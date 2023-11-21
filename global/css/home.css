@@ -1,0 +1,314 @@
+#bannerContainer{
+    animation: bannerReveal 1s forwards;
+}
+
+#bannerMain{
+    height: 50%;
+    min-height: 450px;
+    max-height: 600px;
+    border-bottom: 4px solid #d3d3d3;
+    /* Create the parallax scrolling effect */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 50%;
+    /*Patch for weird padding bug*/
+    margin-top: -35px;
+}
+
+[data-theme='light'] #bannerMain span{
+    color: rgb(235, 235, 235);
+}
+
+.bannerImageLobby{
+    background-image: url('../media/images/dusk.jpg');
+}
+
+.bannerImageSeal{
+  background-image: url('../media/images/landscape.jpg');
+}
+
+.bannerImageAbout{
+  background-image: url('../media/images/mike.jpg');
+}
+
+.bannerImageGalleon{
+  background-image: url('../media/images/sky.png');
+}
+
+.placeholderLobby{
+  background: linear-gradient(to top, rgb(224, 127, 85), rgb(121, 97, 177));
+}
+
+.placeholderGalleon{
+  background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+}
+
+.bannerContent{
+    margin: auto;
+    position: absolute; 
+    left: 0; 
+    right: 0;
+    top: 20%;
+}
+
+.parallax{
+  background-attachment: fixed;
+}
+
+.bannerButton{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    margin-top: 100px;
+    width: 30%;
+    max-width: 200px;
+    min-width: 175px;
+    height: 70px;
+    background-color: rgb(41, 43, 50, 0.75);
+    color: rgb(246, 151, 151);
+    border: 5px solid #d3d3d3;
+    border-radius: 20px;
+    font-size: 20pt;
+    transition: font-size 0.2s, background-color 0.2s, color 0.2s;
+    animation: clickMeHome 2s infinite;  
+    cursor: pointer;
+}
+
+.bannerButton:hover{
+    background-color: rgb(246, 151, 151);
+    color: rgb(255, 255, 255);
+    font-size: 22pt;
+}
+
+.bannerButton:active{
+  transform: scale(1.1);
+}
+
+
+@keyframes bannerReveal {
+  0% {
+    transform: translateY(-50px);
+    scale: 0.9;
+  }
+  50%{
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+    scale: 1;
+  }
+}
+
+
+
+@keyframes clickMeHome {
+    0% {
+      margin-top: 250px;
+    }
+    50% {
+      margin-top: 255px;
+    }
+    100% {
+      margin-top: 250px;
+    }
+  }
+
+
+  /*It's Mobilin' Time*/
+
+@media only screen and (max-width: 700px) {
+  #bannerMain{
+    height: 30%;
+    min-height: 350px;
+  }
+
+  .bannerContent{
+    top: 10%;
+  }
+
+  .bannerButton{
+    top: -5%;
+  }
+
+  .bannerImageAbout{
+    background-image: url('../media/images/ska/skavatarmobile.png');
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  #bannerMain{
+
+      min-height: 400px;
+  }
+
+  .bannerContent{
+    top: 5%;
+  }
+
+  .bannerButton{
+    top: 4%;
+  }
+
+  .homeSeal{
+    display: none;
+  }
+  
+}
+
+.homeSpace a{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+  border-radius: 20px;
+  font-size: 22pt;
+  margin: 10px;
+  padding: 5px 5px;
+  background-color: rgba(241, 142, 92, 0.1);
+  border: 1px solid #bb3e00;
+  cursor: pointer;
+  transition: scale 0.2s;
+}
+
+.homeSpace a:hover{
+  scale: 1.1;
+}
+
+.homeSpace a:active{
+  scale: 1;
+}
+
+.spaceIcon{
+  width: 64px;
+  height: 64px;
+  align-self: center;
+}
+
+.imageSocial{
+  background-color: rgba(95, 141, 55, 0.05);
+  max-width: 256px;
+  max-height: 256px;
+  border: 3px solid #bb3e00;
+  border-radius: 50%;
+  transition: transform .7s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.imageTypeLarge{
+  float: right;
+  margin: 20px;
+  width: 25%;
+  height: 30%;
+}
+
+
+.imageTypeMedium{
+  width: 58%;
+  height: 65%;
+  transition: width 0.5s, height 0.5s;
+}
+
+
+.imageTypeIcon{
+  width: 100%;
+  height: 100%;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  padding-right: 10px;
+}
+
+.textLarge{
+  width: 70%;
+  float: left;
+}
+
+.textBody{
+  font-size: 20pt;
+  color: #bb3e00;
+}
+
+.person{
+  background-color: rgba(95, 141, 55, 0);
+  border: 1px solid #bb3e00;
+  border-radius: 10px;
+  width: 250px;
+  height: 225px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0.5%;
+  transition: margin-top 0.2s;
+  overflow-y: hidden;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.person:hover{
+  transform: scale(1.2);
+  background-color: #fff1d7;
+}
+
+.person:active{
+  transform: scale(1);
+}
+
+.person:hover .imageTypeMedium{
+  width: 0px;
+  height: 0px;
+}
+
+
+.textMedium{
+  font-size: 14pt;
+  color: #bb3e00;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+}
+
+.typeDesc{
+  font-size: 13pt;
+  margin-top: 30px;
+}
+
+.imageTypeMedium{
+  width: 55%;
+  height: 60%;
+}
+
+/*It's Mobilin' Time*/
+
+
+@media only screen and (max-width: 1200px) {
+  .homeSpace a{
+    width: 150px;
+    height: 80px;
+    font-size: 18pt;
+  }
+  .spaceIcon{
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .homeSpace a{
+    width: 100px;
+    height: 60px;
+    font-size: 13pt;
+  }
+  .spaceIcon{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+

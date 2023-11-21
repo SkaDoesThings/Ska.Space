@@ -1,0 +1,416 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*border: 1px solid red;*/
+}
+
+
+/*Coloring*/
+
+
+
+
+/*Code*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 auto;
+}
+
+[data-theme='light'] body {
+    background: url('../media/images/white.jpg') center no-repeat;
+    background-size: 2800px;
+    background-color: rgb(235, 235, 235);
+}
+
+[data-theme='dark'] body {
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 2800px;
+    background-color:rgb(37, 36, 36);
+}
+
+.divider{
+    display: inline-block;
+    background-color: rgb(245, 245, 245);
+    width: 95%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+[data-theme='dark'] .divider{
+    background-color:rgb(117, 117, 117, 0.5);
+}
+
+
+main{
+    width: 100%;
+    animation: pageMoveIn 1s forwards;
+}
+
+article{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 3px solid #d3d3d3;
+    padding: 10px;
+    height: auto;
+    width:93%;
+    background-color: rgb(235, 235, 235);
+    transition: width 0.2s, height 0.2s, border-radius 0.6s, background-color 0.5s;
+    animation: pageEntryway 1s forwards;
+}
+
+[data-theme='dark'] article{
+    background-color:rgb(37, 36, 36);
+}
+
+
+/*Image View*/
+#imageViewer {
+    display: none;
+    background-color: rgb(0, 0, 0);
+    z-index: 9999;
+    animation: imageBox 0.2s forwards;
+}
+
+#imageViewer, #imageBackdrop, #imageDisplay{
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#imageBackdrop, #imageDisplay{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imageBackdrop {
+    width: 110vw;
+    height: 110vh;
+    margin: -100px;
+    background-size: 125%;
+    filter: blur(150px) brightness(0.7);
+    animation: imageBox 0.6s forwards;
+  }
+
+#imageDisplay{
+    margin-top: 15vh;
+    width: 75vw;
+    height: 75vh;
+    background-size: contain;
+    animation: imageAppear 0.3s forwards;
+}
+
+#imageViewer h2{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+
+.viewable{
+    cursor: pointer;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/*=-=-=-=-=-=- ( Text ) -=-=-=-=-=-=*/
+
+span, .text, a, input, h1, h2, p, li{
+    font-family: 'Segoe UI';
+    word-break: break-word;
+    transition: color 0.5s;
+    color: rgb(245, 245, 245);
+} 
+
+span, .text, h2, li{
+    font-size: 18pt;
+}
+
+[data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] p, [data-theme='light'] li {
+    color:rgb(51, 51, 51);
+}
+
+h1, h2{
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 26pt;
+}
+
+.centered {
+    text-align: center;
+}
+.vertical{
+    vertical-align: middle;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.red {
+    color: #bb3e00;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.rounded{
+    border-radius: 50%;
+}
+
+.medium{
+    max-width: 30%;
+    height: auto;
+}
+
+.small{
+    max-width: 125px;
+    height: auto;
+}
+
+.large{
+    max-width: 60%;
+    min-width: 100px;
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.mainImage{
+    padding: 10px;
+    border-radius: 50%;
+}
+    
+.mainText{
+    font-size: 50pt; 
+    font-family: 'Segoe UI';
+}
+
+
+/*Sets proper spacing and borders*/
+
+.columnContainer{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    max-width: 1300px;
+}
+
+
+div article{
+    width: 100%;
+    border: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rotate:hover{
+    transform: rotate(360deg);
+}
+
+#links{
+    height: 200px;
+}
+
+.centerTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*Woah Fancy Forum Stuff*/
+
+form input{
+    background-color:rgb(255, 255, 255);
+    border: 2px solid rgb(246, 151, 151);
+    font-size: 20pt;
+}
+
+[data-theme='dark'] form input{
+    background-color:rgb(87, 87, 87);
+}
+
+form input:hover{
+    background-color: #e2d5d5;
+}
+
+form input[type=text], form input[type=password]{
+    color: #bb3e00;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    transition: width 0.2s;
+    width: 50%;
+    min-width: 250px;
+}
+
+input[type=submit]{
+    border-radius:  20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 50px;
+    transition: width 0.2s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    border: 2px solid white;
+    width: 250px;
+    background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
+}
+
+.fadeOut{
+    animation: pageMoveOut 0.3s ease 1 normal forwards;
+}
+
+/*It's Mobilin' Time*/
+
+
+@media only screen and (min-width: 700px) {
+    .onMobile{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+
+    .subtitle{
+        font-size: 22px;
+    }
+    
+    .columnContainer{
+        background-color: rgba(95, 141, 55, 0);
+        width: 100%;
+        display: inline-block;
+        border: 0px;
+    }
+    
+    .columnContainer article{
+        background-color:rgb(117, 117, 117, 0.1);
+        width: 86%;
+        height: auto;
+        margin-left: 2%; 
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    
+    #form{
+        text-align: center;
+    }
+    
+    .formText{
+        width: 90%;
+        margin-right: 10%;
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .onMobile{
+        display: block;
+    }
+
+    .offMobile{
+        display: none;
+        visibility: hidden;
+    }
+
+    #imageBackdrop {
+        background-size: cover;
+    }
+
+    #imageDisplay{
+        margin-top: 5vh;
+    }
+    
+    #imageViewer h2{
+        bottom: 150px;
+    }
+
+    article{
+        border: 0px;
+        margin-bottom: 0px; 
+    }
+}
+
+/*=-=-=-=- ( Animations ) -=-=-=-=*/
+@keyframes pageEntryway {
+    0%{ 
+        opacity: 0;
+        margin-top: 30px;
+    }
+    100%{
+        margin-top: 50px;
+    }
+}
+
+@keyframes pageMoveOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+    
+@keyframes pageMoveIn {
+    0% {
+        opacity: 0;
+    }
+    10%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes imageBox {
+    0%{ 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes imageAppear {
+    0%{ 
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

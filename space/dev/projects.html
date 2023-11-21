@@ -1,0 +1,127 @@
+<html lang="en" data-theme="dark">
+	<head>
+		<title>Seal Search</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="../../global/css/style.css">
+        <link rel="stylesheet" href="../../global/css/nav.css">
+		<link rel="stylesheet" href="../seal/css/search.css">
+		<link rel="stylesheet" href="css/showcase.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../../global/media/images/ska/wumpus.png"/>
+
+	</head>
+	<body>
+		<nav id="navbox" class="transparency">
+            <a href="../main/lobby.html"><img src="../../global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+                <img src="../../global/media/images/navburger.png" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+                <span>Ska.Space</span>
+                <span class="sectionName">> Dev</span>
+            </button>
+            <button onclick="openNav()" id="openNav" class="navbutton"></button>
+            <button onclick="closeNav()" id="closeNav" class="navbutton"></button>
+            <img src="../../global/media/images/trophy.png" class="navIcon iconTypeGear iconLeft viewable" alt="Logo for Dev Corner"/>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <a href="../main/settings.html"><img src="../../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+			<a href="../seal/search.html"><img src="../../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="projects.html" class="active">Projects</a>
+                <a href="list.html">Web Pages</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="../main/lobby.html"><img src="../../global/media/images/home.png" alt="Logo for Lobby Space">Lobby</a>
+                    <a href="../ska/card.html"><img src="../../global/media/images/infologo.png" alt="Logo for About Ska">About Ska</a>
+                    <a href="../dev/projects.html" class="active"><img src="../../global/media/images/trophy.png" alt="Logo for Dev Corner">Dev Corner</a>
+                    <hr class="offMobile"><h2 class="offMobile">Brands</h2>
+                    <a href="../seal/search.html"><img src="../../global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                    <a href="../galleon/home.html"><img src="../../global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
+                </div>
+            </div>
+        </nav>
+
+		<div id="topArea">
+			<div id="searchLogo">
+				<center>
+				<img src="../../global/media/images/sealco.png" class="image small vertical mainImage viewable" style="padding: 10px;">
+				<span class="text bold mainText" style="font-size: 50pt; font-family: 'Segoe UI';">Projects</span></center>
+			</div>
+		</div>
+
+		<br><br><center>
+		<main id="page">
+            <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+                <div id="imageBackdrop"></div>
+				<div id="imageDisplay"></div>
+                <h2>Click anywhere to close image</h2>
+			</div>
+			<h1>Note, this page is not functional for now</h1>
+			<article>
+				<ul id="navItemList">
+					<div class="navContainer" onclick="setTimeout(function () {location.href = '../seal/search.html';}, 500), pageTransitionOut();;">
+						<li class="navItem">
+							<a class="navText">Seal Search</a>
+							<div class="navImage imageOne"></div>
+						</li>
+					</div>
+
+					<div class="navContainer" onclick="setTimeout(function () {location.href = '../../../Projects/SpencOS/login.html';}, 500), pageTransitionOut();;">
+						<li class="navItem">
+							<a class="navText">SpencOS</a>
+							<div class="navImage imageTwo withBorder"></div>
+						</li>
+					</div>
+
+					<div class="navContainer" onclick="setTimeout(function () {location.href = '../galleon/home.html';}, 500), pageTransitionOut();;">
+						<li class="navItem">
+							<a class="navText">Galleon</a>
+							<div class="navImage imageThree withBorder"></div>
+						</li>
+					</div>
+
+					<div class="navContainer" onclick="setTimeout(function () {location.href = '../../../DACC/AmorayPizza/html/index.php';}, 300), pageTransitionOut();;">
+						<li class="navItem">
+							<a class="navText">Amoray</a>
+							<div class="navImage imageFour withBorder"></div>
+						</li>
+					</div>
+
+					<div class="navContainer" onclick="setTimeout(function () {location.href = '../../index.html';}, 500), pageTransitionOut();;">
+						<li class="navItem">
+							<a class="navText">Home</a>
+							<div class="navImage imageFive withBorder"></div>
+						</li>
+					</div>
+				</ul><br>
+
+				<span class="divider text bold subtitle">Storage</span><br>
+				<table class="listbox centered">
+					<tr>
+						<td>
+							<li><a href="../../../DACC/WebArchive/Main/index.html" class="nav">Seal Archive</a></li>
+							<li><a href="../../../DACC/AmericanDream/index.html" class="nav">Laser Engraving</a></li>
+							<li><a href="../../../DACC/CarbonDisrupters/index.html" class="nav">Carbon Disrupters</a></li>
+						</td>
+					</tr>	
+				</table>
+				<span class=" divider text bold subtitle">Experiments</span><br>
+				<table class="listbox centered">
+					<tr>
+						<td>
+							<li><a href="../../../Overview/index.html" class="nav">Cards</a></li>
+							<li><a href="../../../DACC/dbwebapp/home.php" class="nav">PHP Website</a></li>
+						</td>
+					</tr>
+				</table>
+				<table><tr><td><center><li><a href="list.html" class="nav">View More</a></li></center></td></tr></table>
+			</div></center>
+			</article>
+		</main>
+		<button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
+
+	</body>
+	<script src="../../global/scripts/scripts.js"></script>
+	<script src="../../global/scripts/theme.js"></script>
+	<script>
+		window.onscroll = function() {scrollFunction()};
+	</script>
+</html>
