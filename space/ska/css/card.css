@@ -327,8 +327,6 @@ article{
     background-size: 70px;
 }
 
-
-
 /*It's Mobilin' Time*/
 
 @media only screen and (min-width: 1000px) { 
@@ -338,11 +336,17 @@ article{
 }
 
 @media only screen and (max-width: 1000px) {
-
     .mainText{
         font-size: 40pt; 
     }
 }
+
+@media only screen and (max-width: 700px) {
+    #page{
+        margin-top: -20px;
+    }
+}
+
 
 
 @media only screen and (max-width: 550px) {
@@ -374,10 +378,6 @@ article{
     }
     
 }
-
-
-
-
 
 
 @keyframes titleMoveIn {

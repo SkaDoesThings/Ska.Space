@@ -114,6 +114,8 @@ function closeThatNav() {
 
     document.getElementById("closeNav").style.dislay = "none";
     document.getElementById("openNav").style.dislay = "block";
+    document.getElementById("navbox").style.borderTopLeftRadius = "0px";
+    document.getElementById("navbox").style.borderTopRightRadius = "0px";
     document.getElementById("navbox").style.height = "60px";
     document.getElementById("buttonTop").style.marginRight = "-100px";
 }
