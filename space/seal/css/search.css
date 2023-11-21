@@ -237,6 +237,10 @@ li a:hover{
         margin: 2px;
     }
 
+    li a{
+        font-size: 14pt;
+    }
+
     #navseal{
         margin-left: 0px;
         position: absolute;
@@ -249,8 +253,7 @@ li a:hover{
     }
 
     #searchBox{
-        min-width: 70%;
-
+        min-width: 100%;
     }
 
     #searchBar{

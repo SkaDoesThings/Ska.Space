@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fader.removeEventListener('animationend', listener);
     };
     fader.addEventListener('animationend', listener);
-    
+
     event.preventDefault();
     fader.classList.add('fadeOut');
+    closeThatNav();
       });
     }
 });
@@ -75,7 +76,6 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("navbox").style.height = "60px";
-
 
   document.getElementById("navbox").style.borderTopLeftRadius = "0px";
   document.getElementById("navbox").style.borderTopRightRadius = "0px";

@@ -141,7 +141,6 @@
 @media only screen and (max-width: 500px) {
 
   #bannerMain{
-
       min-height: 400px;
   }
 
@@ -152,11 +151,6 @@
   .bannerButton{
     top: 4%;
   }
-
-  .homeSeal{
-    display: none;
-  }
-  
 }
 
 .homeSpace a{

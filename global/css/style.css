@@ -359,6 +359,10 @@ input[type=submit]:hover{
         border: 0px;
         margin-bottom: 0px; 
     }
+
+    span, .text, li{
+        font-size: 14pt;
+    }
 }
 
 /*=-=-=-=- ( Animations ) -=-=-=-=*/
