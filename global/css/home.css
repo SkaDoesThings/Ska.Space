@@ -123,6 +123,7 @@
   #bannerMain{
     height: 30%;
     min-height: 350px;
+    margin-top: 80px;
   }
 
   .bannerContent{
@@ -130,7 +131,7 @@
   }
 
   .bannerButton{
-    top: -5%;
+    top: 0%;
   }
 
   .bannerImageAbout{
@@ -139,17 +140,16 @@
 }
 
 @media only screen and (max-width: 500px) {
-
-  #bannerMain{
-      min-height: 400px;
-  }
-
   .bannerContent{
     top: 5%;
   }
 
-  .bannerButton{
-    top: 4%;
+  .mainText{
+    font-size: 30pt;
+  }
+
+  .mainImage{
+    width: 128px;
   }
 }
 
