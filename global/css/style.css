@@ -33,14 +33,13 @@ body{
 [data-theme='dark'] body {
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
     background-size: 4em 4em;
-    background-color: #454545;
     opacity: 1;
-    background-color:rgb(41, 40, 40);
+    background-color:rgb(44, 40, 40);
 }
 
 .divider{
     display: block;
-    background-color: rgb(245, 245, 245);
+    background-color:rgb(117, 117, 117, 0.2);
     width: 90%;
     margin: 10px;
     border-radius: 10px;
@@ -49,8 +48,8 @@ body{
     transition: background-color 0.5s;
 }
 
-[data-theme='dark'] .divider{
-    background-color:rgb(117, 117, 117, 0.2);
+[data-theme='light'] .divider{
+    background-color: rgb(245, 245, 245);
 }
 
 
@@ -63,12 +62,12 @@ main{
 }
 
 article{
-    background-color: rgb(235, 235, 235);
+    background-color:rgb(42, 40, 40);
+    border: 2px solid #888282;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     border-radius: 5px;
-    border: 3px solid #d3d3d3;
     padding: 10px;
     width:93%;
     max-width: 2000px;
@@ -77,8 +76,9 @@ article{
     animation: pageEntryway 1s forwards;
 }
 
-[data-theme='dark'] article{
-    background-color:rgb(41, 40, 40);
+[data-theme='light'] article{
+    background-color: rgb(235, 235, 235);
+    border: 2px solid #d3d3d3;
 }
 
 
@@ -193,6 +193,8 @@ img {
 .medium{
     max-width: 30%;
     height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .small{
@@ -240,6 +242,7 @@ img {
     margin-left: auto;
     margin-right: auto; 
     height: auto;
+    border: 0px;
 }
 
 
@@ -349,7 +352,7 @@ input[type=submit]:hover{
         margin-top: 10px !important;
         margin-bottom: 0px;
     }
-    
+
     #form{
         text-align: center;
     }
@@ -357,6 +360,12 @@ input[type=submit]:hover{
     .formText{
         width: 90%;
         margin-right: 10%;
+    }
+
+    .medium{
+        max-width: 80%;
+        margin-top: 10px;
+        height: auto;
     }
     
 }
@@ -455,8 +464,7 @@ input[type=submit]:hover{
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
 nav{
-    background-color: rgba(235, 235, 235, 0);
-    overflow: hidden;
+    background: transparent;
     height: 60px;
     width: 100%;
     position: fixed;
@@ -474,8 +482,12 @@ nav{
 }
 
 [data-theme='dark'] nav{
-    background-color: rgb(57, 58, 59);
+    background-color: rgb(60, 57, 57, 0.6);
     border-bottom: 1px solid #d3d3d3;
+}
+
+[data-theme='dark'] #navbox{
+    backdrop-filter: blur(25px);
 }
 
 #linkContainer a{
@@ -495,7 +507,7 @@ nav{
 
 
 nav a{
-    color: rgb(245, 245, 245);
+    color: rgb(230, 230, 230);
 }
 
 [data-theme="light"] nav a{
@@ -598,7 +610,7 @@ nav a:active, .siteName:active{
 @media only screen and (min-width: 700px) {
 
     [data-theme='dark'] #navbox.transparency {
-        background-color: rgb(57, 58, 59, 0.7);
+        background-color: rgba(59, 57, 57, 0.6);
     }
     
     .navbutton{
@@ -811,9 +823,9 @@ nav a:active, .siteName:active{
 /*Go to top of page*/
 
 #buttonTop{
-    background-color: rgb(41, 43, 50, 0.75);
+    background-color: rgba(48, 41, 41, 0.75);
     color: #fff1d7;
-    border: 2px solid #bb3e00;
+    border: 2px solid #bb3e005d;
     float: right;
     width: 64px;
     height: 64px;
@@ -824,6 +836,7 @@ nav a:active, .siteName:active{
     border-radius: 10px;
     transition: margin-right 0.2s, border-radius 0.1s, width 0.1s, padding-left 0.1s, right 0.1s;
     cursor: pointer;
+    backdrop-filter: blur(5px);
 }
   
 #buttonTop:hover{
@@ -898,12 +911,14 @@ nav a:active, .siteName:active{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
+    margin-top: -25px;
     padding-top: 200px; /* Location of the box */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    backdrop-filter: blur(3px);
 }
 
 /* Modal Content */

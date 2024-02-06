@@ -1,7 +1,7 @@
 [data-theme='dark'] body{
     background: linear-gradient(45deg, #3c3e48 10%,transparent 10%,transparent 90%,#3c3e48 90%),linear-gradient(135deg, transparent 40%, #3c3e4880 40%, #3c3e4880 60%, transparent 0),linear-gradient(45deg, transparent 40%, #3c3e48 40%, #3c3e48 60%, transparent 0);
     background-size: 4em 4em;
-    background-color: #323232;
+    background-color: #3a3a3a;
     opacity: 1
 }
 
@@ -46,7 +46,7 @@
     text-decoration: none;
     width: 250px;
     border-radius: 20px;
-    font-size: 22pt;
+    font-size: 20pt;
     margin: 10px;
     padding: 5px 5px;
     background-color: rgba(246, 171, 241, 0.1);
@@ -74,10 +74,12 @@
 
 @media only screen and (max-width: 900px) {
     .featureList a{
-        width: 150px;
-        font-size: 16pt;
+        width: 130px;
+        font-size: 14pt;
+        margin-left: 5px;
+        margin-right: 5px;
     }
-    
+
     article{
         border: 0px;
     }
