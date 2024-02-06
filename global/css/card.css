@@ -10,9 +10,16 @@ main{
     animation: titleMoveIn 1s forwards;
 }
 
+#topArea img{
+    width: 80px;
+    margin-top: -40px;
+    padding-right: 15px;
+}
+
 article{
     background-color: rgba(0, 0, 0, 0) !important;
     border: 0px;
+    margin-top: 0px;
 }
 
 .columnContainer {
@@ -23,12 +30,6 @@ article{
     animation: contentMoveIn 2s forwards;
     color: rgb(245, 245, 245);
 }
-
-.mainImage{
-    width: 80px;
-    margin-top: -40px;
-}
-
 
 /*<---------- Special Discord-like Profile hehe ---------->*/
 
@@ -365,10 +366,10 @@ article{
 @media only screen and (max-width: 550px) {
 
     .mainText{
-        font-size: 20pt; 
+        font-size: 30pt; 
     }
     
-    .mainImage{
+    #topArea img{
         width: 64px;
         margin-top: 0px;
     }

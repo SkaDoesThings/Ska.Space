@@ -1,0 +1,6 @@
+[data-theme='dark'] body{
+    background-image: url('../images/dirt.jpg');
+    background-size: 500px;
+    background-color: #2d352b;
+    opacity: 1;
+}

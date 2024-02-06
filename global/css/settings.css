@@ -98,7 +98,6 @@ hr{
     height: 98%;
     overflow-x: hidden;
     float: right;
-    animation-duration: 0.5s;
 }
 
 @keyframes switchPage {
