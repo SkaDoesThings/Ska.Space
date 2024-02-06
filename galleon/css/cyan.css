@@ -1,8 +1,9 @@
-main{
-    background-image: url('/global/media/images/cyan/cyanBanner.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: auto;
+.navCredits{
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 0px;
+    font-size: 10pt;
+    float: right;
 }
 
 .columnContainer{
@@ -30,13 +31,13 @@ main{
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    width: 200px;
+    width: 250px;
     border-radius: 20px;
     font-size: 22pt;
     margin: 10px;
     padding: 5px 5px;
     background-color: rgba(246, 171, 241, 0.1);
-    border: 1px solid #f6b6ff;
+    border: 2px solid #f6b6ff;
     user-select: none;
     transition: scale 0.2s;
 }
@@ -56,6 +57,17 @@ main{
 .cyanDisplay img{
     margin-left: 20px;
     margin-bottom: -30px;
+}
+
+@media only screen and (max-width: 900px) {
+    .featureList a{
+        width: 150px;
+        font-size: 16pt;
+    }
+    
+    article{
+        border: 0px;
+    }
 }
 
 @media only screen and (min-width: 900px) {

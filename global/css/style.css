@@ -55,6 +55,10 @@ main{
     animation: pageMoveIn 1s forwards;
 }
 
+#page{
+    margin-bottom: 30px;
+}
+
 article{
     background-color: rgb(235, 235, 235);
     margin-left: auto;
@@ -639,7 +643,7 @@ nav a:active, .siteName:active{
 
     #page{
         margin-top: -120px;
-        padding-bottom: 100px;
+        padding-bottom: 150px;
     }
     
     #navbox{
@@ -849,7 +853,7 @@ nav a:active, .siteName:active{
 
 /*Modal Viewer* - Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 
-.modal-button{
+.modalButton{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(52, 52, 52);
     font-size: 17pt;
@@ -862,15 +866,15 @@ nav a:active, .siteName:active{
     transition: scale 0.1s;
 }
 
-.modal-button:hover{
+.modalButton:hover{
     scale: 1.05;
 }
 
-.modal-button:active{
+.modalButton:active{
     scale: 1.1;
 }
 
-.modal-button img{
+.modalButton img{
     width: 22px;
     height: 22px;
     display: block;
@@ -896,7 +900,7 @@ nav a:active, .siteName:active{
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #452b2b;
+    background-color: #2e2a2a;
     margin: auto;
     padding: 0;
     border: 2px solid rgb(246, 151, 151);;
