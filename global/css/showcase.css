@@ -133,7 +133,7 @@ article{
 }
 
 .imageOne {
-    background-image: url('../../../global/media/images/sealfront.jpg');
+    background-image: url('../../seal/images/sealfront.jpg');
 }
 
 .imageTwo {
@@ -141,15 +141,15 @@ article{
 }
 
 .imageThree {
-    background-image: url('../../../../Galleon/images/sky.png');
+    background-image: url('../../global/media/images/sky.png');
 }
 
 .imageFour {
-    background-image: url('../../../../DACC/AmorayPizza/images/pizzawallpaper.png');
+    background-image: url('../../global/media/images/skills.png');
 }
 
 .imageFive {
-    background-image: url('../../../../DACC/CarbonDisrupters/images/landscape2.jfif');
+    background-image: url('../../global/media/images/dusk.jpg');
 }
 
 
@@ -158,6 +158,18 @@ article{
 
 
 @media only screen and (max-width: 768px) {
+
+    #topArea{
+        height: 120px !important;
+    }
+    
+    .mainText {
+        font-size: 32pt !important;
+    }
+
+    .mainImage {
+        width: 128px;
+    }
 
     #navItemList{
         height: auto;
@@ -168,10 +180,10 @@ article{
         height: 1000px;
         display: inline;
     }
+    
     .navContainer:hover{
         width: 100%;
     }
-
 
     .navItem{
         width: 98%;
@@ -194,9 +206,7 @@ article{
     .navItem:hover{
         background-color: rgb(246, 151, 151);
         font-size: 30pt;
-        padding: 10px;
-        width: 80%;
-        height: 180px;
+        height: 220px;
     }
   }
 

@@ -24,7 +24,10 @@ article{
     color: rgb(245, 245, 245);
 }
 
-
+.mainImage{
+    width: 80px;
+    margin-top: -40px;
+}
 
 
 /*<---------- Special Discord-like Profile hehe ---------->*/
@@ -366,16 +369,17 @@ article{
     }
     
     .mainImage{
-        width: 100px;
+        width: 64px;
+        margin-top: 0px;
     }
 
     .columnContainer article{
         background-color:rgb(117, 117, 117, 0.1) !important;
-        width: 99%;
+        width: 95%;
         height: auto;
         padding: 0px;
-        margin-left: 0px;
-        margin-right: 0px; 
+        margin-left: auto;
+        margin-right: auto; 
         margin-bottom: 20px;
     }
 

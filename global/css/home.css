@@ -123,7 +123,7 @@
   #bannerMain{
     height: 30%;
     min-height: 350px;
-    margin-top: 80px;
+    margin-top: 35px;
   }
 
   .bannerContent{
@@ -131,7 +131,7 @@
   }
 
   .bannerButton{
-    top: 0%;
+    top: -2%;
   }
 
   .bannerImageAbout{

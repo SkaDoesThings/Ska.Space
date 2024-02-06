@@ -1,9 +1,22 @@
+[data-theme='dark'] body{
+    background: linear-gradient(45deg, #3c3e48 10%,transparent 10%,transparent 90%,#3c3e48 90%),linear-gradient(135deg, transparent 40%, #3c3e4880 40%, #3c3e4880 60%, transparent 0),linear-gradient(45deg, transparent 40%, #3c3e48 40%, #3c3e48 60%, transparent 0);
+    background-size: 4em 4em;
+    background-color: #323232;
+    opacity: 1
+}
+
 .navCredits{
     height: 40px;
     margin-top: 10px;
     margin-right: 0px;
     font-size: 10pt;
     float: right;
+}
+
+.divider{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .columnContainer{

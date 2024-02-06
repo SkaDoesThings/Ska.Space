@@ -2,19 +2,41 @@ body{
   background:rgb(37, 36, 36);
 }
 
+.necoArc{
+    width: 128px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 15px;
+}
+
+.sailImage{
+  width: 85px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.specialTitle{
+  margin-top: 80px;
+}
+
 .inviteButton{
     width: 140px;
     height: 55px;
     background-color: rgb(41, 43, 50, 0.75);
     color: white;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
     font-size: 16pt;
     text-indent: 45px;
     cursor: pointer;
     border-radius: 15px;
-    transition: width 0.2s, height 0.2s, background-position 0.2s, border-radius 0.2s;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, border-radius 0.2s;
 }
 
 .mainJoinDiscord{
@@ -38,30 +60,40 @@ body{
 }
 
 .mainJoinDiscord:hover{
-  background: #5865F2 url(../../../global/media/images/external/white/logoDiscord.png) no-repeat 8px 5px;
+  background-color: #5865f2b9;
   background-size: 40px;
 }
 
 .mainJoinGuilded:hover{
-  background: #F5C400 url(../../../global/media/images//external/white/logoGuilded.png) no-repeat 8px 5px;
+  background-color: #f5c40064;
   background-size: 40px;
 }
 
 .mainJoinSteam:hover{
-  background: #0275A5 url(../../../global/media/images/external/white/logoSteam.png) no-repeat 8px 4px;
+  background-color: #0275A5b9;
   background-size: 40px;
 }
 
 
 .listbox{
+  background-color: rgb(50, 50, 50);
   height: auto;
   border-radius: 15px;
   padding: 10px;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   transition: width 0.2s, height 0.2s, border-radius 0.6s;
-  background-color: rgb(41, 43, 50, 0.75)
 }
+
+[data-theme='light'] .listbox{
+  background-color: rgb(219, 219, 219);
+}
+
+
+[data-theme='light'] .listbox button{
+  color: rgb(50, 50, 50);
+}
+
 
 @media only screen and (min-width: 900px) {
   article img{

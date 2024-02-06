@@ -1,0 +1,80 @@
+<html lang="en" data-theme="dark">
+	<head>
+		<title>Galleon | Discord</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../global/css/style.css">
+        <link rel="stylesheet" href="../../global/css/nav.css">
+		<link rel="stylesheet" href="../../global/css/home.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../../global/media/images/glogo.png"/>
+
+	</head>
+	<body>
+        <nav id="navbox" class="transparency">
+            <a href="../index.html"><img src="../../global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+                <img src="../../global/media/images/navburger.png" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+				<span class="spaceName">Ska.Space</span>
+				<span class="sectionName">Galleon</span>
+            </button>
+            <button onclick="openNav()" id="openNav" class="navbutton"></button>
+            <button onclick="closeNav()" id="closeNav" class="navbutton"></button>
+            <img src="../../global/media/images/glogo.png" class="navIcon iconTypeGear iconLeft viewable mobileCenter" alt="Logo for Galleon"/>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <a href="../settings.html"><img src="../../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+            <a href="../seal/search.html"><img src="../../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="home.html" >Home</a>
+				<a href="discord.html">Discord</a>
+                <a href="guilded.html" class="active">Guilded</a>
+				<a href="llamaland.html">LlamaLand</a>
+				<a href="cyan.html">Cyan</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="../index.html"><img src="../../global/media/images/home.png" alt="Logo for Lobby Space">Lobby</a>
+                    <a href="../galleon/home.html" class="active"><img src="../../global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
+                    <a href="../seal/search.html"><img src="../../global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                </div>
+            </div>
+        </nav>
+
+		<br><br>
+		<main id="page">
+            <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+                <div id="imageBackdrop"></div>
+				<div id="imageDisplay"></div>
+                <h2>Click anywhere to close image</h2>
+			</div>
+	
+			<article class="centered">
+                <img src="../global/media/images/sailboat.png" class="sailImage">
+				<h1 class="specialTitle">Guilded Server</h1>
+                <h2>Founded in 2018, this is a public community that embraces the best of Guilded</h2>			
+                <div class="columnContainer">
+                    <article>
+                        <h1>An Innovative Chat Experience</h1><br>
+						<ul>
+							<li>Talk about whatever suits your interests, there will always be a place for it</li><br>
+                        	<li>A design that always is reinterated on to discover what works best</li><br>
+							<li>Countless roles, colors, and emojis so that you can express yourself best</li>
+						</ul>
+                    </article>
+                    <article>
+                       <img src="images/gilPormo.png" class="viewable">
+                    </article>
+                </div>
+                <h1>Join Today!</h1>
+                <div>
+                    <iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l3DZ3PE&size=large" width="553" height="335" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </article>
+		</main>
+	</body>
+	<script src="../../global/scripts/scripts.js"></script>
+	<script src="../../global/scripts/theme.js"></script>
+	<script>
+		window.onscroll = function() {scrollFunction()};
+	</script>
+	<button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
+</html>
