@@ -1,21 +1,4 @@
-*{
-    font-family: Georgia, 'Times New Roman', Times, Arial, Helvetica, sans-serif;
-    /*border: 1px solid red;*/
-}
-
-
-/*Coloring*/
-
-
-
-
-/*Code*/
-
-
-
 /*=-=-=-=-=-=-=-=-= Main Styles =-=-=-=-=-=-=-=-=*/
-
-
 html{
     scroll-behavior: smooth;
 }
@@ -131,19 +114,14 @@ article{
     right: 0;
 }
 
-
 .viewable{
-    cursor: pointer;
-}
-
-.pointer{
     cursor: pointer;
 }
 
 /*=-=-=-=-=-=- ( Text ) -=-=-=-=-=-=*/
 
 span, .text, a, input, h1, h2, p, li{
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
     transition: color 0.5s;
     color: rgb(245, 245, 245);
@@ -170,6 +148,7 @@ h1 {
 .centered {
     text-align: center;
 }
+
 .vertical{
     vertical-align: middle;
 }
@@ -217,7 +196,7 @@ img {
     
 .mainText{
     font-size: 50pt; 
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 
@@ -245,7 +224,6 @@ img {
     border: 0px;
 }
 
-
 div article{
     width: 100%;
     border: 0px;
@@ -257,17 +235,11 @@ div article{
     transform: rotate(360deg);
 }
 
-#links{
-    height: 200px;
-}
-
 .centerTable{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
 
 /*Woah Fancy Forum Stuff*/
 
@@ -315,152 +287,6 @@ input[type=submit]:hover{
     animation: pageMoveOut 0.3s ease 1 normal forwards;
 }
 
-/*It's Mobilin' Time*/
-
-
-@media only screen and (min-width: 700px) {
-    .onMobile{
-        display: none;
-        visibility: hidden;
-    }
-}
-
-
-@media only screen and (max-width: 900px) {
-
-    article{
-        width: 90%;
-        border-radius: 10px;
-    }
-
-    .subtitle{
-        font-size: 22px;
-    }
-    
-    .columnContainer{
-        background-color: rgba(95, 141, 55, 0);
-        width: 100%;
-        display: inline-block;
-        border: 0px;
-        margin-top: 0px;
-        padding: 0px;
-    }
-    
-    .columnContainer article{
-        background-color:rgb(117, 117, 117, 0.05);
-        width: 86%;
-        margin-top: 10px !important;
-        margin-bottom: 0px;
-    }
-
-    #form{
-        text-align: center;
-    }
-    
-    .formText{
-        width: 90%;
-        margin-right: 10%;
-    }
-
-    .medium{
-        max-width: 80%;
-        margin-top: 10px;
-        height: auto;
-    }
-    
-}
-
-@media only screen and (max-width: 700px) {
-    .onMobile{
-        display: block;
-    }
-
-    .offMobile{
-        display: none;
-        visibility: hidden;
-    }
-
-    #imageBackdrop {
-        background-size: cover;
-    }
-
-    #imageDisplay{
-        margin-top: 5vh;
-    }
-    
-    #imageViewer h2{
-        bottom: 150px;
-    }
-
-    article{
-        border: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px; 
-    }
-
-    span, .text, li{
-        font-size: 14pt;
-    }
-}
-
-/*=-=-=-=- ( Animations ) -=-=-=-=*/
-@keyframes pageEntryway {
-    0%{ 
-        opacity: 0;
-        margin-top: 30px;
-    }
-    100%{
-        margin-top: 50px;
-    }
-}
-
-@keyframes pageMoveOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-}
-    
-@keyframes pageMoveIn {
-    0% {
-        opacity: 0;
-    }
-    10%{
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-@keyframes imageBox {
-    0%{ 
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes imageAppear {
-    0%{ 
-        transform: scale(0.5);
-    }
-    50%{
-        transform: scale(1.1);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-
-
-
-
-
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
 nav{
@@ -487,6 +313,7 @@ nav{
 }
 
 [data-theme='dark'] #navbox{
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
 }
 
@@ -502,7 +329,7 @@ nav{
     font-size: 16pt;
     transition: min-width 0.3s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s, transform 0.3s, height 0.3s;
     cursor: pointer;
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', Arial, sans-serif;
 }   
 
 
@@ -607,7 +434,249 @@ nav a:active, .siteName:active{
     height: 32px;
 }
 
+/*Nav Icon Zone*/
+.navIcon[type=checkbox] { /* hides checkbox */
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.navIcon{ /* generic icon dimensions */
+    width: 38px;
+    height: 38px;
+    float: right;
+    margin-left: 5px;
+    margin-top: 10px;
+    transition: transform 0.7s ease-in-out;
+}
+
+.navIcon:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.navIcon:active{
+    scale: 1.3;
+}
+
+.iconLeft{
+    float: left;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+[data-theme='light'] .invert{
+    filter: invert(0);
+}
+
+.iconTypeTheme{
+    background-size: 100%;
+    background-image: url('../media/icons/nav/themeLight.png');
+    background-repeat: no-repeat;
+}
+
+[data-theme='dark'] .iconTypeTheme{
+    background-image: url('../media/icons/nav/themeDark.png');
+}
+
+.iconTypeList{
+    display: block;
+    float: left;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 16px;
+    height: 16px;
+    background-size: 100%;
+}
+
+/*Dropdown Menu*/
+.sectionDivider{
+    display: inline-block;
+    border-right: 2px solid gray;
+    width: 0px;
+    height: 60px;
+}
+
+.dropdown-content {
+    margin-top: 60px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+    display: none;
+    position: absolute;
+    width: 200px;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+@keyframes menuMoveIn {
+    0% {
+        margin-top: 50px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 60px;
+        opacity: 1;
+    }
+}
+
+
+
+/*Go to top of page*/
+
+#buttonTop{
+    background-color: rgba(48, 41, 41, 0.75);
+    color: #fff1d7;
+    border: 2px solid #bb3e005d;
+    float: right;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    right: 0;
+    margin-right: -100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: margin-right 0.2s, border-radius 0.1s, width 0.1s, padding-left 0.1s, right 0.1s;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+  
+#buttonTop:hover{
+    background-color: rgb(246, 151, 151);
+}
+
+#buttonTop:active{
+    border-radius: 35px;
+    width: 100px;
+    padding-left: 50px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    right: -58px;
+}
+
+/*Workaround for changing text*/
+
+#buttonTop:after{
+    content:'Top';
+}
+
+#buttonTop:active:after{
+    padding-right: 50px;
+    content:'^';
+    font-size: 36pt;
+}
+
+
+
+/*Modal Viewer* - Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
+
+.modalButton{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: rgb(52, 52, 52);
+    font-size: 17pt;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: scale 0.1s;
+}
+
+.modalButton:hover{
+    scale: 1.05;
+}
+
+.modalButton:active{
+    scale: 1.1;
+}
+
+.modalButton img{
+    width: 22px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    margin-top: -25px;
+    padding-top: 200px; /* Location of the box */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #2e2a2a;
+    margin: auto;
+    padding: 0;
+    border: 2px solid rgb(246, 151, 151);;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 16pt;
+    animation: imageAppear 0.3s;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #cdcdcd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: rgb(246, 151, 151);
+    color: white;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.modal-body {
+    padding: 22px 16px;
+}
+
+
+/*=-=-=- ( It's Mobilin' Time ) -=-=-=*/
 @media only screen and (min-width: 700px) {
+
+    .onMobile{
+        display: none;
+        visibility: hidden;
+    }
 
     [data-theme='dark'] #navbox.transparency {
         background-color: rgba(59, 57, 57, 0.6);
@@ -621,6 +690,7 @@ nav a:active, .siteName:active{
         position: fixed;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
+        background-color: #f7ad45;
         border: 1px solid gray;
         animation: menuMoveIn 0.2s forwards;
     }
@@ -651,13 +721,9 @@ nav a:active, .siteName:active{
     }
 }
 
-/*@media only screen and (max-width: 900px) and (min-width: 700px) {
-    .siteName, .iconTypeList{
-        display: none;
-    }
-}*/
+@media only screen and (max-width: 900px) {
 
-@media only screen and (max-width: 700px) {
+    /*Nav Stuff*/
     .mobileCenter{
         left: calc((100% - 50px) / 2);
     }
@@ -720,220 +786,135 @@ nav a:active, .siteName:active{
     #buttonTop{
         bottom: 60px;
     }
-  }
 
-/*Nav Icon Zone*/
-.navIcon[type=checkbox] { /* hides checkbox */
-    height: 0;
-    width: 0;
-    visibility: hidden;
+    /*Other Stuff*/
+    article{
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    .subtitle{
+        font-size: 22px;
+    }
+    
+    .columnContainer{
+        background-color: rgba(95, 141, 55, 0);
+        width: 100%;
+        display: inline-block;
+        border: 0px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    
+    .columnContainer article{
+        background-color:rgb(117, 117, 117, 0.05);
+        width: 86%;
+        margin-top: 10px !important;
+        margin-bottom: 0px;
+    }
+
+    #form{
+        text-align: center;
+    }
+    
+    .formText{
+        width: 90%;
+        margin-right: 10%;
+    }
+
+    .medium{
+        max-width: 80%;
+        margin-top: 10px;
+        height: auto;
+    }
+    
 }
 
-.navIcon{ /* generic icon dimensions */
-    width: 38px;
-    height: 38px;
-    float: right;
-    margin-left: 5px;
-    margin-top: 10px;
-    transition: transform 0.7s ease-in-out;
+@media only screen and (max-width: 700px) {
+    .onMobile{
+        display: block;
+    }
+
+    .offMobile{
+        display: none;
+        visibility: hidden;
+    }
+
+    #imageBackdrop {
+        background-size: cover;
+    }
+
+    #imageDisplay{
+        margin-top: 5vh;
+    }
+    
+    #imageViewer h2{
+        bottom: 150px;
+    }
+
+    article{
+        border: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px; 
+    }
+
+    span, .text, li{
+        font-size: 14pt;
+    }
 }
 
-.navIcon:hover{
-    scale: 1.1;
-    cursor: pointer;
-}
+/*=-=-=-=- ( Animations ) -=-=-=-=*/
 
-.navIcon:active{
-    scale: 1.3;
-}
-
-.iconLeft{
-    float: left;
-}
-
-.invert{
-    filter: invert(1);
-}
-
-[data-theme='light'] .invert{
-    filter: invert(0);
-}
-
-
-.iconTypeTheme{
-    background-size: 100%;
-    background-image: url('../media/icons/nav/themeLight.png');
-    background-repeat: no-repeat;
-}
-
-[data-theme='dark'] .iconTypeTheme{
-    background-image: url('../media/icons/nav/themeDark.png');
-}
-
-.iconTypeList{
-    display: block;
-    float: left;
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 0px;
-    width: 16px;
-    height: 16px;
-    background-size: 100%;
-}
-
-/*Dropdown Menu*/
-.sectionDivider{
-    display: inline-block;
-    border-right: 2px solid gray;
-    width: 0px;
-    height: 60px;
-}
-
-.dropdown-content {
-    margin-top: 60px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    background-color: #f7ad45;
-    display: none;
-    position: absolute;
-    width: 200px;
-    overflow: auto;
-    overflow-x: hidden;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.show {
-    display: block;
-}
-
-@keyframes menuMoveIn {
-    0% {
+@keyframes pageEntryway {
+    0%{ 
+        opacity: 0;
+        margin-top: 30px;
+    }
+    100%{
         margin-top: 50px;
+    }
+}
+
+@keyframes pageMoveIn {
+    0% {
+        opacity: 0;
+    }
+    10%{
         opacity: 0;
     }
     100% {
-        margin-top: 60px;
         opacity: 1;
     }
 }
 
-
-
-/*Go to top of page*/
-
-#buttonTop{
-    background-color: rgba(48, 41, 41, 0.75);
-    color: #fff1d7;
-    border: 2px solid #bb3e005d;
-    float: right;
-    width: 64px;
-    height: 64px;
-    position: fixed;
-    right: 0;
-    margin-right: -100px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    transition: margin-right 0.2s, border-radius 0.1s, width 0.1s, padding-left 0.1s, right 0.1s;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-}
-  
-#buttonTop:hover{
-    background-color: rgb(246, 151, 151);
+@keyframes pageMoveOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
 }
 
-#buttonTop:active{
-    border-radius: 35px;
-    width: 100px;
-    padding-left: 50px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    right: -58px;
+@keyframes imageBox {
+    0%{ 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
-/*Workaround for changing text*/
-
-#buttonTop:after{
-    content:'Top';
-}
-
-#buttonTop:active:after{
-    padding-right: 50px;
-    content:'^';
-    font-size: 36pt;
-}
-
-
-
-
-
-
-
-
-
-
-/*Modal Viewer* - Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
-
-.modalButton{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(52, 52, 52);
-    font-size: 17pt;
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: scale 0.1s;
-}
-
-.modalButton:hover{
-    scale: 1.05;
-}
-
-.modalButton:active{
-    scale: 1.1;
-}
-
-.modalButton img{
-    width: 22px;
-    height: 22px;
-    display: block;
-    float: left;
-    margin-left: 0px;
-    margin-right: 5px;
-    margin-top: 3px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    margin-top: -25px;
-    padding-top: 200px; /* Location of the box */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
-    backdrop-filter: blur(3px);
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #2e2a2a;
-    margin: auto;
-    padding: 0;
-    border: 2px solid rgb(246, 151, 151);;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 16pt;
-    animation: imageAppear 0.3s;
+@keyframes imageAppear {
+    0%{ 
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 @keyframes openModal {
@@ -950,32 +931,4 @@ nav a:active, .siteName:active{
         opacity: 1;
         scale: 1;
     }
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: -5px;
-}
-
-.close:hover,
-.close:focus {
-    color: #cdcdcd;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: rgb(246, 151, 151);
-    color: white;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-}
-
-.modal-body {
-    padding: 22px 16px;
 }

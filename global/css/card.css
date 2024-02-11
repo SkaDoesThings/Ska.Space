@@ -2,6 +2,10 @@ body{
     background: linear-gradient(to right, rgb(28, 37, 74), rgb(80, 49, 92)) !important;
 }
 
+[data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] .mainText{
+    color: white;
+}
+
 main{
     margin-top: 30px;
 }
@@ -85,6 +89,7 @@ article{
     background-position-x: -20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
 }
 
 .userIcons{
@@ -99,14 +104,12 @@ article{
     border-radius: 10px;
 }
 
-
-.userIcon{
+.userIcons img{
     width: 20px;
     height: 20px;
     margin-left: 5px;
     border-radius: 10px;
 }
-
 
 .profileBody{
     background-color: rgba(255, 255, 255, 0.374);
@@ -125,6 +128,7 @@ article{
 }
 
 .profileBody span{
+    color: #3f3f3f;
     font-size: 10pt;
     white-space: wrap;
 }
@@ -141,11 +145,9 @@ article{
 .status{
     position: absolute;
     margin-top: -10px;
- 
 }
 
 .category{
-    color: #3f3f3f;
     font-size: 9pt !important;
     font-weight: bold;
 }
@@ -159,14 +161,13 @@ article{
     display: flex;
 }
 
-.userRoles .bio{
+.userRoles span{
     width: fit-content;
     padding: 2px;
     border-radius: 5px;
     background-color: #eef7fb81;
     margin-right: 5px;
 }
-
 
 [data-theme='dark'] #myProfile{
     background: linear-gradient(to bottom, #171111, #9c1f1f);    
@@ -178,10 +179,6 @@ article{
     color: #a9a9a9 !important;
 }
 
-[data-theme='dark'] .profileCard span{
-    color: #e4e5e9 !important;
-}
-
 [data-theme='dark'] .userPicture{
     border: 6px solid #1d1919;
 }
@@ -191,31 +188,20 @@ article{
     border: 5px solid #1d1919;
 }
 
-[data-theme='dark'] .profileBody{
+[data-theme='dark'] .profileBody, [data-theme='dark'] .userIcons{
     background-color: rgba(0, 0, 0, 0.374);
 }
 
-[data-theme='dark'] .userIcons{
-    background-color: rgba(0, 0, 0, 0.374);
+[data-theme='dark'] .profileCard span, [data-theme='dark'] .name, [data-theme='dark'] .category{
+    color: #e4e5e9;
 }
 
-[data-theme='dark'] .name{
-    color: #e4e5e9 !important;
-}
-
-[data-theme='dark'] .category{
-    color: #e4e5e9 !important;
-}
-
-[data-theme='dark'] .userRoles .bio{
+[data-theme='dark'] .userRoles span{
     background-color: #21212181;
-    color: #e4e5e9 !important;
+    color: #e4e5e9;
 }
-
-
 
 /*<---------- Regular Profile Stuff ---------->*/
-
 
 .links img{
     width: 36px;
@@ -272,7 +258,6 @@ article{
     cursor: pointer;
     transition: scale 0.2s, background-color 0.2s, border 0.2s;
 }  
-
 
 .imageTypeSocials:active{
     transform: scale(1.1);
@@ -361,8 +346,6 @@ article{
     }
 }
 
-
-
 @media only screen and (max-width: 550px) {
 
     .mainText{
@@ -393,7 +376,6 @@ article{
     }
     
 }
-
 
 @keyframes titleMoveIn {
     0% {
