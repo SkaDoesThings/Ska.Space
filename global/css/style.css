@@ -671,8 +671,7 @@ nav a:active, .siteName:active{
 
 
 /*=-=-=- ( It's Mobilin' Time ) -=-=-=*/
-@media only screen and (min-width: 700px) {
-
+@media only screen and (min-width: 800px) {
     .onMobile{
         display: none;
         visibility: hidden;
@@ -721,7 +720,7 @@ nav a:active, .siteName:active{
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
 
     /*Nav Stuff*/
     .mobileCenter{
@@ -778,9 +777,10 @@ nav a:active, .siteName:active{
     #myDropdown {
         position: relative;
         width: 100%;
+        margin-top: 20px;
         margin-left: 0px;
         display: inline-block;
-        padding-bottom: 100px;
+        padding-bottom: 130px;
     }
 
     #buttonTop{
@@ -828,9 +828,6 @@ nav a:active, .siteName:active{
         height: auto;
     }
     
-}
-
-@media only screen and (max-width: 700px) {
     .onMobile{
         display: block;
     }
@@ -862,7 +859,6 @@ nav a:active, .siteName:active{
         font-size: 14pt;
     }
 }
-
 /*=-=-=-=- ( Animations ) -=-=-=-=*/
 
 @keyframes pageEntryway {
