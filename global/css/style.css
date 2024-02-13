@@ -3,17 +3,14 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    margin: 0 auto;
-}
-
 [data-theme='light'] body {
     background: url('../media/images/white.jpg') center no-repeat;
     background-size: 2800px;
     background-color: rgb(235, 235, 235);
 }
 
-[data-theme='dark'] body {
+body {
+    margin: 0 auto;
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
     background-size: 4em 4em;
     opacity: 1;
@@ -37,7 +34,7 @@ body{
 
 
 main{
-    animation: pageMoveIn 1s forwards;
+    animation: pageMoveIn 0.5s forwards;
 }
 
 #page{
@@ -528,8 +525,6 @@ nav a:active, .siteName:active{
     }
 }
 
-
-
 /*Go to top of page*/
 
 #buttonTop{
@@ -574,8 +569,6 @@ nav a:active, .siteName:active{
     content:'^';
     font-size: 36pt;
 }
-
-
 
 /*Modal Viewer* - Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 
@@ -670,8 +663,55 @@ nav a:active, .siteName:active{
 }
 
 
+/*Item Container and Navigation*/
+
+.listbox {
+    height: auto;
+    border-radius: 5px;
+    border: 3px solid #d3d3d3;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    transition: width 0.2s, height 0.2s, border-radius 0.6s;
+}
+
+.listbox li {
+    float: left;
+    display: block;
+    border-radius: 10px;
+    border-bottom: 1px solid rgb(87, 87, 87); 
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.listbox li a{
+    color: rgb(87, 87, 87);
+    text-align: left;
+    padding: 1px 10px;
+    text-decoration: none;
+    font-size: 18pt;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.listbox li:active{
+    margin-top: -3px;
+}
+
+[data-theme='dark'] .listbox li a{
+    color: rgb(245, 245, 245);
+}
+
+.listbox li a:hover{
+    background-color: rgb(246, 151, 151);
+}
+
+
 /*=-=-=- ( It's Mobilin' Time ) -=-=-=*/
 @media only screen and (min-width: 800px) {
+
     .onMobile{
         display: none;
         visibility: hidden;
@@ -721,10 +761,15 @@ nav a:active, .siteName:active{
 }
 
 @media only screen and (max-width: 800px) {
+    article{
+        border: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px; 
+    }
 
     /*Nav Stuff*/
     .mobileCenter{
-        left: calc((100% - 50px) / 2);
+        left: calc((100% - 35px) / 2);
     }
 
     #page{
@@ -766,10 +811,11 @@ nav a:active, .siteName:active{
         width: fit-content;
         margin: auto;
         text-align: center;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        padding: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         font-size: 20pt;
-        border: 2px solid gray;
+        border: 2px solid rgb(209, 209, 209);
         margin-left: 10px;
         border-radius: 7px;
     }
@@ -849,13 +895,15 @@ nav a:active, .siteName:active{
         bottom: 150px;
     }
 
-    article{
-        border: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px; 
+    span, .text, li{
+        font-size: 14pt;
     }
 
-    span, .text, li{
+    .listbox li{
+        margin: 2px;
+    }
+
+    .listboxli a{
         font-size: 14pt;
     }
 }

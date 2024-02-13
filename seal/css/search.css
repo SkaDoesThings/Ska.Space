@@ -1,0 +1,259 @@
+body{
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+[data-theme='dark'] body{
+    background-color:rgb(44, 40, 40) !important;
+    background: url('../../../global/media/images/darkmode.jpg') center no-repeat;
+}
+
+article{
+    width: 80%;
+    max-width: 1600px;
+    margin-top: 200px;
+}
+
+[data-theme='light'] article{
+    background-color: transparent;
+    border: 0px;
+}
+
+[data-theme='dark'] article{
+    background-color: transparent;
+    border: 0px;
+}
+
+#page{
+    padding-top: 15vh;
+}
+
+/*Item Container and Navigation*/
+
+.listbox{
+    height: auto;
+    border: 0px;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: width 0.2s, height 0.2s, border-radius 0.6s;
+}
+
+.listbox li {
+    background-color: rgb(37, 36, 36, 0.5);
+    transition: background-color 0.2s, border-radius 0.2s;
+}
+
+/*Search Area*/
+
+.searchLogo{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.searchText{
+    font-size: 40pt;
+    color: white !important;
+}
+
+#searchBox{
+    width: 50%;
+    max-width: 800px;
+    min-width: 415px;
+    margin-bottom: 40px;
+}
+
+#searchBar{
+    width: 100%;
+    height: 55px;
+    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    font-size: 24px;
+    border: 2px solid #d3d3d3;
+    border-radius: 15px;
+    transition: background-color 0.5s;
+}
+
+[data-theme='dark'] #searchBar{
+    background-color: rgb(57, 58, 59, 0.5);
+}
+
+#searchGo{
+    display: inline-block;
+    position: relative;
+    margin-left: -84px;
+    width: 80px;
+    height: 55px;
+    border-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid #d3d3d3;
+    font-size: 20pt;
+    transition: 0.2s;
+    transition: background-color 0.5s, font-size 0.1s;
+}
+
+[data-theme='dark'] #searchGo{
+    background-color: rgb(87, 87, 87, 0.0);
+}
+
+#searchGo:hover{
+    background-color: rgb(246, 151, 151);
+    font-size: 25pt;
+}
+
+.engines{
+    margin-top: -30px; 
+    border: 0px; 
+    padding: 0px;
+}
+
+#select{
+    display: none;
+}
+
+/*Customize Settings Area*/
+
+.contentColor{
+    background-color: rgba(235, 235, 235, 0.3);
+    color: rgb(87, 87, 87);
+}
+
+[data-theme='dark'] .contentColor{
+    background-color:rgb(37, 36, 36, 0.3);
+    color: rgb(245, 245, 245);
+}
+
+#customize {
+    position: fixed;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(203, 203, 203, 0.7);
+    border-radius: 15px;
+    border: 1px solid rgb(185, 185, 185);
+    transition: width 0.5s, height 0.5s;
+}
+
+[data-theme='dark'] #customize{
+    background-color: rgb(87, 87, 87, 0.7);
+}
+
+#customize .spaceNavIcon{
+    margin-right: 5px;
+}
+
+.openMenu{
+    display: inline-flex;
+    align-items: center;
+    color: #000;
+    border: 1px solid rgb(185, 185, 185);
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    animation: customizeContentAppear 0.5s forwards;
+}
+
+#customizeList{
+    display: none;
+    border-radius: 15px;
+    animation: customizeContentAppear 0.5s forwards;
+}
+
+.customizeOption{
+    display: flex;
+    align-items: center;
+    background-color: rgba(235, 235, 235);
+    border: 1px solid gray;
+    color: rgb(87, 87, 87);
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.customizeOption:hover, .closeList:hover {
+    scale: 1.05;
+}
+
+.customizeOption:active, .closeList:active {
+    scale: 1.1;
+}
+
+[data-theme='dark'] .customizeOption{
+    background-color: rgb(87, 87, 87);
+    color: rgb(245, 245, 245);
+}
+
+.closeList{
+    width: 40px;
+    margin: 5px;
+    margin-top: 5px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#test{
+    display: none;
+}
+
+
+/*It's Moblin' Time*/
+
+@media only screen and (min-width: 700px){
+    [data-theme='light'] #navbox {
+        background-color: rgb(235, 235, 235, 0.7);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .content{
+        width: 93%;
+    }
+
+    #searchBox{
+        min-width: 100%;
+    }
+
+    #searchBar{
+        font-size: 3vw;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    #page{
+        padding-top: 25vh;
+    }
+
+    .searchLogo{
+        display: flex;
+        margin-bottom: 0px;
+    }
+
+    .searchText{
+        font-size: 30pt;
+    }
+
+    #customize {
+        top: 0;
+    }
+}
+
+/*Animations*/
+
+@keyframes customizeContentAppear {
+    0% {
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

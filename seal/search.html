@@ -4,13 +4,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="../../global/css/style.css">
         <link rel="stylesheet" href="../../global/css/nav.css">
-		<link rel="stylesheet" href="../../global/css/search.css">
+		<link rel="stylesheet" href="css/search.css">
 		<link rel="shortcut icon" type="image/x-icon" href="../../global/media/images/search.png"/>
 
 	</head>
 	<body>
 		<nav id="navbox" class="transparency">
-            <a href="../index.html"><img src="../../global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <a href="../index.html"><img src="../../global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
             <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
                 <img src="../../global/media/images/navburger.png" class="iconTypeList invert" title="nyoho" alt="Icon For Nav">
 				<span class="spaceName">Ska.Space</span>
@@ -18,16 +18,16 @@
             </button>
             <button onclick="openNav()" id="openNav" class="navbutton"></button>
             <button onclick="closeNav()" id="closeNav" class="navbutton"></button>
-            <img src="images/seal.png" class="navIcon iconTypeGear iconLeft viewable" alt="Logo for Seal Search"/>
+            <img src="images/seal.png" class="navIcon iconTypeGear iconLeft mobileCenter viewable" alt="Logo for Seal Search"/>
             <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
             <a href="../main/settings.html"><img src="../../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2> 
-                <a href="home.html">Home</a>
                 <a href="skasearch.html" class="active">Search</a>
+				<a href="home.html">About</a>
                 <div id="myDropdown" class="dropdown-content">
                     <hr class="onMobile"><h2>Spaces</h2>
-                    <a href="../index.html"><img src="../../global/media/images/home.png" alt="Logo for Lobby Space">Lobby</a>
+                    <a href="../index.html"><img src="../../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
 					<a href="../galleon/home.html"><img src="../../global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
                     <a href="../seal/search.html" class="active"><img src="../../global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
                 </div>
@@ -64,31 +64,16 @@
 					</tr>
 				</table>
 			</article>
-			<article>
-				<h2 class="divider">Quick Links</h2><br>
-				<table class="listbox">
-					<tr>
-						<td>
-							<center><span class="text centered">Entertainment</span><br></center>
-							<li><a href="https://www.youtube.com" class="nav" >YouTube</a></li>
-							<li><a href="https://music.youtube.com" class="nav">Music</a></li>
-							<li><a href="https://www.soundcloud.com" class="nav">SoundCloud</a></li>
-							<li><a href="https://twitch.tv" class="nav" >Twitch</a></li>
-							<li><a href="https://www.dasding.de/" class="nav" >DasDing</a></li>
-						</td>
-					</tr>	
-				</table>
-			</article>
 			<div id="customize">
 				<div>
-					<button id="buttonCustomize" class="openMenu contentColor" onclick="openSealOptions()"><img src="../../global/media/images/settings/styleIcon.png" class="image spaceNavIcon invert">Customize</button>
+					<button id="buttonCustomize" class="openMenu contentColor" onclick="openSealOptions()"><img src="../../global/media/images/settings/styleIcon.png" class="spaceNavIcon invert">Customize</button>
 				</div>
 				<div id="customizeList">
 					<button class="closeList contentColor" onclick="closeList()">X</button>
 					<input id="test" type="file" onchange="loadImageFile(this)"/>
-					<button class="customizeOption" onclick="document.getElementById('test').click();"><img src="images/wallpaperSet.png" class="image spaceNavIcon invert">Select Wallpaper</button>
-					<button class="customizeOption" onclick="clearBackground()"><img src="images/wallpaperClear.png" class="image spaceNavIcon invert">Clear Wallpaper</button>
-					<button class="customizeOption" onclick="document.getElementById('switchThemeLabel').click();"><img src="images/switchTheme.png" class="image spaceNavIcon invert">Switch Theme</button>
+					<button class="customizeOption" onclick="document.getElementById('test').click();"><img src="images/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>
+					<button class="customizeOption" onclick="clearBackground()"><img src="images/wallpaperClear.png" class="spaceNavIcon invert">Clear Wallpaper</button>
+					<button class="customizeOption" onclick="document.getElementById('switchTheme').click();"><img src="images/switchTheme.png" class="spaceNavIcon invert">Switch Theme</button>
 				</div>
 			</div>
 		</main>

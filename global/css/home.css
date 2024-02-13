@@ -21,11 +21,11 @@
 }
 
 .bannerImageLobby{
-    background-image: url('../media/images/dusk.jpg');
+    background-image: url('../media/banners/dusk.webp');
 }
 
 .bannerImageSeal{
-  background-image: url('../media/images/landscape.jpg');
+  background-image: url('../media/banners/landscape.webp');
 }
 
 .bannerImageAbout{
@@ -33,7 +33,7 @@
 }
 
 .bannerImageGalleon{
-  background-image: url('../media/images/sky.png');
+  background-image: url('../media/banners/sky.webp');
 }
 
 .placeholderLobby{
