@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 	<head>
 		<title>Galleon | Home</title>
@@ -26,8 +27,6 @@
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2> 
                 <a href="home.html" class="active">Home</a>
-				<a href="discord.html">Discord</a>
-				<a href="guilded.html">Guilded</a>
 				<a href="llamaland.html">LlamaLand</a>
 				<a href="cyan.html">Cyan</a>
                 <div id="myDropdown" class="dropdown-content">
@@ -50,31 +49,44 @@
 			<div id="bannerContainer" class="placeholderGalleon">
 				<div id="bannerMain" class="bannerImageGalleon" onclick="backgroundViewer('../../global/media/banners/sky.webp')">
 					<div class="bannerContent bannerLogo centered">
-						<img src="../../global/media/images/glogo.png" class="image small vertical viewable" style="padding: 10px;">
-						<span class="mainText bold">Galleon</span><br>
-						<span>Gaming is great, and so are you</span>
+						<img src="../../global/media/images/glogo.png" class="mainImage vertical viewable">
+						<span class="mainText bold">Galleon</span><br><br>
+						<h2>Gaming is great, and so are you</h2>
 					</div>
 				</div>
 			</div>
-			<button class="bannerButton" id="servers" onclick="window.open('../view/discord.html', '_blank');">Join Today!</button>
-
-			<article class="centered">
+			<button class="bannerButton" id="servers" onclick="window.open('../view/discord.html', '_blank');"><img src="../global/media/images/necoarc.png" class="necoArc">Join Today!</button>
+			<article>
 				<h1>Welcome</h1>
-				<h2>We're a community creating experiences to connect people who love the digital world of gaming, anime, tech, and anything in between. Feel free to explore and learn more about what we offer!</h2><br>
+				<h2>A laid-back community connecting people who love the digital world of gaming, anime, tech, and anything in between!</h2><br>
+				                
+                <div class="columnContainer">
+                    <article>
+                        <h1>An Innovative Chat Experience</h1><br>
+						<ul>
+							<li>Talk about whatever suits your interests, there will always be a place for it</li><br>
+							<li>Countless roles, colors, and emojis so that you can express yourself best</li><br>
+							<li>A design that always is reinterated to discover what's best</li><br>
 
-				<center>
-					<table class="listbox">
-						<tr>
-							<td>
-								<h2>Join a Server!</h2>
-								<button class="inviteButton mainJoinDiscord" onclick="window.open('../view/discord.html', '_blank');">Discord</button>
-								<button class="inviteButton mainJoinGuilded" onclick="window.open('https://www.guilded.gg/i/kbZd6ayk', '_blank');">Guilded</button>
-								<button class="inviteButton mainJoinSteam" onclick="window.open('https://steamcommunity.com/groups/GreatlyGaming', '_blank');">Steam</button>
-							</td>
-						</tr>	
-					</table>
-				</center>
-			</article>
+                            <li>Power up with bots, movie / game nights, and even a Minecraft server!</li>
+						</ul>
+                    </article>
+                    <article>
+                       <img src="images/disPromo.png" class="viewable">
+                    </article>
+                </div>
+				<table class="listbox">
+					<tr>
+						<td>
+							<h2>Select a Server</h2>
+							<button class="inviteButton mainJoinDiscord" onclick="window.open('../view/discord.html', '_blank');">Discord</button>
+							<button class="inviteButton mainJoinGuilded" onclick="window.open('https://www.guilded.gg/i/kbZd6ayk', '_blank');">Guilded</button>
+							<button class="inviteButton mainJoinSteam" onclick="window.open('https://steamcommunity.com/groups/GreatlyGaming', '_blank');">Steam</button>
+						</td>
+					</tr>	
+				</table>
+			</article><br>
+			<img src="../global/media/images/sailboat.png" class="sailImage viewable">
 		</main>
 	</body>
 	<script src="../../global/scripts/scripts.js"></script>

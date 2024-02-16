@@ -1,0 +1,17 @@
+body{
+    background-image: url('../../global/media/backgrounds/poolrooms.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+article{
+    background-color: rgba(240, 248, 255, 0.5);
+    background-size: 256px;
+    border: 1px solid black;
+}
+
+h1, h2{
+    color: rgb(0, 108, 179);
+}

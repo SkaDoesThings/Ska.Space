@@ -6,6 +6,23 @@
     right: 15px;
 }
 
+.bannerButton img{
+    margin-top: -90px;
+    transition: width 0.2s, margin-top 0.2s, transform 0.2s;
+}
+
+.bannerButton:hover img{
+    width: 150px;
+    margin-top: -60px;
+}
+
+.bannerButton:active img{
+  width: 0px;
+  margin-top: -50px;
+  transform: rotate(480deg);
+}
+
+
 .sailImage{
   width: 85px;
   position: absolute;
@@ -56,17 +73,17 @@
 }
 
 .mainJoinDiscord:hover{
-  background-color: #5865f2b9;
+  background: #5865F2 url(../../../global/media/images/external/logoDiscordHover.png) no-repeat 8px 5px;
   background-size: 40px;
 }
 
 .mainJoinGuilded:hover{
-  background-color: #f5c40064;
+  background: #F5C400 url(../../../global/media/images//external/logoGuildedHover.png) no-repeat 8px 5px;
   background-size: 40px;
 }
 
 .mainJoinSteam:hover{
-  background-color: #0275A5b9;
+  background: #0275A5 url(../../../global/media/images/external/logoSteamHover.png) no-repeat 8px 4px;
   background-size: 40px;
 }
 

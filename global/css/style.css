@@ -124,8 +124,12 @@ span, .text, a, input, h1, h2, p, li{
     color: rgb(245, 245, 245);
 } 
 
+span::selection, h1::selection, h2::selection, p::selection, li::selection{
+    background-color: rgb(246, 151, 151);
+}
+
 span, .text, h2, li{
-    font-size: 18pt;
+    font-size: 16pt;
 }
 
 [data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] p, [data-theme='light'] li {
@@ -185,17 +189,6 @@ img {
     margin-top: 25px;
     margin-bottom: 25px;
 }
-
-.mainImage{
-    padding: 10px;
-    border-radius: 50%;
-}
-    
-.mainText{
-    font-size: 50pt; 
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
 
 /*Sets proper spacing and borders*/
 
