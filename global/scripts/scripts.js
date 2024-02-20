@@ -1,6 +1,32 @@
+let theme = localStorage.getItem('data-theme');
+const checkbox = document.getElementById("switchTheme");
+const changeThemeToDark = () =>{
+    document.documentElement.setAttribute("data-theme", "dark")
+    localStorage.setItem("data-theme", "dark")
+    console.log("I give you dark")
+}
+
+const changeThemeToLight = () =>{
+    document.documentElement.setAttribute("data-theme", "light")
+    localStorage.setItem("data-theme", 'light')
+    console.log("I give you light")
+}
+
+if(theme === 'light'){
+    changeThemeToLight()
+}
+
+checkbox.addEventListener('change', ()=> {
+    let theme = localStorage.getItem('data-theme');
+    if (theme ==='light'){
+        changeThemeToDark()
+    }else{
+        changeThemeToLight()
+    }
+});
+
 
 //Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
-
 document.addEventListener('DOMContentLoaded', function() {
   if (!window.AnimationEvent) { return; }
   var anchors = document.getElementsByTagName('a');
@@ -91,27 +117,16 @@ function clickPage() {
 // When the user scrolls down 20px from the top of the document, slide down the navbar
 function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-
       document.getElementById("buttonTop").style.marginRight = "15px";
       document.getElementById("navbox").classList.remove('transparency');
-
-      /*document.getElementById("navbox").style.width = "100%";
-      document.getElementById("navbox").style.padding = "5px";
-      document.getElementById("navbox").style.marginTop = "-9px";
-      document.getElementById("navbox").style.borderRadius = "0px";*/
   }
-  else{
-    closeThatNav();
-    document.getElementById("navbox").classList.add('transparency');
+    else{
+      closeThatNav();
+      document.getElementById("navbox").classList.add('transparency');
   }
 }
 
 function closeThatNav() {
-    /*document.getElementById("navbox").style.width = "98%";
-    document.getElementById("navbox").style.borderRadius = "15px";
-    document.getElementById("navbox").style.marginTop = "0px";
-    document.getElementById("navbox").style.padding = "0";*/
-
     document.getElementById("closeNav").style.dislay = "none";
     document.getElementById("openNav").style.dislay = "block";
     document.getElementById("navbox").style.borderTopLeftRadius = "0px";
@@ -124,9 +139,6 @@ function closeThatNav() {
 
 function pageTransitionOut() {
   closeThatNav();
-  /*
-  document.getElementById("navbox").style.height = "50px";*/
-
   document.getElementById("page").style.animation = "pageMoveOut 0.3s ease 1 normal forwards";
   }
 
@@ -201,3 +213,16 @@ window.onclick = function(event) {
      }
     }
 }
+
+
+
+window.addEventListener("scroll", function () {
+  var box = document.getElementById("box");
+  var position = box.getBoundingClientRect();
+  if (position.top < window.innerHeight && 
+  position.bottom >= 0) {
+      box.classList.add("bounce");
+  } else {
+      box.classList.remove("bounce");
+  }
+});

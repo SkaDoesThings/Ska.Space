@@ -3,9 +3,7 @@
 }
 
 #bannerMain{
-    height: 50%;
-    min-height: 450px;
-    max-height: 600px;
+    height: 450px;
     border-bottom: 4px solid #d3d3d3;
     /* Create the parallax scrolling effect */
     background-repeat: no-repeat;
@@ -13,7 +11,8 @@
     background-position-x: center;
     background-position-y: 50%;
     /*Patch for weird padding bug*/
-    margin-top: -35px;
+    margin-top: -47px;
+
 }
 
 .mainImage{
@@ -26,7 +25,7 @@
   font-size: 48pt; 
 }
 
-[data-theme='light'] #bannerMain span{
+#bannerMain span, #bannerMain h2{
     color: rgb(235, 235, 235);
 }
 
@@ -59,7 +58,7 @@
     position: absolute; 
     left: 0; 
     right: 0;
-    top: 20%;
+    top: 18%;
 }
 
 .parallax{
@@ -69,10 +68,9 @@
 .bannerButton{
     position: absolute;
     margin: auto;
+    margin-top: -100px;
     left: 0;
     right: 0;
-    top: 7%;
-    margin-top: 100px;
     width: 30%;
     max-width: 200px;
     min-width: 175px;
@@ -82,7 +80,7 @@
     color: rgb(246, 151, 151);
     border: 5px solid #d3d3d3;
     border-radius: 20px;
-    font-size: 20pt;
+    font-size: 18pt;
     transition: font-size 0.2s, background-color 0.2s, color 0.2s;
     animation: clickMeHome 2s infinite;  
     cursor: pointer;
@@ -91,7 +89,7 @@
 .bannerButton:hover{
     background-color: rgb(246, 151, 151);
     color: rgb(255, 255, 255);
-    font-size: 22pt;
+    font-size: 20pt;
 }
 
 .bannerButton:active{
@@ -117,13 +115,13 @@
 
 @keyframes clickMeHome {
     0% {
-      margin-top: 250px;
+      margin-top: -120px;
     }
     50% {
-      margin-top: 255px;
+      margin-top: -125px;
     }
     100% {
-      margin-top: 250px;
+      margin-top: -120px;
     }
   }
 
@@ -132,17 +130,12 @@
 
 @media only screen and (max-width: 800px) {
   #bannerMain{
-    height: 30%;
-    min-height: 350px;
+    height: 350px;
     margin-top: 35px;
   }
 
   .bannerContent{
     top: 10%;
-  }
-
-  .bannerButton{
-    top: -1%;
   }
 
   .bannerImageAbout{
@@ -315,3 +308,16 @@
 }
 
 
+@media (prefers-reduced-motion) {
+  #bannerContainer, .bannerButton {
+    animation-duration: 0s;
+  }
+
+  .bannerButton{
+    margin-top: -120px;
+  }
+
+  .homeSpace a, .person, .person .imageTypeMedium{
+    transition-duration: 0s;
+  }
+}

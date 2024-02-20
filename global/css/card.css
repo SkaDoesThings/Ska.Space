@@ -87,7 +87,7 @@ article{
 .userBanner{
     width: 100%;
     height: 130px;
-    background: url('../media/images/ska/skavatar.png') no-repeat;
+    background: url('../media/images/ska/skavatar.webp') no-repeat;
     background-size: 107%;
     background-position-y: -25px;
     background-position-x: -20px;
@@ -253,8 +253,8 @@ article{
 .socials a{
     display: block;
     float: left;
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     padding: 5px;
     margin: 3px;
@@ -270,20 +270,20 @@ article{
 .mainJoinInstagram{
     border: 4px solid #f258af;
     background: url(../media/icons/logos/instagram.png) no-repeat center;
-    background-size: 80px;
+    background-size: 64px;
 }
 
 .mainJoinTwitter{
     border: 4px solid #589df2;
     background: url(../media/icons/logos/twitter.png) no-repeat center;
-    background-size: 80px;
+    background-size: 64px;
     transition: background-color 0.2s, border 0.2s;
 }
 
 .mainJoinYouTube{
     border: 4px solid #f25858;
     background: url(../media/icons/logos/youtube.png) no-repeat center;
-    background-size: 70px;
+    background-size: 64px;
 }
 
 .mainJoinInstagram:hover{
@@ -293,7 +293,7 @@ article{
 .mainJoinTwitter:hover{
     border: 4px solid #000000;
     background: #000000 url(../media/icons/logos/x.png) no-repeat center;
-    background-size: 100px;
+    background-size: 80px;
 }
 
 .mainJoinYouTube:hover{
@@ -303,34 +303,34 @@ article{
 .mainJoinDiscord{
     border: 4px solid #5865F2;
     background: url(../media/images/external/logoDiscord.png) no-repeat center;
-    background-size: 70px;
+    background-size: 64px;
 }
 
 .mainJoinGuilded{
     border: 4px solid #F5C400;
-    background: url(../media/images/external/logoGuilded.png) no-repeat center 18px;
-    background-size: 65px;
+    background: url(../media/images/external/logoGuilded.png) no-repeat center 14px;
+    background-size: 54px;
 }
 
 .mainJoinSteam{
     border: 4px solid #0275A5;
     background: url(../media/images/external/logoSteam.png) no-repeat center;
-    background-size: 70px;
+    background-size: 60px;
 }
 
 .mainJoinDiscord:hover{
     background: #5865F2 url(../../../global/media/images/external/logoDiscordHover.png) no-repeat center;
-    background-size: 70px;
+    background-size: 64px;
 }
 
 .mainJoinGuilded:hover{
-    background: #F5C400 url(../../../global/media/images/external/logoGuildedHover.png) no-repeat center 18px;
-    background-size: 65px;
+    background: #F5C400 url(../../../global/media/images/external/logoGuildedHover.png) no-repeat center 14px;
+    background-size: 54px;
 }
 
 .mainJoinSteam:hover{
     background: #0275A5 url(../../../global/media/images/external/logoSteamHover.png) no-repeat center;
-    background-size: 70px;
+    background-size: 64px;
 }
 
 /*It's Mobilin' Time*/
@@ -424,5 +424,11 @@ article{
     100% {
         opacity: 1;
         transform: translateY(0px)
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #topArea, .columnContainer, .columnContainer article, #myProfile{
+        animation: none;
     }
 }

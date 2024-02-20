@@ -283,3 +283,15 @@
         transform: scale(1);
     }
 }
+
+
+
+@media (prefers-reduced-motion) {
+    #topArea, #searchLogo, .mainText, .mainImage{
+        animation-duration: 0s;
+    }
+
+    .navContainer{
+        transition-duration: 0s;
+    }
+}

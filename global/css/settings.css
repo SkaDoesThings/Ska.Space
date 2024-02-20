@@ -229,9 +229,6 @@ hr{
 
 /*Theming Button*/
 
-
-
-
 .box{
     background-color: rgb(222, 222, 222);
 }   
@@ -246,4 +243,16 @@ hr{
 
 [data-theme='dark'] .lightBox{
     background-color: rgb(55, 55, 55);
+}
+
+
+
+@media (prefers-reduced-motion) {
+    #settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA {
+        animation: none;
+    }
+    
+    .settingButton{
+        transition: none;
+    }
 }
