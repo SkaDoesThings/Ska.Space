@@ -12,6 +12,7 @@ main{
 
 #topArea{
     animation: titleMoveIn 1s forwards;
+    margin-bottom: 20px;
 }
 
 #topArea img{
