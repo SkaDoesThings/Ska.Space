@@ -10,12 +10,13 @@ html{
 }
 
 body {
-    scroll-behavior: smooth;
+    min-height: 100vh;
     margin: 0 auto;
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
     background-size: 4em 4em;
     background-color:rgb(44, 40, 40);
 }
+
 
 .divider{
     display: block;
@@ -32,13 +33,13 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
-
 main{
     animation: pageMoveIn 0.5s forwards;
 }
 
-#page{
-    margin-bottom: 30px;
+
+#page, .lobby{
+    padding-bottom: 30px;
 }
 
 article{
@@ -56,66 +57,31 @@ article{
     animation: pageEntryway 1s forwards;
 }
 
+.contentClear article {
+    background-color: rgb(42, 40, 40, 0);
+    border: 0px;
+}
+
+.contentClear .columnContainer article {
+    background-color: rgb(42, 40, 40, 0);
+}
+
+.contentTransparent article {
+    background-color: rgb(42, 40, 40, 0.5);
+    border: 0px;
+}
+
+.contentTransparent .columnContainer article {
+    background-color: rgb(42, 40, 40, 0);
+}
+
 [data-theme='light'] article{
     background-color: rgb(235, 235, 235);
     border: 2px solid #d3d3d3;
 }
 
 
-/*Image View*/
-#imageViewer {
-    display: none;
-    background-color: rgb(0, 0, 0);
-    z-index: 9999;
-    animation: imageBox 0.2s forwards;
-}
-
-#imageViewer, #imageBackdrop, #imageDisplay{
-    position: fixed;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
-#imageBackdrop, #imageDisplay{
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#imageBackdrop {
-    width: 110vw;
-    height: 110vh;
-    background-size: cover;
-    filter: blur(150px) brightness(0.7);
-    animation: imageBox 0.6s forwards;
-  }
-
-#imageDisplay {
-    margin-top: 10vh;
-    width: 80vw;
-    height: 80vh;
-    background-size: contain;
-    animation: imageAppear 0.3s forwards;
-}
-
-#imageViewer h2 {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-}
-
-.viewable{
-    cursor: pointer;
-    transition: scale 0.2s;
-}
-
-/*=-=-=-=-=-=- ( Text ) -=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
 span, .text, a, input, h1, h2, p, li{
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -177,47 +143,7 @@ img {
     margin-right: 5px;
 }
 
-.small{
-    max-width: 125px;
-    height: auto;
-}
 
-.large{
-    max-width: 60%;
-    min-width: 100px;
-    height: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-/*Sets proper spacing and borders*/
-
-.columnContainer{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    max-width: 1300px;
-}
-
-.sizeLarger{
-    max-width: 1700px;
-}
-
-.columnContainer article{
-    margin-left: auto;
-    margin-right: auto; 
-    height: auto;
-    border: 0px;
-}
-
-div article{
-    width: 100%;
-    border: 0px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
 
 .rotate:hover{
     transform: rotate(360deg);
@@ -229,51 +155,14 @@ div article{
     align-items: center;
 }
 
-/*Woah Fancy Forum Stuff*/
-
-form input{
-    background-color:rgb(255, 255, 255);
-    border: 2px solid rgb(246, 151, 151);
-    font-size: 20pt;
+.invert{
+    filter: invert(1);
 }
 
-[data-theme='dark'] form input{
-    background-color:rgb(87, 87, 87);
+[data-theme='light'] .invert{
+    filter: invert(0);
 }
 
-form input:hover{
-    background-color: #e2d5d5;
-}
-
-form input[type=text], form input[type=password]{
-    color: #bb3e00;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: left;
-    transition: width 0.2s;
-    width: 50%;
-    min-width: 250px;
-}
-
-input[type=submit]{
-    border-radius:  20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 200px;
-    height: 50px;
-    transition: width 0.2s;
-    cursor: pointer;
-}
-
-input[type=submit]:hover{
-    border: 2px solid white;
-    width: 250px;
-    background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
-}
-
-.fadeOut{
-    animation: pageMoveOut 0.3s ease 1 normal forwards;
-}
 
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
@@ -311,22 +200,13 @@ nav{
     list-style-type: none;
     height: 30px;
     min-width: 60px;
+    padding: 0px 3px;
     margin-top: 15px;
-    padding: 0px 5px;
     font-size: 16pt;
     transition: min-width 0.3s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s, transform 0.3s, height 0.3s;
     cursor: pointer;
     font-family: 'Segoe UI', Arial, sans-serif;
 }   
-
-
-nav a{
-    color: rgb(230, 230, 230);
-}
-
-[data-theme="light"] nav a{
-    color: rgb(87, 87, 87);
-}
 
 #linkContainer a:hover{
     background-color: rgb(246, 151, 151);
@@ -334,6 +214,7 @@ nav a{
 
 #linkContainer a.active{
     color: rgb(255, 70, 70) !important; 
+    text-decoration: underline;
 }  
 
 #linkContainer a.active:hover{
@@ -426,11 +307,12 @@ nav a:active, .siteName:active{
 }
 
 .navIcon{ /* generic icon dimensions */
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     float: right;
     margin-left: 5px;
-    margin-top: 10px;
+    margin-right: 3px;
+    margin-top: 12px;
     transition: transform 0.7s ease-in-out;
 }
 
@@ -447,14 +329,6 @@ nav a:active, .siteName:active{
     float: left;
 }
 
-.invert{
-    filter: invert(1);
-}
-
-[data-theme='light'] .invert{
-    filter: invert(0);
-}
-
 .iconTypeTheme{
     background-size: 100%;
     background-image: url('../media/icons/nav/themeLight.png');
@@ -469,7 +343,7 @@ nav a:active, .siteName:active{
     display: block;
     float: left;
     position: absolute;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-left: 0px;
     width: 16px;
     height: 16px;
@@ -499,17 +373,6 @@ nav a:active, .siteName:active{
 
 .show {
     display: block;
-}
-
-@keyframes menuMoveIn {
-    0% {
-        margin-top: 50px;
-        opacity: 0;
-    }
-    100% {
-        margin-top: 60px;
-        opacity: 1;
-    }
 }
 
 /*Go to top of page*/
@@ -545,8 +408,6 @@ nav a:active, .siteName:active{
     right: -58px;
 }
 
-/*Workaround for changing text*/
-
 #buttonTop:after{
     content:'Top';
 }
@@ -557,7 +418,221 @@ nav a:active, .siteName:active{
     font-size: 36pt;
 }
 
-/*Modal Viewer* - Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
+@media only screen and (min-width: 800px) {
+    [data-theme='dark'] #navbox.transparency {
+        background-color: rgba(59, 57, 57, 0.0);
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        box-shadow: none;
+    }
+
+    
+    [data-theme='dark'] .blur {
+        background-color: rgba(59, 57, 57, 0.7) !important;
+        -webkit-backdrop-filter: blur(25px) !important;
+        backdrop-filter: blur(25px) !important;
+    }
+    
+    .navbutton{
+        margin-top: -100px;
+    }
+
+    #myDropdown{
+        position: fixed;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background-color: #f7ad45;
+        animation: menuMoveIn 0.2s forwards;
+    }
+
+    .dropdown-content a {
+        width: 90%;
+        display: flex;
+        margin-left: 5px;
+        padding: 0px 0px;
+        justify-content: center;
+    }
+
+    #linkContainer a:hover{
+        font-size: 20pt;
+        margin-top: 8px;
+        padding: 6px 5px;
+        min-width: 100px;
+        border-radius: 7px;
+    }
+
+    .dedicatedPage{
+        float: right !important; 
+        margin-right: 8px !important;
+    }
+
+    #buttonTop{
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .mobileCenter{
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: calc((100% - 40px) / 2);
+    }
+
+    #page{
+        margin-top: -50px;
+        padding-bottom: 50px;
+    }
+
+    #navbox{
+        width: 100%;
+        bottom: 0;
+        border-top: 1px solid #d3d3d3;
+    }
+
+    .navbutton{
+        position: absolute;
+        left: 0;
+        margin-top: 10px;
+    }
+
+    #linkContainer{
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        margin-top: 61px;
+        border-top: 2px solid #d3d3d3;
+    }
+
+    #linkContainer a{
+        display: inline-flex;
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+        padding: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20pt;
+        border: 2px solid rgb(209, 209, 209);
+        margin-left: 10px;
+        border-radius: 7px;
+    }
+
+    #myDropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+        display: inline-block;
+        padding-bottom: 130px;
+    }
+
+    #buttonTop{
+        bottom: 60px;
+    }
+
+    .columnContainer{
+        background-color: rgba(95, 141, 55, 0);
+        width: 100%;
+        display: inline-block;
+        border: 0px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .columnContainer article{
+        background-color:rgb(117, 117, 117, 0.05);
+        width: 86%;
+        margin-top: 10px !important;
+        margin-bottom: 0px;
+    }
+}
+
+/*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
+
+.columnContainer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    max-width: 1300px;
+}
+
+.sizeLarger{
+    max-width: 1700px;
+}
+
+.columnContainer article{
+    margin-left: auto;
+    margin-right: auto; 
+    height: auto;
+    border: 0px;
+}
+
+div article{
+    width: 100%;
+    border: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*=-=-=-=-=-=-=-=-= Modals =-=-=-=-=-=-=-=-=*/
+#imageViewer {
+    display: none;
+    background-color: rgb(0, 0, 0);
+    z-index: 9999;
+    animation: imageBox 0.2s forwards;
+}
+
+#imageViewer, #imageBackdrop, #imageDisplay{
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#imageBackdrop, #imageDisplay{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imageBackdrop {
+    width: 110vw;
+    height: 110vh;
+    background-size: cover;
+    filter: blur(150px) brightness(0.7);
+    animation: imageBox 0.6s forwards;
+  }
+
+#imageDisplay {
+    margin-top: 10vh;
+    width: 80vw;
+    height: 80vh;
+    background-size: contain;
+    animation: imageAppear 0.3s forwards;
+}
+
+#imageViewer h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+.viewable{
+    cursor: pointer;
+    transition: scale 0.2s;
+}
+
+
+/*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 
 .modalButton{
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -647,7 +722,54 @@ nav a:active, .siteName:active{
 }
 
 
-/*Item Container and Navigation*/
+/*=-=-=-=-=-=-=-=-= Forms =-=-=-=-=-=-=-=-=*/
+
+form input{
+    background-color:rgb(255, 255, 255);
+    border: 2px solid rgb(246, 151, 151);
+    font-size: 20pt;
+}
+
+[data-theme='dark'] form input{
+    background-color:rgb(87, 87, 87);
+}
+
+form input:hover{
+    background-color: #e2d5d5;
+}
+
+form input[type=text], form input[type=password]{
+    color: #bb3e00;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    transition: width 0.2s;
+    width: 50%;
+    min-width: 250px;
+}
+
+input[type=submit]{
+    border-radius:  20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 50px;
+    transition: width 0.2s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    border: 2px solid white;
+    width: 250px;
+    background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
+}
+
+.fadeOut{
+    animation: pageMoveOut 0.2s ease 1 normal forwards;
+}
+
+
+/*=-=-=-=-=-= Item Container and Navigation =-=-=-=-=-=*/
 
 .listbox {
     height: auto;
@@ -693,63 +815,11 @@ nav a:active, .siteName:active{
 }
 
 
-/*=-=-=- ( It's Mobilin' Time ) -=-=-=*/
+/*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
 @media only screen and (min-width: 800px) {
-
     .onMobile{
         display: none;
         visibility: hidden;
-    }
-
-    [data-theme='dark'] #navbox.transparency {
-        background-color: rgba(59, 57, 57, 0.0);
-        -webkit-backdrop-filter: blur(0px);
-        backdrop-filter: blur(0px);
-        box-shadow: none;
-    }
-
-    
-    [data-theme='dark'] .blur {
-        background-color: rgba(59, 57, 57, 0.7) !important;
-        -webkit-backdrop-filter: blur(25px) !important;
-        backdrop-filter: blur(25px) !important;
-    }
-    
-    .navbutton{
-        margin-top: -100px;
-    }
-
-    #myDropdown{
-        position: fixed;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        background-color: #f7ad45;
-        animation: menuMoveIn 0.2s forwards;
-    }
-
-    .dropdown-content a {
-        width: 90%;
-        display: flex;
-        margin-left: 5px;
-        padding: 0px 0px;
-        justify-content: center;
-    }
-
-    #linkContainer a:hover{
-        font-size: 20pt;
-        margin-top: 9px;
-        padding: 6px 5px;
-        min-width: 100px;
-        border-radius: 7px;
-    }
-
-    .dedicatedPage{
-        float: right !important; 
-        margin-right: 8px !important;
-    }
-
-    #buttonTop{
-        bottom: 0;
     }
 }
 
@@ -758,66 +828,8 @@ nav a:active, .siteName:active{
         border: 0px;
         margin-top: 0px;
         margin-bottom: 0px; 
-    }
-
-    /*Nav Stuff*/
-    .mobileCenter{
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        left: calc((100% - 40px) / 2);
-    }
-
-    #page{
-        margin-top: -70px;
-        padding-bottom: 80px;
-    }
-    
-    #navbox{
-        width: 100%;
-        bottom: 0;
-        border-top: 1px solid #d3d3d3;
-    }
-
-    .navbutton{
-        position: absolute;
-        left: 0;
-        margin-top: 10px;
-    }
-
-    #linkContainer{
-        width: 100%;
-        height: auto;
-        overflow-y: scroll;
-        margin-top: 61px;
-        border-top: 2px solid #d3d3d3;
-    }
-
-    #linkContainer a{
-        display: inline-flex;
-        width: fit-content;
-        margin: auto;
-        text-align: center;
-        padding: 3px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 20pt;
-        border: 2px solid rgb(209, 209, 209);
-        margin-left: 10px;
-        border-radius: 7px;
-    }
-    
-    #myDropdown {
-        position: relative;
-        width: 100%;
-        margin-top: 20px;
-        margin-left: 0px;
-        display: inline-block;
-        padding-bottom: 130px;
-    }
-
-    #buttonTop{
-        bottom: 60px;
+        width: 90%;
+        border-radius: 10px;
     }
 
     .columnContainer{
@@ -834,12 +846,6 @@ nav a:active, .siteName:active{
         width: 86%;
         margin-top: 10px !important;
         margin-bottom: 0px;
-    }
-
-    /*Other Stuff*/
-    article{
-        width: 90%;
-        border-radius: 10px;
     }
 
     .subtitle{
@@ -895,7 +901,8 @@ nav a:active, .siteName:active{
         font-size: 14pt;
     }
 }
-/*=-=-=-=- ( Animations ) -=-=-=-=*/
+
+/*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
 
 @keyframes pageEntryway {
     0%{ 
@@ -937,6 +944,17 @@ nav a:active, .siteName:active{
     }
 }
 
+@keyframes menuMoveIn {
+    0% {
+        margin-top: 50px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 60px;
+        opacity: 1;
+    }
+}
+
 @keyframes imageAppear {
     0%{ 
         transform: scale(0.5);
@@ -946,22 +964,6 @@ nav a:active, .siteName:active{
     }
     100%{
         transform: scale(1);
-    }
-}
-
-@keyframes openModal {
-    0%{
-        scale: 0.5;
-    }
-    75%{
-        opacity: 1;
-    }
-    95%{
-        scale: 1.1;
-    }
-    100%{
-        opacity: 1;
-        scale: 1;
     }
 }
 

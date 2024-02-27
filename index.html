@@ -36,30 +36,39 @@
         </nav>
 
         <br><br>
-        <main id="page" class="hasBackground">
+        <main id="page" class="pageLobby contentTransparent">
             <div id="imageViewer" onclick="fullPage.style.display = 'none';">
                 <div id="imageBackdrop"></div>
 				<div id="imageDisplay"></div>
                 <h2>Click anywhere to close image</h2>
 			</div>
 
-            <div id="bannerContainer" class="placeholderLobby">
-                <div id="bannerMain" class="bannerImageLobby" onclick="backgroundViewer('global/media/banners/dusk.webp')">
-                    <div class="bannerContent bannerLogo centered">
-                        <img src="global/media/images/ska/wumpus.png" class="mainImage vertical">
-                        <span class="mainText bold white">Ska.Space</span><br>
-                        <h2>Welcome to my grand domain</h2><br>
+            <div id="lobbyBanner">
+                <div id="bannerContainer" class="placeholderLobby">
+                    <div id="bannerMain" class="bannerImageLobby">
+                        <div class="bannerContent bannerLogo centered">
+                            <img src="global/media/images/ska/wumpus.png" class="mainImage vertical viewable">
+                            <span class="mainText bold white">Ska.Space</span><br>
+                            <h2>Welcome to my grand domain</h2><br>
+                            <span>This is a personal website which branches off into many different ideas</span><br>
+                            <span>I developed it in VSCode using HTML, CSS, and JS</span><br><br>
+                            <div class="homeSpace"> 
+                                <a href="#scrollTo">Explore</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <button class="bannerButton" onClick="document.getElementById('scrollTo').scrollIntoView();">Hello World</button>
-			</div>
+            </div>
 
-            <article class="centered"> 
+            <article id="lobbyArticle" class="centered"> 
                 <div id="scrollTo" class="columnContainer sizeLarger">
                     <article>
-                        <h1>Welcome</h1><br>
-                        <span>This is a personal website which branches off into many different ideas</span><br><br>
-                        <span>I developed it in VSCode using HTML, CSS, and JS</span>
+                        <h1>Visit a Space</h1>
+                        <span>'Spaces' are dedicated pages that stand as their own independant websites</span><br>
+                        <div class="homeSpace"> 
+                            <a href="galleon/home.html"><img src="global/media/images/glogo.png">Galleon</a>
+                            <a href="seal/search.html"><img src="global/media/images/sealco.png">Seal Corp</a>
+                        </div>
                     </article>
                     <article>
                         <h1 class="bold subtitle">Creator</span>
@@ -75,12 +84,7 @@
                         </center>
                     </article>
                 </div>
-                <h1>Visit a Space</h1>
-                <span>'Spaces' are dedicated pages that stand as their own independant websites</span><br>
-                <div class="homeSpace"> 
-                    <a href="galleon/home.html"><img src="global/media/images/glogo.png">Galleon</a>
-                    <a href="seal/search.html"><img src="global/media/images/sealco.png">Seal Corp</a>
-                </div>
+                
             </article>
         </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>

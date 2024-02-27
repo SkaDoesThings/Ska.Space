@@ -119,10 +119,18 @@ function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.getElementById("buttonTop").style.marginRight = "15px";
       document.getElementById("navbox").classList.remove('transparency');
+
+      document.getElementById("page").classList.add('backgroundScrollBlur');
+
+      document.getElementById("lobbyBanner").style.opacity = "0";
+      document.getElementById("lobbyBanner").style.transform = "scale(0) translateY(-1000px)";
   }
     else{
       closeThatNav();
+
       document.getElementById("navbox").classList.add('transparency');
+      document.getElementById("lobbyBanner").style.opacity = "1";
+      document.getElementById("lobbyBanner").style.transform = "scale(1) translateY(0px)";
   }
 }
 
@@ -226,3 +234,4 @@ window.addEventListener("scroll", function () {
       box.classList.remove("bounce");
   }
 });
+

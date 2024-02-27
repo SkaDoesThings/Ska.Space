@@ -1,3 +1,7 @@
+body{
+  background: linear-gradient(45deg, rgb(40, 51, 98), rgb(119, 93, 160));
+}
+
 .necoArc{
     width: 128px;
     position: absolute;
@@ -25,10 +29,9 @@
 
 .sailImage{
   width: 85px;
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .specialTitle{
