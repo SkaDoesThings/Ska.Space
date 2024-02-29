@@ -21,28 +21,34 @@ hr{
     justify-content: center;
     border: 2px solid #bb3e00;
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.menuButtons{
+#menuButtons{
     background-color: #f7ad45;
     margin-top: 10px;
     margin-left: 10px;
     width: 17%;
-    max-width: 100%;
     border-radius: 10px;
     height: 98%;
     float: left;
 }
 
-[data-theme='default'] .menuButtons{
-    background-color: #585353;
+#menuButtons img {
+    margin-top: -5px;
+    width: 50px;
+    height: 50px;
 }
 
-[data-theme='default'] .box{
-    background-color: #484444;
+#menuButtons button span{
+    color: #e2e0d5;
+    font-size: 22pt;
+    padding-left: 15px;
+    position: absolute;
 }
 
-.tabButton{
+#menuButtons button{
     background-color: #f7ad45;
     width: 100%;
     height: 60px;
@@ -50,44 +56,20 @@ hr{
     border: none;
     cursor: pointer;
     float: left;
+    text-align: left;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-[data-theme='default'] .tabButton{
-    background-color: #585353;
-}
-
-.tabButton:hover{
-    background-color: #5f8d37;
-}
-
-[data-theme='default'] .tabButton:hover{
+#menuButtons button:hover{
     background-color: rgb(246, 151, 151);
 }
 
-.tabButton:active{
-    background-color: #88c255;
-    height: 70px;
+
+#menuButtons button:active{
+    background-color: #e55b38;
 }
 
-[data-theme='default'] .tabButton:active{
-    background-color: rgb(255, 103, 103);
-}
-
-.navButtonImg{
-    margin-top: -5px;
-    margin-left: -75%;
-    width: 50px;
-    height: 50px;
-}
-
-.navButtonText{
-    color: #e2e0d5;
-    font-size: 25pt;
-    position: absolute;
-    padding-left: 15px;
-}
 
 #menuContent{
     margin-top: 10px;
@@ -130,7 +112,7 @@ hr{
 }
 
 @media only screen and (max-width: 1250px) {
-    .navButtonText{
+    #menuButtons button span{
         font-size: 18pt;
         margin-top: 5px;
     }
@@ -140,45 +122,42 @@ hr{
 
 @media only screen and (max-width: 1000px) {
 
-#pageSettings{
-    width: 98%;
+    #pageSettings{
+        width: 98%;
+    }
+
+    .menuContent{
+        width: 78%;
+    }
+
+    #menuButtons{
+        margin-left: 2%;
+        width: 14%;
+    }
+
+    #menuButtons button{
+        text-align: center;
+    }
+
+    #menuButtons img{
+        width: 36px;
+        height: 36px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #menuButtons span{
+        display: none;
+    }
+
 }
 
-.menuButtons{
-    margin-left: 3%;
-    width: 14%;
-    left: 0; 
-    right: 0; 
-}
 
-.menuContent{
-    width: 78%;
-}
-
-.navButtonImg{
-    width: 36px;
-    height: 36px;
-    margin: auto;
-}
-
-.navButtonText{
-    display: none;
-}
-
-}
-
-.orderTitle{
-    font-size: 22pt;
-    color: #bb3e00;
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     #page{
         margin-top: 0px;
     }
 }
-
-
 
 
 /*Content on the Screens*/
@@ -187,11 +166,14 @@ hr{
     display: inline-block;
 }
 
+.featuredRow{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .featuredBox{
     width: 200px;
     height: 100px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #f7ad45;
     display: flex;
     justify-content: center;
@@ -199,7 +181,8 @@ hr{
 }
 
 .settingButton{
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(91, 91, 91, 0.5);
+    color: rgb(245, 245, 245);
     width: 160px;
     height: 50px;
     border: 2px solid #d3d3d3;
@@ -207,23 +190,22 @@ hr{
     margin: 20px;
     margin-top: 0px;
     font-size: 16pt;
-    color:rgb(51, 51, 51);
-    transition: 0.2s;
+    text-decoration: none;
+    transition: 0.1s;
 }
 
-[data-theme='default'] .settingButton{
-    background-color: rgb(57, 58, 59);
-    color: rgb(245, 245, 245);
+[data-theme='light'] .settingButton{
+    background-color: rgba(233, 233, 233, 0.8);
+    color: rgb(82, 82, 82);
 }
 
 .settingButton:hover{
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(170, 170, 170);
 }
 
 .settingButton:active{
     background-color: rgb(87, 87, 87);
-    width: 170px;
-    height: 60px;
+    scale: 1.1;
 }
 
 

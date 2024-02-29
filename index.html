@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
         
     </head>
-    <body>
+    <body id="lobby">
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
             <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
@@ -51,17 +51,16 @@
                             <span class="mainText bold white">Ska.Space</span><br>
                             <h2>Welcome to my grand domain</h2><br>
                             <span>This is a personal website which branches off into many different ideas</span><br>
-                            <span>I developed it in VSCode using HTML, CSS, and JS</span><br><br>
-                            <div class="homeSpace"> 
-                                <a href="#scrollTo">Explore</a>
-                            </div>
+                            <span>I developed it in VSCode using HTML, CSS, and JS :3</span><br><br><br>
+
+                            <a href="#explore"><button class="bannerButton" id="servers">Explore</button></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <article id="lobbyArticle" class="centered"> 
-                <div id="scrollTo" class="columnContainer sizeLarger">
+                <div id="explore" class="columnContainer sizeLarger">
                     <article>
                         <h1>Visit a Space</h1>
                         <span>'Spaces' are dedicated pages that stand as their own independant websites</span><br>
@@ -71,24 +70,24 @@
                         </div>
                     </article>
                     <article>
-                        <h1 class="bold subtitle">Creator</span>
-                        <center>
-                            <a href="card.html">
-                                <div class="person">
-                                    <img src="global/media/images/ska/pfpnb.png" alt="Image Featuring Spencer" class="imageSocial imageTypeMedium">
-                                    <span class="textMedium">Spencer</span>
-                                    <p class="textMedium">Also Known As Ska</p><br>
-                                    <span class="textMedium">When you see the big pizza pie high on the horizon, you know that's truly the Amor-way</span>
-                                </div>
-                            </a>
-                        </center>
+
+                        <h1>Hello World</h1>
+                        <span>Click the card to learn more about Ska :3</span><br>
+                    
+                        <a href="card.html">
+                            <div class="person">
+                                <img src="global/media/images/ska/pfpnb.png" alt="Image Featuring Spencer">
+                                <span>Spencer</span>
+                                <p>Also Known As Ska</p>
+                                <p>When you see the big pizza pie high on the horizon, you know that's truly the Amor-way</p>
+                            </div>
+                        </a>
                     </article>
                 </div>
                 
             </article>
         </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
-
     </body>
     <script src="global/scripts/scripts.js"></script>
 	<script>

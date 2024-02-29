@@ -28,25 +28,6 @@ article{
     padding-top: 25vh;
 }
 
-/*Item Container and Navigation*/
-
-.listbox{
-    height: auto;
-    border: 0px;
-    padding: 10px;
-    margin-bottom: 20px;
-    transition: width 0.2s, height 0.2s, border-radius 0.6s;
-}
-
-.listbox li {
-    background-color: rgb(37, 36, 36, 0.5);
-    transition: background-color 0.2s, border-radius 0.2s;
-}
-
-[data-theme='light'] .listbox li{
-    background-color: rgb(245, 245, 245, 0.7);
-}
-
 /*Search Area*/
 
 .searchLogo{
@@ -61,57 +42,99 @@ article{
     color: white !important;
 }
 
-#searchBox{
-    width: 60%;
-    max-width: 750px;
-    min-width: 415px;
-    margin-bottom: 40px;
-}
-
-#searchBar{
-    width: 100%;
+input[type='search'] {
+    width: 725px;
     height: 55px;
     padding: 20px;
     background-color: rgb(245, 245, 245, 0.7);
     font-size: 24px;
     border: 2px solid #d3d3d3;
-    border-radius: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s;
 }
 
-[data-theme='dark'] #searchBar{
+[data-theme='dark'] input[type='search']{
     background-color: rgb(57, 58, 59, 0.7);
 }
 
-#searchGo{
-    background: transparent;
+input[type='search']:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+input[type='submit'] {
+    background: transparent !important;
     display: inline-block;
-    position: relative;
-    margin-left: -84px;
-    width: 80px;
+    position: absolute;
+    margin-left: -75px;
+    margin-top: 0px;
+    width: 75px;
     height: 55px;
     border-radius: 0px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 2px solid #d3d3d3;
     font-size: 20pt;
     transition: 0.2s;
-    transition: background-color 0.5s, font-size 0.1s;
 }
 
-#searchGo:hover{
-    background-color: rgb(246, 151, 151);
-    font-size: 25pt;
+input[type='submit']:hover{
+    background-color: rgb(246, 151, 151) !important;
+}
+
+input[type='submit']:active{
+    scale: 1.1;
+}
+
+form image{
+    width: 64px;
+    height: 64px;
+}
+
+#searchYouTube, #searchBing, #searchDuck {
+    display: none;
+}
+
+#selectYouTube, #selectBing, #selectDuck {
+    opacity: 0.8
 }
 
 .engines{
-    margin-top: -30px; 
+    margin-top: 20px;
     border: 0px; 
     padding: 0px;
 }
 
 #select{
     display: none;
+}
+
+/*Item Container and Navigation*/
+
+.listbox{
+    height: auto;
+    border: 0px;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: width 0.2s, height 0.2s, border-radius 0.6s;
+}
+
+.listbox a {
+    background-color: rgb(37, 36, 36, 0.5);
+    transition: background-color 0.2s, border-radius 0.2s;
+}
+
+[data-theme='light'] .listbox a {
+    background-color: rgb(245, 245, 245, 0.7);
+}
+
+.listbox a:hover{
+    opacity: 1 !important;
+}
+
+.listbox h2{
+    margin-top: 20px;
+    margin-bottom: 10px
 }
 
 /*Customize Settings Area*/
@@ -174,6 +197,8 @@ article{
     width: 150px;
     height: 40px;
     border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
     cursor: pointer;
 }
@@ -217,21 +242,16 @@ article{
     #page{
         padding-top: 30vh;
     }
- 
 
-    #searchBox:active{
-        height: 100%;
+    input[type='search']{
+        width: 90%;
     }
 
-    #searchBox{
-        min-width: 95%;
-    }
-
-    #searchBar, #searchGo{
+    input[type='search'], input[type='submit']{
         height: 50px;
     }
 
-    #searchBar{
+    input[type='search']{
         font-size: 3.5vw;
     }
 
@@ -249,7 +269,7 @@ article{
         top: 0;
     }
 
-    .listbox li a {
+    .listbox a {
         font-size: 14pt;
     }
 }

@@ -14,20 +14,13 @@
     margin-top: -47px;
 }
 
-
-.pageLobby {
-  min-height: 100vh;
-  height: 100%;
-  background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
-}
-
 #lobbyBanner{
   transition: opacity 0.3s, transform 0.6s;
 }
 
 #lobbyArticle{
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: 0;
   right: 0;
   z-index: -1;
@@ -44,6 +37,7 @@
   width: 100px;
   height: 100px;
   padding: 10px;
+  transition: transform 0.2s;
 }
   
 .mainText{
@@ -55,7 +49,8 @@
 }
 
 .bannerImageLobby{
-    background-image: url('../media/banners/dusk.webp');
+  background-image: url('../media/banners/dusk.webp');
+  animation: backgroundEffect 5s infinite;
 }
 
 .bannerImageSeal{
@@ -93,7 +88,6 @@
 .bannerButton{
     position: absolute;
     margin: auto;
-    margin-top: -100px;
     left: 0;
     right: 0;
     width: 30%;
@@ -107,8 +101,12 @@
     border-radius: 20px;
     font-size: 18pt;
     transition: font-size 0.2s, background-color 0.2s, color 0.2s;
-    animation: clickMeHome 2s infinite;  
     cursor: pointer;
+}
+
+.bannerButtonAnimate{
+    margin-top: -100px;
+    animation: clickMeHome 2s infinite;  
 }
 
 .bannerButton:hover{
@@ -193,7 +191,7 @@
   background-color: rgba(241, 142, 92, 0.1);
   border: 1px solid #bb3e00;
   cursor: pointer;
-  transition: scale 0.2s;
+  transition: font-size 0.3s, width 0.2s, height 0.2s, background-color 0.2s, scale 0.2s;
 }
 
 .homeSpace a:hover{
@@ -210,61 +208,17 @@
   align-self: center;
 }
 
-.imageSocial{
-  background-color: rgba(95, 141, 55, 0.05);
-  max-width: 256px;
-  max-height: 256px;
-  border: 3px solid #bb3e00;
-  border-radius: 50%;
-  transition: transform .7s ease-in-out;
-  transform-style: preserve-3d;
-}
-
-.imageTypeLarge{
-  float: right;
-  margin: 20px;
-  width: 25%;
-  height: 30%;
-}
-
-
-.imageTypeMedium{
-  width: 58%;
-  height: 65%;
-  transition: width 0.5s, height 0.5s;
-}
-
-
-.imageTypeIcon{
-  width: 100%;
-  height: 100%;
-}
-
-.icon{
-  width: 50px;
-  height: 50px;
-  padding-right: 10px;
-}
-
-.textLarge{
-  width: 70%;
-  float: left;
-}
-
-.textBody{
-  font-size: 20pt;
-  color: #bb3e00;
-}
-
 .person{
-  background-color: rgba(95, 141, 55, 0);
+  background-color: rgba(241, 142, 92, 0.1);
   border: 1px solid #bb3e00;
   border-radius: 10px;
-  width: 250px;
-  height: 225px;
-  margin-top: 15px;
+  width: 230px;
+  height: 205px;
+  margin-top: 25px;
   margin-bottom: 15px;
-  padding: 0.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
   transition: margin-top 0.2s;
   overflow-y: hidden;
   transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.3s;
@@ -274,36 +228,53 @@
 
 .person:hover{
   transform: scale(1.2);
-  background-color: #fff1d7;
+  background-color: rgba(241, 142, 92, 0.2);
 }
 
 .person:active{
   transform: scale(1);
 }
 
-.person:hover .imageTypeMedium{
-  width: 0px;
-  height: 0px;
-}
-
-
-.textMedium{
+.person span, .person p{
   font-size: 14pt;
-  color: #bb3e00;
   width: 100%;
   float: left;
   margin-top: 10px;
 }
 
-.typeDesc{
-  font-size: 13pt;
-  margin-top: 30px;
+.person img{
+  background-color: rgba(95, 141, 55, 0.05);
+  width: 58%;
+  height: 65%;
+  max-width: 256px;
+  max-height: 256px;
+  border: 3px solid #bb3e00;
+  border-radius: 50%;
+  transition: transform .7s ease-in-out;
+  transform-style: preserve-3d;
+  transition: width 0.5s, height 0.5s;
 }
 
-.imageTypeMedium{
-  width: 128px;
-  height: 128px;
+.person:hover img{
+  width: 0px;
+  height: 0px;
 }
+
+
+@keyframes backgroundEffect {
+  0%{
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 0.9;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
 
 /*It's Mobilin' Time*/
 
@@ -330,6 +301,17 @@
     width: 38px;
     height: 38px;
   }
+
+  .person{
+    width: 145px;
+    height: 128px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #lobbyArticle{
+    top: 75px;
+  }
 }
 
 
@@ -338,7 +320,7 @@
     animation-duration: 0s;
   }
 
-  .bannerButton{
+  .bannerButtonAnimate{
     margin-top: -120px;
   }
 

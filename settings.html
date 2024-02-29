@@ -1,160 +1,138 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 	<head>
-        <title>Ska.Space | Settings</title>
+        <title>Ska.Space - Settings</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="global/css/style.css">
-        <link rel="stylesheet" href="global/css/nav.css">
 		<link rel="stylesheet" href="global/css/settings.css">
-		<link rel="stylesheet" href="global/css/column.css">
 
-		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.png"/>
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp"/>
 
 	</head>
 	<body>
         <nav id="navbox" class="transparency">
-            <a href="index.html"><img src="global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
             <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
-                <img src="global/media/images/navburger.png" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+                <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
                 <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="openNav" class="navbutton"></button>
             <button onclick="closeNav()" id="closeNav" class="navbutton"></button>
-            <img src="global/media/images/home.png" class="navIcon iconTypeGear iconLeft offMobile viewable" alt="Logo for Lobby Space"/>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear iconLeft offMobile invert" alt="Logo for Lobby Space"/></a>
             <div id="linkContainer">
-                <h2 class="onMobile">Current Space</h2> 
-                <a href="index.html">Home</a>
-				<a href="card.html">Card</a>
-                <a href="dev.html">Projects</a>
-                <a href="settings.html" class="active dedicatedPage">Settings</a>
+                <h2 class="onMobile">Current Space</h2>
+				<a onclick="history.back()"><- Return to Previous Page</a> 
+				<a href="settings.html" class="active dedicatedPage">Settings</a>
                 <div id="myDropdown" class="dropdown-content">
                     <hr class="onMobile"><h2>Spaces</h2>
                     <a href="index.html"><img src="../../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
 					<a href="galleon/home.html"><img src="../../global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
-                    <a href="seal/search.html" class="active"><img src="../../global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                    <a href="seal/search.html"><img src="../../global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
                 </div>
             </div>
         </nav>
 
 		<br><br>
 		<main id="page">
-			<div id="imageViewer" onclick="fullPage.style.display = 'none';">
-                <div id="imageBackdrop"></div>
-				<div id="imageDisplay"></div>
-                <h2>Click anywhere to close image</h2>
-			</div>
 
-			<div id="pageSettings" class="lightBox">
-				<div class="menuButtons">
-					<center><span class="text centered">Main</span></center>
-					<button onclick="hideAll(), clickHome()" class="tabButton" id="navHome">
-						<img src="global/media/images/settings/homeIcon.png" class="navButtonImg invert" />
+			<div id="pageSettings" class="lightBox centered">
+				<div id="menuButtons">
+					<span>Main</span>
+					<button onclick="settingPage(0)" id="navHome">
+						<img src="global/media/images/settings/homeIcon.png" class="invert"/>
 						<span class="navButtonText">Home</span>
 					</button><hr>	
-					<button onclick="hideAll(), clickStyle()" class="tabButton" id="navStyle">
-						<img src="global/media/images/settings/styleIcon.png" class="navButtonImg invert" />
+					<button onclick="settingPage(1)" id="navStyle">
+						<img src="global/media/images/settings/styleIcon.png" class="invert"/>
 						<span class="navButtonText">Style</span>
 					</button><hr>
 					
-					<center><span class="text centered">Filler</span></center>
+					<span>Filler</span>
 					<!--Only show these screens if logged out-->
-					<button onclick="hideAll(), clickLogin()" class="tabButton" id="navLogin">
-						<img src="global/media/images/settings/loginIcon.png" class="navButtonImg invert" />
-						<span class="navButtonText">Login</span>
+					<button onclick="settingPage(2)" id="navLogin">
+						<img src="global/media/images/settings/loginIcon.png" class="invert"/>
+						<span>Login</span>
 					</button><hr>
 					<!--Only show these screens if logged in-->
-					<button onclick="hideAll(), clickLogout()" class="tabButton buttonLogout" id="navLogout">
-						<img src="global/media/images/settings/logoutIcon.png" class="navButtonImg invert" />
+					<button onclick="settingPage(3)" id="navLogout">
+						<img src="global/media/images/settings/logoutIcon.png" class="invert"/>
 						<span class="navButtonText">Logout</span>
 					</button><hr>
-					<button onclick="hideAll(), clickAccount()" class="tabButton" id="navAccount">
-						<img src="global/media/images/settings/billingIcon.png" class="navButtonImg invert" />
+					<button onclick="settingPage(4)" id="navAccount">
+						<img src="global/media/images/settings/billingIcon.png" class="invert"/>
 						<span class="navButtonText">Account</span>
 					</button>
 				</div>
-		
 
 				<div id="menuContent" class="box">
-				
 					<!--Home page for welcomes and quick settings-->
-					<div id="settingHome"><center>
-						<span class="text title">Welcome</span><br><br>
-
-						
-						<div class="columnContainer">
-
-							<div class="columnItem">
-								<span class="text">Behind the Scenes</span>
-								<table class="featuredRow">
-									<tr>
-										<td>
-											<div class="featuredBox">
-												<button class="settingButton" onclick="setTimeout(function () {location.href = 'fun/template.html';}, 250), pageTransitionOut();;">Template Page</button>
-											</div>
-										</td>
-										<td>
-											<div class="featuredBox">
-												<button class="settingButton" onclick="setTimeout(function () {location.href = 'credits.html';}, 250), pageTransitionOut();;">Media Credits</button>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="featuredBox">
-												
-											</div>
-										</td>
-										<td>
-											<div class="featuredBox">
-												
-											</div>
-										</td>
-									</tr>
-								</table>
-							</div>
-
-							<div class="columnItem">
-								<span class="span text">dfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufgdfsgiushdfhiusgdihughuigsfdhuisdhiugfsdhiugfdhiufg</span>
-							</div>
-						</div>
-					</div></center>
+					<div id="settingHome" class="centered">
+						<h1>Settings Home</h1>
+						<span>This page is very incomplete</span><br><br>
+						<h2>Behind the Scenes</h2>
+						<table class="featuredRow">
+							<tr>
+								<td>
+									<div class="featuredBox">
+										<a href="credits.html" class="settingButton">Media Credits</a>
+									</div>
+								</td>
+								<td>
+									<div class="featuredBox">
+										<a href="template.html" class="settingButton">Template Page</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="featuredBox">
+										
+									</div>
+								</td>
+								<td>
+									<div class="featuredBox">
+										
+									</div>
+								</td>
+							</tr>
+						</table>
+						<h2>:3</h2>
+					</div>
 			
 					<!--Some CSS style changes (dark mode) if we have time-->
-					<div id="settingStyle"><center>
-						<span class="text title">Style</span><br><br><br>
-						<input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme">Toggle</label>
+					<div id="settingStyle" class="centered">
+						<h1>Style</h1><br><br>
 						
-						<select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1">
-							<br>
+						<span>Background Color</span><br>
+						<select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1"><br>
 							<option value="black">black
-								<option value="orange">orange
-									<option value="flamingred">fuschia
-										<option value="lightyellow">light yellow
-											<option value="green">green
-												<option value="cyan">cyan
-													<option value="yellow">yellow
-														<option value="red">red
-															<option value="white">white</option>
-						</select>&nbsp;&nbsp;Background Color
+							<option value="orange">orange
+							<option value="flamingred">fuschia
+							<option value="lightyellow">light yellow
+							<option value="green">green
+							<option value="cyan">cyan
+							<option value="yellow">yellow
+							<option value="red">red
+							<option value="white">white</option>
+						</select><br>
 						
-						<br>
-						<select name="clr" onchange="document.fgColor=this.options[this.selectedIndex].value" size="1">
-							<br>
+						<br><span>Text Color</span><br>
+						<select name="clr" onchange="document.fgColor=this.options[this.selectedIndex].value" size="1"><br>
 							<option value="black">black
-								<option value="orange">orange
-									<option value="flamingred">fuschia
-										<option value="lightyellow">light yellow
-											<option value="cyan">cyan
-												<option value="yellow">yellow
-													<option value="red">red
-														<option value="white">white</option>
-						</select>&nbsp;&nbsp;Text Color
+							<option value="orange">orange
+							<option value="flamingred">fuschia
+							<option value="lightyellow">light yellow
+							<option value="cyan">cyan
+							<option value="yellow">yellow
+							<option value="red">red
+							<option value="white">white</option>
+						</select>
 
-					</div></center>
+					</div>
 					
-					<div id="settingLogin"><center>
-						<span class="text title">User Center</span><br>
-						<span class="text subtitle">Utilize your Seal account today</span><br>
+					<div id="settingLogin" class="centered">
+						<h1>User Center</h1><br>
+						<h2>Utilize your Seal account today</h2><br>
 
 						<div class="columnContainer">
 
@@ -167,7 +145,7 @@
 								<input type="text" name="email" value="" class="formInput typeLarge"><br>
 								<span class="subtitle">Password:</span><br>
 								<input type="password" name="password" value="" class="formInput typeLarge"><br>
-								<input type="submit" value="Submit" class="text">
+								<input type="submit" value="Submit">
 							</div></form>
 
 							<div class="columnItem text">
@@ -177,34 +155,34 @@
 								<input type="text" name="username" value="" class="formInput typeLarge"><br>
 								<span class="subtitle">Password:</span><br>
 								<input type="password" name="password" value="" class="formInput typeLarge"><br>
-								<input type="submit" value="Submit" class="text">
+								<input type="submit" value="Submit">
 							</div></form>
 						</div>
-						<br><br><span class="text subtitle">If not logged in, show Login screen, else show Home screen</span>
-					</div></center>
+						<br><br><span>If not logged in, show Login screen, else show Home screen</span>
+					</div>
 			
 			
 					<!--Log out of the account-->
-					<div id="settingLogout"><center>
-						<span class="text title">Logout</span><br>
-						<span class="text subtitle">Are you sure you want to log out?</span><br><br>
-						<span class="text subtitle">Rememeber that you are {sql username here} with an email of {sql email here}</span><br><br>
+					<div id="settingLogout" class="centered">
+						<h1>Logout</h1><br>
+						<span>Are you sure you want to log out?</span><br><br>
+						<span>Rememeber that you are {sql username here} with an email of {sql email here}</span><br><br>
 						<input type="submit" value="Yes" class="buttonSubmit">
-					</div></center>
+					</div>
 
 					
 					<!--Account page with billing info-->
-					<div id="settingAccount"><center>
-						<span class="text title">Account</span><br>
-					</div></center>
-
+					<div id="settingAccount" class="centered">
+						<h1>Account</h1><br>
+					</div>
 				</div>
 			</div>
 		</main>
-
-	<script type="text/javascript" src="global/scripts/scripts.js"></script>
-	<script type="text/javascript" src="global/scripts/theme.js"></script>
-	<script type="text/javascript" src="global/scripts/settings.js"></script>
+		<button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
+	</body>
+    <script src="global/scripts/scripts.js"></script>
+	<script src="global/scripts/theme.js"></script>
+	<script src="global/scripts/settings.js"></script>
 	<script>
 		window.onscroll = function() {scrollFunction()};
 		settingsTransition();

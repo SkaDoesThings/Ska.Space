@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     event.preventDefault();
     closeThatNav();
+    document.body.style.animation = "backgroundLoader 1s infinite"
     fader.classList.add('fadeOut');
       });
     }
@@ -141,6 +142,9 @@ function closeThatNav() {
     document.getElementById("navbox").style.borderTopRightRadius = "0px";
     document.getElementById("navbox").style.height = "60px";
     document.getElementById("buttonTop").style.marginRight = "-100px";
+
+
+
 }
 
 //Transitions

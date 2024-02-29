@@ -3,20 +3,18 @@ html{
     scroll-behavior: smooth;
 }
 
-[data-theme='light'] body {
-    background: url('../media/backgrounds/lightmode.webp') center no-repeat;
-    background-size: 2800px;
-    background-color: rgb(235, 235, 235);
-}
-
 body {
-    min-height: 100vh;
     margin: 0 auto;
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
     background-size: 4em 4em;
     background-color:rgb(44, 40, 40);
 }
 
+[data-theme='light'] body {
+    background: url('../media/backgrounds/lightmode.webp') center no-repeat;
+    background-size: 2800px;
+    background-color: rgb(235, 235, 235);
+}
 
 .divider{
     display: block;
@@ -37,9 +35,12 @@ main{
     animation: pageMoveIn 0.5s forwards;
 }
 
-
-#page, .lobby{
+#page{
     padding-bottom: 30px;
+}
+
+[data-theme='dark'] #lobby {
+    background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
 }
 
 article{
@@ -143,8 +144,6 @@ img {
     margin-right: 5px;
 }
 
-
-
 .rotate:hover{
     transform: rotate(360deg);
 }
@@ -177,6 +176,7 @@ nav{
     right: 0;
     z-index: 2;
     transition: background-color 0.3s, backdrop-filter 0.1s, width 0.2s, height 0.2s, margin-top 0.2s, margin-left 0.2s, margin-bottom 0.2s, border-radius 0.3s, padding 0.2s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
 
 [data-theme='light'] nav{
@@ -185,10 +185,6 @@ nav{
 
 [data-theme='dark'] nav{
     background-color: rgb(59, 57, 57, 0.7);
-}
-
-[data-theme='dark'] #navbox{
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
 }
@@ -378,12 +374,12 @@ nav a:active, .siteName:active{
 /*Go to top of page*/
 
 #buttonTop{
-    background-color: rgba(48, 41, 41, 0.75);
-    color: #fff1d7;
+    background-color: rgba(53, 40, 40, 0.7);
+    color: #ffd7d7;
     border: 2px solid #bb3e005d;
     float: right;
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     position: fixed;
     right: 0;
     margin-right: -100px;
@@ -393,6 +389,11 @@ nav a:active, .siteName:active{
     cursor: pointer;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
+}
+
+[data-theme='light'] #buttonTop {
+    background-color: rgba(202, 202, 202, 0.75);
+    color: #383838;
 }
   
 #buttonTop:hover{
@@ -415,7 +416,7 @@ nav a:active, .siteName:active{
 #buttonTop:active:after{
     padding-right: 50px;
     content:'^';
-    font-size: 36pt;
+    font-size: 30pt;
 }
 
 @media only screen and (min-width: 800px) {
@@ -749,7 +750,7 @@ form input[type=text], form input[type=password]{
 }
 
 input[type=submit]{
-    border-radius:  20px;
+    border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 200px;
@@ -760,7 +761,6 @@ input[type=submit]{
 
 input[type=submit]:hover{
     border: 2px solid white;
-    width: 250px;
     background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
 }
 
@@ -782,36 +782,32 @@ input[type=submit]:hover{
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
 }
 
-.listbox li {
-    float: left;
-    display: block;
-    border-radius: 10px;
-    border-bottom: 1px solid rgb(87, 87, 87); 
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.listbox li a{
+.listbox a{
     color: rgb(87, 87, 87);
     text-align: left;
     padding: 1px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgb(87, 87, 87); 
     text-decoration: none;
     font-size: 18pt;
     border-radius: 10px;
     transition: 0.2s;
+    cursor: pointer;
 }
 
-.listbox li:active{
+.listbox a:active{
     margin-top: -3px;
 }
 
-[data-theme='dark'] .listbox li a{
+[data-theme='dark'] .listbox a{
     color: rgb(245, 245, 245);
 }
 
-.listbox li a:hover{
+.listbox a:hover{
     background-color: rgb(246, 151, 151);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
 
@@ -893,12 +889,9 @@ input[type=submit]:hover{
         font-size: 14pt;
     }
 
-    .listbox li{
+    .listbox a{
         margin: 2px;
-    }
-
-    .listboxli a{
-        font-size: 14pt;
+        font-size: 16pt;
     }
 }
 
