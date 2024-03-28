@@ -64,7 +64,7 @@ window.addEventListener('pageshow', function (event) {
 function closeMenu(selection) {
   switch(selection){
     case 0: {
-      document.getElementById("leavingPage").style.display = "none";
+      document.getElementById("leavingPage").style.visibility = "hidden";
       break;
     }
   }
