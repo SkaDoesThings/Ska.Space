@@ -23,27 +23,30 @@
             <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2> 
-                <a onclick="history.back()"><- Return to Settings</a>
-                <a href="card.html" class="active dedicatedPage">Template</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="card.html">Card</a>
+                <a href="dev.html">Projects</a>
                 <div id="myDropdown" class="dropdown-content">
                     <hr class="onMobile"><h2>Spaces</h2>
-                    <a href="index.html"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="index.html" class="active"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
                     <a href="galleon/home.html"><img src="global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
                     <a href="seal/search.html"><img src="global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
                 </div>
             </div>
         </nav>
-        <div id="leavingPage">
+
+        <div id="leavingPage" style="display: block;">
             <div id="leavingBackground">
                 <div id="leavingModel">
                     <div class="modal-header" onclick="closeMenu(0)">
                         <span class="close">×</span>
                     </div>
                     <span class="loader"></span><br>
+                    <h2></h2>
                 </div>
             </div>
         </div>
-        
+
         <div id="imageViewer" onclick="fullPage.style.display = 'none';">
             <div id="imageBackdrop"></div>
             <div id="imageDisplay"></div>
@@ -51,19 +54,7 @@
         </div>
 
         <br><br>
-        <main id="page">
-            <div id="imageViewer" onclick="fullPage.style.display = 'none';">
-                <div id="imageBackdrop"></div>
-				<div id="imageDisplay"></div>
-                <h2>Click anywhere to close image</h2>
-			</div>
 
-            <article class="centered"> 
-                <h1>Template</h1>
-                <h2>Hello World</h2>
-                <span>Text Here</span>
-            </article>
-        </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
     </body>
     <script src="global/scripts/scripts.js"></script>

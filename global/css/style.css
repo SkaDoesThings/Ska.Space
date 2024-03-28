@@ -551,7 +551,8 @@ nav a:active, .siteName:active{
   
 
 .fadeOut{
-    animation: pageMoveOut 0.3s ease 1 normal forwards;
+    display: block !important;
+    animation: leavingDivAnimation 0.3s normal forwards;
 }
 
 #leavingPage, #leavingBackground{
@@ -564,7 +565,6 @@ nav a:active, .siteName:active{
     background-color:rgb(44, 40, 40);
     position: fixed;
     margin: auto;
-    animation: leavingDivAnimation 0.3s forwards;
     z-index: 2;
 }
 
@@ -591,6 +591,7 @@ nav a:active, .siteName:active{
 }
 
 #leavingPage .modal-header{
+    background: none;
     height: 20px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -607,9 +608,9 @@ nav a:active, .siteName:active{
     transform: rotateZ(45deg);
     perspective: 1000px;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    margin-top: 55px;
+    width: 68px;
+    height: 68px;
+    margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
     color: #fff;
@@ -657,7 +658,7 @@ nav a:active, .siteName:active{
 
 @keyframes leavingModelAnimation {
     0%{
-        scale: 0.5;
+        scale: 1;
     }
     100%{
         scale: 1;

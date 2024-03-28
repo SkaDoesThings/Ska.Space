@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       continue;
   }
   anchors[idx].addEventListener('click', function(event) {
-    var fader = document.getElementById('page'),
+    var fader = document.getElementById('leavingPage'),
         anchor = event.currentTarget;
     
     var listener = function() {
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     closeThatNav();
     fader.classList.add('fadeOut');
-    document.getElementById("leavingPage").style.display = "block";
       });
     }
 });
