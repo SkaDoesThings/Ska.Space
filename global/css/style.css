@@ -578,16 +578,17 @@ nav a:active, .siteName:active{
 
 #leavingModel{
     display: block;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     background-color:rgb(44, 40, 40);
     border: 3px solid white;
     border-radius: 20px;
     width: 300px;
     height: 200px;
-    margin-top: 30vh;
-    margin-left: auto;
-    margin-right: auto;
-    animation: leavingModelAnimation 0.2s forwards;
-
 }
 
 #leavingPage .modal-header{
@@ -984,6 +985,10 @@ input[type=submit]:hover{
         margin-bottom: 0px; 
         width: 90%;
         border-radius: 10px;
+    }
+
+    #leavingModel{
+        bottom: 50px;
     }
 
     .columnContainer{

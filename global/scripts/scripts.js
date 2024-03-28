@@ -57,7 +57,7 @@ window.addEventListener('pageshow', function (event) {
   if (!event.persisted) {
     return;
   }
-  var fader = document.getElementById('page');
+  var fader = document.getElementById('leavingPage');
   fader.classList.remove('fadeOut');
 });
 
