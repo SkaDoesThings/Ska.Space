@@ -35,13 +35,27 @@
             </div>
         </nav>
 
+        <div id="leavingPage">
+            <div id="leavingBackground">
+                <div id="leavingModel">
+                    <div class="modal-header" onclick="closeMenu(0)">
+                        <span class="close">×</span>
+                    </div>
+                    <span class="loader"></span><br>
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <h2>Click anywhere to close image</h2>
+        </div>
+
         <br><br>
         <main id="page" class="pageLobby contentTransparent">
-            <div id="imageViewer" onclick="fullPage.style.display = 'none';">
-                <div id="imageBackdrop"></div>
-				<div id="imageDisplay"></div>
-                <h2>Click anywhere to close image</h2>
-			</div>
+
 
             <div id="lobbyBanner">
                 <div id="bannerContainer" class="placeholderLobby">
@@ -62,6 +76,7 @@
             <article id="lobbyArticle" class="centered"> 
                 <div id="explore" class="columnContainer sizeLarger">
                     <article>
+
                         <h1>Visit a Space</h1>
                         <span>'Spaces' are dedicated pages that stand as their own independant websites</span><br>
                         <div class="homeSpace"> 
@@ -70,7 +85,6 @@
                         </div>
                     </article>
                     <article>
-
                         <h1>Hello World</h1>
                         <span>Click the card to learn more about me :3</span><br>
                     
@@ -84,7 +98,7 @@
                         </a>
                     </article>
                 </div>
-                
+                <p>Designed and tested using Firefox <3</p>
             </article>
         </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>

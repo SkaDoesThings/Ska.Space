@@ -37,14 +37,25 @@
             </div>
         </nav>
 	
+        <div id="leavingPage">
+            <div id="leavingBackground">
+                <div id="leavingModel">
+                    <div class="modal-header" onclick="closeMenu(0)">
+                        <span class="close">×</span>
+                    </div>
+                    <span class="loader"></span><br>
+                </div>
+            </div>
+        </div>
+        
+        <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <h2>Click anywhere to close image</h2>
+        </div>
+
 		<br><br><center>
-		<main id="page">
-			<div id="imageViewer" onclick="fullPage.style.display = 'none';">
-                <div id="imageBackdrop"></div>
-				<div id="imageDisplay"></div>
-                <h2>Click anywhere to close image</h2>
-			</div>
-			
+		<main id="page">			
             <article>
 				<div class="divider">
 					<span class="title">About Us</span>

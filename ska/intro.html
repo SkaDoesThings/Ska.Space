@@ -35,21 +35,32 @@
             </div>
         </nav>
         
+        <div id="leavingPage">
+            <div id="leavingBackground">
+                <div id="leavingModel">
+                    <div class="modal-header" onclick="closeMenu(0)">
+                        <span class="close">×</span>
+                    </div>
+                    <span class="loader"></span><br>
+                </div>
+            </div>
+        </div>
+        
+        <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <h2>Click anywhere to close image</h2>
+        </div>
+
         <br><br>
         <main id="page">
-            <div id="imageViewer" onclick="fullPage.style.display = 'none';">
-                <div id="imageBackdrop"></div>
-				<div id="imageDisplay"></div>
-                <h2>Click anywhere to close image</h2>
-			</div>
-
             <div id="bannerMain" class="bannerImageAbout" onclick="backgroundViewer('../../global/media/images/mike.jpg')">
 				<div class="bannerContent bannerLogo centered">
 					<span class="clear bold centered onMobile" style="font-size: 50pt; font-family: 'Segoe UI';">Ska</span><br>
                     <span class="clear onMobile" style="font-size: 24pt; font-family: 'Segoe UI';">The One and Only</span><br>
 				</div>
 			</div>
-
+            
             <br><h1>This page is not done, like at all</h1>
             <article class="content">
                 <span class="divider text bold subtitle centered">Information</span><br>
@@ -68,7 +79,7 @@
                         <span class="textBody">A company that aspires to be a really delicious pizza joint. We strive to be highly supportive of our customers and employees! Feel the freedom of your taste buds as you try our spin on pizza.</span>
                     </article>
                 </div>
-            </div>
+            </article>
         </main>    
         
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>

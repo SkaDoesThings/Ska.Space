@@ -174,7 +174,7 @@ nav{
     padding: 0;
     left: 0; 
     right: 0;
-    z-index: 2;
+    z-index: 4;
     transition: background-color 0.3s, backdrop-filter 0.1s, width 0.2s, height 0.2s, margin-top 0.2s, margin-left 0.2s, margin-bottom 0.2s, border-radius 0.3s, padding 0.2s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
@@ -364,7 +364,7 @@ nav a:active, .siteName:active{
     overflow: auto;
     overflow-x: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
 }
 
 .show {
@@ -548,6 +548,166 @@ nav a:active, .siteName:active{
         margin-bottom: 0px;
     }
 }
+  
+
+.fadeOut{
+    animation: pageMoveOut 0.3s ease 1 normal forwards;
+}
+
+#leavingPage, #leavingBackground{
+    width: 100vw;
+    height: 110vh;
+}
+
+#leavingPage{
+    display: none;
+    background-color:rgb(44, 40, 40);
+    position: fixed;
+    margin: auto;
+    animation: leavingDivAnimation 0.3s forwards;
+    z-index: 2;
+}
+
+#leavingBackground{
+    position: absolute;
+    background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
+    background-size: 4em 4em;
+    background-color:rgb(44, 40, 40);
+    animation: backgroundLoader 1s infinite;
+}
+
+#leavingModel{
+    display: block;
+    background-color:rgb(44, 40, 40);
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    margin-top: 30vh;
+    margin-left: auto;
+    margin-right: auto;
+    animation: leavingModelAnimation 0.2s forwards;
+
+}
+
+#leavingPage .modal-header{
+    height: 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+#leavingPage .close{
+    margin-top: -10px;
+}
+
+/*Thanks to https://cssloaders.github.io*/
+
+    .loader {
+    display: block;
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+  }
+
+    .loader:before,
+    .loader:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      transform: rotateX(70deg);
+      animation: 1s spin linear infinite;
+    }
+    
+    .loader:after {
+      color: #FF3D00;
+      transform: rotateY(70deg);
+      animation-delay: -.4s;
+    }
+
+@keyframes backgroundLoader {
+        0% {
+            background-position-x: 0px;
+        }
+        100%{
+            background-position-x: -190px;
+        }
+    }
+    
+    
+
+@keyframes leavingDivAnimation {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+}
+
+@keyframes leavingModelAnimation {
+    0%{
+        scale: 0.5;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+  @keyframes spin {
+    0%,
+    100% {
+      box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+      box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+      box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+      box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+      box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+      box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+      box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+      box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+  }
+
+  
+
+/*=-=-=-=-=-=-=-= In-Page Navs =-=-=-=-=-=-=-=*/
+
+.inlinePage{
+    width: 100vw;
+    height: 100%;
+}
+
+#inlineInfoCard{
+    display: block;
+}
+
+#inlineInfoAbout{
+    display: none;
+}
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
 
@@ -580,10 +740,11 @@ div article{
 
 
 /*=-=-=-=-=-=-=-=-= Modals =-=-=-=-=-=-=-=-=*/
+
 #imageViewer {
     display: none;
     background-color: rgb(0, 0, 0);
-    z-index: 9999;
+    z-index: 1;
     animation: imageBox 0.2s forwards;
 }
 
@@ -764,10 +925,6 @@ input[type=submit]:hover{
     background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
 }
 
-.fadeOut{
-    animation: pageMoveOut 0.2s ease 1 normal forwards;
-}
-
 
 /*=-=-=-=-=-= Item Container and Navigation =-=-=-=-=-=*/
 
@@ -924,7 +1081,7 @@ input[type=submit]:hover{
       opacity: 1;
     }
     100% {
-      opacity: 0;
+      opacity: 1;
     }
 }
 

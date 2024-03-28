@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     event.preventDefault();
     closeThatNav();
-    document.body.style.animation = "backgroundLoader 1s infinite"
     fader.classList.add('fadeOut');
+    document.getElementById("leavingPage").style.display = "block";
       });
     }
 });
@@ -61,6 +61,15 @@ window.addEventListener('pageshow', function (event) {
   var fader = document.getElementById('page');
   fader.classList.remove('fadeOut');
 });
+
+function closeMenu(selection) {
+  switch(selection){
+    case 0: {
+      document.getElementById("leavingPage").style.display = "none";
+      break;
+    }
+  }
+}
 
 
 document.querySelector("#page").addEventListener('click', (e, checkbox = document.querySelector('input'))=>{ 
@@ -239,3 +248,21 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
+// Page Content Swaps
+
+function inlinePageInfo(selection) {
+  document.getElementById("inlineInfoCard").style.display = "none";
+  document.getElementById("inlineInfoAbout").style.display = "none";
+
+  switch(selection){
+    case 0: {
+      document.getElementById("inlineInfoCard").style.display = "block";
+      break;
+    }
+    case 1: {
+      document.getElementById("inlineInfoAbout").style.display = "block";
+      break;
+    }
+  }
+}
