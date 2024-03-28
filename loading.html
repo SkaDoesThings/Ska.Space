@@ -50,15 +50,25 @@
         <div id="imageViewer" onclick="fullPage.style.display = 'none';">
             <div id="imageBackdrop"></div>
             <div id="imageDisplay"></div>
-            <h2>Click anywhere to close image</h2>
+            <h2>nya! nya! nya! nya! nya!</h2>
         </div>
 
         <br><br>
+        <main id="page" class="centered">
+            <h1>Ska was here</h1>
+            <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play()">
+        </main>
 
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
     </body>
     <script src="global/scripts/scripts.js"></script>
 	<script>
 		window.onscroll = function() {scrollFunction()};
+
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }   
 	</script>
+    <audio id="audio" src="global/media/audio/boom.mp3"></audio>
 </html>
