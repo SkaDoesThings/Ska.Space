@@ -58,7 +58,7 @@
 }
 
 .bannerImageAbout{
-  background-image: url('../media/images/mike.jpg');
+  background-image: url('../media/images/ska/skavatar.webp');
 }
 
 .bannerImageGalleon{
@@ -159,10 +159,6 @@
 
   .bannerContent{
     top: 10%;
-  }
-
-  .bannerImageAbout{
-    background-image: url('../media/images/ska/skavatarmobile.png');
   }
 }
 
@@ -311,6 +307,10 @@
 @media only screen and (max-width: 800px) {
   #lobbyArticle{
     top: 75px;
+  }
+
+  .bannerImageAbout{
+    background-image: url('../media/images/ska/skavatarmobile.png');
   }
 }
 

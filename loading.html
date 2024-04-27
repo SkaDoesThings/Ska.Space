@@ -23,9 +23,10 @@
             <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2> 
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="card.html">Card</a>
                 <a href="dev.html">Projects</a>
+                <a href="loading.html" class="active dedicatedPage">Loading Demo</a>
                 <div id="myDropdown" class="dropdown-content">
                     <hr class="onMobile"><h2>Spaces</h2>
                     <a href="index.html" class="active"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
@@ -42,6 +43,7 @@
                         <span class="close">×</span>
                     </div>
                     <span class="loader"></span><br>
+                    <p id="stuckLoading">Not loading? <a onclick="closeMenu(0)">Hide This</a> or <a onclick="location.reload();">Refresh Page</a></p>
                     <h2></h2>
                 </div>
             </div>

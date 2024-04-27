@@ -150,9 +150,6 @@ function closeThatNav() {
     document.getElementById("navbox").style.borderTopRightRadius = "0px";
     document.getElementById("navbox").style.height = "60px";
     document.getElementById("buttonTop").style.marginRight = "-100px";
-
-
-
 }
 
 //Transitions
@@ -251,16 +248,21 @@ window.addEventListener("scroll", function () {
 // Page Content Swaps
 
 function inlinePageInfo(selection) {
-  document.getElementById("inlineInfoCard").style.display = "none";
+  document.getElementById("inlineInfoMain").style.display = "none";
   document.getElementById("inlineInfoAbout").style.display = "none";
+  document.getElementById("inlineInfoCloud").style.display = "none";
 
   switch(selection){
     case 0: {
-      document.getElementById("inlineInfoCard").style.display = "block";
+      document.getElementById("inlineInfoMain").style.display = "block";
       break;
     }
     case 1: {
       document.getElementById("inlineInfoAbout").style.display = "block";
+      break;
+    }
+    case 2: {
+      document.getElementById("inlineInfoCloud").style.display = "block";
       break;
     }
   }

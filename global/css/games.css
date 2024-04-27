@@ -1,0 +1,295 @@
+  /*UI Structure*/
+  #header{
+    width: 100%;
+    height: 80px;
+    background-color: #171D25;   
+  }
+  
+  #footer{
+    width: 100%;
+    height: 60px;
+    background-color: #171D25;
+    position: fixed;
+    bottom: 0; 
+  }
+  
+  #interface{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+  
+  #sidebar, #library{
+    height: 95%;
+  }
+  
+  #sidebar{
+    width: 380px;
+    height: 100vh;
+    background-color: #272C34;
+    overflow-y: visible;
+    border-right: 2px solid rgb(23, 23, 23);
+  }
+  
+  
+  #library{
+    width: 100%;
+  }
+  
+  #list, #content{
+    height: 100%;
+    background-color: #2D333C;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  
+  /*Header Nav*/
+  .navTopRow, .navBottomRow{
+    height: 25px;
+    list-style-type: none;
+    margin-left: -20px;
+  }
+  
+  .navTopRow ul{
+    padding-top: 10px;
+  }
+  
+  .navTopRow li, .navBottomRow li{
+    width: 60px;
+    margin-left: 10px;
+    display: inline;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navTopRow li{
+    color: #787F87;
+    font-size: 10pt;
+  }
+  
+  .navTopRow li:hover{
+    color: #F9FAFA;
+    transition: color 0.3s;
+  }
+  
+  .navBottomRow li{
+    color: #DCDEDF;
+    font-size: 16pt;
+    font-weight: bold;
+    transition: color 0.1s;
+  }
+  
+  .navBottomRow a{
+    color: #787F87;
+    font-size: 16pt;
+    cursor: pointer;
+  }
+  
+  .navBottomRow li:not(:active):hover{
+    color: #FFFFFF;
+  }
+  
+  .navBottomRow .cloudActive{
+    color: #1A9FFF;
+    text-decoration: none;
+    border-bottom: 3px solid #1A9FFF;
+    border-radius: 2px;
+  }
+  
+
+  /*Sidebar*/
+  .bottomSection{
+    position: absolute;
+    color: #000;
+    bottom: 0;
+  }
+  
+  .thanks{
+  
+  }
+  
+  /*Library*/
+  
+  #gameListContainer{
+    padding: 10px;
+    padding-bottom: 50px;
+  }
+  
+  .sectionTitle, .sectionNumber{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  
+  .sectionTitle{
+    padding-left: 17px;
+  }
+  
+  .sectionNumber{
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    color: #8F8F90;
+    cursor: pointer;
+  }
+  
+  .sectionNumber:after {
+    display: inline-block;
+    content: "";
+    height: 3px;
+    background: #363B43;
+    position: absolute;
+    width: 100vw;
+    top: 45%;
+    margin-left: 10px;
+    transition: 0.3s;
+  }
+  
+  
+  .sectionNumber:hover:after {
+    display: inline-block;
+    content: "";
+    height: 20px;
+    top: 15%;
+    margin-left: 10px;
+  }
+  
+  
+  .gameCardList{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    transition: margin-top 0.2s;
+  }
+  
+  
+  
+  .gameCardList div {
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gameCardList div:hover .gameCardList img {
+    background-color: rgba(255, 83, 45, 0.243);
+  
+  }
+  
+  .gameCardList div:hover  {
+    transform: rotate3d(-180, 100, 10, 0.08turn) scale(1.1);
+  }
+  
+  
+  .gameCardList img {
+    border: 2px solid #bb3e00;
+    opacity: 1;
+    display: block;
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    cursor: pointer;
+  }
+  
+  
+  .gameCardList a {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #3D4450;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: -20px;
+  }
+  
+  
+  @media only screen and (max-width: 1500px) {
+    .gameCardList img {
+      width: 180px;
+      height: 270px;
+    }
+  
+  }
+  
+  
+  @media only screen and (max-width: 1000px) {  
+    .gameCardList img {
+      width: 120px;
+      height: 180px;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 800px) {
+  
+    #interface{
+      flex-direction: column;
+    }
+
+    #header{
+        margin-top: -55px;
+    }
+  
+    #sidebar{
+      width: 100vw;
+      height: 10%;
+    }
+  
+    #library{
+      height: 100%;
+    }
+
+    #gameListContainer{
+        padding-bottom: 200px;
+    }
+  
+    .gameCardList img {
+      width: 170px;
+      height: 240px;
+    }
+  }
+  
+  
+  
+  #sidebarToggleLeaveGame, #sidebarToggleCollections{
+    height: 35px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  #sidebarToggleLeaveGame{
+    background-color: #3E4047;
+    width: 100%;
+  }
+  
+  #sidebarToggleLeaveGame a{
+    display: inline-block;
+    padding: 10px;
+    padding-top: 5px;
+    font-size: 20px;
+  }
+  
+  #sidebarToggleCollections{
+    background-color: #25272D;
+    width: 40px;
+    margin-left: 0px;
+    background: url('');
+    background-size: contain;
+  }
+  
+  
+  
+  
+  
+  #content, #gameMinecraft, #gameTerraria, #gameBeatSaber, #gameOSU, #gameGeometryDash{
+    display: none;
+  }

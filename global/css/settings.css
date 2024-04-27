@@ -106,7 +106,7 @@ hr{
     animation: switchPage 0.5s forwards;
 }
 
-#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA{
+#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA, #settingCredits{
     display: none;
     animation: switchPage 0.5s forwards;
 }

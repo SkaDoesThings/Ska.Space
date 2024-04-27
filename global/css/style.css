@@ -552,7 +552,7 @@ nav a:active, .siteName:active{
 
 .fadeOut{
     display: block !important;
-    animation: leavingDivAnimation 0.3s normal forwards;
+    animation: leavingDivAnimation 0.2s normal forwards;
 }
 
 #leavingPage, #leavingBackground{
@@ -600,6 +600,17 @@ nav a:active, .siteName:active{
 
 #leavingPage .close{
     margin-top: -10px;
+}
+
+#stuckLoading{
+    opacity: 0;
+    animation: stuckLoading 7s forwards;
+    text-align: center;
+}
+
+#stuckLoading a{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /*Thanks to https://cssloaders.github.io*/
@@ -655,15 +666,18 @@ nav a:active, .siteName:active{
         100%{
             opacity: 1;
         }
-}
+    }
 
-@keyframes leavingModelAnimation {
-    0%{
-        scale: 1;
-    }
-    100%{
-        scale: 1;
-    }
+@keyframes stuckLoading {
+        0%{
+            opacity: 0;
+        }
+        90%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
 }
 
   @keyframes spin {

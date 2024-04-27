@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Ska's Card</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/home.css">
+        <link rel="stylesheet" href="global/css/card.css">
+        <link rel="stylesheet" href="global/css/games.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.png" />
+        
+    </head>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="index.html"><img src="global/media/images/ska/wumpus.png" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+                <img src="global/media/images/navburger.png" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+                <span>Ska.Space</span>
+            </button>
+            <button onclick="openNav()" id="openNav" class="navbutton"></button>
+            <button onclick="closeNav()" id="closeNav" class="navbutton"></button>
+            <img src="global/media/images/infologo.png" class="navIcon iconTypeGear iconLeft viewable" alt="Logo for About Ska Space"/>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+            <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="index.html">Home</a>
+                <a href="ska.html" class="active">Card</a>
+                <a href="dev.html">Projects</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="index.html" class="active"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="galleon/home.html"><img src="global/media/images/glogo.png" alt="Logo for Galleon">Galleon</a>
+                    <a href="seal/search.html"><img src="global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage">
+            <div id="leavingBackground">
+                <div id="leavingModel">
+                    <div class="modal-header" onclick="closeMenu(0)">
+                        <span class="close">×</span>
+                    </div>
+                    <span class="loader"></span><br>
+                </div>
+            </div>
+        </div>
+        
+        <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <h2>Click anywhere to close image</h2>
+        </div>
+
+        <br><br>
+        <main id="page">
+            <div id="inlineInfoMain" class="inlinePage">
+                <div id="topArea">
+                    <h1 class="bold mainText"><img src="global/media/images/wave.png" class="viewable">Ska Appears!</h1>
+                    <h2>Welcome visitor from afar, to my profile card</h2>
+                </div>
+                <div class="columnContainer">
+                    <article>
+                        <div id="myProfile">
+                            <div class="profileCard nitro">
+                                    <div class="profileHeader">
+                                        <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                        <img src="global/media/images/ska/pfp.png" class="userPicture viewable">
+                                        <img src="global/media/icons/idle.png" class="userStatus viewable">
+
+                                        <div class="userIcons"> 
+                                            <img src="global/media/icons/emotes/stand.webp" class="viewable">
+                                            <img src="global/media/icons/emotes/snap.webp" class="viewable">
+                                            <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play()">
+                                            <img src="global/media/icons/emotes/sip.webp" class="viewable">
+                                        </div>
+                                    </div>
+                                    <div class="profileBody">
+                                        <span class="name">Ska✨</span><br>
+                                        <span class="id">@ska.exe</span><br>
+                                        <span class="pronouns">The Silly One</span><br><br>
+                                        <span class="status">Hello everynyan how are you</span><br><hr>
+                                        
+                                        <span class="category">ABOUT ME</span><br>
+                                        <span class="bio">👋 Spencer here, 19y/o, I do things sometimes<br>📜 I enjoy gaming, tech, coding, stuff like that<br>⚙️ Using PC, Android, and Quest + SteamVR<br>🎮 View more of my games of interest <a href="ska/games.html">here</a></span><br><br>
+
+                                        <span class="category">MY ROLES</span><br>
+                                        <div class="userRoles">
+                                            <span>😋blehh</span>
+                                            <span>🥕bnuuy</span>
+                                            <span>💥:3</span>
+                                            <span>🦊mimi</span>
+                                        </div><br>
+
+                                        <span class="category">CREDITS</span><br>
+
+                                        <span class="bio">🎨PFP by @nbb3_G. <a href="https://twitter.com/nbb3_G/status/1659994951281934338" target="_blank">Click here to view</a></span><br><br>
+
+                                        <span class="category">WEBSITE MAKER SINCE</span><br>
+                                        <span class="date">August 2021</span><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+                    <article>
+                        <center>
+                            <h1>Links</h1>
+                            <table class="socials">
+                                <tr>    
+                                    <td>
+                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram"></a>
+                                        <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter"></a>
+                                        <a href="https://www.youtube.com/channel/UCNqXZ_QuugIEXhegDB7W6HA" target="_blank" class="mainJoinYouTube"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="socials">
+                                <tr>
+                                    <td>
+                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam"></a>
+                                        <a href="https://www.guilded.gg/u/Ska" target="_blank" class="mainJoinGuilded"></a>
+                                        <a href="galleon/home.html" target="_blank" class="mainJoinDiscord"></a>
+                                        
+                                    </td>
+                                </tr>
+                            </table><br>
+                            <h1>About</h1><br>
+                            <div class="links">
+                                <a onclick="inlinePageInfo(1)"><img src="global/media/images/infologo.png" class="small"/>Introduction</a><br>
+                                <a onclick="inlinePageInfo(2)"><img src="global/media/images/trophy.png" class="small"/>Games List</a><br>
+                                <a href="https://anilist.co/user/ska" target="_blank"><img src="global/media/icons/logos/anilist.png" class="small"/>Anime List</a><br>
+                                <a href="galleon/home.html" target="_blank"><img src="global/media/images/glogo.png" class="small"/>My Community</a>
+                            </div>
+                    </article>
+                </div></center>
+            </div>
+
+            <div id="inlineInfoAbout" class="inlinePage">
+                <button id="inlineReturn" class="bannerButton" onclick="inlinePageInfo(0)"><- Return</button>
+                 <div id="bannerMain" class="bannerImageAbout" onclick="backgroundViewer('../../global/media/images/mike.jpg')">
+				    <div class="bannerContent bannerLogo centered">
+					    <span class="clear bold centered onMobile" style="font-size: 50pt; font-family: 'Segoe UI';">Ska</span><br>
+                        <span class="clear onMobile" style="font-size: 24pt; font-family: 'Segoe UI';">The One and Only</span><br>
+				    </div>
+			    </div>
+            
+                <br><h1>This page is not done, like at all</h1>
+                <article class="content">
+                    <span class="divider text bold subtitle centered">Information</span><br>
+                    <div class="columnContainer infoMain">
+                        <article>
+                            <img src="../media/images/sealfront.jpg" alt="Image of Company Logo" class="imageSocial imageTypeLarge"/>
+                            <span class="title">Hello!</span><br>
+                            <span class="subtitle">We make pizza</span><br><br>
+                            <span class="textBody">A company that aspires to be a really delicious pizza joint. We strive to be highly supportive of our customers and employees! Feel the freedom of your taste buds as you try our spin on pizza.</span>
+                        </article>
+
+                        <article>
+                            <img src="../media/images/sealfront.jpg" alt="Image of Company Logo" class="imageSocial imageTypeLarge"/>
+                            <span class="title">Hello!</span><br>
+                            <span class="subtitle">We make pizza</span><br><br>
+                            <span class="textBody">A company that aspires to be a really delicious pizza joint. We strive to be highly supportive of our customers and employees! Feel the freedom of your taste buds as you try our spin on pizza.</span>
+                        </article>
+                    </div>
+                </article>
+            </div>
+
+            <div id="inlineInfoCloud" class="inlinePage">
+                <button id="inlineReturn" class="bannerButton" onclick="inlinePageInfo(0)"><- Return</button>
+                <div id="view">
+                    <div id="header">
+                        <div class="navTopRow">
+                            <ul>
+                                <li>Steam</li>
+                                <li>View</li>
+                                <li>Friends</li>
+                                <li>Games</li>
+                                <li>Help</li>
+                            </ul>
+                        </div>
+                        <div class="navBottomRow">
+                            <ul>
+                                <a><-</a>
+                                <a>-></a>
+                                <li>STORE</li>
+                                <li class="cloudActive" onclick="gameTransitionOut()">LIBRARY</li>
+                                <li>COMMUNITY</li>
+                                <li>SKA</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="interface">
+                        <div id="sidebar">
+                            <div style="display: flex">
+                                <div id="sidebarToggleLeaveGame" onclick="gameTransitionOut()"><a>Home</a></div>
+                                <div id="sidebarToggleCollections" onclick="gameTransitionOut()"></div>
+                            </div>
+                            <p>Work In Progress</p>
+    
+                            <div class="bottomSection">
+                                <div class="thanks">
+                                    <span>Thank you for the Steam Gifts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="library">
+                            <div id="list">
+                                <div id="gameListContainer">
+                                    <a class="sectionTitle">Casual</a><a class="sectionNumber">(2)</a>
+                                    <div class="gameCardList">
+    
+                                        <div onclick="selectGame(0);">
+                                            <img src="global/media/games/covers/Minecraft.jpg" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Minecraft</a></center>
+                                        </div>
+    
+                                        <div onclick="selectGame(1);">
+                                            <img src="global/media/games/covers/Terraria.jpg" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Terraria</a></center>
+                                        </div>
+    
+                                    </div>
+    
+                                    <a class="sectionTitle">Rhythm</a><a class="sectionNumber">(3)</a>
+                                    <div class="gameCardList">
+                                        <div onclick="selectGame(2);">
+                                            <img src="global/media/games/covers/BeatSaber.png" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Beat Saber</a></center>
+                                        </div>
+                                        
+                                        <div onclick="selectGame(3);">
+                                            <img src="global/media/games/covers/osu.jpg" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">osu!</a></center>
+                                        </div>
+
+                                        <div onclick="selectGame(4);">
+                                            <img src="global/media/games/covers/GeomertryDash.png" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Geomertry Dash</a></center>
+                                        </div>
+                                    </div>
+
+                                    <a class="sectionTitle">More</a><a class="sectionNumber">(8)</a>
+                                    <div class="gameCardList">
+                                        <div onclick="selectGame(5);">
+                                            <img src="global/media/games/covers/GenshinImpact.png" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Genshin Impact</a></center>
+                                        </div>
+                                        <div onclick="selectGame(6);">
+                                            <img src="global/media/games/covers/fortnite.png" loading="lazy" alt="Image of Pizza" class="gameImage">
+                                            <center><a class="gameName">Fortnite</a></center>
+                                        </div>
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <div id="content">
+                                <article id="gameMinecraft">
+                                    <h1>Creeper, Aw Man</h1>
+                                </article>
+    
+                                <article id="gameTerraria">
+                                    <h1>Terraria</h1>
+                                </article>
+    
+                                <article id="gameBeatSaber">
+                                    <h1>We're Playing Beat Saber</h1>
+                                </article>
+    
+                                <article id="gameOSU">
+                                    <h1>CLICK THE CIRCLES</h1>
+                                </article>
+                                
+                                <article id="gameGeometryDash">
+                                    <h1>Silly Cube Game</h1>
+                                </article>
+
+                                <article id="gameGenshinImpact">
+                                    <h1>My Favortest Game ever (yes, really)</h1><br>
+                                    <center><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/gXTMFXjgMWY?si=8cV8cIXfreXUM9t3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></center>                            
+                                </article>
+
+                                <article id="gameFortnite">
+                                    <h1>Fortnite Fortnite Let's Go</h1>
+                                    <h2>We get it all night, all night for show</h2>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+    
+                </div>
+
+            </div>
+        </main>    
+        
+        <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
+
+    </body>
+    <script src="global/scripts/scripts.js"></script>
+    <script src="global/scripts/theme.js"></script>
+    <script src="global/scripts/games.js"></script>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+    }
+    </script>
+    <audio id="audio" src="global/media/audio/boom.mp3"></audio>
+</html>

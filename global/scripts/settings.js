@@ -9,12 +9,14 @@ function settingPage(selection){
     document.getElementById("settingStyle").style.display = "none";
     document.getElementById("settingLogin").style.display = "none";
     document.getElementById("settingLogout").style.display = "none";
+    document.getElementById("settingCredits").style.display = "none";
 
     document.getElementById("navHome").style.backgroundColor = "";
     document.getElementById("navStyle").style.backgroundColor = "";
     document.getElementById("navLogin").style.backgroundColor = "";
     document.getElementById("navLogout").style.backgroundColor = "";
     document.getElementById("navAccount").style.backgroundColor = "";
+    document.getElementById("navCredits").style.backgroundColor = "";
 
     switch(selection){
         case 0: {
@@ -40,6 +42,11 @@ function settingPage(selection){
         case 4: {
             document.getElementById("settingAccount").style.display = "block";
             document.getElementById("navAccount").style.backgroundColor = "#bb3e00";
+            break;
+        }
+        case 5: {
+            document.getElementById("settingCredits").style.display = "block";
+            document.getElementById("navCredits").style.backgroundColor = "#bb3e00";
             break;
         }
     }
