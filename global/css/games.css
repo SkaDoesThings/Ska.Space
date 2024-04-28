@@ -175,24 +175,30 @@
   
   .gameCardList div:hover .gameCardList img {
     background-color: rgba(255, 83, 45, 0.243);
-  
   }
   
-  .gameCardList div:hover  {
-    transform: rotate3d(-180, 100, 10, 0.08turn) scale(1.1);
-  }
+  .gameCardList img:hover  {
+      transform: rotateX(30deg) scaleX(1.01) scaleY(1.19) translateY(5px);
+  } 
+
+  .gameCardList img:hover {
+    box-shadow: 0px 12px 8px 8px rgba(0, 0, 0, 0.2);
+  } 
+
   
   
   .gameCardList img {
-    border: 2px solid #bb3e00;
     opacity: 1;
     display: block;
     width: 220px;
     height: 330px;
+    border-radius: 0px;
     object-fit: cover;
     transition: .5s ease;
     backface-visibility: hidden;
     cursor: pointer;
+    box-shadow: 0px 8px 8px 2px rgba(0, 0, 0, 0.2);
+
   }
   
   
@@ -200,13 +206,13 @@
     display: inline-block;
     position: relative;
     width: auto;
-    padding: 3px;
+    padding: 1px;
     padding-left: 15px;
     padding-right: 15px;
     background-color: #3D4450;
     border-radius: 5px;
     font-size: 15px;
-    margin-top: -20px;
+    top: -15px;
   }
   
   
@@ -249,11 +255,7 @@
     #gameListContainer{
         padding-bottom: 200px;
     }
-  
-    .gameCardList img {
-      width: 170px;
-      height: 240px;
-    }
+
   }
   
   
