@@ -197,6 +197,7 @@ window.onclick = function(event) {
 
 // Get the button that opens the modal
 var btn = document.querySelectorAll("button.modal-button");
+var btn = document.querySelectorAll("img.modal-button");
 
 // All page modals
 var modals = document.querySelectorAll('.modal');

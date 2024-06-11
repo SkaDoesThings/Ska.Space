@@ -128,11 +128,11 @@
 }
 
 .imageTwo {
-    background-image: url('../../../global/media/images/landscape.jpg');
+    background-image: url('../../../global/media/banners/landscape.webp');
 }
 
 .imageThree {
-    background-image: url('../../global/media/images/sky.png');
+    background-image: url('../../global/media/banners/sky.webp');
 }
 
 .imageFour {
@@ -140,7 +140,7 @@
 }
 
 .imageFive {
-    background-image: url('../../global/media/images/dusk.jpg');
+    background-image: url('../../global/media/banners/dusk.webp');
 }
 
 

@@ -41,6 +41,7 @@ main{
 
 [data-theme='dark'] #lobby {
     background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
+    background-attachment: fixed;
 }
 
 article{
@@ -420,6 +421,7 @@ nav a:active, .siteName:active{
 }
 
 @media only screen and (min-width: 800px) {
+
     [data-theme='dark'] #navbox.transparency {
         background-color: rgba(59, 57, 57, 0.0);
         -webkit-backdrop-filter: blur(0px);
@@ -482,7 +484,7 @@ nav a:active, .siteName:active{
 
     #page{
         margin-top: -50px;
-        padding-bottom: 50px;
+        padding-bottom: 75px;
     }
 
     #navbox{
@@ -734,6 +736,7 @@ nav a:active, .siteName:active{
     justify-content: center;
     border-radius: 10px;
     max-width: 1300px;
+    transition: width 0.2s;
 }
 
 .sizeLarger{
@@ -821,8 +824,11 @@ div article{
     border: 2px solid gray;
     border-radius: 10px;
     color: white;
-    cursor: pointer;
     transition: scale 0.1s;
+}
+
+.modal-button{
+    cursor: pointer;
 }
 
 .modalButton:hover{
@@ -989,7 +995,7 @@ input[type=submit]:hover{
     .onMobile{
         display: none;
         visibility: hidden;
-    }
+    } 
 }
 
 @media only screen and (max-width: 800px) {

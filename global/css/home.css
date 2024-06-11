@@ -18,21 +18,6 @@
   transition: opacity 0.3s, transform 0.6s;
 }
 
-#lobbyArticle{
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
-  z-index: -1;
-}
-
-.pageLobby #bannerMain{
-  height: 102vh;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-
 .mainImage{
   width: 100px;
   height: 100px;
@@ -119,61 +104,6 @@
   transform: scale(1.1);
 }
 
-
-@keyframes bannerReveal {
-  0% {
-    transform: translateY(-50px);
-    scale: 0.9;
-  }
-  50%{
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(0px);
-    scale: 1;
-  }
-}
-
-
-
-@keyframes clickMeHome {
-    0% {
-      margin-top: -120px;
-    }
-    50% {
-      margin-top: -125px;
-    }
-    100% {
-      margin-top: -120px;
-    }
-  }
-
-
-  /*It's Mobilin' Time*/
-
-@media only screen and (max-width: 800px) {
-  #bannerMain{
-    height: 350px;
-
-  }
-
-  .bannerContent{
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-
-  .mainText{
-    font-size: 30pt;
-  }
-
-  .mainImage{
-    width: 80px;
-    height: 80px;
-  }
-}
-
 .homeSpace a{
   display: inline-flex;
   flex-direction: column;
@@ -257,20 +187,6 @@
 }
 
 
-@keyframes backgroundEffect {
-  0%{
-    opacity: 1;
-  }
-
-  50%{
-    opacity: 0.9;
-  }
-
-  100%{
-    opacity: 1;
-  }
-}
-
 
 /*It's Mobilin' Time*/
 
@@ -305,6 +221,14 @@
 }
 
 @media only screen and (max-width: 800px) {
+  #bannerMain{
+    height: 350px;
+  }
+
+  .bannerContent{
+    top: 8%;
+  }
+
   #lobbyArticle{
     top: 75px;
   }
@@ -314,6 +238,58 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .mainText{
+    font-size: 30pt;
+  }
+
+  .mainImage{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+@keyframes bannerReveal {
+  0% {
+    transform: translateY(-50px);
+    scale: 0.9;
+  }
+  50%{
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+    scale: 1;
+  }
+}
+  
+@keyframes clickMeHome {
+  0% {
+    margin-top: -100px;
+  }
+  50% {
+    margin-top: -105px;
+  }
+  100% {
+    margin-top: -100px;
+  }
+}
+
+@keyframes backgroundEffect {
+  0%{
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 0.9;
+  }
+
+  100%{
+    opacity: 1;
+  }
+  }
+  
 
 @media (prefers-reduced-motion) {
   #bannerContainer, .bannerButton {

@@ -29,6 +29,36 @@ body{
   transform: rotate(480deg);
 }
 
+.bubbleList{
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22pt;
+
+}
+
+.bubbleList div{
+  width: 280px;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: rgba(246, 171, 241, 0.1);
+  border: 2px solid #f6b6ff;
+  border-radius: 20px;
+  margin: 10px;
+  transition: width 0.2s;
+}
+
+.bubbleList span{
+  font-size: 36pt;
+  margin: 0px;
+}
+
+.bubbleList p{
+  font-size: 16pt;
+  margin: 5px;
+  transition: font-size 0.2s;
+}
 
 .sailImage{
   width: 85px;
@@ -65,13 +95,6 @@ body{
     background-size: 40px;
 }
 
-.mainJoinGuilded{
-    border: 4px solid #F5C400;
-    background: url(../../../global/media/images/external/logoGuilded.png) no-repeat 8px 5px;
-    background-position: 8px 5px;
-    background-size: 40px;
-}
-
 .mainJoinSteam{
   border: 4px solid #0275A5;
   background: url(../../../global/media/images/external/logoSteam.png) no-repeat 8px 4px;
@@ -80,11 +103,6 @@ body{
 
 .mainJoinDiscord:hover{
   background: #5865F2 url(../../../global/media/images/external/logoDiscordHover.png) no-repeat 8px 5px;
-  background-size: 40px;
-}
-
-.mainJoinGuilded:hover{
-  background: #F5C400 url(../../../global/media/images//external/logoGuildedHover.png) no-repeat 8px 5px;
   background-size: 40px;
 }
 
@@ -102,7 +120,7 @@ body{
   margin-top: 20px;
   margin-bottom: 20px;
   transition: width 0.2s, height 0.2s, border-radius 0.6s;
-}
+}z
 
 [data-theme='light'] .listbox{
   background-color: rgb(219, 219, 219);
@@ -128,6 +146,19 @@ body{
 }
 
 @media only screen and (max-width: 700px) {
+  .bubbleList div{
+    width: 90%;
+    font-size: 12pt;
+  }
+
+  .bannerContent h1{
+    font-size: 5vw;
+  }
+
+  .bubbleList p{
+    font-size: 14pt;
+  }
+
   .inviteButton{
       width: 64px;
       text-indent: -9999px;
