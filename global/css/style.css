@@ -1,6 +1,7 @@
 /*=-=-=-=-=-=-=-=-= Main Styles =-=-=-=-=-=-=-=-=*/
 html{
     scroll-behavior: smooth;
+    min-height: 100%;
 }
 
 body {
@@ -41,7 +42,6 @@ main{
 
 [data-theme='dark'] #lobby {
     background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
-    background-attachment: fixed;
 }
 
 article{
@@ -57,6 +57,12 @@ article{
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s, background-color 0.5s;
     animation: pageEntryway 1s forwards;
+    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
+
+}
+
+article article{
+    box-shadow: none;
 }
 
 .contentClear article {
@@ -70,7 +76,7 @@ article{
 
 .contentTransparent article {
     background-color: rgb(42, 40, 40, 0.5);
-    border: 0px;
+    border: 1px solid rgb(97, 95, 95);
 }
 
 .contentTransparent .columnContainer article {
@@ -210,7 +216,7 @@ nav{
 }
 
 #linkContainer a.active{
-    color: rgb(255, 70, 70) !important; 
+    color: rgb(252, 100, 100) !important; 
     text-decoration: underline;
 }  
 
@@ -261,34 +267,29 @@ nav a:active, .siteName:active{
 }
 
 /*Start of Mobile Support*/
-.navbutton{
+#navToggle{
+    display: none;
     background: rgb(235, 235, 235) url('../media/images/navburger.png') no-repeat center;
     width: 50px;
     height: 40px;
-    margin-top: -100px;
     margin-left: 3px;
     border-radius: 10px;
     border: 2px rgb(163, 163, 163) solid;
     background-size: 40px;
     float:left;
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
     transition: margin-top 0.5s;
 }
 
-#closeNav{
-    display: none;
-}
-
-.navbutton:hover{
+#navToggle:hover{
     background-color: rgb(246, 151, 151);
 }
 
 .navCenter{
     position: fixed;
     left: calc((100% - 50px) / 2);
-}
-
-.dropdown-content h1 {
-    margin: 0px;
 }
 
 .dropdown-content img, .spaceNavIcon{
@@ -368,10 +369,6 @@ nav a:active, .siteName:active{
     z-index: 3;
 }
 
-.show {
-    display: block;
-}
-
 /*Go to top of page*/
 
 #buttonTop{
@@ -383,6 +380,7 @@ nav a:active, .siteName:active{
     height: 50px;
     position: fixed;
     right: 0;
+    bottom: 0;
     margin-right: -100px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -421,7 +419,6 @@ nav a:active, .siteName:active{
 }
 
 @media only screen and (min-width: 800px) {
-
     [data-theme='dark'] #navbox.transparency {
         background-color: rgba(59, 57, 57, 0.0);
         -webkit-backdrop-filter: blur(0px);
@@ -429,15 +426,10 @@ nav a:active, .siteName:active{
         box-shadow: none;
     }
 
-    
     [data-theme='dark'] .blur {
         background-color: rgba(59, 57, 57, 0.7) !important;
         -webkit-backdrop-filter: blur(25px) !important;
         backdrop-filter: blur(25px) !important;
-    }
-    
-    .navbutton{
-        margin-top: -100px;
     }
 
     #myDropdown{
@@ -468,10 +460,6 @@ nav a:active, .siteName:active{
         float: right !important; 
         margin-right: 8px !important;
     }
-
-    #buttonTop{
-        bottom: 0;
-    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -491,12 +479,11 @@ nav a:active, .siteName:active{
         width: 100%;
         bottom: 0;
         border-top: 1px solid #d3d3d3;
+        overflow: hidden;
     }
 
-    .navbutton{
-        position: absolute;
-        left: 0;
-        margin-top: 10px;
+    #navToggle{
+        display: block;
     }
 
     #linkContainer{
@@ -809,9 +796,11 @@ div article{
 
 .viewable{
     cursor: pointer;
-    transition: scale 0.2s;
 }
 
+.viewable:active{
+    scale: 1.1;
+}
 
 /*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 

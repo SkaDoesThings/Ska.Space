@@ -1,8 +1,5 @@
 body{
   background: linear-gradient(45deg, rgb(40, 51, 98), rgb(119, 93, 160));
-  height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .necoArc{

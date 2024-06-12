@@ -25,7 +25,6 @@ checkbox.addEventListener('change', ()=> {
     }
 });
 
-
 //Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
 document.addEventListener('DOMContentLoaded', function() {
   if (!window.AnimationEvent) { return; }
@@ -70,7 +69,6 @@ function closeMenu(selection) {
   }
 }
 
-
 document.querySelector("#page").addEventListener('click', (e, checkbox = document.querySelector('input'))=>{ 
   if(checkbox.checked) { checkbox.checked = false; e.stopPropagation(); }
 });
@@ -97,30 +95,31 @@ function backgroundViewer(given){
     fullPage.style.display = 'block';
 }
 
+var opened = false;
 //Mobile navigation
 function openNav() {
-  document.getElementById("navbox").style.height = "401px";
-  document.getElementById("linkContainer").style.height = "400px";
-
-  document.getElementById("navbox").style.borderTopLeftRadius = "20px";
-  document.getElementById("navbox").style.borderTopRightRadius = "20px";
+  if (opened == false){
+    document.getElementById("navbox").style.height = "401px";
+    document.getElementById("linkContainer").style.height = "400px";
   
-  document.getElementById("openNav").style.display = "none";
-  document.getElementById("closeNav").style.display = "block";
+    document.getElementById("navbox").style.borderTopLeftRadius = "20px";
+    document.getElementById("navbox").style.borderTopRightRadius = "20px";
+
+    document.getElementById("page").style.opacity = "0.5";
+  }
+  else if (opened == true){
+      closeThatNav();
+  }
+  opened = !opened;
 }
 
-function closeNav() {
+function closeThatNav() {
   document.getElementById("navbox").style.height = "60px";
 
   document.getElementById("navbox").style.borderTopLeftRadius = "0px";
   document.getElementById("navbox").style.borderTopRightRadius = "0px";
 
-  document.getElementById("closeNav").style.display = "none";
-  document.getElementById("openNav").style.display = "block";
-}
-
-function clickPage() {
-  closeNav();
+  document.getElementById("page").style.opacity = "1";
 }
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar
@@ -128,47 +127,14 @@ function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.getElementById("buttonTop").style.marginRight = "15px";
       document.getElementById("navbox").classList.remove('transparency');
-
-      document.getElementById("page").classList.add('backgroundScrollBlur');
-
-      document.getElementById("lobbyBanner").style.opacity = "0";
-      document.getElementById("lobbyBanner").style.transform = "scale(0) translateY(-1000px)";
   }
     else{
-      closeThatNav();
-
+      document.getElementById("buttonTop").style.marginRight = "-100px";
       document.getElementById("navbox").classList.add('transparency');
-      document.getElementById("lobbyBanner").style.opacity = "1";
-      document.getElementById("lobbyBanner").style.transform = "scale(1) translateY(0px)";
   }
 }
-
-function closeThatNav() {
-    document.getElementById("closeNav").style.dislay = "none";
-    document.getElementById("openNav").style.dislay = "block";
-    document.getElementById("navbox").style.borderTopLeftRadius = "0px";
-    document.getElementById("navbox").style.borderTopRightRadius = "0px";
-    document.getElementById("navbox").style.height = "60px";
-    document.getElementById("buttonTop").style.marginRight = "-100px";
-}
-
-//Transitions
-
-function pageTransitionOut() {
-  closeThatNav();
-  document.getElementById("page").style.animation = "pageMoveOut 0.3s ease 1 normal forwards";
-  }
-
-function spaceTransitionOut() {
-  closeThatNav();
-  document.getElementById("navbox").style.height = "50px";
-
-  document.getElementById("page").style.animation = "spaceMoveOut 0.6s ease 1 normal forwards";
-}
-
 
 //To Top Button
-
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -176,33 +142,23 @@ function topFunction() {
 
 
 //Drop Down Menu
+var dropdown = false;
 function dropdownFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-  var dropdowns = document.getElementsByClassName("dropdown-content");
-  var b;
-  for (b = 0; b < dropdowns.length; b++) {
-      var openDropdown = dropdowns[b];
-      if (openDropdown.classList.contains('show')) {
-      openDropdown.classList.remove('show');
-      }
-    }
+  if (dropdown == false) {
+    document.getElementById("myDropdown").style.display = "block";
   }
+  else if (dropdown == true){
+    document.getElementById("myDropdown").style.display = "none";
+  }
+  dropdown = !dropdown;
 }
-
 
 //Modal Viewer
-
-// Get the button that opens the modal
 var btn = document.querySelectorAll("button.modal-button");
 var btn = document.querySelectorAll("img.modal-button");
 
-// All page modals
 var modals = document.querySelectorAll('.modal');
 
-// Get the <span> element that closes the modal
 var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
@@ -232,22 +188,7 @@ window.onclick = function(event) {
     }
 }
 
-
-
-window.addEventListener("scroll", function () {
-  var box = document.getElementById("box");
-  var position = box.getBoundingClientRect();
-  if (position.top < window.innerHeight && 
-  position.bottom >= 0) {
-      box.classList.add("bounce");
-  } else {
-      box.classList.remove("bounce");
-  }
-});
-
-
 // Page Content Swaps
-
 function inlinePageInfo(selection) {
   document.getElementById("inlineInfoMain").style.display = "none";
   document.getElementById("inlineInfoAbout").style.display = "none";
