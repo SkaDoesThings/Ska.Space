@@ -225,39 +225,39 @@
 }
 
 .mainJoinSteam{
-    border: 4px solid #0275A5;
-    background: url(../media/images/external/logoSteam.png) no-repeat center;
+    border: 2px solid #0275A5;
+    background: url(../media/icons/logos/logoSteam.webp) no-repeat center;
 }
 
 .mainJoinDiscord{
-    border: 4px solid #5865F2;
-    background: url(../media/images/external/logoDiscord.png) no-repeat center;
+    border: 2px solid #5865F2;
+    background: url(../media/icons/logos/logoDiscord.webp) no-repeat center;
     background-size: 32px;
 }
 
 .mainJoinInstagram{
-    border: 4px solid #f258af;
-    background: url(../media/icons/logos/instagram.png) no-repeat center;
+    border: 2px solid #f258af;
+    background: url(../media/icons/logos/instagram.webp) no-repeat center;
 }
 
 .mainJoinTwitter{
-    border: 4px solid #589df2;
-    background: url(../media/icons/logos/twitter.png) no-repeat center;
+    border: 2px solid #589df2;
+    background: url(../media/icons/logos/twitter.webp) no-repeat center;
     transition: background-color 0.2s, border 0.2s;
 }
 
 .mainJoinYouTube{
-    border: 4px solid #f25858;
-    background: url(../media/icons/logos/youtube.png) no-repeat center;
+    border: 2px solid #f25858;
+    background: url(../media/icons/logos/youtube.webp) no-repeat center;
 }
 
 .mainJoinSteam:hover{
-    background: #0275A5 url(../../../global/media/images/external/logoSteamHover.png) no-repeat center;
+    background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
     background-size: 42px;
 }
 
 .mainJoinDiscord:hover{
-    background: #5865F2 url(../../../global/media/images/external/logoDiscordHover.png) no-repeat center;
+    background: #5865F2 url(../media/icons/logos/logoDiscordHover.webp) no-repeat center;
     background-size: 40px;
 }
 
@@ -266,15 +266,14 @@
 }
 
 .mainJoinTwitter:hover{
-    border: 4px solid #000000;
-    background: #000000 url(../media/icons/logos/x.png) no-repeat center;
+    border: 2px solid #000000;
+    background: #000000 url(../media/icons/logos/x.webp) no-repeat center;
     background-size: 40px;
 }
 
 .mainJoinYouTube:hover{
     background-color: #762a2a;
 }
-
 
 
 /*It's Mobilin' Time*/

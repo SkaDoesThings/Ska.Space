@@ -155,7 +155,7 @@ function dropdownFunction() {
 
 //Modal Viewer
 var btn = document.querySelectorAll("button.modal-button");
-var btn = document.querySelectorAll("img.modal-button");
+var imgbtn = document.querySelectorAll("img.modal-button");
 
 var modals = document.querySelectorAll('.modal');
 
@@ -169,6 +169,16 @@ for (var i = 0; i < btn.length; i++) {
     modal.style.display = "block";
  }
 }
+
+
+// When the user clicks img button, open the modal
+for (var i = 0; i < imgbtn.length; i++) {
+  imgbtn[i].onclick = function(e) {
+     e.preventDefault();
+     modal = document.querySelector(e.target.getAttribute("href"));
+     modal.style.display = "block";
+  }
+ }
 
 // When the user clicks on <span> (x), close the modal
 for (var i = 0; i < spans.length; i++) {
