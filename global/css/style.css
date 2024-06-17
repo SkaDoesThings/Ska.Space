@@ -1147,10 +1147,10 @@ input[type=submit]:hover{
 
 @keyframes delayedMoveIn {
     0%{ 
-        transform: translateY(130px);
+        transform: translateY(90px);
     }
     75%{
-        transform: translateY(130px);
+        transform: translateY(90px);
     }
     100%{
         transform: translateY(0px);
