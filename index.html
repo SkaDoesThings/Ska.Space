@@ -13,13 +13,13 @@
     <body id="lobby">
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
-            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Desktop Open Menu" alt="Button to Open Spaces Menu">
             <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
             <span>Ska.Space</span>
             </button>
-            <button onclick="openNav()" id="navToggle"></button>
+            <button onclick="openNav()" id="navToggle" title="Mobile Open Menu"></button>
             <img src="global/media/images/infologo.webp" class="navIcon iconTypeGear iconLeft offMobile viewable" alt="Logo for Lobby"/>
-            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme hoverText slideDown"><hover-text>Theme</hover-text></label>
             <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
             <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
@@ -79,8 +79,8 @@
                         <h2>Welcome to my grand domain</h2><br>
                         <span>This branches off into many different spaces that I developed :3</span><br><br>
                         <div class="homeSpace"> 
-                            <a href="galleon/home.html"><img src="global/media/images/glogo.webp">Galleon</a>
-                            <a href="seal/search.html"><img src="global/media/images/sealco.png">Seal Corp</a>
+                            <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community</hover-text>Galleon</a>
+                            <a href="seal/search.html" class="hoverText slideUp"><img src="global/media/images/sealco.png"><hover-text>Seal Search</hover-text>Seal Corp</a>
                         </div>
                     </article>
                     <article>
@@ -89,14 +89,15 @@
                             <div class="profileCard nitro">
                                 <div class="profileHeader">
                                     <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
-                                    <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP Credits"></button>
+                                    <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP Credits">
                                     <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
-                                    <div class="userIcons"> 
+                                    <div class="userIcons hoverText slideUp"> 
                                         <img src="global/media/icons/emotes/stand.webp">
                                         <img src="global/media/icons/emotes/snap.webp">
                                         <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play()">
                                         <img src="global/media/icons/emotes/sip.webp">
+                                        <hover-text>Silly Badges</hover-text>
                                     </div>
                                 </div>
                                 <div class="profileBody">
@@ -107,17 +108,17 @@
                                     <span class="bio">🥕 Spencer here, 19y/o, I do things sometimes<br>😺 I enjoy games, anime, tech, programming, hanging out, and many other things!</span><br><span>🌐 Started the website during August 2021</span><br><br>
                                     <span>My Socials</span><br>
                                     <div class="socials centered">
-                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam"></a>
-                                        <a href="galleon/home.html" target="_blank" class="mainJoinDiscord"></a>
-                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram"></a>
-                                        <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter"></a>
-                                        <a href="https://www.youtube.com/channel/UCNqXZ_QuugIEXhegDB7W6HA" target="_blank" class="mainJoinYouTube"></a>
+                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
+                                        <a href="galleon/home.html" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
+                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
+                                        <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                        <a href="https://www.youtube.com/channel/UCNqXZ_QuugIEXhegDB7W6HA" target="_blank" class="mainJoinYouTube hoverText slideUp"><hover-text>Ska</hover-text></a>
                                     </div><br><br>
                                     <span>My Lists</span><br><br>
                                     <div class="links centered">
-                                        <a href="games.html"><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
-                                        <a href="https://anilist.co/user/ska" target="_blank"><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
-                                        <a href="https://soundcloud.com/skuwu" target="_blank"><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
+                                        <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
+                                        <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
+                                        <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
                                     </div><br>
                                 </div>
                             </div>
@@ -126,8 +127,9 @@
                 </div>
                 <p class="centered">Designed and tested for <a href="https://www.firefox.com/" target="_blank">Firefox</a> <3</p>
             </article>
-            <div class="theSilly">
+            <div class="theSilly hoverText slideUp">
                 <img src="global/media/images/ska/skaart.webp">
+                <hover-text>the silly</hover-text>
             </div>
         </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>

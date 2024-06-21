@@ -181,6 +181,7 @@
 }
 
 .links a{
+    width: 70px;
     padding: 5px;
     margin: 3px;
     background-color: #00000015;
