@@ -95,7 +95,7 @@
                                     <div class="userIcons hoverText slideUp"> 
                                         <img src="global/media/icons/emotes/stand.webp">
                                         <img src="global/media/icons/emotes/snap.webp">
-                                        <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play()">
+                                        <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
                                         <img src="global/media/icons/emotes/sip.webp">
                                         <hover-text>Silly Badges</hover-text>
                                     </div>
@@ -127,7 +127,7 @@
                 </div>
                 <p class="centered">Designed and tested for <a href="https://www.firefox.com/" target="_blank">Firefox</a> <3</p>
             </article>
-            <div class="theSilly hoverText slideUp">
+            <div class="theSilly hoverText slideUp" onclick="play(1)">
                 <img src="global/media/images/ska/skaart.webp">
                 <hover-text>the silly</hover-text>
             </div>
@@ -139,10 +139,21 @@
 	<script>
 		window.onscroll = function() {scrollFunction()};
 
-        function play() {
-        var audio = document.getElementById("audio");
+        var audio;
+        function play(selection) {
+        switch(selection) {
+            case 0: {
+                audio = document.getElementById("audioBoom");
+                break;
+            }
+            case 1: {
+                audio = document.getElementById("audioYippee");
+                break;
+            }
+        }
         audio.play();
     }
 	</script>
-    <audio id="audio" src="global/media/audio/boom.mp3"></audio>
+    <audio id="audioBoom" src="global/media/audio/boom.mp3"></audio>
+    <audio id="audioYippee" src="global/media/audio/yippee.mp3"></audio>
 </html>

@@ -1203,7 +1203,7 @@ input[type=submit]:hover{
         transform: translateY(90px);
     }
     100%{
-        transform: translateY(0px);
+        transform: translateY(-4px);
     }
 }
 
@@ -1225,7 +1225,7 @@ input[type=submit]:hover{
         scroll-behavior: none;
     }
 
-    main, article, .fadeOut{
+    main, article, .fadeOut, .theSilly{
         animation-duration: 0s;
     }
 
