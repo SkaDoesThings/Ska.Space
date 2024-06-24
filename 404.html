@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>404 Page - Ska.Space</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/home.css">
+        <link rel="stylesheet" href="fun/css/rooms.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp"/>
+    </head>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Desktop Open Menu" alt="Button to Open Spaces Menu">
+            <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+            <span>Ska.Space</span>
+            </button>
+            <button onclick="openNav()" id="navToggle" title="Mobile Open Menu"></button>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme hoverText slideDown"><hover-text>Theme</hover-text></label>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+            <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="index.html">404!</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="index.html"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="galleon/home.html"><img src="global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
+                    <a href="seal/search.html"><img src="global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage">
+            <div id="leavingBackground">
+                <div id="leavingModel">
+                    <div class="modal-header" onclick="closeMenu(0)">
+                        <span class="close">×</span>
+                    </div>
+                    <span class="loader"></span><br>
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <main id="page" class="hasBackground">
+            <article class="centered">
+                <span class="loader"></span><br>
+                <span class="mainText bold white">404</span>
+                <h1>Page Not Found</h1>
+                <p>You slipped into the backrooms while looking for your page</p>
+                <p>Want to take a ~d i v e~?</p>
+                <div class="homeSpace"> 
+                    <a href="index.html">🏠 Return Home</a>
+                    <div onclick="history.back()"><a>⬅️ Previous Page</a></div>
+                </div>
+            </article>
+        </main>
+    </body>
+    <script src="global/scripts/scripts.js"></script>
+    <script src="global/scripts/theme.js"></script>
+    <audio id="audioBoom" src="global/media/audio/boom.mp3"></audio>
+    <audio id="audioYippee" src="global/media/audio/yippee.mp3"></audio>
+</html>
