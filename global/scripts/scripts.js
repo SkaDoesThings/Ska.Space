@@ -25,6 +25,9 @@ checkbox.addEventListener('change', ()=> {
     }
 });
 
+
+var fader = document.getElementById('leavingPage');
+fader.classList.add('fadeIn');
 //Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
 document.addEventListener('DOMContentLoaded', function() {
   if (!window.AnimationEvent) { return; }
@@ -36,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       continue;
   }
   anchors[idx].addEventListener('click', function(event) {
-    var fader = document.getElementById('leavingPage'),
         anchor = event.currentTarget;
     
     var listener = function() {
@@ -47,7 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     event.preventDefault();
     closeThatNav();
+
+    fader.classList.remove('fadeIn');
     fader.classList.add('fadeOut');
+    fader.style.zIndex = "2";
       });
     }
 });
@@ -58,16 +63,10 @@ window.addEventListener('pageshow', function (event) {
   }
   var fader = document.getElementById('leavingPage');
   fader.classList.remove('fadeOut');
+  fader.style.zIndex = "-1";
+  fader.style.opacity = "0"
 });
 
-function closeMenu(selection) {
-  switch(selection){
-    case 0: {
-      document.getElementById("leavingPage").style.visibility = "hidden";
-      break;
-    }
-  }
-}
 
 document.querySelector("#page").addEventListener('click', (e, checkbox = document.querySelector('input'))=>{ 
   if(checkbox.checked) { checkbox.checked = false; e.stopPropagation(); }
@@ -104,8 +103,6 @@ function openNav() {
   
     document.getElementById("navbox").style.borderTopLeftRadius = "20px";
     document.getElementById("navbox").style.borderTopRightRadius = "20px";
-
-    document.getElementById("page").style.opacity = "0.5";
   }
   else if (opened == true){
       closeThatNav();
@@ -118,8 +115,6 @@ function closeThatNav() {
 
   document.getElementById("navbox").style.borderTopLeftRadius = "0px";
   document.getElementById("navbox").style.borderTopRightRadius = "0px";
-
-  document.getElementById("page").style.opacity = "1";
 }
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar

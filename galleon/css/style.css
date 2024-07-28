@@ -31,8 +31,6 @@ body{
   display: block;
   text-align: center;
   text-decoration: none;
-  font-size: 22pt;
-
 }
 
 .bubbleList div{
@@ -47,12 +45,12 @@ body{
 }
 
 .bubbleList span{
-  font-size: 36pt;
+  font-size: 26pt;
   margin: 0px;
 }
 
 .bubbleList p{
-  font-size: 16pt;
+  font-size: 11pt;
   margin: 5px;
   transition: font-size 0.2s;
 }

@@ -169,6 +169,11 @@ img {
     filter: invert(0);
 }
 
+video {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+  }
 
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
@@ -295,6 +300,7 @@ nav a:active, .siteName:active{
 .dropdown-content img, .spaceNavIcon{
     width: 32px;
     height: 32px;
+    margin-right: 5px;
 }
 
 /*Nav Icon Zone*/
@@ -540,67 +546,28 @@ nav a:active, .siteName:active{
   
 
 .fadeOut{
-    display: block !important;
-    animation: leavingDivAnimation 0.2s normal forwards;
+    animation: enteringAnimation 0.2s normal forwards;
 }
 
-#leavingPage, #leavingBackground{
-    width: 100vw;
-    height: 110vh;
+.fadeIn{
+    animation: leavingAnimation 0.3s normal forwards;
 }
 
 #leavingPage{
-    display: none;
+    width: 100vw;
+    height: 110vh;
     background-color:rgb(44, 40, 40);
     position: fixed;
     margin: auto;
-    z-index: 2;
-}
-
-#leavingBackground{
-    position: absolute;
-    background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
-    background-size: 4em 4em;
-    background-color:rgb(44, 40, 40);
-    animation: backgroundLoader 1s infinite;
-}
-
-#leavingModel{
     display: block;
-    position: fixed;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-color:rgb(44, 40, 40);
-    border: 3px solid white;
-    border-radius: 20px;
-    width: 300px;
-    height: 200px;
+    opacity: 1;
+    z-index: -1;
 }
 
-#leavingPage .modal-header{
-    background: none;
-    height: 20px;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+[data-theme="light"] #leavingPage {
+    background-color: rgb(235, 235, 235);
 }
 
-#leavingPage .close{
-    margin-top: -10px;
-}
-
-#stuckLoading{
-    opacity: 0;
-    animation: stuckLoading 7s forwards;
-    text-align: center;
-}
-
-#stuckLoading a{
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 /*Thanks to https://cssloaders.github.io*/
 
@@ -636,67 +603,6 @@ nav a:active, .siteName:active{
       transform: rotateY(70deg);
       animation-delay: -.4s;
     }
-
-@keyframes backgroundLoader {
-        0% {
-            background-position-x: 0px;
-        }
-        100%{
-            background-position-x: -190px;
-        }
-    }
-    
-    
-
-@keyframes leavingDivAnimation {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-
-@keyframes stuckLoading {
-        0%{
-            opacity: 0;
-        }
-        90%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-}
-
-  @keyframes spin {
-    0%,
-    100% {
-      box-shadow: .2em 0px 0 0px currentcolor;
-    }
-    12% {
-      box-shadow: .2em .2em 0 0 currentcolor;
-    }
-    25% {
-      box-shadow: 0 .2em 0 0px currentcolor;
-    }
-    37% {
-      box-shadow: -.2em .2em 0 0 currentcolor;
-    }
-    50% {
-      box-shadow: -.2em 0 0 0 currentcolor;
-    }
-    62% {
-      box-shadow: -.2em -.2em 0 0 currentcolor;
-    }
-    75% {
-      box-shadow: 0px -.2em 0 0 currentcolor;
-    }
-    87% {
-      box-shadow: .2em -.2em 0 0 currentcolor;
-    }
-  }
-
   
 
 /*=-=-=-=-=-=-=-= In-Page Navs =-=-=-=-=-=-=-=*/
@@ -712,6 +618,19 @@ nav a:active, .siteName:active{
 
 #inlineInfoAbout{
     display: none;
+}
+
+.linkButton{
+    text-decoration: none;
+    width: auto;
+    font-size: 16pt;
+    color: white;
+}
+
+.linkButton img{
+    width: 32px;
+    height: 32px;
+    padding-right: 5px;
 }
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
@@ -1215,6 +1134,76 @@ input[type=submit]:hover{
     100% {
         margin-top: 60px;
         opacity: 1;
+    }
+}
+
+
+@keyframes backgroundLoader {
+    0% {
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: -190px;
+    }
+}
+
+
+@keyframes leavingAnimation {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+@keyframes enteringAnimation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes stuckLoading {
+    0%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
     }
 }
 

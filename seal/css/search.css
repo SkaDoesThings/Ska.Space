@@ -166,6 +166,10 @@ form image{
     background-color: rgb(87, 87, 87, 0.7);
 }
 
+#customize span{
+    font-size: 8pt;
+}
+
 #customize .spaceNavIcon{
     margin-right: 5px;
 }

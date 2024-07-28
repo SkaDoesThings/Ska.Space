@@ -1,0 +1,426 @@
+/*Style*/
+
+#texttitle
+{
+    color: white;
+    font-size: 30px;
+}
+
+span, p, a, h1, h2{
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#text{
+    color: white;
+}
+
+#loginimage{
+    transition: margin-top 0.2s;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+
+
+/*Login*/
+
+body{
+    background-image:url("../global/media/backgrounds/desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#loginimage{
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    width: 256px;
+    height: 256px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#loginlist{
+    position: fixed; /* Sit on top of the page content */
+    background-color: rgba(50, 50, 50, 0.829);
+    width:400px;
+    height: 950px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.loginField{
+  background-color: rgba(78, 78, 78, 0.829);
+  margin-top: 30px;
+  width: 500px;
+  height: 100px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-size: 40pt;
+}
+
+#logingo{
+    font-size: 60px;
+    color:white;
+    text-decoration: none;
+    padding: 15px;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: -85px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#logingo:hover{
+    background-color: rgba(255, 146, 146, 0.829);
+}
+
+
+  
+/*Desktop*/
+
+#desktop{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+
+#start{
+    background-color: rgba(224, 236, 247, 0.75);
+
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+
+    width: 90%;
+    min-width: 435px;
+    max-width: 550px;
+    height: 70%;
+    min-height: 200px;
+    max-height: 600px;
+
+    bottom: calc(0% + 50px);
+    left: calc(0% + 3px);
+
+    position: fixed;
+    display: none;
+    z-index: 50;
+}
+
+
+#notify{
+    background-color: rgba(224, 236, 247, 0.75);
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+
+    width: 350px;
+    height: 90%;
+
+    bottom: calc(0% + 50px);
+    right: calc(0% + 5px);
+
+    position: fixed;
+    display: none;
+    z-index: 50;
+}
+
+.rectangle {
+    border: 1px solid #FF0000;
+    position: absolute;
+}
+
+
+/*Apps*/
+
+.app{
+    min-width: 350px;
+    min-height: 300px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    resize: both;
+    overflow: auto;
+    overflow-y: hidden;
+    padding-bottom: 30px;
+}
+
+
+#appSettings{
+    background-color: rgb(90, 90, 90);
+    width: 1500px;
+    height: 600px;
+}
+
+.appHeader{
+    width: 100%;
+    height: 30px;
+    background-color: rgba(224, 236, 247, 0.75);
+    border-bottom: 1px solid gray;
+    cursor: move;
+    z-index: 50px;
+}
+
+#appSeal{
+    width: 1500px;
+    height: 800px;
+}
+
+.webapp{
+    width: 100%;
+    height: 100%;
+}
+
+.appActions{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.appLi{
+    float: right;
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+    border-right: 1px solid gray;
+}
+
+.appLi:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.typeClose:hover{
+    background-color: rgba(255, 67, 67, 0.2);
+}
+
+
+/*Taskbar*/
+
+#navdiv{
+    position:fixed;
+      bottom: 0;
+      width: 100%;
+      height: 47px;
+      margin-right: -10px;
+      z-index: 60;
+  }
+  
+  .navUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(50, 50, 50, 0.529);
+
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+
+    margin-left: -10px;
+  }
+  
+  .navLi {
+    float: left;
+    border-right: 1px solid #bbb;
+  }
+  
+  .navLi:last-child {
+    border-right: none;
+  }
+  
+  .navLi a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .navLi a:hover {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  
+  
+  
+  #clock{
+    max-width: 600px;
+  }
+  
+  #date-time{
+    color: white;
+    float: right;
+    font-size: 13px;
+    padding-right:20px;
+  }
+  
+  #navright
+  {
+    float:right
+  }
+  
+  #startbutton{
+  padding: 0;
+  padding-right: 12px;
+  width: 100px;
+  }
+  
+  #startlogo{
+    width: 40px;
+    padding-left: 12px;
+    margin-left: -10px;
+  }
+  
+  #taskbaricon{
+    position:inherit;
+  width:24px;
+  height: 24px;
+  }
+
+
+/*Animations*/
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    75%{
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes popout {
+    0% {
+      transform: scale(1);
+    }
+    75%{
+      opacity: 0;
+    }
+    99%{
+      transform: scale(0.7);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes maximize {
+    0% {
+  
+    }
+    75%{
+  
+    }
+    100% {
+      top: calc(0%);
+      left: calc(0%);
+  
+      width: 100%;
+      height: calc(100% - 50px);
+    }
+  }
+  
+  @keyframes minimize {
+    0% {
+  
+    }
+    75%{
+      
+    }
+    99%{
+      margin-top: 20%;
+      opacity: 0
+    }
+    100% {
+      transform: scale(0.7);
+      margin-top: 0%;
+      opacity: 0
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translate(0, 700px)
+    }
+    75%{
+      transform: translate(0, 0)
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0)
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, 700px)
+    }
+  }
+  
+  
+  @keyframes slideRightToLeftIn {
+    0% {
+      opacity: 0;
+      transform: translate(700px, 0)
+    }
+    75%{
+      transform: translate(0, 0)
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideRightToLeftOut {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0)
+    }
+    100% {
+      opacity: 0;
+      transform: translate(700px, 0)
+    }
+  }
+  

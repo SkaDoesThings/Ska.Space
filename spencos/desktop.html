@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="system.css">
+    </head>
+    <body>
+        <!--Animation Div-->
+        <div id="content">
+
+            <!--Start Menu stored here-->
+            <div id="start">
+                <h1>Start</h1>
+                <a href="../index.html">Logout</a>
+            </div>
+
+            <!--Notifications stored here-->
+            <div id="notify">
+                <h1>Notifications</h1>
+            </div>
+
+            <!--Desktop, Holds Wallpaper and Apps-->
+            <div id="desktop" onclick="clickDesktop()">
+                <center><p id="texttitle">SpencOS Web</p></center>
+
+                <!--Apps are stored here-->
+                <div class="apps">
+                    <div class="app" id="appSeal">
+                        <div class="appHeader" id="appSealHeader">
+                            <ul class="appActions">
+                                <img src="../global/media/images/ska/wumpus.webp" style="width: 24px; height: 24px; margin: 3px">
+                                <span>Ska.Space</span>
+                                <li class="appLi typeClose" onclick="appFunction('Seal', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('Seal', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('Seal', 'minimize')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <embed type="text/html" src="../index.html" class="webapp">          
+                    </div>
+                </div>  
+
+                <div class="app" id="appSettings">
+                    <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                    <div class="appHeader" id="appSettingsHeader">
+                        <ul class="appActions">
+                            <img src="../global/media/icons/nav/settings.png" style="width: 24px; height: 24px; margin: 3px">
+                            <span>Settings</span>
+                            <li class="appLi typeClose" onclick="appFunction('Settings', 'close')"><a>x</a></li>
+                            <li class="appLi" onclick="appFunction('Settings', 'maximize')"><a>+</a></li>
+                            <li class="appLi" onclick="appFunction('Settings', 'minimize')"><a>-</a></li>
+                        </ul>
+                    </div>
+                    <div id="pageSettings">
+                        <div id="settingHome"><center>
+                            <span class="title">Home</span><br><br>
+                            <h2 class="title">Welcome {username here}</h2>
+                        </div></center>
+                    </div>
+                </div>
+            </div>
+
+            <!--Taskbar, Holds Potential Apps-->
+            <div id="navdiv">
+                <ul class="navUl">
+                    <li class="navLi" onclick="uiFunction('Start', 'open')"><a id="startbutton"><img src="../global/media/icons/logos/tree.png" id="startlogo">Start</a></li>
+                    <li class="navLi"><a onclick="appFunction('Seal', 'open')">Ska.Space</a></li>
+                    <li class="navLi"><a onclick="appFunction('Settings', 'open')">Settings</a></li>
+                    <li class="navLi"><a href="login.html">Page</a></li>
+                    <li class="navLi" id="navright" onclick="uiFunction('Notify', 'open')"><h1 id="date-time"></h1></li>
+                </ul>
+            </div>
+        </div>
+        <script src="system.js"></script>
+    </body>
+</html>
