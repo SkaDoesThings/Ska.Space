@@ -12,6 +12,7 @@ article{
     width: 80%;
     max-width: 1600px;
     margin-top: 200px;
+    box-shadow: none;
 }
 
 [data-theme='light'] article{

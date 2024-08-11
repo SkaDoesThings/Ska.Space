@@ -114,8 +114,12 @@ function dragElement(elmnt) {
 function clickDesktop() {
   switch(event.which) {
     case 1:
-      document.getElementById("start").style.animation = "slideOut 0.4s ease 1 normal forwards";
-      document.getElementById("notify").style.animation = "slideRightToLeftOut 0.4s ease 1 normal forwards";
+      if(UIStateStart = 1){
+        uiFunction("Start");
+      }
+      if(UIStateNotify = 1){
+        uiFunction("Notify");
+      }
       break;
     case 2:
       $('#desktop').html('Middle Mouse button pressed.');
@@ -132,22 +136,34 @@ function clickTaskbar() {
   
 }
 
-function uiFunction(name, type) {
+var UIStateStart = 0;
+var UIStateNotify = 0;
+function uiFunction(name) {
   switch(name){
     case "Start":
-      switch(type){
-        case "open":
+      switch(UIStateStart){
+        case 0:
           document.getElementById("start").style.animation = "slideUp 0.4s ease 1 normal forwards";
           document.getElementById("start").style.display = "block";
+          UIStateStart = 1;
+          break;
+        case 1:
+          document.getElementById("start").style.animation = "slideOut 0.4s ease 1 normal forwards";
+          UIStateStart = 0;
           break;
       }
     break;
 
     case "Notify":
-      switch(type){
-        case "open":
+      switch(UIStateNotify){
+        case 0:
           document.getElementById("notify").style.animation = "slideRightToLeftIn 0.4s ease 1 normal forwards";
           document.getElementById("notify").style.display = "block";
+          UIStateNotify = 1;
+          break;
+        case 1:
+          document.getElementById("notify").style.animation = "slideRightToLeftOut 0.4s ease 1 normal forwards";
+          UIStateNotify = 0;
           break;
       }
     break;

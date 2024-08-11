@@ -5,7 +5,6 @@
 #bannerMain{
     height: 450px;
     border-bottom: 4px solid #d3d3d3;
-    /* Create the parallax scrolling effect */
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -20,7 +19,7 @@
 
 .mainImage{
   width: 100px;
-  height: 100px;
+  height: auto;
   padding: 10px;
   transition: transform 0.2s;
 }
@@ -33,17 +32,8 @@
     color: rgb(235, 235, 235);
 }
 
-.bannerImageLobby{
-  background-image: url('../media/banners/dusk.webp');
-  animation: backgroundEffect 5s infinite;
-}
-
 .bannerImageSeal{
   background-image: url('../media/banners/landscape.webp');
-}
-
-.bannerImageAbout{
-  background-image: url('../media/images/ska/skavatar.webp');
 }
 
 .bannerImageGalleon{
@@ -109,9 +99,10 @@
   flex-direction: column;
   text-align: center;
   text-decoration: none;
-  width: 200px;
+  width: 150px;
+  height: 80px;
   border-radius: 20px;
-  font-size: 22pt;
+  font-size: 18pt;
   margin: 10px;
   padding: 5px 5px;
   background-color: rgba(241, 142, 92, 0.1);
@@ -129,79 +120,13 @@
 }
 
 .homeSpace img{
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   align-self: center;
 }
 
-.person{
-  background-color: rgba(241, 142, 92, 0.1);
-  border: 1px solid #bb3e00;
-  border-radius: 10px;
-  width: 230px;
-  height: 205px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px;
-  transition: margin-top 0.2s;
-  overflow-y: hidden;
-  transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.3s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-}
-
-.person:hover{
-  transform: scale(1.2);
-  background-color: rgba(241, 142, 92, 0.2);
-}
-
-.person:active{
-  transform: scale(1);
-}
-
-.person span, .person p{
-  font-size: 14pt;
-  width: 100%;
-  float: left;
-  margin-top: 10px;
-}
-
-.person img{
-  background-color: rgba(95, 141, 55, 0.05);
-  width: 58%;
-  height: 65%;
-  max-width: 256px;
-  max-height: 256px;
-  border: 3px solid #bb3e00;
-  border-radius: 50%;
-  transition: transform .7s ease-in-out;
-  transform-style: preserve-3d;
-  transition: width 0.5s, height 0.5s;
-}
-
-.person:hover img{
-  width: 0px;
-  height: 0px;
-}
-
-
 
 /*It's Mobilin' Time*/
-
-
-@media only screen and (max-width: 1200px) {
-  .homeSpace a{
-    width: 150px;
-    height: 80px;
-    font-size: 18pt;
-  }
-  .homeSpace img{
-    width: 48px;
-    height: 48px;
-  }
-}
 
 @media only screen and (max-width: 1000px) {
   .homeSpace a{
@@ -231,10 +156,6 @@
 
   #lobbyArticle{
     top: 75px;
-  }
-
-  .bannerImageAbout{
-    background-image: url('../media/images/ska/skavatarmobile.png');
   }
 }
 
@@ -275,21 +196,6 @@
     margin-top: -100px;
   }
 }
-
-@keyframes backgroundEffect {
-  0%{
-    opacity: 1;
-  }
-
-  50%{
-    opacity: 0.9;
-  }
-
-  100%{
-    opacity: 1;
-  }
-  }
-  
 
 @media (prefers-reduced-motion) {
   #bannerContainer, .bannerButton {

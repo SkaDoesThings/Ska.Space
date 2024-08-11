@@ -21,6 +21,7 @@ body {
     display: block;
     background-color:rgb(117, 117, 117, 0.2);
     width: 90%;
+    max-width: 1700px;
     margin-top: 40px;
     border-radius: 10px;
     margin-left: auto;
@@ -51,7 +52,6 @@ article{
     margin-right: auto;
     margin-top: 40px;
     border-radius: 5px;
-    padding: 10px;
     width:93%;
     max-width: 2000px;
     height: auto;
@@ -117,7 +117,7 @@ h1, h2{
 
 h1 {
     font-weight: bold;
-    font-size: 26pt;
+    font-size: 22pt;
 }
 
 .centered {
@@ -173,7 +173,7 @@ video {
     width: auto;
     height: auto;
     border-radius: 10px;
-  }
+}
 
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
@@ -544,7 +544,6 @@ nav a:active, .siteName:active{
     }
 }
   
-
 .fadeOut{
     animation: enteringAnimation 0.2s normal forwards;
 }
@@ -715,6 +714,7 @@ div article{
 
 .viewable{
     cursor: pointer;
+    transition: box-shadow 0.2s;
 }
 
 .viewable:active{
@@ -859,20 +859,13 @@ input[type=submit]:hover{
 /*=-=-=-=-=-= Item Container and Navigation =-=-=-=-=-=*/
 
 .listbox {
-    height: auto;
-    border-radius: 5px;
-    border: 3px solid #d3d3d3;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 20px;
-    transition: width 0.2s, height 0.2s, border-radius 0.6s;
 }
 
 .listbox a{
     color: rgb(87, 87, 87);
     text-align: left;
-    padding: 1px 10px;
+    padding: 1px 5px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
@@ -972,7 +965,7 @@ input[type=submit]:hover{
         border: 0px;
         margin-top: 0px;
         margin-bottom: 0px; 
-        width: 90%;
+        width: 96%;
         border-radius: 10px;
     }
 
@@ -1063,20 +1056,11 @@ input[type=submit]:hover{
     0% {
         opacity: 0;
     }
-    10%{
+    25%{
         opacity: 0;
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes pageMoveOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
     }
 }
 
@@ -1138,16 +1122,6 @@ input[type=submit]:hover{
 }
 
 
-@keyframes backgroundLoader {
-    0% {
-        background-position-x: 0px;
-    }
-    100%{
-        background-position-x: -190px;
-    }
-}
-
-
 @keyframes leavingAnimation {
     0%{
         opacity: 1;
@@ -1157,21 +1131,8 @@ input[type=submit]:hover{
     }
 }
 
-
 @keyframes enteringAnimation {
     0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes stuckLoading {
-    0%{
-        opacity: 0;
-    }
-    90%{
         opacity: 0;
     }
     100%{
@@ -1214,7 +1175,7 @@ input[type=submit]:hover{
         scroll-behavior: none;
     }
 
-    main, article, .fadeOut, .theSilly{
+    main, article, .fadeOut, .fadeIn, .theSilly{
         animation-duration: 0s;
     }
 

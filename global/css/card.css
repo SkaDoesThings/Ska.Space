@@ -2,13 +2,12 @@
     animation: titleMoveIn 0.75s forwards;
 }
 
-
 /*<---------- Special Discord-like Profile hehe ---------->*/
 
 #myProfile{
     background: linear-gradient(to bottom, #dac3c3, #f24d4d);    
     padding: 4px;
-    width: 350px;
+    width: 300px;
     border-radius: 10px;
     position: relative;
     margin-left: auto;
@@ -18,7 +17,7 @@
 
 .profileCard{
     background: linear-gradient(to bottom, rgb(214, 243, 255), #e4d6d6, #FFB9B9);
-    width: 350px;
+    width: 300px;
     height: auto;
     color: #54565B;
     border-radius: 10px;
@@ -35,7 +34,7 @@
     width: 80px;
     height: 80px;
     margin-top: -80px;
-    margin-left: 15px;
+    margin-left: 10px;
     border: 6px solid #EDF8FC;
     border-radius: 50%;
 }
@@ -68,7 +67,7 @@
     display: flex;
     float: right;
     margin: 15px;
-    margin-top: 10px;
+    margin-top: -10px;
     padding: 6px;
     border-radius: 10px;
 }
@@ -85,8 +84,8 @@
     width: 85%;
     height: auto;
     min-height: 200px;
-    margin-top: -10px;
-    margin-left: 15px;
+    margin-top: -20px;
+    margin-left: 12px;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -102,50 +101,24 @@
     white-space: wrap;
 }
 
-.profileBody h2{
-    font-size: 9pt;
-    font-weight: bold;
-    line-height: 30px;
-}
-
-
 .name{
     color: #000000;
     font-size: 16pt !important;
 }
 
-.id{
-    font-size: 12pt !important;
+.user{
+    margin-top: -3px;
 }
 
-.status{
-    position: absolute;
-    margin-top: -10px;
-}
-
-
-.date{
-    position: absolute;
-    margin-top: 5px;
-}
-
-.userRoles{
-    display: flex;
-}
-
-.userRoles span{
-    width: fit-content;
-    padding: 2px;
-    border-radius: 5px;
-    background-color: #eef7fb81;
-    margin-right: 5px;
+.bio{
+    display: block;
+    margin-top: 10px;
 }
 
 [data-theme='dark'] #myProfile{
     background: linear-gradient(to bottom, #171111, #9c1f1f);    
 
 }
-
 [data-theme='dark'] .profileCard{
     background: linear-gradient(to bottom, rgb(7, 6, 6), #1b1414, #461e1e, #4a0e0e);
     color: #a9a9a9 !important;
@@ -184,13 +157,14 @@
     width: 70px;
     padding: 5px;
     margin: 3px;
+    font-size: 11pt;
     background-color: #00000015;
     border: 2px solid gray;
     border-radius: 10px;
     text-decoration: none;
     text-align: left;
     color: rgb(245, 245, 245);
-    transition: scale 0.2s;
+    transition: background-color 0.2s, scale 0.2s;
 }
 
 .links a:hover{
@@ -206,14 +180,14 @@
 }
 
 .socials{
-    height: 40px;
+    height: 30px;
 }
 
 .socials a{
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-size: 32px;
+    width: 26px;
+    height: 26px;
+    background-size: 30px;
     border-radius: 50%;
     padding: 5px;
     margin-top: 5px;
@@ -248,19 +222,19 @@
     transition: background-color 0.2s, border 0.2s;
 }
 
-.mainJoinYouTube{
-    border: 2px solid #f25858;
-    background: url(../media/icons/logos/youtube.webp) no-repeat center;
+.mainJoinGitHub{
+    border: 2px solid #b8b8b8;
+    background: url(../media/icons/logos/github.webp) no-repeat center;
 }
 
 .mainJoinSteam:hover{
     background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
-    background-size: 42px;
+    background-size: 32px;
 }
 
 .mainJoinDiscord:hover{
     background: #5865F2 url(../media/icons/logos/logoDiscordHover.webp) no-repeat center;
-    background-size: 40px;
+    background-size: 30px;
 }
 
 .mainJoinInstagram:hover{
@@ -270,17 +244,17 @@
 .mainJoinTwitter:hover{
     border: 2px solid #000000;
     background: #000000 url(../media/icons/logos/x.webp) no-repeat center;
-    background-size: 40px;
+    background-size: 32px;
 }
 
-.mainJoinYouTube:hover{
-    background-color: #762a2a;
+.mainJoinGitHub:hover{
+    background-color: #8d8c8c;
 }
 
 
 /*It's Mobilin' Time*/
 
-@media only screen and (max-width: 1100px) and (min-width: 800px){
+@media only screen and (max-width: 1000px) and (min-width: 800px){
     #myProfile{
         float: right;
     }
@@ -322,33 +296,6 @@
         margin-left: auto;
         margin-right: auto; 
         margin-bottom: 20px;
-    }
-
-    #myProfile{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    #myProfile, .profileCard{
-        width: 300px;
-    }
-
-    .userBanner{
-        height: 110px;
-    }
-
-    .profileBody {
-        margin-top: -30px;
-        margin-left: 12px;
-    }
-    
-    .profileBody span{
-        font-size: 9pt;
-    }  
-
-    .socials a{
-        width: 26px;
-        height: 26px;
     }
 }
 

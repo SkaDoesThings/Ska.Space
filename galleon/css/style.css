@@ -115,7 +115,7 @@ body{
   margin-top: 20px;
   margin-bottom: 20px;
   transition: width 0.2s, height 0.2s, border-radius 0.6s;
-}z
+}
 
 [data-theme='light'] .listbox{
   background-color: rgb(219, 219, 219);
@@ -127,11 +127,6 @@ body{
 }
 
 
-@media only screen and (min-width: 1000px) {
-  article img{
-    margin-left: 50px;
-  }
-}
 
 @media only screen and (min-width: 700px) {
   .inviteButton:hover{
@@ -151,7 +146,7 @@ body{
   }
 
   .bubbleList p{
-    font-size: 14pt;
+    font-size: 12pt;
   }
 
   .inviteButton{
