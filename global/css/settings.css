@@ -111,6 +111,24 @@ hr{
     animation: switchPage 0.5s forwards;
 }
 
+#settingCredits img{
+    border-radius: 0px;
+    width: 32px;
+    height: auto;
+}
+
+.imageTable td:nth-child(odd) {
+    padding-left: 10px;
+    border-left: 2px solid black;
+}
+
+.imageTable td:nth-child(even) {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid black;
+}
+
+
 @media only screen and (max-width: 1250px) {
     #menuButtons button span{
         font-size: 18pt;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Ska.Space - Welcome</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/posts.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
+        
+    </head>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+                <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+                <span>Ska.Space</span>
+            </button>
+            <button onclick="openNav()" id="navToggle"></button>
+            <img src="global/media/images/infologo.webp" class="navIcon iconTypeGear iconLeft offMobile viewable" alt="Logo for Lobby"/>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+            <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="posts.html" class="active">Posts</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="index.html"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="galleon/home.html"><img src="global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
+                    <a href="seal/search.html"><img src="global/media/images/sealco.png" alt="Logo for Seal Corp">Seal Corp</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage"></div>
+        
+        <div id="imageViewer" onclick="fullPage.style.display = 'none';">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <h2 class="offMobile">Click anywhere to close image</h2>
+        </div>
+
+        <br>
+        <main id="page">
+			<h1 id="pageTitle" class="centered">Posts</h1>
+            <article class="postList"> 
+                <h1 class="divider">Featured</h1>
+
+                <div id="featuredPosts">
+                    <div id="featuredPostOne">
+                        <a href="post/developing-this-website.html">
+                            <span>August 14th, 2024 &#x2022 Dev</span>
+                            <h1>Developing this website</h1>
+                            <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
+                        </a>
+                    </div>
+                    <div id="featuredPostTwo">
+                        <a href="post/post-template.html">
+                            <span>TBD &#x2022 Misc</span>
+                            <h1>More posts here</h1>
+                            <h2>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</h2>
+                        </a>
+                    </div>
+                    <div id="featuredPostThree">
+                        <a href="post/post-template.html">
+                            <span>TBD &#x2022 Misc</span>
+                            <h1>More posts here</h1>
+                            <h2>Hello World</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <h1 class="divider">Other Posts</h1>
+                <div id="morePosts">
+                    <a href="post/post-template.html">
+                        <span>August 14th, 2024 &#x2022 Misc</span>
+                        <h1>Blog post template</h1>
+                        <h2>Just the base I use, serves as good filler for sure</h2>
+                    </a><br>
+                </div>
+            </article>
+        </main>
+        <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
+    </body>
+    <script src="global/scripts/scripts.js"></script>
+	<script>
+		window.onscroll = function() {scrollFunction()};
+	</script>
+</html>

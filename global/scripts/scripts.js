@@ -121,11 +121,9 @@ function closeThatNav() {
 function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.getElementById("buttonTop").style.marginRight = "15px";
-      document.getElementById("navbox").classList.remove('transparency');
   }
     else{
       document.getElementById("buttonTop").style.marginRight = "-100px";
-      document.getElementById("navbox").classList.add('transparency');
   }
 }
 
@@ -213,4 +211,14 @@ function inlinePageInfo(selection) {
       break;
     }
   }
+}
+
+function copyUrl() {
+  let url = document.location.href
+
+  navigator.clipboard.writeText(url).then(function() {
+      console.log('Copied!');
+  }, function() {
+      console.log('Copy error')
+  })
 }

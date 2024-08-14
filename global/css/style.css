@@ -9,6 +9,7 @@ body {
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
     background-size: 4em 4em;
     background-color:rgb(44, 40, 40);
+    cursor: url('../media/cursor.png'), auto;
 }
 
 [data-theme='light'] body {
@@ -26,6 +27,7 @@ body {
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     transition: background-color 0.5s;
 }
 
@@ -38,6 +40,7 @@ main{
 }
 
 #page{
+    margin-top: 50px;
     padding-bottom: 30px;
 }
 
@@ -91,7 +94,7 @@ article article{
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
-span, .text, a, input, h1, h2, p, li, hover-text{
+span, .text, a, input, h1, h2, h3, p, li, hover-text{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
     transition: color 0.5s;
@@ -102,8 +105,9 @@ span::selection, h1::selection, h2::selection, p::selection, li::selection{
     background-color: rgb(246, 151, 151);
 }
 
-span, .text, h2, li, hover-text{
-    font-size: 16pt;
+span, .text, li, hover-text{
+    font-size: 14pt;
+    line-height: 1.5;
 }
 
 [data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] p, [data-theme='light'] li{
@@ -111,13 +115,16 @@ span, .text, h2, li, hover-text{
 }
 
 h1, h2{
-    text-align: center;
     margin: 0;
 }
 
 h1 {
     font-weight: bold;
     font-size: 22pt;
+}
+
+h2{
+    font-size: 16pt;
 }
 
 .centered {
@@ -136,12 +143,29 @@ h1 {
     color: #bb3e00;
 }
 
+#pageTitle{
+    font-size: 38pt;
+    animation: contentItemsExpand 1.3s forwards;
+}
+
+#pageTitle h1{
+    font-size: 38pt;
+}
+
 img {
     border-radius: 10px;
 }
 
 .rounded{
     border-radius: 50%;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+[data-theme='light'] .invert{
+    filter: invert(0);
 }
 
 .medium{
@@ -159,14 +183,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.invert{
-    filter: invert(1);
-}
-
-[data-theme='light'] .invert{
-    filter: invert(0);
 }
 
 video {
@@ -207,14 +223,22 @@ nav{
     text-decoration: none;
     list-style-type: none;
     height: 30px;
-    min-width: 60px;
-    padding: 0px 3px;
+    min-width: 30px;
+    padding: 0px 5px;
+    margin-left: 2px;
+    margin-right: 2px;
     margin-top: 15px;
     font-size: 16pt;
-    transition: min-width 0.3s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s, transform 0.3s, height 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.3s;
     cursor: pointer;
     font-family: 'Segoe UI', Arial, sans-serif;
 }   
+
+
+#linkContainer a:active{
+    scale: 1.1;
+}
 
 #linkContainer a:hover{
     background-color: rgb(246, 151, 151);
@@ -226,7 +250,12 @@ nav{
 }  
 
 #linkContainer a.active:hover{
+    background-color: rgb(246, 151, 151);
     color: rgb(255, 255, 255) !important; 
+}
+
+#linkContainer h2{
+    text-align: center;
 }
 
 .siteName{
@@ -425,12 +454,6 @@ nav a:active, .siteName:active{
 }
 
 @media only screen and (min-width: 800px) {
-    [data-theme='dark'] #navbox.transparency {
-        background-color: rgba(59, 57, 57, 0.0);
-        -webkit-backdrop-filter: blur(0px);
-        backdrop-filter: blur(0px);
-        box-shadow: none;
-    }
 
     [data-theme='dark'] .blur {
         background-color: rgba(59, 57, 57, 0.7) !important;
@@ -452,14 +475,6 @@ nav a:active, .siteName:active{
         margin-left: 5px;
         padding: 0px 0px;
         justify-content: center;
-    }
-
-    #linkContainer a:hover{
-        font-size: 20pt;
-        margin-top: 8px;
-        padding: 6px 5px;
-        min-width: 100px;
-        border-radius: 7px;
     }
 
     .dedicatedPage{
@@ -567,7 +582,6 @@ nav a:active, .siteName:active{
     background-color: rgb(235, 235, 235);
 }
 
-
 /*Thanks to https://cssloaders.github.io*/
 
     .loader {
@@ -649,8 +663,8 @@ nav a:active, .siteName:active{
 }
 
 .columnContainer article{
-    margin-left: auto;
-    margin-right: auto; 
+    margin-left: 10px auto;
+    margin-right: 10px auto; 
     height: auto;
     border: 0px;
 }
@@ -710,6 +724,7 @@ div article{
     bottom: 20px;
     left: 0;
     right: 0;
+    text-align: center;
 }
 
 .viewable{
@@ -1038,6 +1053,12 @@ input[type=submit]:hover{
         margin: 2px;
         font-size: 16pt;
     }
+
+    #returnButton {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+    }
 }
 
 /*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
@@ -1165,6 +1186,18 @@ input[type=submit]:hover{
     }
     87% {
     box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+@keyframes contentItemsExpand {
+    0% {
+        opacity: 0
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 

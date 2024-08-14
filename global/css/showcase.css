@@ -1,15 +1,3 @@
-
-#searchLogo{
-    animation-name: contentItemsExpand;
-    animation-duration: 1.3s;  
-    animation-fill-mode: forwards;
-}
-
-.mainText {
-    font-weight: bold;
-    animation-name: itemExpand 1s forwards;
-}
-
 .navContainer{
     width: 15%;
     max-width: 550px;
@@ -175,18 +163,6 @@
 
 /*=-=-=-=- ( Animations ) -=-=-=-=*/
 
-@keyframes contentItemsExpand {
-    0% {
-        opacity: 0
-    }
-    25%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
 @keyframes itemExpand {
     0% {
         margin-top: -15px;
@@ -202,23 +178,6 @@
         
     }
 }
-
-    
-@keyframes pageMoveIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    10%{
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 
 
 @media (prefers-reduced-motion) {
