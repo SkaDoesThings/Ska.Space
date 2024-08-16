@@ -170,6 +170,7 @@ for (var i = 0; i < imgbtn.length; i++) {
      e.preventDefault();
      modal = document.querySelector(e.target.getAttribute("href"));
      modal.style.display = "block";
+
   }
  }
 
@@ -186,7 +187,7 @@ for (var i = 0; i < spans.length; i++) {
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
      for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none"; 
      }
     }
 }

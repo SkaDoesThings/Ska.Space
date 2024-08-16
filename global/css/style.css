@@ -13,8 +13,8 @@ body {
 }
 
 [data-theme='light'] body {
-    background: url('../media/backgrounds/lightmode.webp') center no-repeat;
-    background-size: 2800px;
+    background: url('../media/backgrounds/lightmode.webp') center;
+    background-size: 700px;
     background-color: rgb(235, 235, 235);
 }
 
@@ -28,20 +28,17 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    transition: background-color 0.5s;
 }
 
 [data-theme='light'] .divider{
     background-color: rgb(245, 245, 245);
 }
 
-main{
-    animation: pageMoveIn 0.5s forwards;
-}
-
 #page{
     margin-top: 50px;
     padding-bottom: 30px;
+    transition: scale 0.2s;
+    animation: appearOpacity 0.7s forwards;
 }
 
 [data-theme='dark'] #lobby {
@@ -50,7 +47,7 @@ main{
 
 article{
     background-color:rgb(42, 40, 40);
-    border: 2px solid #888282;
+    border: 1px solid rgb(97, 95, 95);
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
@@ -58,28 +55,17 @@ article{
     width:93%;
     max-width: 2000px;
     height: auto;
-    transition: width 0.2s, height 0.2s, border-radius 0.6s, background-color 0.5s;
-    animation: pageEntryway 1s forwards;
+    transition: width 0.2s, height 0.2s, border-radius 0.6s;
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
-
+    animation: appearOpacity 0.7s forwards;
 }
 
 article article{
     box-shadow: none;
 }
 
-.contentClear article {
-    background-color: rgb(42, 40, 40, 0);
-    border: 0px;
-}
-
-.contentClear .columnContainer article {
-    background-color: rgb(42, 40, 40, 0);
-}
-
 .contentTransparent article {
     background-color: rgb(42, 40, 40, 0.5);
-    border: 1px solid rgb(97, 95, 95);
 }
 
 .contentTransparent .columnContainer article {
@@ -88,7 +74,7 @@ article article{
 
 [data-theme='light'] article{
     background-color: rgb(235, 235, 235);
-    border: 2px solid #d3d3d3;
+    border: 1px solid #d3d3d3;
 }
 
 
@@ -97,7 +83,6 @@ article article{
 span, .text, a, input, h1, h2, h3, p, li, hover-text{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
-    transition: color 0.5s;
     color: rgb(245, 245, 245);
 } 
 
@@ -145,7 +130,7 @@ h2{
 
 #pageTitle{
     font-size: 38pt;
-    animation: contentItemsExpand 1.3s forwards;
+    animation: appearOpacity 1.3s forwards;
 }
 
 #pageTitle h1{
@@ -194,16 +179,12 @@ video {
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
 nav{
-    background: transparent;
+    position: fixed;
     height: 60px;
     width: 100%;
-    position: fixed;
-    margin: auto;
-    padding: 0;
-    left: 0; 
-    right: 0;
-    z-index: 4;
-    transition: background-color 0.3s, backdrop-filter 0.1s, width 0.2s, height 0.2s, margin-top 0.2s, margin-left 0.2s, margin-bottom 0.2s, border-radius 0.3s, padding 0.2s;
+    background-color: rgb(59, 57, 57, 0.7);
+    z-index: 5;
+    transition: height 0.2s, border-radius 0.3s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
 
@@ -212,7 +193,6 @@ nav{
 }
 
 [data-theme='dark'] nav{
-    background-color: rgb(59, 57, 57, 0.7);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
 }
@@ -453,129 +433,23 @@ nav a:active, .siteName:active{
     font-size: 30pt;
 }
 
-@media only screen and (min-width: 800px) {
-
-    [data-theme='dark'] .blur {
-        background-color: rgba(59, 57, 57, 0.7) !important;
-        -webkit-backdrop-filter: blur(25px) !important;
-        backdrop-filter: blur(25px) !important;
-    }
-
-    #myDropdown{
-        position: fixed;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        background-color: #f7ad45;
-        animation: slideDown 0.2s forwards;
-    }
-
-    .dropdown-content a {
-        width: 90%;
-        display: flex;
-        margin-left: 5px;
-        padding: 0px 0px;
-        justify-content: center;
-    }
-
-    .dedicatedPage{
-        float: right !important; 
-        margin-right: 8px !important;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .mobileCenter{
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        left: calc((100% - 40px) / 2);
-    }
-
-    #page{
-        margin-top: -50px;
-        padding-bottom: 75px;
-    }
-
-    #navbox{
-        width: 100%;
-        bottom: 0;
-        border-top: 1px solid #d3d3d3;
-        overflow: hidden;
-    }
-
-    #navToggle{
-        display: block;
-    }
-
-    #linkContainer{
-        width: 100%;
-        height: auto;
-        overflow-y: scroll;
-        margin-top: 61px;
-        border-top: 2px solid #d3d3d3;
-    }
-
-    #linkContainer a{
-        display: inline-flex;
-        width: fit-content;
-        margin: auto;
-        text-align: center;
-        padding: 3px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 20pt;
-        border: 2px solid rgb(209, 209, 209);
-        margin-left: 10px;
-        border-radius: 7px;
-    }
-
-    #myDropdown {
-        position: relative;
-        width: 100%;
-        margin-top: 20px;
-        margin-left: 0px;
-        display: inline-block;
-        padding-bottom: 130px;
-    }
-
-    #buttonTop{
-        bottom: 60px;
-    }
-
-    .columnContainer{
-        background-color: rgba(95, 141, 55, 0);
-        width: 100%;
-        display: inline-block;
-        border: 0px;
-        margin-top: 0px;
-        padding: 0px;
-    }
-
-    .columnContainer article{
-        background-color:rgb(117, 117, 117, 0.05);
-        width: 86%;
-        margin-top: 10px !important;
-        margin-bottom: 0px;
-    }
-}
-  
 .fadeOut{
-    animation: enteringAnimation 0.2s normal forwards;
+    animation: appearOpacity 0.2s normal forwards;
 }
 
 .fadeIn{
-    animation: leavingAnimation 0.3s normal forwards;
+    animation: disappearOpacity 0.5s normal forwards;
 }
 
 #leavingPage{
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
     background-color:rgb(44, 40, 40);
     position: fixed;
     margin: auto;
     display: block;
-    opacity: 1;
     z-index: -1;
+    pointer-events: none;
 }
 
 [data-theme="light"] #leavingPage {
@@ -683,7 +557,7 @@ div article{
     display: none;
     background-color: rgb(0, 0, 0);
     z-index: 1;
-    animation: imageBox 0.2s forwards;
+    animation: appearOpacity 0.2s forwards;
 }
 
 #imageViewer, #imageBackdrop, #imageDisplay{
@@ -708,7 +582,7 @@ div article{
     height: 110vh;
     background-size: cover;
     filter: blur(150px) brightness(0.7);
-    animation: imageBox 0.6s forwards;
+    animation: appearOpacity 0.6s forwards;
   }
 
 #imageDisplay {
@@ -716,7 +590,7 @@ div article{
     width: 80vw;
     height: 80vh;
     background-size: contain;
-    animation: imageAppear 0.3s forwards;
+    animation: appearScale 0.3s forwards;
 }
 
 #imageViewer h2 {
@@ -797,7 +671,7 @@ div article{
     max-width: 700px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     font-size: 16pt;
-    animation: imageAppear 0.3s;
+    animation: appearScale 0.3s;
 }
 
 .close {
@@ -888,7 +762,7 @@ input[type=submit]:hover{
     text-decoration: none;
     font-size: 18pt;
     border-radius: 10px;
-    transition: 0.2s;
+    transition: background-color 0.2s;
     cursor: pointer;
 }
 
@@ -904,7 +778,6 @@ input[type=submit]:hover{
     background-color: rgb(246, 151, 151);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
-
 
 .hoverText{
     position: relative;
@@ -973,19 +846,103 @@ input[type=submit]:hover{
         display: none;
         visibility: hidden;
     } 
+
+
+    #myDropdown{
+        position: fixed;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background-color: #f7ad45;
+        animation: slideDown 0.2s forwards;
+    }
+
+    .dropdown-content a {
+        width: 90%;
+        display: flex;
+        margin-left: 5px;
+        padding: 0px 0px;
+        justify-content: center;
+    }
+
+    .dedicatedPage{
+        float: right !important; 
+        margin-right: 8px !important;
+    }
 }
 
 @media only screen and (max-width: 800px) {
+    .onMobile{
+        display: block;
+    }
+
+    .offMobile{
+        display: none;
+        visibility: hidden;
+    }
+
+    #page{
+        margin-top: -20px;
+        padding-bottom: 75px;
+    }
+
     article{
-        border: 0px;
-        margin-top: 0px;
+        margin-top: 20px;
         margin-bottom: 0px; 
         width: 96%;
         border-radius: 10px;
     }
 
-    #leavingModel{
-        bottom: 50px;
+    .mobileCenter{
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: calc((100% - 40px) / 2);
+    }
+
+    #navbox{
+        width: 100%;
+        bottom: 0;
+        border-top: 1px solid #d3d3d3;
+        overflow: hidden;
+    }
+
+    #navToggle{
+        display: block;
+    }
+
+    #linkContainer{
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        margin-top: 61px;
+        border-top: 2px solid #d3d3d3;
+    }
+
+    #linkContainer a{
+        display: inline-flex;
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+        padding: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20pt;
+        border: 2px solid rgb(209, 209, 209);
+        margin-left: 10px;
+        border-radius: 7px;
+    }
+
+    #myDropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+        display: inline-block;
+        padding-bottom: 130px;
+    }
+
+    #buttonTop{
+        bottom: 60px;
     }
 
     .columnContainer{
@@ -996,57 +953,23 @@ input[type=submit]:hover{
         margin-top: 0px;
         padding: 0px;
     }
-    
+
     .columnContainer article{
         background-color:rgb(117, 117, 117, 0.05);
         width: 86%;
-        margin-top: 10px !important;
+        margin-top: 10px;
         margin-bottom: 0px;
-    }
-
-    .subtitle{
-        font-size: 22px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #form{
         text-align: center;
     }
-    
-    .formText{
-        width: 90%;
-        margin-right: 10%;
-    }
-
-    .medium{
-        max-width: 80%;
-        margin-top: 10px;
-        height: auto;
-    }
-    
-    .onMobile{
-        display: block;
-    }
-
-    .offMobile{
-        display: none;
-        visibility: hidden;
-    }
-
-    #imageBackdrop {
-        background-size: cover;
-    }
 
     #imageDisplay{
         margin-top: 5vh;
         width: 100vw;
-    }
-    
-    #imageViewer h2{
-        bottom: 150px;
-    }
-
-    span, .text, li{
-        font-size: 14pt;
     }
 
     .listbox a{
@@ -1063,29 +986,8 @@ input[type=submit]:hover{
 
 /*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
 
-@keyframes pageEntryway {
-    0%{ 
-        opacity: 0;
-        margin-top: 10px;
-    }
-    100%{
-        margin-top: 30px;
-    }
-}
 
-@keyframes pageMoveIn {
-    0% {
-        opacity: 0;
-    }
-    25%{
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes imageBox {
+@keyframes appearOpacity {
     0%{ 
         opacity: 0;
     }
@@ -1094,7 +996,16 @@ input[type=submit]:hover{
     }
 }
 
-@keyframes imageAppear {
+@keyframes disappearOpacity {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appearScale {
     0%{ 
         transform: scale(0.5);
     }
@@ -1106,31 +1017,6 @@ input[type=submit]:hover{
     }
 }
 
-
-@keyframes delayedAppear {
-    0%{ 
-        opacity: 0;
-    }
-    75%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes delayedMoveIn {
-    0%{ 
-        transform: translateY(90px);
-    }
-    75%{
-        transform: translateY(90px);
-    }
-    100%{
-        transform: translateY(-4px);
-    }
-}
-
 @keyframes slideDown {
     0% {
         margin-top: 40px;
@@ -1138,25 +1024,6 @@ input[type=submit]:hover{
     }
     100% {
         margin-top: 60px;
-        opacity: 1;
-    }
-}
-
-
-@keyframes leavingAnimation {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
-@keyframes enteringAnimation {
-    0%{
-        opacity: 0;
-    }
-    100%{
         opacity: 1;
     }
 }
@@ -1186,18 +1053,6 @@ input[type=submit]:hover{
     }
     87% {
     box-shadow: .2em -.2em 0 0 currentcolor;
-    }
-}
-
-@keyframes contentItemsExpand {
-    0% {
-        opacity: 0
-    }
-    25%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }
 

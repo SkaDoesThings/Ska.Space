@@ -4,8 +4,6 @@
         <title>Ska.Space - Settings</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="global/css/style.css">
-		<link rel="stylesheet" href="global/css/settings.css">
-
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp"/>
 
 	</head>
@@ -219,3 +217,261 @@
 		settingsTransition();
 	</script>   
 </html>
+
+<style>
+	#page{
+		margin-top: 50px;
+	}
+
+	hr{
+		width: 95%;
+		margin-bottom: 0px;
+		border-width: 1px;
+		border-style: solid;
+		color: white;
+	}
+
+	#pageSettings{
+		width: 90%;
+		max-width: 2000px;
+		height: 85%;
+		position: absolute; 
+		margin: auto;
+		left: 0; 
+		right: 0; 
+		justify-content: center;
+		border: 2px solid #bb3e00;
+		border-radius: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#menuButtons{
+		background-color: #f7ad45;
+		margin-top: 10px;
+		margin-left: 10px;
+		width: 17%;
+		border-radius: 10px;
+		height: 98%;
+		float: left;
+	}
+
+	#menuButtons img {
+		margin-top: -5px;
+		width: 50px;
+		height: 50px;
+	}
+
+	#menuButtons button span{
+		color: #e2e0d5;
+		font-size: 22pt;
+		padding-left: 15px;
+		position: absolute;
+	}
+
+	#menuButtons button{
+		background-color: #f7ad45;
+		width: 100%;
+		height: 60px;
+		padding: 10px;
+		border: none;
+		cursor: pointer;
+		float: left;
+		text-align: left;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#menuButtons button:hover{
+		background-color: rgb(246, 151, 151);
+	}
+
+
+	#menuButtons button:active{
+		background-color: #e55b38;
+	}
+
+
+	#menuContent{
+		margin-top: 10px;
+		margin-right: 10px;
+		width: 80%;
+		max-width: 100%;
+		border-radius: 10px;
+		height: 98%;
+		overflow-x: hidden;
+		float: right;
+	}
+
+	@keyframes switchPage {
+		0% {
+			opacity: 0;
+			transform: scale(0.93);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1.0);
+		}
+	}
+
+	.buttonLogout{
+		bottom: 0;
+	}
+
+	#navHome{
+		color: #bb3e00;
+	}
+
+	#settingHome{
+		display: block;
+		animation: switchPage 0.5s forwards;
+	}
+
+	#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA, #settingCredits{
+		display: none;
+		animation: switchPage 0.5s forwards;
+	}
+
+	#settingCredits img{
+		border-radius: 0px;
+		width: 32px;
+		height: auto;
+	}
+
+	.imageTable td:nth-child(odd) {
+		padding-left: 10px;
+		border-left: 2px solid black;
+	}
+
+	.imageTable td:nth-child(even) {
+		padding-left: 10px;
+		padding-right: 10px;
+		border-right: 2px solid black;
+	}
+
+
+	@media only screen and (max-width: 1250px) {
+		#menuButtons button span{
+			font-size: 18pt;
+			margin-top: 5px;
+		}
+	}
+
+	/*Content on the Screens*/
+
+	.featuredRow td{
+		display: inline-block;
+	}
+
+	.featuredRow{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.featuredBox{
+		width: 200px;
+		height: 100px;
+		background-color: #f7ad45;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.settingButton{
+		background-color: rgba(91, 91, 91, 0.5);
+		color: rgb(245, 245, 245);
+		width: 160px;
+		height: 50px;
+		border: 2px solid #d3d3d3;
+		border-radius: 10px;
+		margin: 20px;
+		margin-top: 0px;
+		font-size: 16pt;
+		text-decoration: none;
+		transition: 0.1s;
+	}
+
+	[data-theme='light'] .settingButton{
+		background-color: rgba(233, 233, 233, 0.8);
+		color: rgb(82, 82, 82);
+	}
+
+	.settingButton:hover{
+		background-color: rgb(170, 170, 170);
+	}
+
+	.settingButton:active{
+		background-color: rgb(87, 87, 87);
+		scale: 1.1;
+	}
+
+
+	/*Theming Button*/
+
+	.box{
+		background-color: rgb(222, 222, 222);
+	}   
+
+	[data-theme='dark'] .box{
+		background-color: rgb(37, 36, 36);
+	}
+
+	.lightBox{
+		background-color: rgb(235, 235, 235);
+	}   
+
+	[data-theme='dark'] .lightBox{
+		background-color: rgb(55, 55, 55);
+	}
+
+
+	/*It's Mobilin' Time*/
+
+	@media only screen and (max-width: 1000px) {
+
+		#pageSettings{
+			width: 98%;
+		}
+
+		.menuContent{
+			width: 78%;
+		}
+
+		#menuButtons{
+			margin-left: 2%;
+			width: 14%;
+		}
+
+		#menuButtons button{
+			text-align: center;
+		}
+
+		#menuButtons img{
+			width: 36px;
+			height: 36px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#menuButtons span{
+			display: none;
+		}
+
+	}
+
+	@media only screen and (max-width: 800px) {
+		#page{
+			margin-top: 0px;
+		}
+	}
+
+	@media (prefers-reduced-motion) {
+		#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA {
+			animation: none;
+		}
+		
+		.settingButton{
+			transition: none;
+		}
+	}
+</style>

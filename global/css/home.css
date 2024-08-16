@@ -56,10 +56,6 @@
     top: 18%;
 }
 
-.parallax{
-  background-attachment: fixed;
-}
-
 .bannerButton{
     position: absolute;
     margin: auto;
@@ -125,7 +121,6 @@
   align-self: center;
 }
 
-
 /*It's Mobilin' Time*/
 
 @media only screen and (max-width: 1000px) {
@@ -138,16 +133,12 @@
     width: 38px;
     height: 38px;
   }
-
-  .person{
-    width: 145px;
-    height: 128px;
-  }
 }
 
 @media only screen and (max-width: 800px) {
   #bannerMain{
     height: 350px;
+    margin-top: -50px;
   }
 
   .bannerContent{
@@ -173,10 +164,15 @@
 
 @keyframes bannerReveal {
   0% {
+    opacity: 0;
     transform: translateY(-50px);
     scale: 0.9;
   }
+  5%{
+    opacity: 0;
+  }
   50%{
+    opacity: 1;
     transform: translateY(3px);
   }
   100% {
@@ -194,6 +190,18 @@
   }
   100% {
     margin-top: -100px;
+  }
+}
+
+@keyframes delayedMoveIn {
+  0%{ 
+      transform: translateY(90px);
+  }
+  75%{
+      transform: translateY(90px);
+  }
+  100%{
+      transform: translateY(-4px);
   }
 }
 
