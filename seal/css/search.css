@@ -3,12 +3,6 @@ body{
     background-attachment: fixed !important;
 }
 
-nav{
-    background-color: transparent !important;
-    box-shadow: none !important;
-    backdrop-filter: blur(0px) !important;
-}
-
 [data-theme='dark'] body{
     background-color:rgb(44, 40, 40) !important;
     background: url('../../../global/media/backgrounds/darkmode.webp') center no-repeat;
@@ -31,7 +25,7 @@ article{
     border: 0px;
 }
 
-#page{
+main{
     padding-top: 25vh;
 }
 
@@ -244,13 +238,19 @@ form image{
 /*It's Moblin' Time*/
 
 @media only screen and (min-width: 800px){
+    nav{
+        background-color: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: blur(0px) !important;
+    }
+    
     [data-theme='light'] #navbox {
         background-color: rgb(235, 235, 235, 0.7);
     }
 }
 
 @media only screen and (max-width: 800px) {
-    #page{
+    main{
         padding-top: 30vh;
     }
 

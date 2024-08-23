@@ -34,8 +34,8 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
-#page{
-    margin-top: 50px;
+main{
+    padding-top: 50px;
     padding-bottom: 30px;
     transition: scale 0.2s;
     animation: appearOpacity 0.7s forwards;
@@ -57,7 +57,7 @@ article{
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
-    animation: appearOpacity 0.7s forwards;
+    animation: slideDownTo 0.7s forwards;
 }
 
 article article{
@@ -853,7 +853,7 @@ input[type=submit]:hover{
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
         background-color: #f7ad45;
-        animation: slideDown 0.2s forwards;
+        animation: slideDownBelow 0.2s forwards;
     }
 
     .dropdown-content a {
@@ -880,7 +880,8 @@ input[type=submit]:hover{
         visibility: hidden;
     }
 
-    #page{
+    main{
+        padding-top: 0px;
         margin-top: -20px;
         padding-bottom: 75px;
     }
@@ -963,6 +964,11 @@ input[type=submit]:hover{
         margin-right: auto;
     }
 
+    .medium{
+        max-width: 80%;
+    }
+    
+
     #form{
         text-align: center;
     }
@@ -1017,13 +1023,24 @@ input[type=submit]:hover{
     }
 }
 
-@keyframes slideDown {
+@keyframes slideDownBelow {
     0% {
         margin-top: 40px;
         opacity: 0;
     }
     100% {
         margin-top: 60px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownTo {
+    0%{ 
+        margin-top: 0px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 20px;
         opacity: 1;
     }
 }

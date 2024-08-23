@@ -1,16 +1,13 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="2; url='https://discord.gg/qFXRc5khwt'" />
+        <meta http-equiv="refresh" content="1; url='https://discord.gg/qFXRc5khwt'" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../global/css/redirect.css">
     </head>
     <body>
         <div class="box">
-            <div class="box">
-                <span class="main">Redirecting to&nbsp<a class="main textLink">discord.com</a>&nbspmomentarily</span>
-            </div>
+            <h1>Redirecting to&nbsp<a href="https://discord.gg/qFXRc5khwt" class="textLink">Discord</a></h1>
         </div>
-        <span class="fallback">Not working? Click&nbsp<a class="fallback textLink" href=https://discord.gg/qFXRc5khwt>here</a></span>
     </body>
 </html>
 
@@ -21,7 +18,6 @@
     }
 
     .box{
-        opacity: 0;
         width: 90%;
         height: 90%;
         border: 2px solid gray;
@@ -35,15 +31,19 @@
         align-items: center;
         position: absolute;
         white-space: nowrap;
-        animation: divAppear 1.5s ease-in-out;
+        animation: divAppear 1.5s ease-in-out forwards;
     }
 
-    .main{
+    span, h1{
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    h1{
         font-size: calc(2.5vw + 1.0vh);
         animation: textAppear 0.5s ease-in-out;
     }
 
-    .textLink {
+    a {
         color: rgb(142, 142, 255);
         text-decoration: underline;
     }
@@ -60,11 +60,8 @@
         30% {
             transform: scale(1);
         }
-        80%{
-            opacity: 1;
-        }
         100%{
-            opacity: 0;
+            opacity: 1;
             width: 95%;
         }
         
