@@ -153,7 +153,11 @@ img {
     filter: invert(0);
 }
 
-.medium{
+.imageSmall{
+    width: 32px;
+}
+
+.imageMedium, .medium{
     max-width: 30%;
     height: auto;
     margin-left: 5px;
@@ -261,7 +265,7 @@ nav{
     position: absolute;
     content: "";
     width: 7px;
-    height: 35px;
+    height: 28px;
     border-right: 2px solid gray;
 }
 
@@ -269,7 +273,7 @@ nav{
     display: flex;
     justify-content: center;
     font-size: 10px;
-    margin-top: -13px
+    margin-top: -13px;
 }
 
 .siteName:hover{
@@ -306,7 +310,7 @@ nav a:active, .siteName:active{
     left: calc((100% - 50px) / 2);
 }
 
-.dropdown-content img, .spaceNavIcon{
+#myDropdown img, .spaceNavIcon{
     width: 32px;
     height: 32px;
     margin-right: 5px;
@@ -356,32 +360,11 @@ nav a:active, .siteName:active{
     display: block;
     float: left;
     position: absolute;
-    margin-top: 8px;
+    margin-top: 7px;
     margin-left: 0px;
     width: 16px;
     height: 16px;
     background-size: 100%;
-}
-
-/*Dropdown Menu*/
-.sectionDivider{
-    display: inline-block;
-    border-right: 2px solid gray;
-    width: 0px;
-    height: 60px;
-}
-
-.dropdown-content {
-    margin-top: 60px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    display: none;
-    position: absolute;
-    width: 200px;
-    overflow: auto;
-    overflow-x: hidden;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
 }
 
 /*Go to top of page*/
@@ -847,16 +830,23 @@ input[type=submit]:hover{
         visibility: hidden;
     } 
 
-
     #myDropdown{
         position: fixed;
+        display: none;
+        position: absolute;
+        width: 200px;
+        margin-top: 60px;
+        margin-left: 20px;
+        padding-bottom: 10px;
+        background-color: #f7ad45;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
-        background-color: #f7ad45;
         animation: slideDownBelow 0.2s forwards;
+        z-index: 3;
     }
 
-    .dropdown-content a {
+    #myDropdown a {
         width: 90%;
         display: flex;
         margin-left: 5px;
@@ -934,12 +924,14 @@ input[type=submit]:hover{
     }
 
     #myDropdown {
+        display: inline-block;
         position: relative;
         width: 100%;
         margin-top: 20px;
         margin-left: 0px;
-        display: inline-block;
         padding-bottom: 130px;
+        overflow: auto;
+        overflow-x: hidden;
     }
 
     #buttonTop{
@@ -1025,12 +1017,14 @@ input[type=submit]:hover{
 
 @keyframes slideDownBelow {
     0% {
-        margin-top: 40px;
+        margin-top: 0px;
         opacity: 0;
+        scale: 0.5;
     }
     100% {
         margin-top: 60px;
         opacity: 1;
+        scale: 1;
     }
 }
 

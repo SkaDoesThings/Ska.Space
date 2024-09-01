@@ -92,19 +92,17 @@
 
 .homeSpace a{
   display: inline-flex;
-  flex-direction: column;
   text-align: center;
   text-decoration: none;
-  width: 150px;
-  height: 80px;
+  height: auto;
   border-radius: 20px;
   font-size: 18pt;
-  margin: 10px;
-  padding: 5px 5px;
+  margin: 5px;
+  padding: 10px 10px;
   background-color: rgba(241, 142, 92, 0.1);
   border: 1px solid #bb3e00;
   cursor: pointer;
-  transition: font-size 0.3s, width 0.2s, height 0.2s, background-color 0.2s, scale 0.2s;
+  transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
 }
 
 .homeSpace a:hover{
@@ -116,23 +114,25 @@
 }
 
 .homeSpace img{
-  width: 48px;
-  height: 48px;
-  align-self: center;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 0px;
+
 }
 
 /*It's Mobilin' Time*/
 
 @media only screen and (max-width: 1000px) {
   .homeSpace a{
-    width: 100px;
-    height: 60px;
     font-size: 13pt;
   }
+  
   .homeSpace img{
-    width: 38px;
-    height: 38px;
+    width: 24px;
+    height: 24px;
   }
+
 }
 
 @media only screen and (max-width: 800px) {
