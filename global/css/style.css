@@ -38,7 +38,7 @@ main{
     padding-top: 50px;
     padding-bottom: 30px;
     transition: scale 0.2s;
-    animation: appearOpacity 0.7s forwards;
+    animation: appearOpacityDelayed 0.4s forwards;
 }
 
 [data-theme='dark'] #lobby {
@@ -421,7 +421,7 @@ nav a:active, .siteName:active{
 }
 
 .fadeIn{
-    animation: disappearOpacity 0.5s normal forwards;
+    animation: disappearOpacity 0.4s normal forwards;
 }
 
 #leavingPage{
@@ -998,8 +998,23 @@ input[type=submit]:hover{
     0%{
         opacity: 1;
     }
+    15%{
+        opacity: 1;
+    }
     100%{
         opacity: 0;
+    }
+}
+
+@keyframes appearOpacityDelayed {
+    0%{ 
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
@@ -1028,16 +1043,7 @@ input[type=submit]:hover{
     }
 }
 
-@keyframes slideDownTo {
-    0%{ 
-        margin-top: 0px;
-        opacity: 0;
-    }
-    100%{
-        margin-top: 20px;
-        opacity: 1;
-    }
-}
+
 
 @keyframes spin {
     0%,

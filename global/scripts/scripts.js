@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.remove('fadeIn');
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
+    document.getElementById("myDropdown").style.display = "none";
+
       });
     }
 });

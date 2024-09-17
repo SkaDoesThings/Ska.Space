@@ -1,5 +1,5 @@
 #bannerContainer{
-    animation: bannerReveal 1s forwards;
+    animation: bannerReveal 0.75s forwards;
 }
 
 #bannerMain{
