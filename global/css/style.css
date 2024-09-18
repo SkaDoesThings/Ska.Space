@@ -188,7 +188,7 @@ nav{
     width: 100%;
     background-color: rgb(59, 57, 57, 0.7);
     z-index: 5;
-    transition: height 0.2s, border-radius 0.3s;
+    transition: height 0.15s, border-radius 0.3s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
 
@@ -417,11 +417,11 @@ nav a:active, .siteName:active{
 }
 
 .fadeOut{
-    animation: appearOpacity 0.2s normal forwards;
+    animation: appearOpacity 0.15s ease forwards;
 }
 
 .fadeIn{
-    animation: disappearOpacity 0.4s normal forwards;
+    animation: disappearOpacity 0.4s ease forwards;
 }
 
 #leavingPage{
@@ -1080,7 +1080,7 @@ input[type=submit]:hover{
         scroll-behavior: none;
     }
 
-    main, article, .fadeOut, .fadeIn, .theSilly{
+    main, article, .fadeOut, .fadeIn{
         animation-duration: 0s;
     }
 

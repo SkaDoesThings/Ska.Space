@@ -193,18 +193,6 @@
   }
 }
 
-@keyframes delayedMoveIn {
-  0%{ 
-      transform: translateY(90px);
-  }
-  75%{
-      transform: translateY(90px);
-  }
-  100%{
-      transform: translateY(-4px);
-  }
-}
-
 @media (prefers-reduced-motion) {
   #bannerContainer, .bannerButton {
     animation-duration: 0s;

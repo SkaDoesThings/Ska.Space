@@ -265,7 +265,7 @@
         position: fixed;
         bottom: -10px;
         right: 90px;
-        animation: delayedMoveIn 0.55s forwards;
+        animation: delayedMoveIn 0.45s forwards;
     }
 
     .theSilly img{
@@ -302,11 +302,11 @@
 @keyframes titleMoveIn {
     0% {
         opacity: 0;
-        transform: scale(0.8);
+        transform: scale(0.9);
     }
     30%{
         opacity: 0;
-        transform: scale(0.8);
+        transform: scale(0.9);
     }
     80%{
         opacity: 1;
@@ -316,8 +316,20 @@
     }
 }
 
+@keyframes delayedMoveIn {
+    0%{ 
+        transform: translateY(90px);
+    }
+    75%{
+        transform: translateY(90px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+  }
+
 @media (prefers-reduced-motion) {
-    #topArea, .columnContainer, .columnContainer article, #myProfile{
+    #topArea, .columnContainer, .columnContainer article, #myProfile, .theSilly{
         animation: none;
     }
 }

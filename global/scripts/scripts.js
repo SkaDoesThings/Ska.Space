@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
     document.getElementById("myDropdown").style.display = "none";
-
       });
     }
 });
@@ -101,7 +100,6 @@ var opened = false;
 function openNav() {
   if (opened == false){
     document.getElementById("navbox").style.height = "401px";
-    document.getElementById("linkContainer").style.height = "400px";
   
     document.getElementById("navbox").style.borderTopLeftRadius = "20px";
     document.getElementById("navbox").style.borderTopRightRadius = "20px";
