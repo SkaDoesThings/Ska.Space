@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
     document.getElementById("myDropdown").style.display = "none";
+    document.getElementById('pageLoader').style.display = "block";
       });
     }
 });
@@ -66,6 +67,7 @@ window.addEventListener('pageshow', function (event) {
   fader.classList.remove('fadeOut');
   fader.style.zIndex = "-1";
   fader.style.opacity = "0"
+  document.getElementById('pageLoader').style.display = "none";
 });
 
 

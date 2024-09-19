@@ -1,3 +1,4 @@
+
 //Clock
 
 window.addEventListener("load", () => {
@@ -173,56 +174,112 @@ function uiFunction(name) {
 var flipflop = 0;
 
 function appFunction(name, type) {
-  switch(name){
-    case "Settings": 
-      switch(type){
-        case "open":
-          document.getElementById("appSettings").style.animation = "popup 0.4s ease 1 normal forwards";
-          document.getElementById("appSettings").style.display = "block";
+  var appName = document.getElementById(name);
+  var taskbarName = document.getElementById(name + "Icon");
+    switch(type){
+      case "toggle":
+        if(appName.classList.contains('opened')) {
+          appName.classList.remove('opened')
+          taskbarName.classList.remove('active')
+          appName.style.animation = "minimize 0.4s ease 1 normal forwards";
           break;
+        }
+        else{
+          appName.classList.add('opened')
+          taskbarName.classList.add('active')
+          appName.style.display = "block";
+          taskbarName.style.display = "inline-flex";
+          appName.style.animation = "popup 0.4s ease 1 normal forwards";
+          break;
+      }
 
-        case "minimize":
-          document.getElementById("appSettings").style.animation = "minimize 0.4s ease 1 normal forwards";
+      case "close":
+          appName.classList.remove('opened')
+          taskbarName.classList.remove('active')
+          taskbarName.style.display = "none";
+          appName.style.animation = "popout 0.4s ease 1 normal forwards";
+        
+        break;
+
+      case "maximize":
+        if(appName.classList.contains('resized')){
+          appName.classList.remove('resized')
+          appName.style.width = "50%"
+          appName.style.height = "50%"
+          appName.style.top = "calc(25%)"
+          appName.style.left = "calc(25%)"
+          flipflop = 0;
           break;
+        }
+        else {
+          appName.classList.add('resized')
+          appName.style.width = "100%"
+          appName.style.height = "calc(100% - 75px)"
+          appName.style.top = "calc(0%)"
+          appName.style.left = "calc(0%)"
+          flipflop = 1;
+          break;
+        }
+        break;
       }
-      
-    break;
-    
-    case "Seal": 
-      switch(type){
-        case "open":
-          document.getElementById("appSeal").style.animation = "popup 0.4s ease 1 normal forwards";
-          document.getElementById("appSeal").style.display = "block";
-          break;
-        case "minimize":
-          document.getElementById("appSeal").style.animation = "minimize 0.4s ease 1 normal forwards";
-          break;
-        case "maximize":
-          if(flipflop == 0){
-              document.getElementById("appSeal").style.width = "100%"
-              document.getElementById("appSeal").style.height = "calc(100% - 75px)"
-              document.getElementById("appSeal").style.top = "calc(0%)"
-              document.getElementById("appSeal").style.left = "calc(0%)"
-              flipflop = 1;
-              break;
-          }
-          else {
-              document.getElementById("appSeal").style.width = "50%"
-              document.getElementById("appSeal").style.height = "50%"
-              document.getElementById("appSeal").style.top = "calc(25%)"
-              document.getElementById("appSeal").style.left = "calc(25%)"
-              flipflop = 0;
-              break;
-          }
-          break;
-          case "close":
-          document.getElementById("appSeal").style.animation = "popout 0.4s ease 1 normal forwards";
-          break;
-      }
-    break;
-  }
+    }
+
+//Wallpaper
+$(switchBackground);
+var oFReader = new FileReader(),
+    rFilter = /^(?:image\/bmp|image\/webp|image\/|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+
+oFReader.onload = function(oFREvent) {
+    localStorage.setItem('wallpaper', oFREvent.target.result);
+    switchBackground();
+};
+
+function switchBackground() {
+  var backgroundImage = localStorage.getItem('wallpaper');
+  if (backgroundImage) {
+    $('body').css('background-image', 'url(' + backgroundImage + ')');    
+    closeList();
+  } 
+}
+
+function loadImageFile(testEl) {
+  if (! testEl.files.length) { return; }
+  var oFile = testEl.files[0];
+  if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
+  oFReader.readAsDataURL(oFile);
+}
+
+function clearBackground() {
+    localStorage.removeItem('wallpaper')
+    window.location.reload()
 }
 
 
+//Theme
 
+let theme = localStorage.getItem('desktop-theme');
+const checkbox = document.getElementById("switchTheme");
+const changeThemeToDark = () =>{
+    document.documentElement.setAttribute("desktop-theme", "dark")
+    localStorage.setItem("desktop-theme", "dark")
+    console.log("I give you dark")
+}
 
+const changeThemeToLight = () =>{
+    document.documentElement.setAttribute("desktop-theme", "light")
+    localStorage.setItem("desktop-theme", 'light')
+    console.log("I give you light")
+}
+
+if(theme === 'light'){
+    changeThemeToLight()
+}
+
+checkbox.addEventListener('change', ()=> {
+    let theme = localStorage.getItem('desktop-theme');
+    if (theme ==='light'){
+        changeThemeToDark()
+    }else{
+        changeThemeToLight()
+    }
+});

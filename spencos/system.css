@@ -1,12 +1,16 @@
 /*Style*/
 
-#texttitle
-{
-    color: white;
-    font-size: 30px;
+h1{
+  text-align: center;
 }
 
-span, p, a, h1, h2{
+#title{
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+span, p, a, h1, h2, li{
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -14,22 +18,42 @@ span, p, a, h1, h2{
     color: white;
 }
 
-#loginimage{
-    transition: margin-top 0.2s;
+.hidden {
+  display: none;
 }
 
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
+.invert{
+  filter: invert(1);
+}
+
+[desktop-theme='light'] .invert{
+  filter: invert(0);
+}
+
+
+[desktop-theme='light'] #start, [desktop-theme='light'] #notify, [desktop-theme='light'] nav ul {
+    background-color: rgba(224, 236, 247, 0.75);
+    color: rgb(50, 50, 50);
+}
+
+[desktop-theme='light'] #date-time, [desktop-theme='light'] nav ul a {
+  color: rgb(57, 57, 57);
+}
+
 
 
 /*Login*/
 
 body{
-    background-image:url("../global/media/backgrounds/desktop.jpg");
+    background-image: url("../global/media/backgrounds/desktop.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
 }
 
 #loginimage{
@@ -38,6 +62,8 @@ body{
     height: 256px;
     border: 2px solid white;
     border-radius: 10px;
+    transition: margin-top 0.2s;
+
 }
 
 #loginlist{
@@ -88,38 +114,34 @@ body{
 
 
 #start{
-    background-color: rgba(224, 236, 247, 0.75);
-
+    background-color: rgba(39, 39, 39, 0.7);
+    color: rgb(225, 225, 225);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-
     width: 90%;
     min-width: 435px;
     max-width: 550px;
     height: 70%;
     min-height: 200px;
     max-height: 600px;
-
+    border-radius: 5px;
     bottom: calc(0% + 50px);
     left: calc(0% + 3px);
-
     position: fixed;
     display: none;
     z-index: 50;
 }
 
-
 #notify{
-    background-color: rgba(224, 236, 247, 0.75);
+    background-color: rgba(39, 39, 39, 0.7);
+    color: rgb(225, 225, 225);
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-
     width: 350px;
     height: 90%;
-
+    border-radius: 5px;
     bottom: calc(0% + 50px);
     right: calc(0% + 5px);
-
     position: fixed;
     display: none;
     z-index: 50;
@@ -130,8 +152,79 @@ body{
     position: absolute;
 }
 
+/*Desktop Apps*/
 
-/*Apps*/
+#desktopIcons{
+    list-style-type: none;
+    height: auto;
+    text-align: center;
+}
+
+#desktopIcons li{
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  transition: background-color 0.1s;
+}
+
+#desktopIcons li img{
+  width: 48px;
+  border-radius: 10px;
+}
+
+#desktopIcons li:hover{
+  background-color: #e1e1e12b;
+}
+
+/*Start Apps*/
+
+#startIcons{
+  width: 100%;
+  list-style-type: none;
+  height: auto;
+}
+
+#startIcons li{
+  display:inline-block;
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.1s;
+  }
+
+#startIcons li img{
+  width: 48px;
+  border-radius: 10px;
+  transition: scale 0.1s;
+}
+
+#startIcons li:hover{
+background-color: #e1e1e12b;
+}
+
+#startBottom{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid gray;
+  bottom: 1;
+}
+
+#buttonLogout{
+  color: inherit;
+  float: right;
+  text-decoration: none;
+  margin: 20px;
+}
+
+
+/*App Windows*/
 
 .app{
     min-width: 350px;
@@ -196,8 +289,7 @@ body{
 
 
 /*Taskbar*/
-
-#navdiv{
+nav{
     position:fixed;
       bottom: 0;
       width: 100%;
@@ -206,45 +298,81 @@ body{
       z-index: 60;
   }
   
-  .navUl {
+  nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgba(50, 50, 50, 0.529);
-
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-
     margin-left: -10px;
   }
   
-  .navLi {
+  nav li {
     float: left;
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #bbbbbb7f;
   }
   
-  .navLi:last-child {
+  nav li:last-child {
     border-right: none;
   }
   
-  .navLi a {
-    display: block;
+  nav li a {
+    display: none;
     color: white;
     text-align: center;
-    padding: 14px 30px;
+    padding: 8px 20px;
+    margin: 3px;
+    border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.1s;
   }
   
-  /* Change the link color to #111 (black) on hover */
-  .navLi a:hover {
-    background-color: #111;
+  nav li img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: -5px;
+  }
+
+  nav li a:hover, #startButton:hover a, .active {
+    background-color: #3b3b3b75;
+  }
+
+  .pinnedToTaskbar{
+    display: inline-flex !important;
+  }
+
+  .defaultOnTaskbar{
+    display: inline-flex;
+  }
+
+
+  #startButton{
+    display: inline-flex;
+    padding: 3px 3px;
+    margin: 4px;
+    margin-left: 6px;
+    width: 35px;
+    height: 35px;
+  }
+
+  #startButton img{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin: 0px;
+    border-radius: 5px;
+  }
+
+  nav img{
+    transition: scale 0.1s;
   }
   
-  .active {
-    background-color: #04AA6D;
+  nav li:active img, #startButton:active img, #startIcons li:active img{
+    scale: 0.8;
   }
-  
   
   
   #clock{
@@ -262,23 +390,11 @@ body{
   {
     float:right
   }
-  
-  #startbutton{
-  padding: 0;
-  padding-right: 12px;
-  width: 100px;
-  }
-  
-  #startlogo{
-    width: 40px;
-    padding-left: 12px;
-    margin-left: -10px;
-  }
-  
+
   #taskbaricon{
     position:inherit;
-  width:24px;
-  height: 24px;
+    width:24px;
+    height: 24px;
   }
 
 
@@ -424,3 +540,28 @@ body{
     }
   }
   
+
+
+/*App Settings*/
+
+.customizeOption{
+  display: flex;
+  align-items: center;
+  background-color: rgba(235, 235, 235);
+  border: 1px solid gray;
+  color: rgb(87, 87, 87);
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .app{
+    max-width: 100%;
+    width: 200px;
+  } 
+}

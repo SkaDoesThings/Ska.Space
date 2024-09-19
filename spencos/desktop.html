@@ -1,4 +1,4 @@
-<html>
+<html desktop-theme="dark">
     <head>
         <link rel="stylesheet" href="system.css">
     </head>
@@ -9,7 +9,14 @@
             <!--Start Menu stored here-->
             <div id="start">
                 <h1>Start</h1>
-                <a href="../index.html">Logout</a>
+                <ul id="startIcons" onclick="clickDesktop()">
+                    <li onclick="appFunction('appSeal', 'toggle')"><img src="../global/media/images/ska/wumpus.webp">Ska.Space</li>
+                    <li onclick="appFunction('appSettings', 'toggle')"><img src="../global/media/icons/nav/settings.png" class="invert">Settings</li>
+                </ul>
+
+                <div id="startBottom">
+                    <a id="buttonLogout" href="../index.html">Logout</a>
+                </div>
             </div>
 
             <!--Notifications stored here-->
@@ -19,7 +26,9 @@
 
             <!--Desktop, Holds Wallpaper and Apps-->
             <div id="desktop" onclick="clickDesktop()">
-                <center><p id="texttitle">SpencOS Web</p></center>
+                <h1 id="title">SpencOS Web</h1>
+
+                <!--Desktop icons-->
 
                 <!--Apps are stored here-->
                 <div class="apps">
@@ -28,9 +37,9 @@
                             <ul class="appActions">
                                 <img src="../global/media/images/ska/wumpus.webp" style="width: 24px; height: 24px; margin: 3px">
                                 <span>Ska.Space</span>
-                                <li class="appLi typeClose" onclick="appFunction('Seal', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('Seal', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('Seal', 'minimize')"><a>-</a></li>
+                                <li class="appLi typeClose" onclick="appFunction('appSeal', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('appSeal', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('appSeal', 'toggle')"><a>-</a></li>
                             </ul>
                         </div>
                         <embed type="text/html" src="../index.html" class="webapp">          
@@ -43,31 +52,37 @@
                         <ul class="appActions">
                             <img src="../global/media/icons/nav/settings.png" style="width: 24px; height: 24px; margin: 3px">
                             <span>Settings</span>
-                            <li class="appLi typeClose" onclick="appFunction('Settings', 'close')"><a>x</a></li>
-                            <li class="appLi" onclick="appFunction('Settings', 'maximize')"><a>+</a></li>
-                            <li class="appLi" onclick="appFunction('Settings', 'minimize')"><a>-</a></li>
+                            <li class="appLi typeClose" onclick="appFunction('appSettings', 'close')"><a>x</a></li>
+                            <li class="appLi" onclick="appFunction('appSettings', 'maximize')"><a>+</a></li>
+                            <li class="appLi" onclick="appFunction('appSettings', 'toggle')"><a>-</a></li>
                         </ul>
                     </div>
                     <div id="pageSettings">
                         <div id="settingHome"><center>
                             <span class="title">Home</span><br><br>
                             <h2 class="title">Welcome {username here}</h2>
+                            <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
+                            <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+                            <button class="customizeOption" onclick="document.getElementById('test').click();"><img src="../seal/images/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>
+                            <button class="customizeOption" onclick="clearBackground()"><img src="../seal/images/wallpaperClear.png" class="spaceNavIcon invert">Clear Wallpaper</button>
+                            <button class="customizeOption" onclick="document.getElementById('switchTheme').click();"><img src="../seal/images/switchTheme.png" class="spaceNavIcon invert">Switch Theme</button>
                         </div></center>
                     </div>
                 </div>
             </div>
 
             <!--Taskbar, Holds Potential Apps-->
-            <div id="navdiv">
-                <ul class="navUl">
-                    <li class="navLi" onclick="uiFunction('Start')"><a id="startbutton"><img src="../global/media/icons/logos/tree.png" id="startlogo">Start</a></li>
-                    <li class="navLi"><a onclick="appFunction('Seal', 'open')">Ska.Space</a></li>
-                    <li class="navLi"><a onclick="appFunction('Settings', 'open')">Settings</a></li>
-                    <li class="navLi"><a href="login.html">Page</a></li>
-                    <li class="navLi" id="navright" onclick="uiFunction('Notify')"><h1 id="date-time"></h1></li>
+            <nav>
+                <ul id="taskbar">
+                    <li onclick="uiFunction('Start')"><a id="startButton"><img src="../global/media/icons/logos/tree.png"></a></li>
+                    <li><a id="appSealIcon" class="defaultOnTaskbar" onclick="appFunction('appSeal', 'toggle')"><img src="../global/media/images/ska/wumpus.webp">Ska.Space</a></li>
+                    <li><a id="appSettingsIcon" onclick="appFunction('appSettings', 'toggle')"><img src="../global/media/icons/nav/settings.png">Settings</a></li>
+                    <li><a href="login.html">Page</a></li>
+                    <li id="navright" onclick="uiFunction('Notify')"><h1 id="date-time"></h1></li>
                 </ul>
-            </div>
+            </nav>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="system.js"></script>
     </body>
 </html>

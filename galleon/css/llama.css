@@ -5,3 +5,11 @@
     background-repeat: repeat;
     opacity: 1;
 }
+
+[data-theme='dark'] article{
+    background-image: url('../images/stone.webp');
+    background-size: 100px;
+    background-repeat: repeat;
+    opacity: 1;
+}
+
