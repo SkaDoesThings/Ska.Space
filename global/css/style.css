@@ -50,7 +50,8 @@ article{
     border: 1px solid rgb(97, 95, 95);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 0px;
+    padding-top: 20px;
     border-radius: 5px;
     width:93%;
     max-width: 2000px;
@@ -62,6 +63,7 @@ article{
 
 article article{
     box-shadow: none;
+    padding-top: 0px;
 }
 
 .contentTransparent article {
@@ -859,7 +861,7 @@ input[type=submit]:hover{
     #myDropdown a {
         width: 90%;
         display: flex;
-        margin-left: 5px;
+        margin-left: 10px;
         padding: 0px 0px;
         justify-content: center;
     }
@@ -882,7 +884,7 @@ input[type=submit]:hover{
 
     main{
         padding-top: 0px;
-        margin-top: -20px;
+        margin-top: -45px;
         padding-bottom: 75px;
     }
 
