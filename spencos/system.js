@@ -1,5 +1,20 @@
-//Clock
+let apps = document.querySelectorAll('.app');
+apps.forEach(function(app) {
+  app.addEventListener('click', function() {
+    windowToTop(app);
+  });
+});
 
+function windowToTop(app) {
+  apps.forEach(function(app) {
+    if (app.style.zIndex = 10){
+      app.style.zIndex = 9;
+    }      
+  })
+  app.style.zIndex = 10;
+}
+
+//Clock
 window.addEventListener("load", () => {
   clock();
   function clock() {
@@ -60,8 +75,6 @@ window.addEventListener("load", () => {
 
 
 //Window Controls
-
-// Make the DIV element draggable:
 dragElement(document.getElementById("Settings"));
 dragElement(document.getElementById("Ska.Space"));
 dragElement(document.getElementById("Cloud"));
@@ -111,7 +124,6 @@ function dragElement(elmnt) {
 
 
 //Main Desktop
-
 function clickDesktop() {
   switch(event.which) {
     case 1:
@@ -145,7 +157,6 @@ function shutdown() {
   }, 1100);
 }
 
-
 var UIStateStart = 0;
 var UIStateNotify = 0;
 function uiFunction(name) {
@@ -153,12 +164,12 @@ function uiFunction(name) {
     case "Start":
       switch(UIStateStart){
         case 0:
-          document.getElementById("start").style.animation = "slideUp 0.4s ease 1 normal forwards";
+          document.getElementById("start").style.animation = "slideUp 0.25s ease 1 normal forwards";
           document.getElementById("start").style.display = "block";
           UIStateStart = 1;
           break;
         case 1:
-          document.getElementById("start").style.animation = "slideOut 0.4s ease 1 normal forwards";
+          document.getElementById("start").style.animation = "slideOut 0.25s ease 1 normal forwards";
           UIStateStart = 0;
           break;
       }
@@ -167,16 +178,25 @@ function uiFunction(name) {
     case "Notify":
       switch(UIStateNotify){
         case 0:
-          document.getElementById("notify").style.animation = "slideRightToLeftIn 0.4s ease 1 normal forwards";
+          document.getElementById("notify").style.animation = "slideRightToLeftIn 0.25s ease 1 normal forwards";
           document.getElementById("notify").style.display = "block";
           UIStateNotify = 1;
           break;
         case 1:
-          document.getElementById("notify").style.animation = "slideRightToLeftOut 0.4s ease 1 normal forwards";
+          document.getElementById("notify").style.animation = "slideRightToLeftOut 0.25s ease 1 normal forwards";
           UIStateNotify = 0;
           break;
       }
     break;
+
+    case "Peek":{
+      apps.forEach(function(app) {
+        var taskbarName = (app + "Icon");
+        if(document.getElementById(taskbarName) == null){
+          
+        }
+      });      
+    }
   }
 }
 
@@ -310,25 +330,6 @@ checkbox.addEventListener('change', ()=> {
         changeThemeToLight()
     }
 });
-
-
-let apps = document.querySelectorAll('.app');
-apps.forEach(function(app) {
-  app.addEventListener('click', function() {
-    windowToTop(app);
-  });
-});
-
-function windowToTop(app) {
-  apps.forEach(function(app) {
-    if (app.style.zIndex = 10){
-      app.style.zIndex = 9;
-    }      
-  })
-  app.style.zIndex = 10;
-}
-
-
 
 //Microsoft Copilot made this code, couldn't find anything on the internet
 

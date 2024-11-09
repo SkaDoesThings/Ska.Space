@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html desktop-theme="dark">
     <head>
         <title>SpencOS</title>
@@ -13,13 +14,13 @@
             <div id="start">
                 <h1>Dashboard</h1>
                 <ul id="startIcons" onclick="clickDesktop()">
-                    <li onclick="appFunction('Ska.Space', 'toggle')"><img src="../global/media/images/ska/wumpus.webp">Ska.Space</li>
-                    <li onclick="appFunction('Settings', 'toggle')"><img src="../global/media/icons/nav/settings.png" class="invert">Settings</li>
-                    <li onclick="appFunction('Cloud', 'toggle')"><img src="../global/media/icons/nav/settings.png" class="invert">Cloud</li>
+                    <li onclick="appFunction('Ska.Space', 'toggle')"><img src="images/apps/Ska.SpaceIcon.webp">Ska.Space</li>
+                    <li onclick="appFunction('Settings', 'toggle')"><img src="images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                    <li onclick="appFunction('Cloud', 'toggle')"><img src="images/apps/CloudIcon.webp">Cloud</li>
                 </ul>
 
                 <div id="startBottom">
-                    <button onclick="shutdown()" >Shutdown</button>
+                    <a id="buttonLogout" onclick="shutdown()">Shutdown</a>
                 </div>
             </div>
 
@@ -45,9 +46,9 @@
                 <!--Apps are stored here-->
                 <div class="apps">
                     <div class="app" id="Ska.Space">
-                        <div class="appHeader" id="appSka.SpaceHeader">
+                        <div class="appHeader" id="Ska.SpaceHeader">
                             <ul class="appActions">
-                                <img src="../global/media/images/ska/wumpus.webp" style="width: 24px; height: 24px; margin: 3px">
+                                <img src="images/apps/Ska.SpaceIcon.webp">
                                 <span>Ska.Space</span>
                                 <li class="appLi typeClose" onclick="appFunction('Ska.Space', 'close')"><a>x</a></li>
                                 <li class="appLi" onclick="appFunction('Ska.Space', 'maximize')"><a>+</a></li>
@@ -59,9 +60,9 @@
 
                     <div class="app" id="Settings">
                         <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-                        <div class="appHeader">
+                        <div class="appHeader" id="SettingsHeader">
                             <ul class="appActions">
-                                <img src="../global/media/icons/nav/settings.png" style="width: 24px; height: 24px; margin: 3px">
+                                <img src="images/apps/SettingsIcon.webp">
                                 <span>Settings</span>
                                 <li class="appLi typeClose" onclick="appFunction('Settings', 'close')"><a>x</a></li>
                                 <li class="appLi" onclick="appFunction('Settings', 'maximize')"><a>+</a></li>
@@ -82,10 +83,10 @@
                     </div>
 
                     <div class="app" id="Cloud">
-                        <div class="appHeader">
+                        <div class="appHeader" id="CloudHeader">
                             <ul class="appActions">
-                                <img src="../global/media/images/ska/wumpus.webp" style="width: 24px; height: 24px; margin: 3px">
-                                <span>Ska.Space</span>
+                                <img src="images/apps/CloudIcon.webp">
+                                <span>Cloud</span>
                                 <li class="appLi typeClose" onclick="appFunction('Cloud', 'close')"><a>x</a></li>
                                 <li class="appLi" onclick="appFunction('Cloud', 'maximize')"><a>+</a></li>
                                 <li class="appLi" onclick="appFunction('Cloud', 'toggle')"><a>-</a></li>
@@ -99,9 +100,10 @@
             <!--Taskbar, Holds Potential Apps-->
             <nav id="taskbar">
                 <a id="startButton" onclick="uiFunction('Start')"><img src="../global/media/icons/logos/tree.png"></a>
-               
                 <a href="login.html">Page</a></li>
-                <a id="navright" onclick="uiFunction('Notify')"><h1 id="date-time"></h1>
+                <div id="peekBar" onclick="uiFunction('Peek')"></div>
+                <div id="navright" onclick="uiFunction('Notify')"><h1 id="date-time"></h1></div>
+                <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
             </nav>
         </div>
         <div id="shutdown">
