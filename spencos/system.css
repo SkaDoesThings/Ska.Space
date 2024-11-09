@@ -150,9 +150,18 @@ span, p, a, h1, h2, li{
     right: calc(0% + 5px);
     position: fixed;
     display: none;
+    text-align: center;
     z-index: 50;
 }
 
+#notify img{
+  display: block;
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
 .rectangle {
     border: 1px solid #FF0000;
     position: absolute;
@@ -360,8 +369,8 @@ nav a img{
 }
 
 
-nav a:hover, #startButton:hover a, .active {
- background-color: #535353ba;
+nav a:hover, #startButton:hover a, #navright:hover, .active {
+ background-color: #5353538b;
 }
 
 .pinnedToTaskbar{
@@ -390,7 +399,6 @@ nav a:hover, #startButton:hover a, .active {
  border-radius: 5px;
 }
 
-
 nav img{
   transition: scale 0.1s;
 }
@@ -408,6 +416,7 @@ nav a:active img, #startIcons a:active img{
 
 #navright{
   float:right;
+  padding-left: 8px;
   margin-top: -4px;
 }
 
