@@ -1,4 +1,3 @@
-
 //Clock
 
 window.addEventListener("load", () => {
@@ -63,8 +62,9 @@ window.addEventListener("load", () => {
 //Window Controls
 
 // Make the DIV element draggable:
-dragElement(document.getElementById("appSettings"));
-dragElement(document.getElementById("appSeal"));
+dragElement(document.getElementById("Settings"));
+dragElement(document.getElementById("Ska.Space"));
+dragElement(document.getElementById("Cloud"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -137,6 +137,15 @@ function clickTaskbar() {
   
 }
 
+function shutdown() {
+  document.getElementById("shutdown").style.display = "block";
+
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 1100);
+}
+
+
 var UIStateStart = 0;
 var UIStateNotify = 0;
 function uiFunction(name) {
@@ -175,48 +184,66 @@ var flipflop = 0;
 
 function appFunction(name, type) {
   var appName = document.getElementById(name);
-  var taskbarName = document.getElementById(name + "Icon");
+  var taskbarName = (name + "Icon");
     switch(type){
       case "toggle":
         if(appName.classList.contains('opened')) {
           appName.classList.remove('opened')
-          taskbarName.classList.remove('active')
+          document.getElementById(taskbarName).classList.remove('active')
           appName.style.animation = "minimize 0.4s ease 1 normal forwards";
           break;
         }
         else{
+          
+          if(document.getElementById(taskbarName) == null){
+            var menu = document.getElementById("taskbar");
+            var newlink = document.createElement("a");
+  
+            newlink.setAttribute("id", name + "Icon");
+            newlink.setAttribute("class", "active");
+            newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
+            newlink.innerHTML = ("<img src='images/apps/" + name + "Icon.webp'>" + name) 
+            menu.appendChild(newlink);
+          }
+      
+          
           appName.classList.add('opened')
-          taskbarName.classList.add('active')
+          document.getElementById(taskbarName).classList.add('active')
           appName.style.display = "block";
-          taskbarName.style.display = "inline-flex";
+          document.getElementById(taskbarName).style.display = "inline-flex";
           appName.style.animation = "popup 0.4s ease 1 normal forwards";
+
+          windowToTop(appName)
           break;
       }
-
       case "close":
           appName.classList.remove('opened')
-          taskbarName.classList.remove('active')
-          taskbarName.style.display = "none";
+          document.getElementById(taskbarName).classList.remove('active')
+          document.getElementById(taskbarName).style.display = "none";
           appName.style.animation = "popout 0.4s ease 1 normal forwards";
-        
+          
+          var menu = document.getElementById("taskbar");
+          menu.removeChild(document.getElementById(taskbarName));
         break;
 
       case "maximize":
         if(appName.classList.contains('resized')){
           appName.classList.remove('resized')
-          appName.style.width = "50%"
-          appName.style.height = "50%"
-          appName.style.top = "calc(25%)"
-          appName.style.left = "calc(25%)"
+          appName.style.width = "50%";
+          appName.style.height = "50%";
+          appName.style.top = "calc(25%)";
+          appName.style.left = "calc(25%)";
+          appName.style.borderRadius = "10px";
           flipflop = 0;
           break;
         }
         else {
           appName.classList.add('resized')
-          appName.style.width = "100%"
-          appName.style.height = "calc(100% - 75px)"
-          appName.style.top = "calc(0%)"
-          appName.style.left = "calc(0%)"
+          appName.style.width = "100%";
+          appName.style.height = "calc(100% - 75px)";
+          appName.style.top = "calc(0%)";
+          appName.style.left = "calc(0%)";
+          appName.style.borderRadius = "0px";
           flipflop = 1;
           break;
         }
@@ -283,3 +310,57 @@ checkbox.addEventListener('change', ()=> {
         changeThemeToLight()
     }
 });
+
+
+let apps = document.querySelectorAll('.app');
+apps.forEach(function(app) {
+  app.addEventListener('click', function() {
+    windowToTop(app);
+  });
+});
+
+function windowToTop(app) {
+  apps.forEach(function(app) {
+    if (app.style.zIndex = 10){
+      app.style.zIndex = 9;
+    }      
+  })
+  app.style.zIndex = 10;
+}
+
+
+
+//Microsoft Copilot made this code, couldn't find anything on the internet
+
+const container = document.getElementById('container'); 
+const selection = document.getElementById('selection'); 
+
+let startX, startY, endX, endY; 
+container.addEventListener('mousedown', (e) =>  { 
+  startX = e.clientX; 
+  startY = e.clientY; 
+  selection.style.left = `${startX}px`; 
+  selection.style.top = `${startY}px`; 
+  selection.style.width = `0px`; 
+  selection.style.height = `0px`; 
+  selection.style.display = 'block'; 
+  container.addEventListener('mousemove', onMouseMove); 
+}); 
+
+container.addEventListener('mouseup', () => { 
+  container.removeEventListener('mousemove', onMouseMove); 
+  selection.style.display = 'none'; 
+}); 
+  
+function onMouseMove(e) { 
+  let currentX = e.clientX; 
+  let currentY = e.clientY; 
+  let width = Math.abs(currentX - startX); 
+  let height = Math.abs(currentY - startY); 
+  
+  selection.style.width = `${width}px`; 
+  selection.style.height = `${height}px`; 
+  
+  if (currentX < startX) { selection.style.left = `${currentX}px`; } 
+  if (currentY < startY) { selection.style.top = `${currentY}px`; }
+}
