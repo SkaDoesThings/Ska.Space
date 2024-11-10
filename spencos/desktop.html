@@ -31,6 +31,15 @@
                 <h2>Nothing to see here~</h2>
             </div>
 
+            <div id="ccenter">
+                <h1>Action Center</h1>
+                <ul id="startIcons" class="typeCCenter">
+                    <li onclick="uiFunction('Audio', 'toggle')"><img src="images/icons/soundOff.png" id="audioToggle" class="invert">Audio</li>
+                    <li onclick="document.getElementById('switchTheme').click()"><img src="images/icons/theme.png" class="invert">Theme</li>
+                    <li onclick="appFunction('Settings', 'toggle')"><img src="images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                </ul>
+            </div>
+
             <!--Desktop, Holds Wallpaper and Apps-->
             <div id="desktop" onclick="clickDesktop()">
                 <h1 id="title">SpencOS Web</h1>
@@ -104,7 +113,13 @@
                 <a id="startButton" onclick="uiFunction('Start')"><img src="../global/media/icons/logos/tree.png"></a>
                 <a href="login.html">Page</a></li>
                 <div id="peekBar" onclick="uiFunction('Peek')"></div>
-                <div id="navright" onclick="uiFunction('Notify')"><h1 id="date-time"></h1></div>
+                <div id="navright" onclick="uiFunction('Notify')">
+                    <h1 id="date-time"></h1>
+                </div>
+                <div id="statusBar" onclick="uiFunction('CCenter')">
+                    <img src="images/icons/wifi.png" class="invert">
+                    <img src="images/icons/soundOff.png" id="audioIcon" class="invert">
+                </div>
                 <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
             </nav>
         </div>

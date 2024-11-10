@@ -133,6 +133,9 @@ function clickDesktop() {
       if(UIStateNotify = 1){
         uiFunction("Notify");
       }
+      if(UIStateCCenter = 1){
+        uiFunction("CCenter");
+      }
       break;
     case 2:
       $('#desktop').html('Middle Mouse button pressed.');
@@ -159,6 +162,9 @@ function shutdown() {
 
 var UIStateStart = 0;
 var UIStateNotify = 0;
+var UIStateCCenter = 0;
+var desktopStateAudio = 0;
+
 function uiFunction(name) {
   switch(name){
     case "Start":
@@ -176,18 +182,8 @@ function uiFunction(name) {
     break;
 
     case "Notify":
-      switch(UIStateNotify){
-        case 0:
-          document.getElementById("notify").style.animation = "slideRightToLeftIn 0.25s ease 1 normal forwards";
-          document.getElementById("notify").style.display = "block";
-          UIStateNotify = 1;
-          break;
-        case 1:
-          document.getElementById("notify").style.animation = "slideRightToLeftOut 0.25s ease 1 normal forwards";
-          UIStateNotify = 0;
-          break;
-      }
-    break;
+      switchUI("Notify");
+      break;
 
     case "Peek":{
       apps.forEach(function(app) {
@@ -196,6 +192,71 @@ function uiFunction(name) {
           
         }
       });      
+    }
+
+    case "CCenter": {
+      switchUI("CCenter");
+      break;
+    }
+
+    case "Audio": {
+      var audioToggle = document.getElementById('audioToggle').src;
+      var audioIcon = document.getElementById('audioIcon').src;
+      switch(desktopStateAudio) {
+        case 0:
+          document.getElementById("ccenter").style.animation = "slideUp 0.25s ease 1 normal forwards";
+          document.getElementById("ccenter").style.display = "block";
+          document.getElementById('audioIcon').src = 'images/icons/soundOn.png';
+          document.getElementById('audioToggle').src = 'images/icons/soundOn.png';
+          desktopStateAudio = 1
+          break;
+        case 1:
+          document.getElementById('audioIcon').src = 'images/icons/soundOff.png';
+          document.getElementById('audioToggle').src = 'images/icons/soundOff.png';
+          desktopStateAudio = 0;
+          break;
+      }
+      break;
+    }
+  }
+}
+
+function switchUI(type){
+  switch(type){
+    case "Notify": {
+      switch(UIStateNotify){
+        case 0:
+          document.getElementById("notify").style.animation = "slideRightToLeftIn 0.25s ease 1 normal forwards";
+          document.getElementById("notify").style.display = "block";
+          UIStateNotify = 1;
+          if(UIStateCCenter = 1){
+            switchUI("CCenter");
+          }
+          break;
+        case 1:
+          document.getElementById("notify").style.animation = "slideRightToLeftOut 0.25s ease 1 normal forwards";
+          UIStateNotify = 0;
+          break;
+      }
+      break;
+    }
+
+    case "CCenter": {
+      switch(UIStateCCenter){
+        case 0:
+          document.getElementById("ccenter").style.animation = "slideUp 0.25s ease 1 normal forwards";
+          document.getElementById("ccenter").style.display = "block";
+          UIStateCCenter = 1;
+          if(UIStateNotify = 1){
+            switchUI("Notify");
+          }
+          break;
+        case 1:
+          document.getElementById("ccenter").style.animation = "slideOut 0.25s ease 1 normal forwards";
+          UIStateCCenter = 0;
+          break;
+      }
+      break;
     }
   }
 }
