@@ -45,7 +45,7 @@ span, p, a, h1, h2, li{
 }
 
 
-[desktop-theme='light'] #start, [desktop-theme='light'] #notify, [desktop-theme='light'] nav, [desktop-theme='light'] .appHeader {
+[desktop-theme='light'] #start, [desktop-theme='light'] #notify, [desktop-theme='light'] #ccenter, [desktop-theme='light'] nav, [desktop-theme='light'] .appHeader {
     background-color: rgba(224, 236, 247, 0.75);
     color: rgb(50, 50, 50);
 }
@@ -127,8 +127,8 @@ span, p, a, h1, h2, li{
   -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
   border-radius: 5px;
+  border: 1px solid rgb(100, 100, 100);
 }
-
 
 #start{
     width: 90%;
@@ -217,13 +217,14 @@ span, p, a, h1, h2, li{
   margin-right: 5px;
   margin-top: 5px;
   border-radius: 10px;
+  font-size: 10pt;
   text-align: center;
   user-select: none;
   transition: background-color 0.1s;
+  cursor: pointer;
 }
 
 .typeCCenter li{
-
   height: 32px;
 }
 
@@ -245,11 +246,32 @@ background-color: #e1e1e12b;
   bottom: 0;
 }
 
+#startUser{
+  float: left;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+#startUser img{
+  width: 36px;
+  margin-top: 8px;
+  border: 1px solid rgb(246, 151, 151);
+  border-radius: 50%;
+}
+
+#startUser span{
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 10px;
+}
+
 #buttonLogout{
   color: inherit;
   float: right;
   text-decoration: none;
   margin: 20px;
+  user-select: none;
+  cursor: pointer;
 }
 
 
@@ -265,6 +287,8 @@ background-color: #e1e1e12b;
     overflow: auto;
     overflow-y: hidden;
     padding-bottom: 30px;
+    border: 1px solid rgb(65, 65, 65);
+    box-shadow: 5px 8px 16px 3px rgba(0,0,0,0.2);
 }
 
 
@@ -286,13 +310,18 @@ background-color: #e1e1e12b;
 #Settings{
   background-color: rgb(56, 56, 56);
   color: white;
-  width: 1200px;
-  height: 600px;
+  width: 200px;
+  height: 400px;
 }
 
 #Cloud{
   width: 1500px;
   height: 800px;
+}
+
+#SpiderWeb{
+  width: 1200px;
+  height: 600px;
 }
 
 .webapp{
@@ -324,6 +353,7 @@ background-color: #e1e1e12b;
     height: 35px;
     text-align: center;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .appLi:hover{
@@ -365,6 +395,7 @@ nav a {
  border-radius: 5px;
  text-decoration: none;
  user-select: none;
+ cursor: pointer;
  transition: background-color 0.1s;
 }
 
@@ -428,6 +459,8 @@ nav a:active img, #startIcons a:active img{
   float:right;
   padding-left: 8px;
   margin-top: -4px;
+  user-select: none;
+  cursor: pointer;
 }
 
 #peekBar{
@@ -435,6 +468,7 @@ nav a:active img, #startIcons a:active img{
   height: 50px;
   float:right;
   transition: background-color 0.1s;
+  cursor: pointer;
 }
 
 #peekBar:hover{
@@ -448,12 +482,14 @@ nav a:active img, #startIcons a:active img{
   margin-top: 5px;
   padding-left: 5px;
   border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
 }
 
 #statusBar img{
   width: 20px;
   margin-top: 10px;
-  align-self: center;
+  align-self: center; 
 }
 
 #taskbaricon{

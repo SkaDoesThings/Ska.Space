@@ -15,12 +15,14 @@
                 <h1>Dashboard</h1>
                 <ul id="startIcons" onclick="clickDesktop()">
                     <li onclick="appFunction('Ska.Space', 'toggle')"><img src="images/apps/Ska.SpaceIcon.webp">Ska.Space</li>
+                    <li onclick="appFunction('SpiderWeb', 'toggle')"><img src="images/apps/SpiderWebIcon.webp">SpiderWeb</li>
                     <li onclick="appFunction('Settings', 'toggle')"><img src="images/apps/SettingsIcon.webp" class="invert">Settings</li>
                     <li onclick="appFunction('Cloud', 'toggle')"><img src="images/apps/CloudIcon.webp">Cloud</li>
                 </ul>
 
                 <div id="startBottom">
-                    <a id="buttonLogout" onclick="shutdown()">Shutdown</a>
+                    <div id="startUser"><img src="images/user.png"><span>You</span></div>
+                    <a id="buttonLogout" onclick="shutdown()">Logout</a>
                 </div>
             </div>
 
@@ -37,6 +39,8 @@
                     <li onclick="uiFunction('Audio', 'toggle')"><img src="images/icons/soundOff.png" id="audioToggle" class="invert">Audio</li>
                     <li onclick="document.getElementById('switchTheme').click()"><img src="images/icons/theme.png" class="invert">Theme</li>
                     <li onclick="appFunction('Settings', 'toggle')"><img src="images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                    <li onclick="document.getElementById('test').click()"><img src="../seal/images/wallpaperSet.png" class="invert">Wallpaper</li>
+                    <li onclick="clearBackground()"><img src="../seal/images/wallpaperClear.png" class="invert">Clear WP</li>
                 </ul>
             </div>
 
@@ -56,6 +60,19 @@
 
                 <!--Apps are stored here-->
                 <div class="apps">
+                    <div class="app" id="SpiderWeb">
+                        <div class="appHeader" id="SpiderWebHeader">
+                            <ul class="appActions">
+                                <img src="images/apps/SpiderWebIcon.webp">
+                                <span>SpiderWeb - Not Functional</span>
+                                <li class="appLi typeClose" onclick="appFunction('SpiderWeb', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('SpiderWeb', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('SpiderWeb', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <embed type="text/html" src="../seal/search.html" class="webapp">          
+                    </div>
+
                     <div class="app" id="Ska.Space">
                         <div class="appHeader" id="Ska.SpaceHeader">
                             <ul class="appActions">
@@ -82,8 +99,6 @@
                         </div>
                         <div id="pageSettings">
                             <div id="settingHome"><center>
-                                <span class="title">Home</span><br><br>
-                                <h2 class="title">Welcome {username here}</h2>
                                 <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
                                 <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
                                 <button class="customizeOption" onclick="document.getElementById('test').click();"><img src="../seal/images/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>

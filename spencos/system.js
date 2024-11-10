@@ -78,6 +78,7 @@ window.addEventListener("load", () => {
 dragElement(document.getElementById("Settings"));
 dragElement(document.getElementById("Ska.Space"));
 dragElement(document.getElementById("Cloud"));
+dragElement(document.getElementById("SpiderWeb"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
