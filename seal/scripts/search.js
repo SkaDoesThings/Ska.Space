@@ -1,9 +1,11 @@
+
+
 function openSealOptions() {
     document.getElementById("customizeList").style.display = "block";
     document.getElementById("buttonCustomize").style.display = "none";
     
     document.getElementById("customize").style.width = "180px";
-    document.getElementById("customize").style.height = "200px";
+    document.getElementById("customize").style.height = "240px";
 }
 
 function closeList() {
@@ -14,39 +16,97 @@ function closeList() {
   document.getElementById("customize").style.height = "40px";
 }
 
-function resetSearch() {
+//Thank you Copilot for helping
 
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const quickLinksDiv = document.getElementById("quickLinks");
+  const linkNameInput = document.getElementById("link-name");
+  const linkUrlInput = document.getElementById("link-url");
+  const addLinkButton = document.getElementById("add-link");
+
+  // Load quick links from local storage
+  const loadLinks = () => {
+      const links = JSON.parse(localStorage.getItem("quickLinks")) || [];
+      quickLinksDiv.innerHTML = "";
+      links.forEach((link, index) => {
+          const linkElement = document.createElement("li");
+          linkElement.innerHTML = `
+              <button onclick="removeLink(${index})">x</button>
+              <a href="${link.url}">${link.name}</a>
+          `;
+          quickLinksDiv.appendChild(linkElement);
+      });
+  };
+
+  // Add a new link to the quick links
+  addLinkButton.addEventListener("click", () => {
+      const name = linkNameInput.value;
+      const url = linkUrlInput.value;
+      if (name && url) {
+          const links = JSON.parse(localStorage.getItem("quickLinks")) || [];
+          links.push({ name, url });
+          localStorage.setItem("quickLinks", JSON.stringify(links));
+          loadLinks();
+          linkNameInput.value = "";
+          linkUrlInput.value = "";
+      }
+  });
+
+  // Remove a link from the quick links
+  window.removeLink = (index) => {
+      const links = JSON.parse(localStorage.getItem("quickLinks")) || [];
+      links.splice(index, 1);
+      localStorage.setItem("quickLinks", JSON.stringify(links));
+      loadLinks();
+  };
+
+  // Initial load of links
+  loadLinks();
+});
+
 
 function selectSearch(selection) {
   document.getElementById("searchGoogle").style.display = "none";
   document.getElementById("searchYouTube").style.display = "none";
   document.getElementById("searchBing").style.display = "none";
-  document.getElementById("searchDuck").style.display = "none";
+  document.getElementById("searchX").style.display = "none";
+  document.getElementById("searchReddit").style.display = "none";
+
   document.getElementById("selectGoogle").style.opacity = "0.7";
   document.getElementById("selectYouTube").style.opacity = "0.7";
   document.getElementById("selectBing").style.opacity = "0.7";
-  document.getElementById("selectDuck").style.opacity = "0.7";
+  document.getElementById("selectX").style.opacity = "0.7";
+  document.getElementById("selectReddit").style.opacity = "0.7";
 
   switch(selection) {
-    case 0: {
+    case 'Google': {
       document.getElementById("searchGoogle").style.display = "block";
       document.getElementById("selectGoogle").style.opacity = "1";
       break;
     }
-    case 1: {
+    case 'YouTube': {
       document.getElementById("searchYouTube").style.display = "block";
       document.getElementById("selectYouTube").style.opacity = "1";
       break;
     }
-    case 2: {
+    case 'Bing': {
       document.getElementById("searchBing").style.display = "block";
       document.getElementById("selectBing").style.opacity = "1";
       break;
     }
-    case 3: {
+    case 'Duck': {
       document.getElementById("searchDuck").style.display = "block";
       document.getElementById("selectDuck").style.opacity = "1";
+      break;
+    }
+    case 'X': {
+      document.getElementById("searchX").style.display = "block";
+      document.getElementById("selectX").style.opacity = "1";
+      break;
+    }
+    case 'Reddit': {
+      document.getElementById("searchReddit").style.display = "block";
+      document.getElementById("selectReddit").style.opacity = "1";
       break;
     }
   }
@@ -80,3 +140,5 @@ function clearBackground() {
     localStorage.removeItem('b')
     window.location.reload()
 }
+
+

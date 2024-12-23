@@ -16,14 +16,15 @@
                 <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
-            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
             <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2> 
                 <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
-                <a href="posts.html" class="active">Posts</a>
+                <a href="posts.html">Posts</a>
+                <a href="gallery.html" class="active">Gallery</a>
                 <div id="myDropdown" class="dropdown-content">
                     <hr class="onMobile"><h2>Spaces</h2>
                     <a href="index.html" class="active"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
@@ -43,22 +44,20 @@
 
         <br><br>
         <main>
-			<h1 id="pageTitle" class="centered">Posts</h1>
+			<h1 id="pageTitle" class="centered">Gallery</h1><br>
             <article class="postList"> 
-                <h1 class="divider">Featured</h1>
-
                 <div id="featuredPosts">
                     <div id="featuredPostOne">
                         <a href="post/developing-this-website.html">
-                            <span>August 14th, 2024 &#x2022 Dev</span>
-                            <h1>Developing this website</h1>
-                            <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
+                            <span>August 14th, 2024 &#x2022 OC</span>
+                            <h1>Artwork</h1>
+                            <h2>Not that it's the best, but sometimes I experiment</h2>
                         </a>
                     </div>
                     <div id="featuredPostTwo">
                         <a href="post/post-template.html">
-                            <span>TBD &#x2022 Misc</span>
-                            <h1>More posts here</h1>
+                            <span>TBD &#x2022 OC</span>
+                            <h1>Edits</h1>
                             <h2>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</h2>
                         </a>
                     </div>
@@ -69,16 +68,14 @@
                             <h2>Hello World</h2>
                         </a>
                     </div>
-                </div>
-
-                <h1 class="divider">Other Posts</h1>
-                <div id="morePosts">
-                    <a href="post/post-template.html">
-                        <span>August 14th, 2024 &#x2022 Misc</span>
-                        <h1>Blog post template</h1>
-                        <h2>Just the base I use, serves as good filler for sure</h2>
-                    </a><br>
-                </div>
+                    <div id="featuredPostThree">
+                        <a href="post/post-template.html">
+                            <span>TBD &#x2022 Misc</span>
+                            <h1>Website Credits</h1>
+                            <h2>Hello World</h2>
+                        </a>
+                    </div>
+                </div><br>
             </article>
         </main>
         <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>

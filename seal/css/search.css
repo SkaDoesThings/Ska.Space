@@ -4,8 +4,11 @@ body{
 }
 
 [data-theme='dark'] body{
-    background-color:rgb(44, 40, 40) !important;
-    background: url('../../../global/media/backgrounds/darkmode.webp') center no-repeat;
+    /*background: url('../../../global/media/backgrounds/darkmode.webp') center no-repeat;*/
+}
+
+[data-theme='light'] body{
+    background: none;
 }
 
 article{
@@ -40,7 +43,7 @@ main{
 
 .searchText{
     font-size: 40pt;
-    color: white !important;
+    color: white;
 }
 
 input[type='search'] {
@@ -69,6 +72,8 @@ input[type='submit'] {
     position: absolute;
     margin-left: -75px;
     margin-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: 75px;
     height: 55px;
     border-radius: 0px;
@@ -92,11 +97,11 @@ form image{
     height: 64px;
 }
 
-#searchYouTube, #searchBing, #searchDuck {
+#searchYouTube, #searchBing, #searchDuck, #searchReddit, #searchX {
     display: none;
 }
 
-#selectYouTube, #selectBing, #selectDuck {
+#selectYouTube, #selectBing, #selectDuck, #selectReddit, #selectX {
     opacity: 0.8
 }
 
@@ -104,6 +109,10 @@ form image{
     margin-top: 20px;
     border: 0px; 
     padding: 0px;
+}
+
+.engines button{
+    margin: 3px;
 }
 
 #select{
@@ -120,16 +129,16 @@ form image{
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
 }
 
-.listbox a {
+.listbox a, .engines button {
     background-color: rgb(37, 36, 36, 0.5);
     transition: background-color 0.2s, border-radius 0.2s;
 }
 
-[data-theme='light'] .listbox a {
+[data-theme='light'] .listbox a, [data-theme='light'] .engines button {
     background-color: rgb(245, 245, 245, 0.7);
 }
 
-.listbox a:hover{
+.listbox a:hover, .engines button:hover{
     opacity: 1 !important;
 }
 
@@ -157,7 +166,7 @@ form image{
     margin: 10px;
     right: 0;
     bottom: 0;
-    background-color: rgba(203, 203, 203, 0.7);
+    background-color: rgba(203, 203, 203, 0.5);
     border-radius: 15px;
     border: 1px solid rgb(185, 185, 185);
     transition: width 0.5s, height 0.5s;
@@ -232,6 +241,26 @@ form image{
 
 #test{
     display: none;
+}
+
+#quickLinks li {
+    display: inline-block
+}
+
+#quickLinks button{
+    position: absolute;
+    background: none;
+    border: none;
+    display: none;
+    color: white;
+    font-size: 12pt;
+    margin-left: 8px;
+    margin-top: -20px;
+}
+
+#quickLinks li:hover button{
+    position: absolute;
+    display: inline-flex;
 }
 
 

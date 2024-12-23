@@ -1,3 +1,11 @@
+//Window Controls
+dragElement(document.getElementById("About Ska"));
+dragElement(document.getElementById("Settings"));
+dragElement(document.getElementById("Ska.Space"));
+dragElement(document.getElementById("Cloud"));
+dragElement(document.getElementById("SpiderWeb"));
+dragElement(document.getElementById("Cyan"));
+
 let apps = document.querySelectorAll('.app');
 apps.forEach(function(app) {
   app.addEventListener('click', function() {
@@ -72,13 +80,6 @@ window.addEventListener("load", () => {
     setTimeout(clock, 1000);
   }
 });
-
-
-//Window Controls
-dragElement(document.getElementById("Settings"));
-dragElement(document.getElementById("Ska.Space"));
-dragElement(document.getElementById("Cloud"));
-dragElement(document.getElementById("SpiderWeb"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -207,13 +208,13 @@ function uiFunction(name) {
         case 0:
           document.getElementById("ccenter").style.animation = "slideUp 0.25s ease 1 normal forwards";
           document.getElementById("ccenter").style.display = "block";
-          document.getElementById('audioIcon').src = 'images/icons/soundOn.png';
-          document.getElementById('audioToggle').src = 'images/icons/soundOn.png';
+          document.getElementById('audioIcon').src = 'spencos/images/icons/soundOn.png';
+          document.getElementById('audioToggle').src = 'spencos/images/icons/soundOn.png';
           desktopStateAudio = 1
           break;
         case 1:
-          document.getElementById('audioIcon').src = 'images/icons/soundOff.png';
-          document.getElementById('audioToggle').src = 'images/icons/soundOff.png';
+          document.getElementById('audioIcon').src = 'spencos/images/icons/soundOff.png';
+          document.getElementById('audioToggle').src = 'spencos/images/icons/soundOff.png';
           desktopStateAudio = 0;
           break;
       }
@@ -276,25 +277,20 @@ function appFunction(name, type) {
           break;
         }
         else{
-          
           if(document.getElementById(taskbarName) == null){
             var menu = document.getElementById("taskbar");
             var newlink = document.createElement("a");
-  
             newlink.setAttribute("id", name + "Icon");
             newlink.setAttribute("class", "active");
             newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
-            newlink.innerHTML = ("<img src='images/apps/" + name + "Icon.webp'>" + name) 
+            newlink.innerHTML = ("<img src='spencos/images/apps/" + name + "Icon.webp'>" + name) 
             menu.appendChild(newlink);
           }
-      
-          
           appName.classList.add('opened')
           document.getElementById(taskbarName).classList.add('active')
           appName.style.display = "block";
           document.getElementById(taskbarName).style.display = "inline-flex";
           appName.style.animation = "popup 0.4s ease 1 normal forwards";
-
           windowToTop(appName)
           break;
       }
@@ -303,7 +299,6 @@ function appFunction(name, type) {
           document.getElementById(taskbarName).classList.remove('active')
           document.getElementById(taskbarName).style.display = "none";
           appName.style.animation = "popout 0.4s ease 1 normal forwards";
-          
           var menu = document.getElementById("taskbar");
           menu.removeChild(document.getElementById(taskbarName));
         break;

@@ -269,13 +269,13 @@
     }
 
     .theSilly img{
-        width: 75px;
+        width: 64px;
         border-radius: 0px;
         transition: transform 0.1s;
     }
 
     .theSilly:hover img {
-        transform: scale(1.5) translateY(75px);
+        transform: scale(1.5) translateY(55px);
     }
 }
 

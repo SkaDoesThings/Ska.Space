@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.remove('fadeIn');
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
+
     document.getElementById("myDropdown").style.display = "none";
     document.getElementById('pageLoader').style.display = "block";
       });
@@ -113,7 +114,7 @@ function openNav() {
 }
 
 function closeThatNav() {
-  document.getElementById("navbox").style.height = "60px";
+  document.getElementById("navbox").style.height = "56px";
 
   document.getElementById("navbox").style.borderTopLeftRadius = "0px";
   document.getElementById("navbox").style.borderTopRightRadius = "0px";

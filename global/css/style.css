@@ -7,8 +7,9 @@ html{
 body {
     margin: 0 auto;
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
-    background-size: 4em 4em;
-    background-color:rgb(44, 40, 40);
+    background-size: 16em 16em;
+    background-position: center;
+    background-color:rgb(45, 42, 42);
     cursor: url('../media/cursor.png'), auto;
 }
 
@@ -16,6 +17,10 @@ body {
     background: url('../media/backgrounds/lightmode.webp') center;
     background-size: 700px;
     background-color: rgb(235, 235, 235);
+}
+
+[data-theme='dark'] #lobby {
+    background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
 }
 
 .divider{
@@ -38,15 +43,19 @@ main{
     padding-top: 50px;
     padding-bottom: 30px;
     transition: scale 0.2s;
-    animation: appearOpacityDelayed 0.4s forwards;
+    animation: appearOpacityDelayed 0.3s forwards;
 }
 
-[data-theme='dark'] #lobby {
-    background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
+.fadeOut{
+    animation: appearOpacity 0.15s forwards;
+}
+
+.fadeIn{
+    animation: disappearOpacity 0.3s forwards;
 }
 
 article{
-    background-color:rgb(42, 40, 40);
+    background-color:rgb(42, 40, 40, 1);
     border: 1px solid rgb(97, 95, 95);
     margin-left: auto;
     margin-right: auto;
@@ -54,7 +63,7 @@ article{
     padding-top: 20px;
     border-radius: 5px;
     width:93%;
-    max-width: 2000px;
+    max-width: 1850px;
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
@@ -62,6 +71,7 @@ article{
 }
 
 article article{
+    background-color:rgb(42, 40, 40, 0);
     box-shadow: none;
     padding-top: 0px;
 }
@@ -78,7 +88,6 @@ article article{
     background-color: rgb(235, 235, 235);
     border: 1px solid #d3d3d3;
 }
-
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
@@ -131,8 +140,7 @@ h2{
 }
 
 #pageTitle{
-    font-size: 38pt;
-    animation: appearOpacity 0.5s forwards;
+    animation: appearOpacity 1s forwards;
 }
 
 #pageTitle h1{
@@ -182,12 +190,43 @@ video {
     border-radius: 10px;
 }
 
+.button, .modalButton{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: rgb(52, 52, 52);
+    font-size: 17pt;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover, .modalButton:hover{
+    scale: 1.05;
+}
+
+button:active, .modalButton:active{
+    scale: 1.1;
+}
+
+button img, .modalButton img{
+    width: 22px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
 
 nav{
     position: fixed;
-    height: 60px;
+    height: 56px;
     width: 100%;
+    box-sizing: border-box;
     background-color: rgb(59, 57, 57, 0.7);
     z-index: 5;
     transition: height 0.15s, border-radius 0.3s;
@@ -213,7 +252,7 @@ nav{
     padding: 0px 5px;
     margin-left: 2px;
     margin-right: 2px;
-    margin-top: 15px;
+    margin-top: 13px;
     font-size: 16pt;
     border-radius: 5px;
     transition: background-color 0.2s, color 0.3s;
@@ -222,11 +261,15 @@ nav{
 }   
 
 
+#linkContainer a:hover{
+    scale: 1.05;
+}
+
 #linkContainer a:active{
     scale: 1.1;
 }
 
-#linkContainer a:hover{
+#linkContainer a:hover, .siteName:hover{
     background-color: rgb(246, 151, 151);
 }
 
@@ -252,14 +295,13 @@ nav{
     float: left;
     width: fit-content;
     height: 40px;
-    margin: 5px;
-    margin-top: 10px;
+    margin: 0px;
+    margin-top: 8px;
     min-width: 60px;
     cursor: pointer;
     transition: background-color 0.2s, min-width 0.3s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
 }
 .siteName span{
-    margin-left: 20px;
     pointer-events: none; 
 }
 
@@ -268,6 +310,7 @@ nav{
     content: "";
     width: 7px;
     height: 28px;
+    padding-right: 2px;
     border-right: 2px solid gray;
 }
 
@@ -276,10 +319,6 @@ nav{
     justify-content: center;
     font-size: 10px;
     margin-top: -13px;
-}
-
-.siteName:hover{
-    background-color: rgb(246, 151, 151);
 }
 
 nav a:active, .siteName:active{
@@ -331,7 +370,7 @@ nav a:active, .siteName:active{
     float: right;
     margin-left: 5px;
     margin-right: 3px;
-    margin-top: 12px;
+    margin-top: 10px;
     transition: transform 0.7s ease-in-out;
 }
 
@@ -359,14 +398,18 @@ nav a:active, .siteName:active{
 }
 
 .iconTypeList{
-    display: block;
+    display: none;
     float: left;
-    position: absolute;
-    margin-top: 7px;
     margin-left: 0px;
+    margin-top: 7px;
     width: 16px;
     height: 16px;
+    border-radius: 0px;
     background-size: 100%;
+}
+
+.siteName:hover .iconTypeList{
+    display: block;
 }
 
 /*Go to top of page*/
@@ -418,14 +461,6 @@ nav a:active, .siteName:active{
     font-size: 30pt;
 }
 
-.fadeOut{
-    animation: appearOpacity 0.15s ease forwards;
-}
-
-.fadeIn{
-    animation: disappearOpacity 0.4s ease forwards;
-}
-
 #leavingPage{
     width: 100vw;
     height: 100vh;
@@ -439,80 +474,6 @@ nav a:active, .siteName:active{
 
 [data-theme="light"] #leavingPage {
     background-color: rgb(235, 235, 235);
-}
-
-/*Thanks to https://cssloaders.github.io*/
-
-    #pageLoader{
-        display: block;
-        position: fixed;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .loader {
-        display: block;
-        transform: rotateZ(45deg);
-        perspective: 1000px;
-        border-radius: 50%;
-        width: 68px;
-        height: 68px;
-        margin-top: 35px;
-        margin-left: auto;
-        margin-right: auto;
-        color: #fff;
-  }
-
-    .loader:before,
-    .loader:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: inherit;
-      height: inherit;
-      border-radius: 50%;
-      transform: rotateX(70deg);
-      animation: 1s spin linear infinite;
-    }
-    
-    .loader:after {
-      color: #FF3D00;
-      transform: rotateY(70deg);
-      animation-delay: -.4s;
-    }
-  
-
-/*=-=-=-=-=-=-=-= In-Page Navs =-=-=-=-=-=-=-=*/
-
-.inlinePage{
-    width: 100vw;
-    height: 100%;
-}
-
-#inlineInfoCard{
-    display: block;
-}
-
-#inlineInfoAbout{
-    display: none;
-}
-
-.linkButton{
-    text-decoration: none;
-    width: auto;
-    font-size: 16pt;
-    color: white;
-}
-
-.linkButton img{
-    width: 32px;
-    height: 32px;
-    padding-right: 5px;
 }
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
@@ -544,7 +505,6 @@ div article{
     margin-left: 10px;
     margin-right: 10px;
 }
-
 
 /*=-=-=-=-=-=-=-=-= Modals =-=-=-=-=-=-=-=-=*/
 
@@ -607,45 +567,10 @@ div article{
 
 /*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 
-.modalButton{
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: rgb(52, 52, 52);
-    font-size: 17pt;
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    color: white;
-    transition: scale 0.1s;
-}
-
-.modal-button{
-    cursor: pointer;
-}
-
-.modalButton:hover{
-    scale: 1.05;
-}
-
-.modalButton:active{
-    scale: 1.1;
-}
-
-.modalButton img{
-    width: 22px;
-    height: 22px;
-    display: block;
-    float: left;
-    margin-left: 0px;
-    margin-right: 5px;
-    margin-top: 3px;
-}
-
 .modal {
     display: none;
     position: fixed;
     z-index: 1; 
-    padding-top: 150px;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -656,13 +581,18 @@ div article{
 }
 
 .modal-content {
-    position: relative;
     background-color: #2e2a2a;
     margin: auto;
     padding: 0;
     border: 4px solid rgb(246, 151, 151);;
     border-radius: 20px;
     width: 80%;
+    height: max-content;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     max-width: 700px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     font-size: 16pt;
@@ -700,23 +630,25 @@ div article{
 
 /*=-=-=-=-=-=-=-=-= Forms =-=-=-=-=-=-=-=-=*/
 
-form input{
+form input, .inputArray input, .inputSubmit{
     background-color:rgb(255, 255, 255);
     border: 2px solid rgb(246, 151, 151);
     font-size: 20pt;
 }
 
-[data-theme='dark'] form input{
+[data-theme='dark'] form input, [data-theme='dark'] .inputArray input, [data-theme='dark'] .inputArray button{
     background-color:rgb(87, 87, 87);
+    color: white;
 }
 
-form input:hover{
+form input:hover, form input:focus, .inputArray input:hover, .inputArray input:focus{
     background-color: #e2d5d5;
 }
 
-form input[type=text], form input[type=password]{
+form input[type=text], form input[type=password], .inputArray input{
     color: #bb3e00;
     border-radius: 5px;
+    margin: 5px;
     padding: 5px;
     text-align: left;
     transition: width 0.2s;
@@ -724,17 +656,19 @@ form input[type=text], form input[type=password]{
     min-width: 250px;
 }
 
-input[type=submit]{
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 200px;
+input[type=submit], .inputArray button{
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: auto;
     height: 50px;
     transition: width 0.2s;
     cursor: pointer;
 }
 
-input[type=submit]:hover{
+input[type=submit]:hover, .inputArray button:hover{
     border: 2px solid white;
     background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
 }
@@ -746,13 +680,14 @@ input[type=submit]:hover{
     margin-bottom: 20px;
 }
 
-.listbox a{
+.listbox a, .engines button{
     color: rgb(87, 87, 87);
     text-align: left;
     padding: 1px 5px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+    border: 0px;
     border-bottom: 1px solid rgb(87, 87, 87); 
     text-decoration: none;
     font-size: 18pt;
@@ -761,15 +696,15 @@ input[type=submit]:hover{
     cursor: pointer;
 }
 
-.listbox a:active{
+.listbox a:active, .engines button{
     margin-top: -3px;
 }
 
-[data-theme='dark'] .listbox a{
+[data-theme='dark'] .listbox a, [data-theme='dark'] .engines button{
     color: rgb(245, 245, 245);
 }
 
-.listbox a:hover{
+.listbox a:hover, .engines button:hover{
     background-color: rgb(246, 151, 151);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
@@ -799,7 +734,7 @@ input[type=submit]:hover{
     user-select: none;
 }
   
-  .hoverText:hover hover-text {
+.hoverText:hover hover-text {
     visibility: visible;
     padding: 8px 10px;
     opacity: 1;
@@ -819,8 +754,7 @@ input[type=submit]:hover{
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-
-  }
+}
 
 .slideDown hover-text::after{
     content: " ";
@@ -834,21 +768,204 @@ input[type=submit]:hover{
     margin-top: 40px;
 }
 
+/*=-=-=-=-=-=-=-=- ( Home Design ) -=-=-=-=-=-=-=-=*/
+
+#bannerContainer{
+    animation: bannerReveal 0.75s forwards;
+}
+
+#bannerMain{
+    height: 400px;
+    border-bottom: 3px solid #d3d3d3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 50%;
+    /*Patch for weird padding bug*/
+    margin-top: -87px;
+    margin-bottom: 20px;
+}
+
+#lobbyBanner{
+  transition: opacity 0.3s, transform 0.6s;
+}
+
+.mainImage{
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+  
+.mainText{
+  font-size: 48pt; 
+}
+
+#bannerMain span, #bannerMain h2{
+    color: rgb(235, 235, 235);
+}
+
+.bannerImageSeal{
+  background-image: url('../media/banners/landscape.webp');
+}
+
+.bannerImageGalleon{
+  background-image: url('../media/banners/sky.webp');
+}
+
+.placeholderLobby{
+  background: linear-gradient(to top, rgb(224, 127, 85), rgb(121, 97, 177));
+}
+
+.placeholderGalleon{
+  background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+}
+
+.bannerContent{
+    margin: auto;
+    position: absolute; 
+    left: 0; 
+    right: 0;
+    top: 18%;
+}
+
+.bannerButton{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 30%;
+    max-width: 200px;
+    min-width: 175px;
+    height: 70px;
+    background-color: rgb(41, 43, 50, 0.75);
+    backdrop-filter: blur(5px);
+    color: rgb(246, 151, 151);
+    border: 5px solid #d3d3d3;
+    border-radius: 20px;
+    font-size: 18pt;
+    transition: font-size 0.2s, background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.bannerButtonAnimate{
+    margin-top: -100px;
+    animation: clickMeHome 2s infinite;  
+}
+
+.bannerButton:hover{
+    background-color: rgb(246, 151, 151);
+    color: rgb(255, 255, 255);
+    font-size: 20pt;
+}
+
+.bannerButton:active{
+  transform: scale(1.1);
+}
+
+.homeSpace a{
+  display: inline-flex;
+  text-align: center;
+  text-decoration: none;
+  height: auto;
+  border-radius: 20px;
+  font-size: 18pt;
+  margin: 5px;
+  padding: 10px 10px;
+  background-color: rgba(241, 142, 92, 0.1);
+  border: 1px solid #bb3e00;
+  cursor: pointer;
+  transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
+}
+
+.homeSpace a:hover{
+  scale: 1.1;
+}
+
+.homeSpace a:active{
+  scale: 1;
+}
+
+.homeSpace img{
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 0px;
+
+}
+
+
+/*=-=-=-=-=-=-=- ( Dynamic Elements ) -=-=-=-=-=-=-=*/
+/*Thanks to https://cssloaders.github.io*/
+
+#pageLoader{
+    display: block;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loader {
+    display: block;
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: -.4s;
+}
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
 @media only screen and (min-width: 800px) {
+    body{
+        background-attachment: fixed;
+    }
+
     .onMobile{
         display: none;
         visibility: hidden;
-    } 
+    }
+    
+    nav{
+        padding: 0 10px;
+    }
+
+    #linkContainer a:nth-child(2) { 
+        margin-left: 10px;
+    }
 
     #myDropdown{
         position: fixed;
         display: none;
         position: absolute;
         width: 200px;
-        margin-top: 60px;
-        margin-left: 20px;
+        margin-top: 56px;
         padding-bottom: 10px;
         background-color: #f7ad45;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -872,6 +989,17 @@ input[type=submit]:hover{
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .homeSpace a{
+      font-size: 13pt;
+    }
+    
+    .homeSpace img{
+      width: 24px;
+      height: 24px;
+    }
+  }
+
 @media only screen and (max-width: 800px) {
     .onMobile{
         display: block;
@@ -893,6 +1021,11 @@ input[type=submit]:hover{
         margin-bottom: 0px; 
         width: 96%;
         border-radius: 10px;
+    }
+
+    .modal-content{
+        bottom: 70px;
+        top: 0px;
     }
 
     .mobileCenter{
@@ -971,7 +1104,6 @@ input[type=submit]:hover{
     .medium{
         max-width: 80%;
     }
-    
 
     #form{
         text-align: center;
@@ -982,7 +1114,7 @@ input[type=submit]:hover{
         width: 100vw;
     }
 
-    .listbox a{
+    .listbox a, .engines button{
         margin: 2px;
         font-size: 16pt;
     }
@@ -991,6 +1123,30 @@ input[type=submit]:hover{
         position: relative;
         top: 0;
         margin-left: 10px;
+    }
+
+    #bannerMain{
+        height: 325px;
+        margin-top: -50px;
+    }
+
+    .bannerContent{
+        top: 8%;
+    }
+
+    #lobbyArticle{
+        top: 75px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .mainText{
+        font-size: 30pt;
+    }
+
+    .mainImage{
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -1049,39 +1205,68 @@ input[type=submit]:hover{
         scale: 0.5;
     }
     100% {
-        margin-top: 60px;
+        margin-top: 56px;
         opacity: 1;
         scale: 1;
     }
 }
 
-
+@keyframes bannerReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+        scale: 0.9;
+    }
+    5%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(0px);
+        scale: 1;
+    }
+  }
+    
+  @keyframes clickMeHome {
+    0% {
+        margin-top: -100px;
+    }
+    50% {
+        margin-top: -105px;
+    }
+    100% {
+        margin-top: -100px;
+    }
+  }
 
 @keyframes spin {
     0%,
     100% {
-    box-shadow: .2em 0px 0 0px currentcolor;
+        box-shadow: .2em 0px 0 0px currentcolor;
     }
     12% {
-    box-shadow: .2em .2em 0 0 currentcolor;
+        box-shadow: .2em .2em 0 0 currentcolor;
     }
     25% {
-    box-shadow: 0 .2em 0 0px currentcolor;
+        box-shadow: 0 .2em 0 0px currentcolor;
     }
     37% {
-    box-shadow: -.2em .2em 0 0 currentcolor;
+        box-shadow: -.2em .2em 0 0 currentcolor;
     }
     50% {
-    box-shadow: -.2em 0 0 0 currentcolor;
+        box-shadow: -.2em 0 0 0 currentcolor;
     }
     62% {
-    box-shadow: -.2em -.2em 0 0 currentcolor;
+        box-shadow: -.2em -.2em 0 0 currentcolor;
     }
     75% {
-    box-shadow: 0px -.2em 0 0 currentcolor;
+        box-shadow: 0px -.2em 0 0 currentcolor;
     }
     87% {
-    box-shadow: .2em -.2em 0 0 currentcolor;
+        box-shadow: .2em -.2em 0 0 currentcolor;
     }
 }
 
@@ -1092,24 +1277,23 @@ input[type=submit]:hover{
         scroll-behavior: none;
     }
 
-    main, article, .fadeOut, .fadeIn{
+    main, article, .fadeOut, .fadeIn, #bannerContainer, .bannerButton,
+    #imageViewer, #imageBackdrop, #imageDisplay, .modal-content{
         animation-duration: 0s;
     }
 
-    #navbox, .siteName{
+    article, #navbox, .siteName, 
+    .homeSpace a, .person, .person .imageTypeMedium,
+    #linkContainer, #linkContainer a, .listbox, .listbox li a, .modalButton, #buttonTop {
         transition-duration: 0s;
     } 
-    
-    #linkContainer, #linkContainer a, article .listbox, .listbox li a, .modalButton, #buttonTop {
-        transition-duration: 0s;
-    }
-
-    #imageViewer, #imageBackdrop, #imageDisplay, .modal-content {
-        animation-duration: 0s;
-    }
 
     #buttonTop:after{
         content:'To Top (Reduced Motion)';
         font-size: 9pt;
+    }
+    
+    .bannerButtonAnimate{
+        margin-top: -120px;
     }
 }

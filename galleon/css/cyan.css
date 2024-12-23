@@ -1,6 +1,6 @@
 [data-theme='dark'] body{
     background: linear-gradient(45deg, #3c3e48 10%,transparent 10%,transparent 90%,#3c3e48 90%),linear-gradient(135deg, transparent 40%, #3c3e4880 40%, #3c3e4880 60%, transparent 0),linear-gradient(45deg, transparent 40%, #3c3e48 40%, #3c3e48 60%, transparent 0);
-    background-size: 4em 4em;
+    background-size: 20em 20em;
     background-color: #3a3a3a;
     opacity: 1
 }

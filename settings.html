@@ -15,7 +15,7 @@
                 <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear iconLeft offMobile invert" alt="Logo for Lobby Space"/></a>
+            <a href="settings.html"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">Current Space</h2>
 				<a onclick="history.back()"><- Return to Previous Page</a> 
@@ -35,31 +35,29 @@
 		<main>
 			<div id="pageSettings" class="lightBox centered">
 				<div id="menuButtons">
-					<span>Main</span>
+					<h2 class="offMobile">Settings</h2>
 					<button onclick="settingPage(0)" id="navHome">
 						<img src="global/media/images/settings/homeIcon.webp" class="invert"/>
 						<span class="navButtonText">Home</span>
-					</button><hr>		
+					</button>
 					<button onclick="settingPage(5)" id="navCredits">
 						<img src="global/media/images/settings/createIcon.webp" class="invert"/>
 						<span class="navButtonText">Credits</span>
-					</button><hr>	
+					</button>
 					<button onclick="settingPage(1)" id="navStyle">
 						<img src="global/media/images/settings/styleIcon.webp" class="invert"/>
 						<span class="navButtonText">Style</span>
-					</button><hr>
-
-					<span>Filler</span>
+					</button>
 					<!--Only show these screens if logged out-->
 					<button onclick="settingPage(2)" id="navLogin">
 						<img src="global/media/images/settings/loginIcon.webp" class="invert"/>
 						<span>Login</span>
-					</button><hr>
+					</button>
 					<!--Only show these screens if logged in-->
 					<button onclick="settingPage(3)" id="navLogout">
 						<img src="global/media/images/settings/logoutIcon.webp" class="invert"/>
 						<span class="navButtonText">Logout</span>
-					</button><hr>
+					</button>
 					<button onclick="settingPage(4)" id="navAccount">
 						<img src="global/media/images/settings/billingIcon.webp" class="invert"/>
 						<span class="navButtonText">Account</span>
@@ -123,9 +121,8 @@
 									<span>Nav icons from icons8</span>
 								</td>
 							</tr>
-
 						</table>
-
+						<h1>Media</h1>		
 					</div>
 
 					<!--Some CSS style changes (dark mode) if we have time-->
@@ -196,7 +193,7 @@
 						<h1>Logout</h1><br>
 						<span>Are you sure you want to log out?</span><br><br>
 						<span>Rememeber that you are {sql username here} with an email of {sql email here}</span><br><br>
-						<input type="submit" value="Yes" class="buttonSubmit">
+						<input type="submit" value="Yes" class="button">
 					</div>
 
 					
@@ -207,7 +204,6 @@
 				</div>
 			</div>
 		</main>
-		<button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
 	</body>
     <script src="global/scripts/scripts.js"></script>
 	<script src="global/scripts/theme.js"></script>
@@ -233,14 +229,14 @@
 
 	#pageSettings{
 		width: 90%;
-		max-width: 2000px;
+		max-width: 1500px;
 		height: 85%;
 		position: absolute; 
 		margin: auto;
 		left: 0; 
 		right: 0; 
 		justify-content: center;
-		border: 2px solid #bb3e00;
+		border: 2px solid #e55b38;
 		border-radius: 10px;
 		margin-left: auto;
 		margin-right: auto;
@@ -254,42 +250,40 @@
 		border-radius: 10px;
 		height: 98%;
 		float: left;
+		overflow-y: auto;
 	}
 
 	#menuButtons img {
 		margin-top: -5px;
-		width: 50px;
-		height: 50px;
+		width: 36px;
+		height: 36px;
 	}
 
 	#menuButtons button span{
 		color: #e2e0d5;
-		font-size: 22pt;
-		padding-left: 15px;
-		position: absolute;
+		font-size: 14pt;
+		margin-left: 5px;
 	}
 
 	#menuButtons button{
 		background-color: #f7ad45;
-		width: 100%;
-		height: 60px;
+		width: 90%;
+		height: 50px;
 		padding: 10px;
+		margin: 5px;
+		margin-left: 5%;
 		border: none;
+		border-radius: 10px;
 		cursor: pointer;
 		float: left;
 		text-align: left;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		transition: background-color 0.15s;
 	}
 
 	#menuButtons button:hover{
 		background-color: rgb(246, 151, 151);
 	}
 
-
-	#menuButtons button:active{
-		background-color: #e55b38;
-	}
 
 
 	#menuContent{
@@ -347,14 +341,6 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		border-right: 2px solid black;
-	}
-
-
-	@media only screen and (max-width: 1250px) {
-		#menuButtons button span{
-			font-size: 18pt;
-			margin-top: 5px;
-		}
 	}
 
 	/*Content on the Screens*/
@@ -428,11 +414,6 @@
 	/*It's Mobilin' Time*/
 
 	@media only screen and (max-width: 1000px) {
-
-		#pageSettings{
-			width: 98%;
-		}
-
 		.menuContent{
 			width: 78%;
 		}
@@ -443,6 +424,7 @@
 		}
 
 		#menuButtons button{
+			display: inline-flex;
 			text-align: center;
 		}
 
@@ -456,12 +438,27 @@
 		#menuButtons span{
 			display: none;
 		}
-
 	}
 
 	@media only screen and (max-width: 800px) {
-		#page{
-			padding-top: 0px;
+		main{
+			padding-top: 5px;
+		}
+
+		#pageSettings{
+			width: 100%;
+			height: calc(100vh - 60px);
+			border: 0px;
+		}
+
+	}
+
+	@media only screen and (max-width: 450px) {
+		#menuButtons img{
+			width: 22px;
+			height: 22px;
+			border-radius: 0px;
+			margin-top: 3px;
 		}
 	}
 

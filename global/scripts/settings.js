@@ -1,5 +1,5 @@
 function settingsTransition() {
-    document.getElementById("navHome").style.backgroundColor = "#bb3e00";
+    document.getElementById("navHome").style.backgroundColor = "#e55b38";
 }
 
 /*Select settings to show*/
@@ -21,32 +21,32 @@ function settingPage(selection){
     switch(selection){
         case 0: {
             document.getElementById("settingHome").style.display = "block";
-            document.getElementById("navHome").style.backgroundColor = "#bb3e00";
+            document.getElementById("navHome").style.backgroundColor = "#e55b38";
             break;
         }
         case 1: {
             document.getElementById("settingStyle").style.display = "block";
-            document.getElementById("navStyle").style.backgroundColor = "#bb3e00";
+            document.getElementById("navStyle").style.backgroundColor = "#e55b38";
             break;
         }
         case 2: {
             document.getElementById("settingLogin").style.display = "block";
-            document.getElementById("navLogin").style.backgroundColor = "#bb3e00";
+            document.getElementById("navLogin").style.backgroundColor = "#e55b38";
             break;
         }
         case 3: {
             document.getElementById("settingLogout").style.display = "block";
-            document.getElementById("navLogout").style.backgroundColor = "#bb3e00";
+            document.getElementById("navLogout").style.backgroundColor = "#e55b38";
             break;
         }
         case 4: {
             document.getElementById("settingAccount").style.display = "block";
-            document.getElementById("navAccount").style.backgroundColor = "#bb3e00";
+            document.getElementById("navAccount").style.backgroundColor = "#e55b38";
             break;
         }
         case 5: {
             document.getElementById("settingCredits").style.display = "block";
-            document.getElementById("navCredits").style.backgroundColor = "#bb3e00";
+            document.getElementById("navCredits").style.backgroundColor = "#e55b38";
             break;
         }
     }

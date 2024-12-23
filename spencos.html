@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html desktop-theme="dark">
+    <head>
+        <title>SpencOS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="spencos/system.css">
+        <link rel="stylesheet" href="global/css/card.css">
+        <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
+    </head>
+    <body>
+        <!--Animation Div-->
+        <div id="content">
+
+            <!--Start Menu stored here-->
+            <div id="start">
+                <h1>Dashboard</h1>
+                <ul id="startIcons" onclick="clickDesktop()">
+                    <li onclick="appFunction('Ska.Space', 'toggle')"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</li>
+                    <li onclick="appFunction('About Ska', 'toggle')"><img src="spencos/images/apps/About SkaIcon.webp">About Ska</li>
+                    <li onclick="appFunction('SpiderWeb', 'toggle')"><img src="spencos/images/apps/SpiderWebIcon.webp">SpiderWeb</li>
+                    <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                    <li onclick="appFunction('Cloud', 'toggle')"><img src="spencos/images/apps/CloudIcon.webp">Cloud</li>
+                    <li onclick="appFunction('Cyan', 'toggle')"><img src="spencos/images/apps/CyanIcon.webp">Cyan🎧</li>
+                </ul>
+
+                <div id="startBottom">
+                    <div id="startUser"><img src="spencos/images/user.png"><span>You</span></div>
+                    <a id="buttonLogout" onclick="shutdown()">Logout</a>
+                </div>
+            </div>
+
+            <!--Notifications stored here-->
+            <div id="notify">
+                <h1>Notifications</h1>
+                <img src="spencos/images/cat.gif">
+                <h2>Nothing to see here~</h2>
+            </div>
+
+            <div id="ccenter">
+                <h1>Action Center</h1>
+                <ul id="startIcons" class="typeCCenter">
+                    <li onclick="uiFunction('Audio', 'toggle')"><img src="spencos/images/icons/soundOff.png" id="audioToggle" class="invert">Audio</li>
+                    <li onclick="document.getElementById('switchTheme').click()"><img src="spencos/images/icons/theme.png" class="invert">Theme</li>
+                    <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                    <li onclick="document.getElementById('test').click()"><img src="seal/images/wallpaperSet.png" class="invert">Wallpaper</li>
+                    <li onclick="clearBackground()"><img src="seal/images/wallpaperClear.png" class="invert">Clear WP</li>
+                </ul>
+            </div>
+
+            <!--Desktop, Holds Wallpaper and Apps-->
+            <div id="desktop" onclick="clickDesktop()">
+                <h1 id="title">SpencOS Web</h1>
+
+
+            <div id="container">
+                <div id="selection">
+                    
+                </div>
+            </div> 
+                
+
+
+                <!--Desktop icons-->
+
+                <!--Apps are stored here-->
+                <div class="apps">
+                    <div class="app" id="SpiderWeb">
+                        <div class="appHeader" id="SpiderWebHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/SpiderWebIcon.webp">
+                                <span>SpiderWeb - Not Functional</span>
+                                <li class="appLi typeClose" onclick="appFunction('SpiderWeb', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('SpiderWeb', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('SpiderWeb', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <embed type="text/html" src="seal/search.html" class="webapp">          
+                    </div>
+
+                    <div class="app" id="Ska.Space">
+                        <div class="appHeader" id="Ska.SpaceHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/Ska.SpaceIcon.webp">
+                                <span>Ska.Space</span>
+                                <li class="appLi typeClose" onclick="appFunction('Ska.Space', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('Ska.Space', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('Ska.Space', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <embed type="text/html" src="index.html" class="webapp">          
+                    </div>
+
+                    <div class="app native" id="About Ska">
+                        <div class="appHeader" id="About SkaHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/About SkaIcon.webp">
+                                <span>About Ska</span>
+                                <li class="appLi typeClose" onclick="appFunction('About Ska', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('About Ska', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <div id="myProfile">
+                            <div class="profileCard nitro">
+                                <div class="profileHeader">
+                                    <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                    <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
+                                    <img src="global/media/icons/emotes/idle.webp" class="userStatus">
+
+                                    <div class="userIcons hoverText slideUp"> 
+                                        <img src="global/media/icons/emotes/stand.webp">
+                                        <img src="global/media/icons/emotes/snap.webp">
+                                        <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
+                                        <img src="global/media/icons/emotes/sip.webp">
+                                        <hover-text>Silly Badges</hover-text>
+                                    </div>
+                                </div>
+                                <div class="profileBody">
+                                    <span class="name">Ska✨</span><br>
+                                    <span class="user">@ska.exe &#x2022 The Silly One</span><br>
+                                    <span class="bio">I enjoy gaming, anime, tech, programming, and many other things revolving around the internet!</span><br>
+                                    <div class="socials centered">
+                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
+                                        <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                        <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
+                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
+                                        <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                    </div><br><br>
+                                    <div class="links centered">
+                                        <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
+                                        <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
+                                        <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <div class="app native" id="Settings">
+                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                        <div class="appHeader" id="SettingsHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/SettingsIcon.webp">
+                                <span>Settings</span>
+                                <li class="appLi typeClose" onclick="appFunction('Settings', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('Settings', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('Settings', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <div id="pageSettings">
+                            <div id="settingHome"><center>
+                                <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
+                                <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
+                                <button class="customizeOption" onclick="document.getElementById('test').click();"><img src="seal/images/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>
+                                <button class="customizeOption" onclick="clearBackground()"><img src="seal/images/wallpaperClear.png" class="spaceNavIcon invert">Clear Wallpaper</button>
+                                <button class="customizeOption" onclick="document.getElementById('switchTheme').click();"><img src="seal/images/switchTheme.png" class="spaceNavIcon invert">Switch Theme</button>
+                            </div></center>
+                        </div>
+                    </div>
+
+                    <div class="app" id="Cloud">
+                        <div class="appHeader" id="CloudHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/CloudIcon.webp">
+                                <span>Cloud</span>
+                                <li class="appLi typeClose" onclick="appFunction('Cloud', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('Cloud', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('Cloud', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <embed type="text/html" src="games.html" class="webapp">          
+                    </div>
+
+                    <div class="app native" id="Cyan">
+                        <div class="appHeader" id="CyanHeader">
+                            <ul class="appActions">
+                                <img src="spencos/images/apps/CyanIcon.webp">
+                                <span>Cyan</span>
+                                <li class="appLi typeClose" onclick="appFunction('Cyan', 'close')"><a>x</a></li>
+                                <li class="appLi" onclick="appFunction('Cyan', 'maximize')"><a>+</a></li>
+                                <li class="appLi" onclick="appFunction('Cyan', 'toggle')"><a>-</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <audio controls>
+                            <source src="spencos/audio/eshop.mp3" type="audio/mp3">
+                            Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+
+            <!--Taskbar, Holds Potential Apps-->
+            <nav id="taskbar">
+                <a id="startButton" onclick="uiFunction('Start')"><img src="global/media/icons/logos/tree.png"></a>
+                <div id="peekBar" onclick="uiFunction('Peek')"></div>
+                <div id="navright" onclick="uiFunction('Notify')">
+                    <h1 id="date-time"></h1>
+                </div>
+                <div id="statusBar" onclick="uiFunction('CCenter')">
+                    <img src="spencos/images/icons/wifi.png" class="invert">
+                    <img src="spencos/images/icons/soundOff.png" id="audioIcon" class="invert">
+                </div>
+                <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
+            </nav>
+        </div>
+        <div id="shutdown">
+            <div id="shutdownContent">
+                <span class="loader"></span>
+                <h1>Shutting Down</h1>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="spencos/system.js"></script>
+    </body>
+</html>
