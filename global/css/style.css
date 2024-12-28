@@ -303,7 +303,7 @@ nav{
     margin-top: 8px;
     min-width: 60px;
     cursor: pointer;
-    transition: background-color 0.2s, min-width 0.3s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
+    transition: background-color 0.2s, margin-left 0.2s, min-width 0.2s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
 }
 .siteName span{
     pointer-events: none; 
@@ -318,11 +318,20 @@ nav{
     border-right: 2px solid gray;
 }
 
+.siteName:hover{
+    padding-left: 25px;
+}
+
+.siteName:hover .iconTypeList{
+    opacity: 1;
+    scale: 1;
+}
+
 .spaceName{
     display: flex;
     justify-content: center;
     font-size: 10px;
-    margin-top: -13px;
+    margin-top: -15px;
 }
 
 /*Start of Mobile Support*/
@@ -388,18 +397,17 @@ nav{
 }
 
 .iconTypeList{
-    display: none;
-    float: left;
-    margin-left: 0px;
+    display: inline-block;
+    opacity: 0;
+    scale: 0;
+    margin: auto;
+    margin-left: -20px;
     margin-top: 7px;
     width: 16px;
     height: 16px;
     border-radius: 0px;
     background-size: 100%;
-}
-
-.siteName:hover .iconTypeList{
-    display: block;
+    transition: margin-left 0.2s, opacity 0.2s, scale 0.2s;
 }
 
 /*Go to top of page*/
