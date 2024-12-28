@@ -1,44 +1,7 @@
-/*Comments*/
-
-#HCB_comment_box{
-    width: 50%;
-    background-color: rgba(128, 128, 128, 0.25);
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-[data-theme='light'] #HCB_comment_box{
-    color: black;
-}
-
-#HCB_comment_box img{
-    display: none;
-}
-
-#HCB_comment_box textarea{
-    resize: none;
-}
-
-#HCB_comment_box h3{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -50px !important;
-    line-height: 0px;
-}
-
-#HCB_comment_box span, #HCB_comment_box a{
-    font-size: 13pt;
-}
 
 /*Featured Posts*/
 
-#featuredPosts{
+#featuredBoxes {
     width: 90%;
     height: auto;
     margin-top: 10px;
@@ -47,7 +10,7 @@
     text-align: center;
 }
 
-#featuredPosts div{
+#featuredBoxes div{
     display: inline-flex;
     flex-direction: column;
     width: 400px;
@@ -59,31 +22,32 @@
     background-repeat: no-repeat;
 }
 
-#featuredPosts a{
+#featuredBoxes a{
     height: 210px;
     padding: 20px;
     border-radius: 9px;
     text-decoration: none;
     text-align: left;
     backdrop-filter: brightness(75%);
+    scale: 1;
 }
 
-#featuredPosts div:active{
+#featuredBoxes div:active{
     scale: 1.05;
 }
 
-#featuredPosts h1{
+#featuredBoxes h1{
     color: white;
     margin-top: 10px;
 }
 
-#featuredPosts h2{
+#featuredBoxes h2{
     color: white;
     margin-top: 20px;
     font-size: 14pt;
 }
 
-#featuredPosts span{
+#featuredBoxes span{
     color: rgb(230, 230, 230);
 }
 
@@ -101,24 +65,24 @@
 
 /*More Posts*/
 
-#morePosts{
+#listBoxes{
     margin: 40px;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-#morePosts a{
+#listBoxes a{
     width: 100%;
     height: auto;
     border-radius: 10px;
     text-decoration: none;
 }
 
-#morePosts h2{
+#listBoxes h2{
     font-weight: normal;
 }
 
-#featuredPosts a:hover h1, #morePosts a:hover h1{
+#featuredBoxes a:hover h1, #listBoxes a:hover h1{
     text-decoration: underline;
 }
 
@@ -135,19 +99,6 @@
     padding-right: 5%;
 }
 
-.blog h1{
-    font-size: 28pt;
-}
-
-.blog h2{
-    font-size: 18pt;
-    line-height: 1.5;
-    font-weight: normal;
-}
-
-.blog p{
-    font-size: 14pt;
-}
 
 .blog img{
     width: 100%;
@@ -198,7 +149,7 @@
         margin-top: -20px;
     }
 
-    #featuredPosts div{
+    #featuredBoxes div{
         width: 90%;
         height: auto;
         min-height: 0px;
@@ -206,7 +157,7 @@
         margin-bottom: 10px;
     }
     
-    #featuredPosts a{
+    #featuredBoxes a{
         height: auto;
     }
 

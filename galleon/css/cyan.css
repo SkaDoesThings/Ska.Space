@@ -1,22 +1,8 @@
 [data-theme='dark'] body{
     background: linear-gradient(45deg, #3c3e48 10%,transparent 10%,transparent 90%,#3c3e48 90%),linear-gradient(135deg, transparent 40%, #3c3e4880 40%, #3c3e4880 60%, transparent 0),linear-gradient(45deg, transparent 40%, #3c3e48 40%, #3c3e48 60%, transparent 0);
-    background-size: 20em 20em;
-    background-color: #3a3a3a;
+    background-size: 36em 36em;
+    background-color: #373839;
     opacity: 1
-}
-
-.navCredits{
-    height: 40px;
-    margin-top: 10px;
-    margin-right: 0px;
-    font-size: 8pt;
-    float: right;
-}
-
-.divider{
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
 }
 
 .columnContainer{
@@ -43,23 +29,6 @@
     box-shadow: 0 6px 24px 0 #ffa9f263,0 18px 60px 0 #384272;
 }
 
-
-.featureList a{
-    display: inline-flex;
-    flex-direction: column;
-    text-align: center;
-    text-decoration: none;
-    width: 250px;
-    border-radius: 20px;
-    font-size: 22pt;
-    margin: 10px;
-    padding: 5px 5px;
-    background-color: rgba(246, 171, 241, 0.1);
-    border: 2px solid #f6b6ff;
-    user-select: none;
-    transition: scale 0.2s;
-}
-
 .cyanDisplay{
     width: 50%;
     background: linear-gradient(to top, #3842722a, #fab1f74a), linear-gradient(to right, #3842725f, #fab1f70c);
@@ -78,12 +47,6 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .featureList a{
-        width: 130px;
-        font-size: 14pt;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
 
     article{
         border: 0px;

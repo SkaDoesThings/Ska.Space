@@ -7,7 +7,7 @@ html{
 body {
     margin: 0 auto;
     background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
-    background-size: 16em 16em;
+    background-size: 36em 36em;
     background-position: center;
     background-color:rgb(45, 42, 42);
     cursor: url('../media/cursor.png'), auto;
@@ -25,11 +25,12 @@ body {
 
 .divider{
     display: block;
-    background-color:rgb(117, 117, 117, 0.2);
-    width: 90%;
-    max-width: 1700px;
-    margin-top: 40px;
+    background-color: rgb(117, 117, 117, 0.2);
     border-radius: 10px;
+    line-height: 1.3;
+    margin: 20px;
+    width: 90%;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -94,6 +95,7 @@ article article{
 span, .text, a, input, h1, h2, h3, p, li, hover-text{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
+    line-height: 1.5;
     color: rgb(245, 245, 245);
 } 
 
@@ -101,30 +103,37 @@ span::selection, h1::selection, h2::selection, p::selection, li::selection{
     background-color: rgb(246, 151, 151);
 }
 
-span, .text, li, hover-text{
-    font-size: 14pt;
-    line-height: 1.5;
+span, .text, li, p, hover-text{
+    font-size: 1.2rem;
 }
 
 [data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li{
     color:rgb(51, 51, 51);
 }
 
-h1, h2{
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
     margin: 0;
 }
 
-h1 {
-    font-weight: bold;
-    font-size: 22pt;
+h2{
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;
 }
 
-h2{
-    font-size: 16pt;
+article img{
+    width: 100%;
+    height: auto;
 }
 
 .centered {
     text-align: center;
+}
+
+.left{
+    text-align: left;
 }
 
 .vertical{
@@ -202,12 +211,16 @@ video {
     cursor: pointer;
 }
 
-button:hover, .modalButton:hover{
+button:hover, a:hover, .navIcon:hover, .modalButton:hover{
     scale: 1.05;
 }
 
-button:active, .modalButton:active{
+button:active, a:active, .modalButton:active, .viewable:active{
     scale: 1.1;
+}
+
+.navIcon:active{
+    scale: 1.2;
 }
 
 button img, .modalButton img{
@@ -252,22 +265,13 @@ nav{
     padding: 0px 5px;
     margin-left: 2px;
     margin-right: 2px;
-    margin-top: 13px;
+    margin-top: 11px;
     font-size: 16pt;
     border-radius: 5px;
     transition: background-color 0.2s, color 0.3s;
     cursor: pointer;
     font-family: 'Segoe UI', Arial, sans-serif;
 }   
-
-
-#linkContainer a:hover{
-    scale: 1.05;
-}
-
-#linkContainer a:active{
-    scale: 1.1;
-}
 
 #linkContainer a:hover, .siteName:hover{
     background-color: rgb(246, 151, 151);
@@ -309,7 +313,7 @@ nav{
     position: absolute;
     content: "";
     width: 7px;
-    height: 28px;
+    height: 30px;
     padding-right: 2px;
     border-right: 2px solid gray;
 }
@@ -321,25 +325,20 @@ nav{
     margin-top: -13px;
 }
 
-nav a:active, .siteName:active{
-    scale: 1.1;
-}
-
 /*Start of Mobile Support*/
 #navToggle{
     display: none;
-    background: rgb(235, 235, 235) url('../media/images/navburger.png') no-repeat center;
+    background: rgba(235, 235, 235, 0.8) url('../media/images/navburger.png') no-repeat center;
     width: 50px;
     height: 40px;
-    margin-left: 3px;
+    margin-left: 8px;
     border-radius: 10px;
-    border: 2px rgb(163, 163, 163) solid;
+    border: 1px rgb(163, 163, 163) solid;
     background-size: 40px;
-    float:left;
+    float: left;
     position: absolute;
     left: 0;
-    margin-top: 10px;
-    transition: margin-top 0.5s;
+    margin-top: 7px;
 }
 
 #navToggle:hover{
@@ -372,15 +371,6 @@ nav a:active, .siteName:active{
     margin-right: 3px;
     margin-top: 10px;
     transition: transform 0.7s ease-in-out;
-}
-
-.navIcon:hover{
-    scale: 1.1;
-    cursor: pointer;
-}
-
-.navIcon:active{
-    scale: 1.3;
 }
 
 .iconLeft{
@@ -561,10 +551,6 @@ div article{
     transition: box-shadow 0.2s;
 }
 
-.viewable:active{
-    scale: 1.1;
-}
-
 /*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
 
 .modal {
@@ -723,6 +709,7 @@ input[type=submit]:hover, .inputArray button:hover{
     transform: translate(-50%, 0);
     width: max-content;
     background-color: #555;
+    border: 1px solid gray;
     color: #fff;
     font-size: 12pt;
     text-align: center;
@@ -768,6 +755,68 @@ input[type=submit]:hover, .inputArray button:hover{
     margin-top: 40px;
 }
 
+hover-text img{
+    width: 32px;
+}
+
+/*=-=-=-=-=-=-=-=- ( Box Components ) -=-=-=-=-=-=-=-=*/
+
+.bubbleList{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+  
+.bubbleList div{
+    display: inline-block;
+    width: 20%;
+    background-color: rgba(241, 142, 92, 0.1);
+    border: 2px solid #bb3e00;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: left;
+    transition: width 0.2s, font-size 0.2s;
+}
+
+.bubbleList p{
+    font-size: 1rem;
+    margin: 15px;
+    margin-top: 2px;
+}
+
+.bubbleList span{
+    display: block;
+    font-size: 1.1rem;
+    padding-left: 5px;
+    border-radius: 15px;
+    line-height: 1.5;
+    margin: 10px;
+}
+
+.homeSpace a{
+    display: inline-flex;
+    text-align: center;
+    text-decoration: none;
+    height: auto;
+    border-radius: 15px;
+    font-size: 18pt;
+    margin: 5px;
+    padding: 7px 10px;
+    background-color: rgba(241, 142, 92, 0.1);
+    border: 2px solid #ae5549;
+    cursor: pointer;
+    transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
+  }
+  
+  .homeSpace img{
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 0px;
+  }
+  
+
 /*=-=-=-=-=-=-=-=- ( Home Design ) -=-=-=-=-=-=-=-=*/
 
 #bannerContainer{
@@ -791,12 +840,21 @@ input[type=submit]:hover, .inputArray button:hover{
 }
 
 .mainImage{
-  width: 100px;
+  width: 84px;
   height: auto;
-  padding: 10px;
-  transition: transform 0.2s;
+  padding: 5px;
+  transition: 
+  transform 0.2s;
+}
+
+.mainNote{
+    font-size: 11pt;
 }
   
+.welcomeText{
+    font-size: 28pt; 
+}
+
 .mainText{
   font-size: 48pt; 
 }
@@ -859,41 +917,6 @@ input[type=submit]:hover, .inputArray button:hover{
     font-size: 20pt;
 }
 
-.bannerButton:active{
-  transform: scale(1.1);
-}
-
-.homeSpace a{
-  display: inline-flex;
-  text-align: center;
-  text-decoration: none;
-  height: auto;
-  border-radius: 20px;
-  font-size: 18pt;
-  margin: 5px;
-  padding: 10px 10px;
-  background-color: rgba(241, 142, 92, 0.1);
-  border: 1px solid #bb3e00;
-  cursor: pointer;
-  transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
-}
-
-.homeSpace a:hover{
-  scale: 1.1;
-}
-
-.homeSpace a:active{
-  scale: 1;
-}
-
-.homeSpace img{
-  margin-right: 5px;
-  width: 32px;
-  height: 32px;
-  border-radius: 0px;
-
-}
-
 
 /*=-=-=-=-=-=-=- ( Dynamic Elements ) -=-=-=-=-=-=-=*/
 /*Thanks to https://cssloaders.github.io*/
@@ -939,6 +962,48 @@ input[type=submit]:hover, .inputArray button:hover{
     color: #FF3D00;
     transform: rotateY(70deg);
     animation-delay: -.4s;
+}
+
+/*Comments*/
+
+#HCB_comment_box{
+    width: 50%;
+    background-color: rgba(128, 128, 128, 0.25);
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+[data-theme='light'] #HCB_comment_box{
+    color: black;
+}
+
+#HCB_comment_box img{
+    display: none;
+}
+
+#HCB_comment_box textarea{
+    resize: none;
+}
+
+#HCB_comment_box h3{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px !important;
+    line-height: 0px;
+}
+
+#HCB_comment_box span, #HCB_comment_box a{
+    font-size: 13pt;
+}
+
+.home-desc{
+    display: none;
 }
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
@@ -1022,7 +1087,11 @@ input[type=submit]:hover, .inputArray button:hover{
         width: 96%;
         border-radius: 10px;
     }
-
+    
+    .welcomeText{
+        font-size: 30pt;
+    }
+    
     .modal-content{
         bottom: 70px;
         top: 0px;
@@ -1069,7 +1138,7 @@ input[type=submit]:hover, .inputArray button:hover{
     }
 
     #myDropdown {
-        display: inline-block;
+        display: inline-block !important;
         position: relative;
         width: 100%;
         margin-top: 20px;
@@ -1137,10 +1206,19 @@ input[type=submit]:hover, .inputArray button:hover{
     #lobbyArticle{
         top: 75px;
     }
+
+    .bubbleList {
+        display: block;
+        align-items: center;
+      }
+    
+    .bubbleList div {
+    width: 90%;
+    }    
 }
 
 @media only screen and (max-width: 500px) {
-    .mainText{
+    .mainTexT{
         font-size: 30pt;
     }
 
