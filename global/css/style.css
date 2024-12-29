@@ -851,8 +851,8 @@ hover-text img{
   width: 84px;
   height: auto;
   padding: 5px;
-  transition: 
-  transform 0.2s;
+  margin-top: -20px;
+  transition: transform 0.2s;
 }
 
 .mainNote{
@@ -864,7 +864,7 @@ hover-text img{
 }
 
 .mainText{
-  font-size: 48pt; 
+  font-size: 40pt; 
 }
 
 #bannerMain span, #bannerMain h2{
@@ -1208,7 +1208,7 @@ hover-text img{
     }
 
     .bannerContent{
-        top: 8%;
+        top: 12%;
     }
 
     #lobbyArticle{
@@ -1218,7 +1218,7 @@ hover-text img{
     .bubbleList {
         display: block;
         align-items: center;
-      }
+    }
     
     .bubbleList div {
     width: 90%;
@@ -1226,13 +1226,18 @@ hover-text img{
 }
 
 @media only screen and (max-width: 500px) {
-    .mainTexT{
-        font-size: 30pt;
+    .mainText{
+        font-size: 9vw;
     }
 
     .mainImage{
-        width: 80px;
-        height: 80px;
+        width: 64px;
+        height: 64px;
+        margin-top: -3vw;
+    }
+      
+    .bannerContent h1{
+        font-size: 5vw;
     }
 }
 

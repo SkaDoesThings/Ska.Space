@@ -2,6 +2,11 @@ body{
   background: linear-gradient(45deg, rgb(40, 51, 98), rgb(119, 93, 160));
 }
 
+article img{
+  width: 100%;
+  max-width: 1000px;
+}
+
 .necoArc{
     width: 128px;
     height: auto;
@@ -50,14 +55,18 @@ body{
     color: white;
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-align: center;
     font-size: 16pt;
     text-indent: 45px;
     cursor: pointer;
     border-radius: 15px;
     transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, border-radius 0.2s;
+}
+
+.inviteButton:hover{
+  border: 4px solid rgba(255, 255, 255, 0.15);
 }
 
 .mainJoinDiscord{
@@ -104,20 +113,7 @@ body{
 }
 
 
-
-@media only screen and (min-width: 700px) {
-  .inviteButton:hover{
-    border-radius: 10px;
-    border: 4px solid rgba(255, 255, 255, 0.15);
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  
-  .bannerContent h1{
-    font-size: 5vw;
-  }
-
+@media only screen and (max-width: 400px) {
   .inviteButton{
       width: 64px;
       text-indent: -9999px;
@@ -127,12 +123,3 @@ body{
     margin: 0px !important;
   }
 } 
-
-article img{
-  width: 100%;
-  max-width: 1000px;
-}
-
-.mainText{
-  font-size: 36pt;
-}

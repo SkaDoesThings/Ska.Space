@@ -216,17 +216,16 @@
     background: url(../media/icons/logos/instagram.webp) no-repeat center;
 }
 
-.mainJoinTwitter{
-    border: 3px solid #1E1E1E;
-    background: url(../media/icons/logos/x.webp) no-repeat center;
-    transition: background-color 0.2s, border 0.2s;
-    background-size: 36px;
-}
-
 .mainJoinGitHub{
     border: 2px solid #b8b8b8;
     background: url(../media/icons/logos/github.webp) no-repeat center;
 }
+
+.mainJoinOSU{
+    border: 3px solid #E75D9B;
+    background: url(../media/icons/logos/logoOSU.png) no-repeat center;
+}
+
 
 .mainJoinSteam:hover{
     background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
@@ -242,14 +241,15 @@
     background-color: #93366a;
 }
 
-.mainJoinTwitter:hover{
-    background: #1E1E1E url(../media/icons/logos/x.webp) no-repeat center;
-    background-size: 36px;
-}
-
 .mainJoinGitHub:hover{
     background-color: #8d8c8c;
 }
+
+.mainJoinOSU:hover{
+    background: #E75D9B url(../media/icons/logos/logoOSU.png) no-repeat center;
+    background-size: 36px;
+}
+
 
 .theSilly{
     width: 50px;
