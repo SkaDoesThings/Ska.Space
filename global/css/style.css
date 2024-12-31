@@ -123,11 +123,6 @@ h2{
     margin: 0;
 }
 
-article img{
-    width: 100%;
-    height: auto;
-}
-
 .centered {
     text-align: center;
 }
@@ -142,10 +137,6 @@ article img{
 
 .bold {
     font-weight: bold;
-}
-
-.red {
-    color: #bb3e00;
 }
 
 #pageTitle{
@@ -172,25 +163,8 @@ img {
     filter: invert(0);
 }
 
-.imageSmall{
-    width: 32px;
-}
-
-.imageMedium, .medium{
-    max-width: 30%;
-    height: auto;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 .rotate:hover{
     transform: rotate(360deg);
-}
-
-.centerTable{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 video {
@@ -305,6 +279,7 @@ nav{
     cursor: pointer;
     transition: background-color 0.2s, margin-left 0.2s, min-width 0.2s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
 }
+
 .siteName span{
     pointer-events: none; 
 }
@@ -408,55 +383,6 @@ nav{
     border-radius: 0px;
     background-size: 100%;
     transition: margin-left 0.2s, opacity 0.2s, scale 0.2s;
-}
-
-/*Go to top of page*/
-
-#buttonTop{
-    background-color: rgba(53, 40, 40, 0.7);
-    color: #ffd7d7;
-    border: 2px solid #bb3e005d;
-    float: right;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    margin-right: -100px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    transition: margin-right 0.2s, border-radius 0.1s, width 0.1s, padding-left 0.1s, right 0.1s;
-    cursor: pointer;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
-[data-theme='light'] #buttonTop {
-    background-color: rgba(202, 202, 202, 0.75);
-    color: #383838;
-}
-  
-#buttonTop:hover{
-    background-color: rgb(246, 151, 151);
-}
-
-#buttonTop:active{
-    border-radius: 35px;
-    width: 100px;
-    padding-left: 50px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    right: -58px;
-}
-
-#buttonTop:after{
-    content:'Top';
-}
-
-#buttonTop:active:after{
-    padding-right: 50px;
-    content:'^';
-    font-size: 30pt;
 }
 
 #leavingPage{
@@ -703,6 +629,11 @@ input[type=submit]:hover, .inputArray button:hover{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
+table {
+    justify-content: center;
+    align-items: center;
+}
+
 .hoverText{
     position: relative;
 }
@@ -774,7 +705,7 @@ hover-text img{
     display: flex;
     align-items: stretch;
     justify-content: center;
-  }
+}
   
 .bubbleList div{
     display: inline-block;
@@ -817,12 +748,12 @@ hover-text img{
     transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
   }
   
-  .homeSpace img{
+.homeSpace img{
     margin-right: 5px;
     width: 32px;
     height: 32px;
     border-radius: 0px;
-  }
+}
   
 
 /*=-=-=-=-=-=-=-=- ( Home Design ) -=-=-=-=-=-=-=-=*/
@@ -843,10 +774,6 @@ hover-text img{
     margin-bottom: 20px;
 }
 
-#lobbyBanner{
-  transition: opacity 0.3s, transform 0.6s;
-}
-
 .mainImage{
   width: 84px;
   height: auto;
@@ -864,27 +791,23 @@ hover-text img{
 }
 
 .mainText{
-  font-size: 40pt; 
+    font-size: 40pt; 
 }
 
-#bannerMain span, #bannerMain h2{
+#bannerMain span, #bannerMain h1, #bannerMain h2{
     color: rgb(235, 235, 235);
 }
 
-.bannerImageSeal{
-  background-image: url('../media/banners/landscape.webp');
-}
-
 .bannerImageGalleon{
-  background-image: url('../media/banners/sky.webp');
+    background-image: url('../media/banners/sky.webp');
 }
 
 .placeholderLobby{
-  background: linear-gradient(to top, rgb(224, 127, 85), rgb(121, 97, 177));
+    background: linear-gradient(to top, rgb(224, 127, 85), rgb(121, 97, 177));
 }
 
 .placeholderGalleon{
-  background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+    background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
 }
 
 .bannerContent{
@@ -1156,10 +1079,6 @@ hover-text img{
         overflow-x: hidden;
     }
 
-    #buttonTop{
-        bottom: 60px;
-    }
-
     .columnContainer{
         background-color: rgba(95, 141, 55, 0);
         width: 100%;
@@ -1178,10 +1097,6 @@ hover-text img{
         margin-right: auto;
     }
 
-    .medium{
-        max-width: 80%;
-    }
-
     #form{
         text-align: center;
     }
@@ -1194,12 +1109,6 @@ hover-text img{
     .listbox a, .engines button{
         margin: 2px;
         font-size: 16pt;
-    }
-
-    #returnButton {
-        position: relative;
-        top: 0;
-        margin-left: 10px;
     }
 
     #bannerMain{
@@ -1221,7 +1130,7 @@ hover-text img{
     }
     
     .bubbleList div {
-    width: 90%;
+        width: 90%;
     }    
 }
 
@@ -1368,21 +1277,15 @@ hover-text img{
         scroll-behavior: none;
     }
 
-    main, article, .fadeOut, .fadeIn, #bannerContainer, .bannerButton,
+    main, article, #myDropdown, .fadeOut, .fadeIn, #bannerContainer, .bannerButton,
     #imageViewer, #imageBackdrop, #imageDisplay, .modal-content{
         animation-duration: 0s;
     }
 
-    article, #navbox, .siteName, 
-    .homeSpace a, .person, .person .imageTypeMedium,
-    #linkContainer, #linkContainer a, .listbox, .listbox li a, .modalButton, #buttonTop {
+    article, #navbox, .siteName, .iconTypeList,
+   .homeSpace a, #linkContainer, #linkContainer a, .listbox, .listbox li a, .modalButton {
         transition-duration: 0s;
     } 
-
-    #buttonTop:after{
-        content:'To Top (Reduced Motion)';
-        font-size: 9pt;
-    }
     
     .bannerButtonAnimate{
         margin-top: -120px;

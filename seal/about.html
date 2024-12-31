@@ -40,31 +40,32 @@
         </div>
         
         <br><br>
-        <main class="centered">
-            <div id="bannerContainer" class="placeholderGalleon">
-                <div id="bannerMain" class="bannerImageSeal" onclick="backgroundViewer('../global/media/banners/landscape.webp')">
-                    <div class="bannerContent bannerLogo centered">
-                        <img src="../global/media/images/sealco.png" class="mainImage vertical ">
-                        <span class="mainText bold">Seal Zone</span><br>
-                        <h2 class="clear">Overtaking the world one seal at a time</h2><br>
-                    </div>
-                </div>
-                <a href="search.html"><button class="bannerButton bannerButtonAnimate" id="servers">Seal Search</button></a>
-            </div>
-            
-            <article>       
-                    <h1>About Us</h1><br>
-                    <h2>We Love Seals</h2><br><br>
-                    <span>A company that aspires to be highly supportive of our seals! Feel the freedom as you try our spin on the internet.</span><br><br><br><br>
-                    <img src="images/sealfront.jpg" alt="Image of Company Logo" class="medium rounded viewable">
-            </article>    
+        <main>
+            <article class="centered">       
+                <img src="../global/media/images/sealco.png" class="mainImage vertical">
+                <span class="mainText bold">Seal Zone</span><br>
+                <h2>Overtaking the world one seal at a time</h2>
+                <br><br>
+                <h1>About the Fatseal</h1>
+                <p> The fatseal is an exotic creature that is excellent in its ability to be, what humans can only put into words, fat</p>
+                <br><br>
+                <h1>The Fatseal Gallery</h1>
+                <span>Pure Fat<img src="images/sealleft.png" width="256", height="256"></span>
+                <span>Center Seal #1<img src="images/sealfront.jpg" width="256", height="256"></span>
+                <span>Center Seal #2<img src="images/sealfront.jpg" width="256", height="256"></span>
+                <span>Center Seal #3<img src="images/sealfront.jpg" width="256", height="256"></span>
+                <span>Pure Fat<img src="images/sealco.png" width="256", height="256"></span>
+                <br>
+                <p>Feel like a seal on the internet and try <a href="search.html">Seal Search</a> today</p><br>
+            </article> 
         </main>
-        <button onclick="topFunction()" id="buttonTop" title="Go to top"></button>
-
     </body>
     <script src="../global/scripts/scripts.js"></script>
-	  <script src="../global/scripts/theme.js"></script>
-	  <script>
-		    window.onscroll = function() {scrollFunction()};
-	  </script>
+	<style>
+		article span {
+			display: inline-flex;
+			flex-direction: column;
+			margin: 10px;
+		}
+	</style>
 </html>
