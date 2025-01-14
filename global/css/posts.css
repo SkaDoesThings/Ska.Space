@@ -2,7 +2,7 @@
 /*Featured Posts*/
 
 #featuredBoxes {
-    width: 90%;
+    width: 95%;
     height: auto;
     margin-top: 10px;
     margin-left: auto;
@@ -14,7 +14,7 @@
     display: inline-flex;
     flex-direction: column;
     width: 400px;
-    min-height: 250px;
+    min-height: 200px;
     margin: 10px;
     border: 2px solid gray;
     border-radius: 10px;
@@ -23,12 +23,12 @@
 }
 
 #featuredBoxes a{
-    height: 210px;
+    background-color: rgba(34, 34, 34, 0.5);
+    height: 180px;
     padding: 20px;
     border-radius: 9px;
     text-decoration: none;
     text-align: left;
-    backdrop-filter: brightness(75%);
     scale: 1;
 }
 
@@ -36,31 +36,27 @@
     scale: 1.05;
 }
 
-#featuredBoxes h1{
-    color: white;
-    margin-top: 10px;
-}
-
 #featuredBoxes h2{
-    color: white;
-    margin-top: 20px;
     font-size: 14pt;
+    margin-top: 10px;
+
 }
 
-#featuredBoxes span{
-    color: rgb(230, 230, 230);
+#featuredBoxes img{
+    width: 32px;
+    margin-right: 10px;
+    margin-top: -5px;
+    vertical-align: middle;
 }
 
-#featuredPostOne{
-    background-image: url("../../post/media/dusk.webp");
+[data-theme='light'] #featuredBoxes div {
+    border: 2px solid rgb(185, 184, 184);
 }
 
-#featuredPostTwo{
-    background-image: url("../../global/media/backgrounds/poolrooms.webp");
-}
+[data-theme='light'] #featuredBoxes a {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: white;
 
-#featuredPostThree{
-    background-image: url("../../global/media/banners/sky.webp");
 }
 
 /*More Posts*/

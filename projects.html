@@ -3,9 +3,19 @@
 		<title>Ska.Space - Projects</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" href="global/css/style.css">
+		<link rel="stylesheet" href="global/css/posts.css">
 		<link rel="stylesheet" href="global/css/showcase.css">
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp"/>
+		<style>
+            #featuredOne{
+                background-image: url("global/media/images/ska/wumpus.webp");
+            }
 
+            #featuredTwo{
+                background-image: url("");
+            }
+
+        </style>
 	</head>
 	<body>
 		<nav id="navbox" class="transparency">
@@ -41,57 +51,35 @@
         </div>
 
 		<br>
-		<main class="centered">
+		<main>
 			<div id="pageTitle">
-				<h1>Projects</h1>
-				<span>(Under Development)</span>
+				<h1 class="centered">Projects</h1>
 			</div>
 
 			<article>
-				<ul id="navItemList">
-					<div class="navContainer" onclick="setTimeout(function () {location.href = 'seal/search.html';}, 500), pageTransitionOut();;">
-						<li class="navItem">
-							<a class="navText">Seal Search</a>
-							<div class="navImage imageOne"></div>
-						</li>
+				<div id="featuredBoxes">
+					<div>
+						<a href="https://github.com/SkaDoesThings/Ska.Space">
+							<h1><img src="global/media/images/ska/wumpus.webp">Ska.Space</h1>
+							<span>2024-2025 &#x2022 HTML, CSS, JS</span>
+							<h2>The website you are currently viewing! Being a developer started first here, and this place has expanded since</h2>
+						</a>
 					</div>
-
-					<div class="navContainer" onclick="setTimeout(function () {location.href = 'spencos/desktop.html';}, 500), pageTransitionOut();;">
-						<li class="navItem">
-							<a class="navText">SpencOS</a>
-							<div class="navImage imageTwo withBorder"></div>
-						</li>
+					<div>
+						<a href="https://github.com/SkaDoesThings/SpencOS">
+							<h1><img src="global/media/icons/logos/tree.png">SpencOS</h1>
+							<span>2022 &#x2022 C#</span>
+							<h2>An 'OS' designed in WinForms. Contains apps such as Ropapsi and even a calculator before iPadOS</h2>
+							</h2>
+						</a>
 					</div>
+				</div>
 
-					<div class="navContainer" onclick="setTimeout(function () {location.href = 'galleon/home.html';}, 500), pageTransitionOut();;">
-						<li class="navItem">
-							<a class="navText">Galleon</a>
-							<div class="navImage imageThree withBorder"></div>
-						</li>
-					</div>
-
-					<div class="navContainer" onclick="setTimeout(function () {location.href = 'DACC/AmorayPizza/html/index.php';}, 300), pageTransitionOut();;">
-						<li class="navItem">
-							<a class="navText">Amoray</a>
-							<div class="navImage imageFour withBorder"></div>
-						</li>
-					</div>
-
-					<div class="navContainer" onclick="setTimeout(function () {location.href = 'index.html';}, 500), pageTransitionOut();;">
-						<li class="navItem">
-							<a class="navText">Home</a>
-							<div class="navImage imageFive withBorder"></div>
-						</li>
-					</div>
-				</ul><br>
-
-				<div class="listbox">
-					<h2 class="divider">2021</h2><br>
-					<a href="DACC/AmericanDream/index.html" class="nav">Laser Engraving</a>
-					<a href="DACC/CarbonDisrupters/index.html" class="nav">Carbon Disrupters</a>
-					<a href="DACC/dbwebapp/home.php" class="nav">PHP Website</a>
-					<a href="DACC/WebArchive/Main/index.html" class="nav">Seal Archive</a>
-
+				<h2 class="divider">Misc Creations (WIP)</h2>
+				<div class="listbox centered">
+					<a href="">Laser Engraving</a>
+					<a href="" >Carbon Disrupters</a>
+					<a href="">PHP Website</a>
 				</div>
 			</article>
 		</main>
