@@ -13,6 +13,7 @@ body {
     cursor: url('../media/cursor.png'), auto;
 }
 
+
 [data-theme='light'] body {
     background: url('../media/backgrounds/lightmode.webp') center;
     background-size: 700px;
@@ -974,10 +975,9 @@ hover-text img{
     }
 
     #myDropdown{
-        position: fixed;
         display: none;
         position: absolute;
-        width: 220px;
+        width: 250px;
         height: auto;
         margin-top: 56px;
         padding-top: 5px;
@@ -999,13 +999,24 @@ hover-text img{
     }
 
     #myDropdown a {
-        width: 190px;
+        width: 88%;
         display: flex;
         margin-top: 5px;
         margin-left: 5px;
         padding: 5px 10px;
         scale: 1;
     }
+    
+    #myDropdown img {
+        margin-right: 15px;
+    }
+
+     #myDropdown h2 {
+        border-top: 1px solid rgb(180, 180, 180);
+        border-bottom: 1px solid rgb(180, 180, 180);
+        padding: 2px;
+    }
+
 
     .dedicatedPage{
         float: right !important; 
@@ -1181,6 +1192,21 @@ hover-text img{
 
 /*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
 
+[data-theme='dark'] .movingBG {
+    animation: backgroundMove 30s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0px 0px;
+    }
+    50% {
+        
+    }
+    100% {
+        background-position: 575px 575px;
+    }
+  }
 
 @keyframes appearOpacity {
     0%{ 
