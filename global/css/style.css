@@ -56,7 +56,6 @@ main{
 }
 
 article{
-    background-color:rgb(42, 40, 40, 1);
     border: 1px solid rgb(97, 95, 95);
     margin-left: auto;
     margin-right: auto;
@@ -71,28 +70,77 @@ article{
     animation: slideDownTo 0.7s forwards;
 }
 
-article article{
-    background-color:rgb(42, 40, 40, 0);
-    box-shadow: none;
-    padding-top: 0px;
-}
-
 .contentTransparent article {
     background-color: rgb(42, 40, 40, 0.5);
 }
 
-.contentTransparent .columnContainer article {
+article article, .contentTransparent .columnContainer article {
     background-color: rgb(42, 40, 40, 0);
 }
 
+article article{
+    box-shadow: none;
+    padding-top: 0px;
+}
+
 [data-theme='light'] article{
-    background-color: rgb(235, 235, 235);
     border: 1px solid #d3d3d3;
 }
 
+
+/*=-=-=-=-=-=-= ( Universal Colors ) =-=-=-=-=-=-=*/
+
+/*Blurred elements*/
+nav, .bannerButton{
+    background-color: rgb(59, 57, 57, 0.7);
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+}
+
+[data-theme='light'] nav {
+    background-color: rgb(235, 235, 235, 0.8);
+}
+
+/*Medium grays, usually main elements*/
+
+article, .modal-content, #leavingPage{
+    background-color:rgb(43, 40, 40);
+}
+ 
+[data-theme='light'] article, [data-theme='light'] .modal-content, [data-theme="light"] #leavingPage, [data-theme='light'] .bannerButton {
+    background-color: rgb(235, 235, 235);
+}
+
+/*Defined grays, usually for menus and sidebars*/
+#myDropdown, .hoverText hover-text{
+    background-color:rgb(87, 87, 87);
+}
+
+[data-theme="light"] #myDropdown, [data-theme="light"]  .hoverText hover-text{
+    background-color: #cfcfcf;
+}
+
+/*Contrasty grays, usually for interactables*/
+
+[data-theme='light'] button, [data-theme='light'] form input, [data-theme='light'] .inputArray input, [data-theme='light'] .inputArray button{
+    background-color: rgb(205, 205, 205);
+}
+
+.button, form input, .inputArray input, .inputArray button, .modalButton{
+    background-color:rgb(82, 79, 79);
+}
+
+/*Shades of red*/
+
+[data-theme='light'] form input:hover, [data-theme='light'] form input:focus, [data-theme='light'] .inputArray input:hover, [data-theme='light'] .inputArray input:focus{
+    background-color: #e2d5d5;
+}
+
+
+
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
-span, .text, a, input, h1, h2, h3, p, li, hover-text{
+span, .text, a, input, h1, h2, h3, p, li, hover-text, button{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
     line-height: 1.5;
@@ -107,7 +155,7 @@ span, .text, li, p, hover-text{
     font-size: 1.2rem;
 }
 
-[data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li{
+[data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li, [data-theme='light'] hover-text, [data-theme='light'] button{
     color:rgb(51, 51, 51);
 }
 
@@ -174,14 +222,11 @@ video {
 }
 
 .button, .modalButton{
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: rgb(52, 52, 52);
     font-size: 17pt;
     margin: 10px;
-    padding: 10px;
+    padding: 8px;
     border: 2px solid gray;
     border-radius: 10px;
-    color: white;
     cursor: pointer;
 }
 
@@ -214,20 +259,53 @@ nav{
     height: 56px;
     width: 100%;
     box-sizing: border-box;
-    background-color: rgb(59, 57, 57, 0.7);
     z-index: 5;
     transition: height 0.15s, border-radius 0.3s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
 
-[data-theme='light'] nav{
-    background-color: rgb(235, 235, 235);
+
+.siteName{
+    background: transparent;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 14pt;
+    float: left;
+    width: fit-content;
+    height: 40px;
+    margin: 0px;
+    margin-top: 8px;
+    min-width: 60px;
+    cursor: pointer;
+    transition: background-color 0.2s, margin-left 0.2s, min-width 0.2s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
 }
 
-[data-theme='dark'] nav{
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
+[data-theme="light"] .siteName{
+    background-color: transparent;
 }
+
+.siteName span{
+    pointer-events: none; 
+}
+
+.siteName:after {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 30px;
+    padding-right: 2px;
+    border-right: 2px solid gray;
+}
+
+.siteName:hover{
+    padding-left: 25px;
+}
+
+.siteName:hover .iconTypeList{
+    opacity: 1;
+    scale: 1;
+}
+
 
 #linkContainer a{
     text-align: center;
@@ -263,43 +341,6 @@ nav{
 
 #linkContainer h2{
     text-align: center;
-}
-
-.siteName{
-    background: transparent;
-    border-radius: 5px;
-    border: 0px;
-    font-size: 14pt;
-    float: left;
-    width: fit-content;
-    height: 40px;
-    margin: 0px;
-    margin-top: 8px;
-    min-width: 60px;
-    cursor: pointer;
-    transition: background-color 0.2s, margin-left 0.2s, min-width 0.2s, font-size 0.3s, padding 0.3s, margin-top 0.3s, color 0.4s;
-}
-
-.siteName span{
-    pointer-events: none; 
-}
-
-.siteName:after {
-    position: absolute;
-    content: "";
-    width: 7px;
-    height: 30px;
-    padding-right: 2px;
-    border-right: 2px solid gray;
-}
-
-.siteName:hover{
-    padding-left: 25px;
-}
-
-.siteName:hover .iconTypeList{
-    opacity: 1;
-    scale: 1;
 }
 
 .spaceName{
@@ -388,16 +429,11 @@ nav{
 #leavingPage{
     width: 100vw;
     height: 100vh;
-    background-color:rgb(44, 40, 40);
     position: fixed;
     margin: auto;
     display: block;
     z-index: -1;
     pointer-events: none;
-}
-
-[data-theme="light"] #leavingPage {
-    background-color: rgb(235, 235, 235);
 }
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
@@ -501,7 +537,6 @@ div article{
 }
 
 .modal-content {
-    background-color: #2e2a2a;
     margin: auto;
     padding: 0;
     border: 4px solid rgb(246, 151, 151);;
@@ -527,7 +562,7 @@ div article{
 }
 
 .close:hover {
-    color: #cdcdcd;
+    color: rgb(252, 100, 100);
     text-decoration: none;
     cursor: pointer;
 }
@@ -543,27 +578,14 @@ div article{
     padding: 22px 16px;
 }
 
-.modal-body p, .modal-body a, .modal-header h2, .close {
-    color: white !important;
-}
-
 
 /*=-=-=-=-=-=-=-=-= Forms =-=-=-=-=-=-=-=-=*/
 
 form input, .inputArray input, .inputSubmit{
-    background-color:rgb(255, 255, 255);
     border: 2px solid rgb(246, 151, 151);
     font-size: 20pt;
 }
 
-[data-theme='dark'] form input, [data-theme='dark'] .inputArray input, [data-theme='dark'] .inputArray button{
-    background-color:rgb(87, 87, 87);
-    color: white;
-}
-
-form input:hover, form input:focus, .inputArray input:hover, .inputArray input:focus{
-    background-color: #e2d5d5;
-}
 
 form input[type=text], form input[type=password], .inputArray input{
     color: #bb3e00;
@@ -647,9 +669,7 @@ table {
     left: 50%;
     transform: translate(-50%, 0);
     width: max-content;
-    background-color: #555;
     border: 1px solid gray;
-    color: #fff;
     font-size: 12pt;
     text-align: center;
     border-radius: 10px;
@@ -827,8 +847,6 @@ hover-text img{
     max-width: 200px;
     min-width: 175px;
     height: 70px;
-    background-color: rgb(41, 43, 50, 0.75);
-    backdrop-filter: blur(5px);
     color: rgb(246, 151, 151);
     border: 5px solid #d3d3d3;
     border-radius: 20px;
@@ -899,7 +917,6 @@ hover-text img{
 
 #HCB_comment_box{
     width: 50%;
-    background-color: rgba(128, 128, 128, 0.25);
     color: white;
     margin-left: auto;
     margin-right: auto;
@@ -960,23 +977,34 @@ hover-text img{
         position: fixed;
         display: none;
         position: absolute;
-        width: 200px;
+        width: 220px;
+        height: auto;
         margin-top: 56px;
+        padding-top: 5px;
         padding-bottom: 10px;
-        background-color: #f7ad45;
+        border: 3px solid rgb(121, 117, 117);
+        border-top: none;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
         animation: slideDownBelow 0.2s forwards;
+        -webkit-backdrop-filter: blur(25px);
+        backdrop-filter: blur(25px);
         z-index: 3;
     }
 
+    [data-theme="light"] #myDropdown {
+        border: 3px solid rgb(180, 180, 180);
+        border-top: none;
+    }
+
     #myDropdown a {
-        width: 90%;
+        width: 190px;
         display: flex;
-        margin-left: 10px;
-        padding: 0px 0px;
-        justify-content: center;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 5px 10px;
+        scale: 1;
     }
 
     .dedicatedPage{
@@ -1071,6 +1099,8 @@ hover-text img{
     #myDropdown {
         display: inline-block !important;
         position: relative;
+        background: transparent !important;
+        background-color: rgba(0, 0, 0, 0);
         width: 100%;
         margin-top: 20px;
         margin-left: 0px;
