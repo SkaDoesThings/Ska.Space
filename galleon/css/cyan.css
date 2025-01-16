@@ -25,8 +25,17 @@
     transition: scale 0.2s, box-shadow 0.2s;
 }
 
+[data-theme="light"] .buttonForCyan{
+    background: linear-gradient(to right, #9faade, #ffa7f28e);
+    box-shadow: 0 2px 8px 0 #ffc0f663,0 6px 20px 0 #6976b3;
+}
+
 .buttonForCyan:hover{
     box-shadow: 0 6px 24px 0 #ffa9f263,0 18px 60px 0 #384272;
+}
+
+[data-theme="light"] .buttonForCyan:hover{
+    box-shadow: 0 6px 24px 0 #bc77b163,0 18px 60px 0 #6572b4;
 }
 
 .cyanDisplay{
