@@ -22,7 +22,7 @@
     border: 0px;
     background: linear-gradient(to right, #384272, #ffa9f28e);
     box-shadow: 0 2px 8px 0 #ffa9f263,0 6px 20px 0 #384272;
-    transition: scale 0.2s, box-shadow 0.2s;
+    transition: scale 0.15s, box-shadow 0.15s;
 }
 
 [data-theme="light"] .buttonForCyan{
@@ -32,6 +32,11 @@
 
 .buttonForCyan:hover{
     box-shadow: 0 6px 24px 0 #ffa9f263,0 18px 60px 0 #384272;
+    scale: 1.05;
+}
+
+.buttonForCyan:active{
+    scale: 1.1;
 }
 
 [data-theme="light"] .buttonForCyan:hover{
