@@ -6,19 +6,6 @@
         <link rel="stylesheet" href="global/css/style.css">
         <link rel="stylesheet" href="global/css/posts.css">
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
-        <style>
-            #featuredOne{
-                background-image: url("post/media/dusk.webp");
-            }
-
-            #featuredTwo{
-                background-image: url("global/media/backgrounds/poolrooms.webp");
-            }
-
-            #featuredThree{
-                background-image: url("global/media/banners/sky.webp");
-            }
-        </style>
     </head>
     <body>
         <nav id="navbox" class="transparency">
@@ -58,46 +45,41 @@
 			<div id="pageTitle">
                 <h1 class="centered">Posts</h1>
             </div>
-            <article class="postList"> 
-                <h1 class="divider">Featured</h1>
-
-                <div id="featuredBoxes">
-                    <div id="featuredOne">
-                        <a href="post/developing-this-website.html">
-                            <span>August 14th, 2024 &#x2022 Dev</span>
-                            <h1>Developing this website</h1>
-                            <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
-                        </a>
-                    </div>
-                    <div id="featuredTwo">
-                        <a href="post/post-template.html">
-                            <span>TBD &#x2022 Misc</span>
-                            <h1>More posts here</h1>
-                            <h2>TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</h2>
-                        </a>
-                    </div>
-                    <div id="featuredThree">
-                        <a href="post/post-template.html">
-                            <span>TBD &#x2022 Misc</span>
-                            <h1>More posts here</h1>
-                            <h2>Hello World</h2>
-                        </a>
-                    </div>
-                </div>
-
-                <h1 class="divider">Other Posts</h1>
+            <article> 
                 <div id="listBoxes">
-                    <a href="post/markdown-testing.html">
-                        <span>December 28th, 2024 &#x2022 Misc</span>
-                        <h1>Markdown Testing</h1>
-                        <h2>This displays all of the markdown on my website</h2>
-                    </a><br>
+                    <a href="post/developing-this-website.html">
+                        <img src="post/media/dusk.webp">
+                        <div>
+                            <h1>Developing This Website</h1>
+                            <span>August 14th, 2024 &#x2022 Dev</span>
+                            <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
+                        </div>
+                    </a>
+                    <hr>
                     <a href="post/post-template.html">
-                        <span>August 14th, 2024 &#x2022 Misc</span>
-                        <h1>Blog post template</h1>
-                        <h2>Just the base I use, serves as good filler for sure</h2>
-                    </a><br>
+                        <img src="global/media/banners/sky.webp">
+                        <div>
+                            <h1>Markdown Testing</h1>
+                            <span>August 14th, 2024 &#x2022 Misc</span>
+                            <h2>Displays the markdown I use on my website, also serves as good filler</h2>
+                        </div>
+                    </a>
+                    <br>
+                    <div id="startHidden">
+                        <hr>
+                        <h1 class="divider">Other Posts</h1>
+                        <a href="post/bee-movie-script.html">
+                            <img src="post/media/beemovie.webp" loading="lazy">
+                            <div>
+                                <h1>Bee Movie Script</h1>
+                                <span>December 21st, 2025 &#x2022 Fun</span>
+                                <h2>You like jazz too? 🎺</h2>
+                            </div>
+                        </a>
+                        <br>
+                    </div>
                 </div>
+                <button id="showHiddenItem" class="button" onclick="showHiddenItem()">Other Posts</button>
             </article>
         </main>
     </body>

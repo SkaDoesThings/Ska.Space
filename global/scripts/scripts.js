@@ -226,3 +226,8 @@ function copyUrl() {
       console.log('Copy error')
   })
 }
+
+function showHiddenItem() {
+  document.getElementById("showHiddenItem").style.display = "none";
+  document.getElementById("startHidden").style.display = "block";
+}

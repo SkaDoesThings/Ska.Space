@@ -63,7 +63,7 @@ article{
     margin-top: 0px;
     padding-top: 20px;
     border-radius: 5px;
-    width:93%;
+    width: 95%;
     max-width: 1850px;
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
@@ -158,6 +158,10 @@ span, .text, li, p, hover-text{
     font-size: 1.2rem;
 }
 
+h1, h2, h3{
+    margin: 0;
+}
+
 [data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li, [data-theme='light'] hover-text, [data-theme='light'] button{
     color:rgb(51, 51, 51);
 }
@@ -165,13 +169,11 @@ span, .text, li, p, hover-text{
 h1 {
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 0;
 }
 
 h2{
     font-size: 1.5rem;
     font-weight: normal;
-    margin: 0;
 }
 
 .centered {
@@ -196,6 +198,7 @@ h2{
 
 #pageTitle h1{
     font-size: 38pt;
+    margin: 10px;
 }
 
 img {
@@ -233,9 +236,8 @@ video {
     cursor: pointer;
 }
 
-
 button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
-    scale: 0.9;
+    scale: 1.05;
 }
 
 button img, .modalButton img{
@@ -247,6 +249,14 @@ button img, .modalButton img{
     margin-right: 5px;
     margin-top: 7px;
     border-radius: 0px;
+}
+
+hr {
+    border-color: rgb(200, 200, 200);
+}
+
+#startHidden{
+    display: none;
 }
 
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
@@ -956,6 +966,10 @@ hover-text img{
         background-attachment: fixed;
     }
 
+    [data-theme="light"] body{
+        background-attachment: fixed;
+    }
+
     .onMobile{
         display: none;
         visibility: hidden;
@@ -1047,8 +1061,8 @@ hover-text img{
 
     article{
         margin-top: 20px;
-        margin-bottom: 0px; 
-        width: 96%;
+        margin-bottom: 0px;
+        width: 97%;
         border-radius: 10px;
     }
     

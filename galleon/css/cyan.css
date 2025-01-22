@@ -5,6 +5,10 @@
     opacity: 1
 }
 
+[data-theme='dark'] article{
+    background-color: rgb(40, 43, 43);
+}
+
 .columnContainer{
     margin-top: 0px;
 }
