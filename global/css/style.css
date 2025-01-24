@@ -13,7 +13,6 @@ body {
     cursor: url('../media/cursor.png'), auto;
 }
 
-
 [data-theme='light'] body {
     background: url('../media/backgrounds/lightmode.webp') center;
     background-size: 700px;

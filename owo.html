@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Ska.Space - Posts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/posts.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
+        <link rel="preload" as="image" href="global/media/backgrounds/genshin.webp">
+    </head>
+    <style>
+        body{
+            overflow: hidden;
+            background: none;
+            background: rgb(45, 42, 42);
+        }
+
+        #background{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("global/media/backgrounds/genshin.webp");
+            background-size: cover;
+            background-position: center;
+            animation: backgroundAppear 1s forwards ease;
+        }
+
+        #uwu{
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: -2vh;
+            bottom: 0;
+            text-align: center;
+        }
+        #uwu h1{
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 7rem;
+            line-height: normal;
+            animation: slideUpH1 1s forwards;
+        }
+        #uwu h2{
+            color: rgba(255, 255, 255, 0.8) !important;
+            line-height: normal;
+            animation: slideUpH2 1.5s forwards;
+        }
+
+        @keyframes slideUpH1 {
+            0%{
+                opacity: 0;
+                margin-top: 100px;
+            }
+            100%{
+                opacity: 1;
+                margin-top: 0px;
+            }
+        }
+
+        @keyframes slideUpH2 {
+            0%{
+                opacity: 0;
+                margin-top: 30px;
+            }
+            50%{
+                opacity: 0;
+                margin-top: 30px;
+            }
+            100%{
+                opacity: 1;
+                margin-top: 0px;
+            }
+        }
+        @keyframes backgroundAppear {
+            0%{
+                scale: 1.1;
+                opacity: 0;
+            }
+            100%{
+                scale: 1;
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            #uwu{
+                top: -8vh;
+            }
+        }
+    </style>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+            <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+            <span>Ska.Space</span>
+            </button>
+            <button onclick="openNav()" id="navToggle"></button>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
+            <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
+            <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="posts.html">Posts</a>
+                <a href="owo.html" class="active dedicatedPage">owo</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="index.html" class="active"><img src="global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="galleon/home.html"><img src="global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
+                    <a href="seal/search.html"><img src="global/media/images/sealco.png" alt="Logo for Seal Zone">Seal Zone</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage"></div>
+        
+        <div id="background">
+
+        </div>
+
+        <main>
+            <div id="uwu">
+                <h1>OwO</h1>
+                <h2>What's this?</h2>
+            </div>
+        </main>
+    </body>
+    <script src="global/scripts/scripts.js"></script>
+</html>
