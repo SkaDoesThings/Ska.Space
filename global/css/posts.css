@@ -1,7 +1,7 @@
 /*Featured Posts*/
 
 #featuredBoxes {
-    width: 95%;
+    width: 100%;
     height: auto;
     margin-top: 10px;
     margin-left: auto;
@@ -13,16 +13,14 @@
     display: inline-flex;
     flex-direction: column;
     width: 400px;
-    min-height: 180;
+    min-height: 180px;
     margin: 10px;
-    border: 2px solid gray;
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #featuredBoxes a{
-    background-color: rgba(34, 34, 34, 0.5);
     height: 160px;
     padding: 15px;
     padding-top: 10px;
@@ -48,19 +46,10 @@
     vertical-align: middle;
 }
 
-[data-theme='light'] #featuredBoxes div {
-    border: 2px solid rgb(185, 184, 184);
-}
-
-[data-theme='light'] #featuredBoxes a {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: white;
-}
-
 /*More Posts*/
 
 #listBoxes{
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
@@ -68,9 +57,12 @@
 
 #listBoxes a{
     display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
+    width: 90%;
     height: auto;
+    padding: 20px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     text-decoration: none;
 }
@@ -80,6 +72,7 @@
 }
 
 #listBoxes h2{
+    font-size: 14pt;
     flex-direction: column;
     margin-top: 5px;
     margin-bottom: 10px;

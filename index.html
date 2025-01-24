@@ -57,20 +57,19 @@
         </div>
 
         <br><br>
-        <main>
-            <article id="lobbyArticle">
-
-                <div class="columnContainer sizeLarger">
-                    <article class="centered">
-                        <img src="global/media/emotes/BlobCatWave.webp" class="mainImage vertical viewable">
-                        <h1 class="welcomeText">Ska Appears!</h1>
-                        <p>Welcome visitor from afar to my grand domain. This branches off into many different spaces that I developed. Feel free to explore or learn more about me<a href="owo.html">!</a></p>
+        
+        <main class="pageLobby">
+            <article class="flexArea">
+                    <div class="flexOne centeredMobile">
+                        <h1 class="welcomeText gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play(1)"><hover-text>the silly</hover-text></span></h1>
+                        <span>Welcome to my website visitor from afar. This branches off into many spaces that I developed. Feel free to explore more spaces below or learn more about me</span><br><br>
                         <div class="homeSpace">
                             <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community Projects</hover-text>Galleon</a>
                             <a href="seal/search.html" class="hoverText slideUp"><img src="global/media/images/sealco.png"><hover-text>Seal Search & More!</hover-text>Seal Zone</a>
                         </div>
-                    </article>
-                    <article>
+                        <p><a href="spencos.html">SpencOS Mode</a> &#x2022 <a href="mailto:skadoesthings@outlook.com" class="hoverText slideUp">Contact<hover-text>skadoesthings@outlook.com</hover-text></a> &#x2022 <a href="https://github.com/SkaDoesThings/Ska.Space">Source Code</a></p></p>
+                    </div>
+                    <div class="flexRightSide">
                         <h1 class="divider onMobile">About Me</h1>
                         <div id="myProfile">
                             <div class="profileCard nitro">
@@ -80,15 +79,15 @@
                                     <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
                                     <div class="userIcons"> 
-                                        <img src="global/media/icons/emotes/stand.webp">
-                                        <img src="global/media/icons/emotes/snap.webp">
+                                        <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play(4)">
+                                        <img src="global/media/icons/emotes/snap.webp" class="viewable" onclick="play(3)">
                                         <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
-                                        <img src="global/media/icons/emotes/sip.webp">
+                                        <img src="global/media/icons/emotes/sip.webp" class="viewable" onclick="play(2)">
                                     </div>
                                 </div>
                                 <div class="profileBody">
                                     <span class="name">Ska✨</span><br>
-                                    <span class="user">@ska.exe &#x2022 bnuuy</span><br>
+                                    <span class="user">@ska.exe &#x2022 <a href="owo.html">bnuuy</a></span><br>
                                     <span class="bio">I'm Spencer! I enjoy gaming, anime, tech, programming, and many other things revolving around the internet</span><br>
                                     <div class="socials centered">
                                         <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
@@ -105,15 +104,11 @@
                                 </div>
                             </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
                 </div><br>
             </article>
-            <p class="centered"><a href="spencos.html">SpencOS Mode</a> &#x2022 <a href="mailto:skadoesthings@outlook.com" class="hoverText slideUp">Contact<hover-text>skadoesthings@outlook.com</hover-text></a> &#x2022 <a href="https://github.com/SkaDoesThings/Ska.Space">Source Code</a></p></p>
-            <div class="theSilly hoverText slideUp" onclick="play(1)">
-                <img src="global/media/images/ska/skaart.webp">
-                <hover-text>the silly</hover-text>
-            </div>
+
         </main>
     </body>
     <script src="global/scripts/scripts.js"></script>
@@ -129,6 +124,18 @@
                 audio = document.getElementById("audioYippee");
                 break;
             }
+            case 2: {
+                audio = document.getElementById("audioHolehMoleh");
+                break;
+            }
+            case 3: {
+                audio = document.getElementById("audioSnapped");
+                break;
+            }
+            case 4: {
+                audio = document.getElementById("audioJoJo");
+                break;
+            }
         }
         audio.play();
     }
@@ -138,4 +145,7 @@
     </script>
     <audio id="audioBoom" src="global/media/audio/boom.mp3"></audio>
     <audio id="audioYippee" src="global/media/audio/yippee.mp3"></audio>
+    <audio id="audioHolehMoleh" src="global/media/audio/holymoly.ogg"></audio>
+    <audio id="audioSnapped" src="global/media/audio/snapped.mp3"></audio>
+    <audio id="audioJoJo" src="global/media/audio/giorno.mp3"></audio>
 </html>

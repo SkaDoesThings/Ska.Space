@@ -15,7 +15,7 @@ body {
 
 [data-theme='light'] body {
     background: url('../media/backgrounds/lightmode.webp') center;
-    background-size: 700px;
+    background-size: 400px;
     background-color: rgb(235, 235, 235);
 }
 
@@ -26,6 +26,7 @@ body {
 .divider{
     display: block;
     background-color: rgb(117, 117, 117, 0.2);
+    border: 1px solid rgb(97, 95, 95);
     border-radius: 10px;
     line-height: 1.3;
     margin: 20px;
@@ -38,6 +39,7 @@ body {
 
 [data-theme='light'] .divider{
     background-color: rgb(245, 245, 245);
+    border: 1px solid #d3d3d3;
 }
 
 main{
@@ -56,37 +58,33 @@ main{
 }
 
 article{
-    border: 1px solid rgb(97, 95, 95);
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
     padding-top: 20px;
     border-radius: 5px;
-    width: 95%;
-    max-width: 1850px;
+    width: 90%;
+    max-width: 1400px;
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
-    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
     animation: slideDownTo 0.7s forwards;
 }
 
 .contentTransparent article {
     background-color: rgb(42, 40, 40, 0.5);
+    border: 1px solid rgb(97, 95, 95);
+    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
 }
 
 article article, .contentTransparent .columnContainer article {
     background-color: rgb(42, 40, 40, 0);
+    box-shadow: none;
 }
 
 article article{
     box-shadow: none;
     padding-top: 0px;
 }
-
-[data-theme='light'] article{
-    border: 1px solid #d3d3d3;
-}
-
 
 /*=-=-=-=-=-=-= ( Universal Colors ) =-=-=-=-=-=-=*/
 
@@ -103,13 +101,30 @@ nav, .bannerButton{
     backdrop-filter: blur(0px);
 }
 
+/*Border elements*/
+
+.box, .blog article, #featuredBoxes div, #listBoxes a {
+    background-color:rgb(43, 40, 40);
+    border: 1px solid rgb(97, 95, 95);
+}
+
+[data-theme='light'] .box, [data-theme='light'] .blog article, [data-theme='light'] #featuredBoxes div, [data-theme='light'] #listBoxes a{
+    background-color: rgb(235, 235, 235);
+    border: 1px solid #c3c3c3;
+}
+
+.box, .blog article{
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
+}
+
 /*Medium grays, usually main elements*/
 
-article, .modal-content, #leavingPage{
+.modal-content, #leavingPage{
     background-color:rgb(43, 40, 40);
 }
  
-[data-theme='light'] article, [data-theme='light'] .modal-content, [data-theme="light"] #leavingPage, [data-theme='light'] .bannerButton {
+[data-theme='light'] .modal-content, [data-theme="light"] #leavingPage, [data-theme='light'] .bannerButton {
     background-color: rgb(235, 235, 235);
 }
 
@@ -118,7 +133,7 @@ article, .modal-content, #leavingPage{
     background-color:rgb(87, 87, 87);
 }
 
-[data-theme="light"] #myDropdown, [data-theme="light"]  .hoverText hover-text{
+[data-theme="light"] #myDropdown, [data-theme="light"] .hoverText hover-text{
     background-color: #cfcfcf;
 }
 
@@ -137,8 +152,6 @@ article, .modal-content, #leavingPage{
 [data-theme='light'] form input:hover, [data-theme='light'] form input:focus, [data-theme='light'] .inputArray input:hover, [data-theme='light'] .inputArray input:focus{
     background-color: #e2d5d5;
 }
-
-
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
@@ -191,6 +204,15 @@ h2{
     font-weight: bold;
 }
 
+.gradientRedWhite{
+    width: fit-content;
+    font-size: 28pt;
+    background: linear-gradient(45deg, #ffbbbe, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 #pageTitle{
     animation: appearOpacity 1s forwards;
 }
@@ -237,6 +259,7 @@ video {
 
 button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
     scale: 1.05;
+    transition: scale 0.05s;
 }
 
 button img, .modalButton img{
@@ -444,17 +467,30 @@ nav{
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
 
+.flexArea {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexOne {
+    flex: 1;
+}
+
+.flexPointFive {
+    flex: 0.5;
+}
+
+.flexPointThree {
+    flex: 0.3;
+}
+
 .columnContainer{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     border-radius: 10px;
     max-width: 1300px;
-}
-
-.sizeLarger{
-    max-width: 1700px;
 }
 
 .columnContainer article{
@@ -764,19 +800,22 @@ hover-text img{
     text-decoration: none;
     height: auto;
     border-radius: 15px;
-    font-size: 18pt;
+    font-size: 14pt;
     margin: 5px;
     padding: 7px 10px;
-    background-color: rgba(241, 142, 92, 0.1);
-    border: 2px solid #ae5549;
+    background-color: rgb(67, 50, 48);
+    border: 2px solid #de8579;
     cursor: pointer;
-    transition: font-size 0.2s, width 0.2s, background-color 0.2s, scale 0.2s;
   }
+
+[data-theme='light'] .homeSpace a {
+    background-color: #f2f2f2;
+}
   
 .homeSpace img{
     margin-right: 5px;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     border-radius: 0px;
 }
   
@@ -800,9 +839,9 @@ hover-text img{
 }
 
 .mainImage{
-  width: 84px;
+  width: 64px;
   height: auto;
-  padding: 5px;
+  padding: 10px;
   margin-top: -20px;
   transition: transform 0.2s;
 }
@@ -1024,23 +1063,15 @@ hover-text img{
         padding: 2px;
     }
 
-
     .dedicatedPage{
         float: right !important; 
         margin-right: 8px !important;
     }
-}
-
-@media only screen and (max-width: 1000px) {
-    .homeSpace a{
-      font-size: 13pt;
-    }
     
-    .homeSpace img{
-      width: 24px;
-      height: 24px;
+    .flexRightSide{
+        margin-left: 10%;
     }
-  }
+}
 
 @media only screen and (max-width: 800px) {
     .onMobile{
@@ -1050,6 +1081,10 @@ hover-text img{
     .offMobile{
         display: none;
         visibility: hidden;
+    }
+
+    .centeredMobile {
+        text-align: center;
     }
 
     main{
@@ -1063,6 +1098,10 @@ hover-text img{
         margin-bottom: 0px;
         width: 97%;
         border-radius: 10px;
+    }
+
+    .flexArea{
+        display: block;
     }
     
     .welcomeText{
@@ -1184,6 +1223,10 @@ hover-text img{
     .bubbleList div {
         width: 90%;
     }    
+
+    .gradientRedWhite{
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 500px) {
