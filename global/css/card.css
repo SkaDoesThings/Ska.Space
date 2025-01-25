@@ -1,5 +1,52 @@
-.columnContainer {
+main {
     animation: titleMoveIn 0.75s forwards;
+}
+
+/*=-=-=-=-=-=-=-= Code From SpencOS =-=-=-=-=-=-=-=*/
+
+.windowContent{
+    width: fit-content;
+    padding: 30px;
+}
+
+.appHeader{
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid gray;
+    z-index: 50px;
+    user-select: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.appActions{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.appActions span{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.appActions li{
+    float: right;
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.appActions li:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.appActions .typeClose:hover{
+    background-color: rgb(252, 100, 100);
+    border-top-right-radius: 10px;
 }
 
 /*<---------- Special Discord-like Profile hehe ---------->*/
@@ -247,16 +294,6 @@
     background-size: 36px;
 }
 
-.theSilly{
-    width: 40px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.theSilly img{
-    width: 40px;
-}
-
 /*It's Mobilin' Time*/
 
 @media only screen and (max-width: 800px){
@@ -265,37 +302,18 @@
         margin-left: auto;
         margin-right: auto;
     }
-}
 
+    .window{
+        margin-bottom: 30px;
+    }    
+}
 
 @keyframes titleMoveIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    30%{
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    80%{
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.9); }
+    30% { opacity: 0; transform: scale(0.9); }
+    80% { opacity: 1; }
+    100% { transform: scale(1); }
 }
-
-@keyframes delayedMoveIn {
-    0%{ 
-        transform: translateY(90px);
-    }
-    75%{
-        transform: translateY(90px);
-    }
-    100%{
-        transform: translateY(-3px);
-    }
-  }
 
 @media (prefers-reduced-motion) {
     #topArea, .columnContainer, .columnContainer article, #myProfile, .theSilly{

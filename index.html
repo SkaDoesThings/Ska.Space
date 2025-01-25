@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="global/css/style.css">
         <link rel="stylesheet" href="global/css/card.css">
+        <link rel="stylesheet" href="global/css/posts.css">
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
         
     </head>
@@ -56,89 +57,102 @@
             <h2 class="offMobile">Click anywhere to close image</h2>
         </div>
 
-        <br><br>
-        
+        <br>      
         <main class="pageLobby">
             <article class="flexArea">
-                    <div class="flexOne centeredMobile">
-                        <h1 class="welcomeText gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play(1)"><hover-text>the silly</hover-text></span></h1>
-                        <span>Welcome to my website visitor from afar. This branches off into many spaces that I developed. Feel free to explore them below or learn more about me</span><br><br>
+                <div id="welcome" class="flexOne box window">
+                    <div class="appHeader">
+                        <ul class="appActions">
+                            <span>📝 Notepad</span>
+                            <li class="typeClose" onclick="shakeWindow()"><a>x</a></li>
+                            <li onclick="shakeWindow()"><a>+</a></li>
+                            <li onclick="shakeWindow()"><a>-</a></li>
+                        </ul>
+                    </div>
+                    <div class="windowContent centeredMobile">
+                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play(1)"><hover-text>the silly</hover-text></span></h1>
+                        <span>Welcome to my website, visitor from afar. This page branches off into many spaces that I developed. Feel free to explore them below or learn more about me</span><br><br>
                         <div class="homeSpace">
                             <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community Projects</hover-text>Galleon</a>
                             <a href="seal/search.html" class="hoverText slideUp"><img src="global/media/images/sealco.png"><hover-text>Seal Search & More!</hover-text>Seal Zone</a>
                         </div>
-                        <p><a href="spencos.html">SpencOS Mode</a> &#x2022 <a href="mailto:skadoesthings@outlook.com" class="hoverText slideUp">Contact<hover-text>skadoesthings@outlook.com</hover-text></a> &#x2022 <a href="https://github.com/SkaDoesThings/Ska.Space">Source Code</a></p></p>
+                        <span class="offMobile"><br>My motto is 'always be silly'. You should have fun and enjoy things in life!</span>
                     </div>
-                    <div class="flexRightSide">
-                        <h1 class="divider onMobile">About Me</h1>
-                        <div id="myProfile">
-                            <div class="profileCard nitro">
-                                <div class="profileHeader">
-                                    <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
-                                    <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
-                                    <img src="global/media/icons/emotes/idle.webp" class="userStatus">
+                </div>
+                <div class="flexRightSide">
+                    <div id="myProfile">
+                        <div class="profileCard nitro">
+                            <div class="profileHeader">
+                                <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
+                                <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
-                                    <div class="userIcons"> 
-                                        <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play(4)">
-                                        <img src="global/media/icons/emotes/snap.webp" class="viewable" onclick="play(3)">
-                                        <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
-                                        <img src="global/media/icons/emotes/sip.webp" class="viewable" onclick="play(2)">
-                                    </div>
+                                <div class="userIcons"> 
+                                    <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play(4)">
+                                    <img src="global/media/icons/emotes/snap.webp" class="viewable" onclick="play(3)">
+                                    <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
+                                    <img src="global/media/icons/emotes/sip.webp" class="viewable" onclick="play(2)">
                                 </div>
-                                <div class="profileBody">
-                                    <span class="name">Ska✨</span><br>
-                                    <span class="user">@ska.exe &#x2022 <a href="owo.html">bnuuy</a></span><br>
-                                    <span class="bio">I'm Spencer! I enjoy gaming, anime, tech, programming, and many other things revolving around the internet</span><br>
-                                    <div class="socials centered">
-                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
-                                        <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
-                                        <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
-                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
-                                        <a href="https://osu.ppy.sh/users/8787709" target="_blank" class="mainJoinOSU hoverText slideUp"><hover-text>@SKA915</hover-text></a>
-                                    </div><br><br>
-                                    <div class="links centered">
-                                        <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
-                                        <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
-                                        <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
-                                    </div><br>
-                                </div>
+                            </div>
+                            <div class="profileBody">
+                                <span class="name">Ska✨</span><br>
+                                <span class="user">@ska.exe &#x2022 <a href="owo.html">bnuuy</a></span><br>
+                                <span class="bio">I'm Spencer! I enjoy gaming, anime, tech, programming, and many other things revolving around the internet</span><br>
+                                <div class="socials centered">
+                                    <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
+                                    <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                    <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
+                                    <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
+                                    <a href="https://osu.ppy.sh/users/8787709" target="_blank" class="mainJoinOSU hoverText slideUp"><hover-text>@SKA915</hover-text></a>
+                                </div><br><br>
+                                <div class="links centered">
+                                    <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
+                                    <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
+                                    <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
+                                </div><br>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div><br>
             </article>
-
+            <p class="centered"><a href="spencos.html">SpencOS Mode</a> &#x2022 <a href="mailto:skadoesthings@outlook.com" class="hoverText slideUp">Contact<hover-text>skadoesthings@outlook.com</hover-text></a> &#x2022 <a href="https://github.com/SkaDoesThings/Ska.Space">Source Code</a></p>
         </main>
     </body>
     <script src="global/scripts/scripts.js"></script>
 	<script>
         var audio;
         function play(selection) {
-        switch(selection) {
-            case 0: {
-                audio = document.getElementById("audioBoom");
-                break;
+            switch(selection) {
+                case 0: {
+                    audio = document.getElementById("audioBoom");
+                    break;
+                }
+                case 1: {
+                    audio = document.getElementById("audioYippee");
+                    break;
+                }
+                case 2: {
+                    audio = document.getElementById("audioHolehMoleh");
+                    break;
+                }
+                case 3: {
+                    audio = document.getElementById("audioSnapped");
+                    break;
+                }
+                case 4: {
+                    audio = document.getElementById("audioJoJo");
+                    break;
+                }
             }
-            case 1: {
-                audio = document.getElementById("audioYippee");
-                break;
-            }
-            case 2: {
-                audio = document.getElementById("audioHolehMoleh");
-                break;
-            }
-            case 3: {
-                audio = document.getElementById("audioSnapped");
-                break;
-            }
-            case 4: {
-                audio = document.getElementById("audioJoJo");
-                break;
-            }
-        }
         audio.play();
-    }
+        }
+        
+        function shakeWindow(){
+            document.getElementById('welcome').classList.remove('shake');
+            setTimeout(function(){             
+                document.getElementById('welcome').classList.add('shake');
+            }, 10);
+        }
 	</script>
     <script type="text/javascript" id="hcb"> 
         if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24iBYyfxGNvQHukmSMP.LwF%2F"+"&opts=16798&num=10&ts=1725773801432");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 

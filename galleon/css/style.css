@@ -37,6 +37,11 @@ article img{
   border: 2px solid #f6b6ff;
 }
 
+[data-theme='light'] .bubbleList div{
+  background-color: rgb(242, 234, 242);
+  border: 2px solid #f6b6ff;
+}
+
 .sailImage{
   width: 85px;
   display: block;
@@ -64,18 +69,18 @@ article img{
 }
 
 .inviteButton:hover{
-  border: 4px solid rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.15);
 }
 
 .mainJoinDiscord{
-    border: 4px solid #5865F2;
+    border: 3px solid #5865F2;
     background: url(../../global/media/icons/logos/logoDiscord.webp) no-repeat 8px 5px;
     background-position: 8px 5px;
     background-size: 40px;
 }
 
 .mainJoinSteam{
-  border: 4px solid #0275A5;
+  border: 3px solid #0275A5;
   background: url(../../global/media/icons/logos/logoSteam.webp) no-repeat 8px 4px;
   background-size: 40px;
 }

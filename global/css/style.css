@@ -43,6 +43,7 @@ body {
 }
 
 main{
+    height: 100%;
     padding-top: 50px;
     padding-bottom: 30px;
     transition: scale 0.2s;
@@ -102,7 +103,6 @@ nav, .bannerButton{
 }
 
 /*Border elements*/
-
 .box, .blog article, #featuredBoxes div, #listBoxes a {
     background-color:rgb(43, 40, 40);
     border: 1px solid rgb(97, 95, 95);
@@ -113,18 +113,17 @@ nav, .bannerButton{
     border: 1px solid #c3c3c3;
 }
 
-.box, .blog article{
+.box, .blog article, #myProfile{
     border-radius: 10px;
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
 }
 
 /*Medium grays, usually main elements*/
-
-.modal-content, #leavingPage{
+.modal-content, #leavingPage, .appHeader {
     background-color:rgb(43, 40, 40);
 }
  
-[data-theme='light'] .modal-content, [data-theme="light"] #leavingPage, [data-theme='light'] .bannerButton {
+[data-theme='light'] .modal-content, [data-theme="light"] #leavingPage, [data-theme='light'] .appHeader, [data-theme='light'] .bannerButton {
     background-color: rgb(235, 235, 235);
 }
 
@@ -155,7 +154,7 @@ nav, .bannerButton{
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
-span, .text, a, input, h1, h2, h3, p, li, hover-text, button{
+span, .text, a, input, h1, h2, h3, p, li, hover-text, button, #bannerMain span, #bannerMain h1, #bannerMain h2{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
     line-height: 1.5;
@@ -293,7 +292,6 @@ nav{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }   
 
-
 .siteName{
     background: transparent;
     border-radius: 5px;
@@ -334,7 +332,6 @@ nav{
     opacity: 1;
     scale: 1;
 }
-
 
 #linkContainer a{
     text-align: center;
@@ -550,6 +547,7 @@ div article{
 }
 
 #imageViewer h2 {
+    color: white;
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -619,7 +617,6 @@ div article{
     padding: 22px 16px;
 }
 
-
 /*=-=-=-=-=-=-=-=-= Forms =-=-=-=-=-=-=-=-=*/
 
 form input, .inputArray input, .inputSubmit{
@@ -656,8 +653,7 @@ input[type=submit]:hover, .inputArray button:hover{
     background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
 }
 
-
-/*=-=-=-=-=-= Item Container and Navigation =-=-=-=-=-=*/
+/*=-=-=-= Item Container & Navigation =-=-=-=*/
 
 .listbox {
     margin-bottom: 20px;
@@ -697,6 +693,8 @@ table {
     align-items: center;
 }
 
+/*=-=-=-=-=-=-=-= Hovertext =-=-=-=-=-=-=-=*/
+
 .hoverText{
     position: relative;
 }
@@ -728,31 +726,27 @@ table {
     margin-top: -45px;
 }
 
-.slideDown:hover hover-text{
-    margin-top: 45px !important;
-}
-
-.slideUp hover-text::after {
+hover-text::after {
     content: " ";
     position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
+}
+
+.slideUp hover-text::after{
+    top: 100%;
     border-color: #555 transparent transparent transparent;
 }
 
-.slideDown hover-text::after{
-    content: " ";
-    position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #555 transparent !important;
-    margin-top: 40px;
+.slideDown:hover hover-text{
+    margin-top: 45px;
+}
+
+.slideDown hover-text::after {
+    bottom: 100%;
+    border-color: transparent transparent #555 transparent;
 }
 
 hover-text img{
@@ -849,29 +843,9 @@ hover-text img{
 .mainNote{
     font-size: 11pt;
 }
-  
-.welcomeText{
-    font-size: 28pt; 
-}
 
 .mainText{
     font-size: 40pt; 
-}
-
-#bannerMain span, #bannerMain h1, #bannerMain h2{
-    color: rgb(235, 235, 235);
-}
-
-.bannerImageGalleon{
-    background-image: url('../media/banners/sky.webp');
-}
-
-.placeholderLobby{
-    background: linear-gradient(to top, rgb(224, 127, 85), rgb(121, 97, 177));
-}
-
-.placeholderGalleon{
-    background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
 }
 
 .bannerContent{
@@ -910,8 +884,7 @@ hover-text img{
     font-size: 20pt;
 }
 
-
-/*=-=-=-=-=-=-=- ( Dynamic Elements ) -=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=- ( Special Loader ) -=-=-=-=-=-=-=*/
 /*Thanks to https://cssloaders.github.io*/
 
 #pageLoader{
@@ -955,47 +928,6 @@ hover-text img{
     color: #FF3D00;
     transform: rotateY(70deg);
     animation-delay: -.4s;
-}
-
-/*Comments*/
-
-#HCB_comment_box{
-    width: 50%;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-[data-theme='light'] #HCB_comment_box{
-    color: black;
-}
-
-#HCB_comment_box img{
-    display: none;
-}
-
-#HCB_comment_box textarea{
-    resize: none;
-}
-
-#HCB_comment_box h3{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -50px !important;
-    line-height: 0px;
-}
-
-#HCB_comment_box span, #HCB_comment_box a{
-    font-size: 13pt;
-}
-
-.home-desc{
-    display: none;
 }
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
@@ -1069,7 +1001,7 @@ hover-text img{
     }
     
     .flexRightSide{
-        margin-left: 10%;
+        margin-left: 5%;
     }
 }
 
@@ -1104,10 +1036,6 @@ hover-text img{
         display: block;
     }
     
-    .welcomeText{
-        font-size: 30pt;
-    }
-    
     .modal-content{
         bottom: 70px;
         top: 0px;
@@ -1121,7 +1049,6 @@ hover-text img{
     }
 
     #navbox{
-        width: 100%;
         bottom: 0;
         border-top: 1px solid #d3d3d3;
         overflow: hidden;
@@ -1159,7 +1086,6 @@ hover-text img{
     }
 
     #myDropdown {
-        display: inline-block !important;
         position: relative;
         background: transparent !important;
         background-color: rgba(0, 0, 0, 0);
@@ -1171,7 +1097,7 @@ hover-text img{
         overflow-x: hidden;
     }
 
-    .columnContainer{
+    .columnContainer {
         background-color: rgba(95, 141, 55, 0);
         width: 100%;
         display: inline-block;
@@ -1211,10 +1137,6 @@ hover-text img{
         top: 12%;
     }
 
-    #lobbyArticle{
-        top: 75px;
-    }
-
     .bubbleList {
         display: block;
         align-items: center;
@@ -1252,133 +1174,80 @@ hover-text img{
 }
 
 @keyframes backgroundMove {
-    0% {
-        background-position: 0px 0px;
-    }
-    50% {
-        
-    }
-    100% {
-        background-position: 575px 575px;
-    }
-  }
+    0% { background-position: 0px 0px; } 
+    100% { background-position: 575px 575px; }
+}
 
 @keyframes appearOpacity {
-    0%{ 
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+    0% {  opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes disappearOpacity {
-    0%{
-        opacity: 1;
-    }
-    15%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    15% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @keyframes appearOpacityDelayed {
-    0%{ 
-        opacity: 0;
-    }
-    25%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes appearScale {
-    0%{ 
-        transform: scale(0.5);
-    }
-    50%{
-        transform: scale(1.1);
-    }
-    100%{
-        transform: scale(1);
-    }
+    0% {  transform: scale(0.5); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 @keyframes slideDownBelow {
-    0% {
-        margin-top: 0px;
-        opacity: 0;
-        scale: 0.5;
-    }
-    100% {
-        margin-top: 56px;
-        opacity: 1;
-        scale: 1;
-    }
+    0% { margin-top: 0px; opacity: 0; scale: 0.5; }
+    100% { margin-top: 56px; opacity: 1; scale: 1; }
 }
 
 @keyframes bannerReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-        scale: 0.9;
-    }
-    5%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 1;
-        transform: translateY(3px);
-    }
-    100% {
-        transform: translateY(0px);
-        scale: 1;
-    }
-  }
+    0% { opacity: 0; transform: translateY(-50px); scale: 0.9; }
+    5%{ opacity: 0; }
+    50%{ opacity: 1; transform: translateY(3px); }
+    100% { transform: translateY(0px); scale: 1; }
+}
     
   @keyframes clickMeHome {
-    0% {
-        margin-top: -100px;
-    }
-    50% {
-        margin-top: -105px;
-    }
-    100% {
-        margin-top: -100px;
-    }
-  }
+    0% { margin-top: -100px; }
+    50% { margin-top: -105px; }
+    100% { margin-top: -100px; }
+}
 
 @keyframes spin {
-    0%,
-    100% {
-        box-shadow: .2em 0px 0 0px currentcolor;
-    }
-    12% {
-        box-shadow: .2em .2em 0 0 currentcolor;
-    }
-    25% {
-        box-shadow: 0 .2em 0 0px currentcolor;
-    }
-    37% {
-        box-shadow: -.2em .2em 0 0 currentcolor;
-    }
-    50% {
-        box-shadow: -.2em 0 0 0 currentcolor;
-    }
-    62% {
-        box-shadow: -.2em -.2em 0 0 currentcolor;
-    }
-    75% {
-        box-shadow: 0px -.2em 0 0 currentcolor;
-    }
-    87% {
-        box-shadow: .2em -.2em 0 0 currentcolor;
-    }
+    0%, 100% { box-shadow: .2em 0px 0 0px currentcolor; } 
+    12% { box-shadow: .2em .2em 0 0 currentcolor; }
+    25% { box-shadow: 0 .2em 0 0px currentcolor; }
+    37% { box-shadow: -.2em .2em 0 0 currentcolor; }
+    50% { box-shadow: -.2em 0 0 0 currentcolor; }
+    62% { box-shadow: -.2em -.2em 0 0 currentcolor; }
+    75% { box-shadow: 0px -.2em 0 0 currentcolor; }
+    87% { box-shadow: .2em -.2em 0 0 currentcolor; }
 }
+
+.shake {
+    animation: shake 0.1s forwards;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+  }
 
 /*=-=-=-=-=-=-=-=-= Accessibility =-=-=-=-=-=-=-=-=*/
 
