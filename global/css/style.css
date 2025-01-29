@@ -2,6 +2,7 @@
 html{
     scroll-behavior: smooth;
     min-height: 100%;
+    cursor: url('../media/cursor.png'), auto;
 }
 
 body {
@@ -10,7 +11,6 @@ body {
     background-size: 36em 36em;
     background-position: center;
     background-color:rgb(45, 42, 42);
-    cursor: url('../media/cursor.png'), auto;
 }
 
 [data-theme='light'] body {
@@ -26,7 +26,6 @@ body {
 .divider{
     display: block;
     background-color: rgb(117, 117, 117, 0.2);
-    border: 1px solid rgb(97, 95, 95);
     border-radius: 10px;
     line-height: 1.3;
     margin: 20px;
@@ -39,12 +38,11 @@ body {
 
 [data-theme='light'] .divider{
     background-color: rgb(245, 245, 245);
-    border: 1px solid #d3d3d3;
 }
 
 main{
     height: 100%;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 30px;
     transition: scale 0.2s;
     animation: appearOpacityDelayed 0.3s forwards;
@@ -64,7 +62,7 @@ article{
     margin-top: 0px;
     padding-top: 20px;
     border-radius: 5px;
-    width: 90%;
+    width: 95%;
     max-width: 1400px;
     height: auto;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
@@ -129,21 +127,21 @@ nav, .bannerButton{
 
 /*Defined grays, usually for menus and sidebars*/
 #myDropdown, .hoverText hover-text{
-    background-color:rgb(87, 87, 87);
+    background-color:rgb(112, 107, 107);
 }
 
 [data-theme="light"] #myDropdown, [data-theme="light"] .hoverText hover-text{
-    background-color: #cfcfcf;
+    background-color: rgb(229, 229, 229);
 }
 
 /*Contrasty grays, usually for interactables*/
 
-[data-theme='light'] button, [data-theme='light'] form input, [data-theme='light'] .inputArray input, [data-theme='light'] .inputArray button{
-    background-color: rgb(205, 205, 205);
+table, pre, .button, form input, .inputArray input, .inputArray button, .modalButton{
+    background-color:rgb(82, 79, 79);
 }
 
-.button, form input, .inputArray input, .inputArray button, .modalButton{
-    background-color:rgb(82, 79, 79);
+[data-theme="light"] table, [data-theme='light'] pre, [data-theme='light'] button, [data-theme='light'] form input, [data-theme='light'] .inputArray input, [data-theme='light'] .inputArray button{
+    background-color: rgb(240, 240, 240);
 }
 
 /*Shades of red*/
@@ -154,7 +152,7 @@ nav, .bannerButton{
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
-span, .text, a, input, h1, h2, h3, p, li, hover-text, button, #bannerMain span, #bannerMain h1, #bannerMain h2{
+span, .text, a, input, h1, h2, h3, p, li, hover-text, button, table, #bannerMain span, #bannerMain h1, #bannerMain h2{
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
     line-height: 1.5;
@@ -173,7 +171,9 @@ h1, h2, h3{
     margin: 0;
 }
 
-[data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, [data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li, [data-theme='light'] hover-text, [data-theme='light'] button{
+[data-theme='light'] span, [data-theme='light'] .text, [data-theme='light'] a, [data-theme='light'] input, [data-theme='light'] h1, 
+[data-theme='light'] h2, [data-theme='light'] h3, [data-theme='light'] p, [data-theme='light'] li, [data-theme='light'] hover-text, 
+[data-theme='light'] button, [data-theme='light'] table{
     color:rgb(51, 51, 51);
 }
 
@@ -245,35 +245,6 @@ video {
     width: auto;
     height: auto;
     border-radius: 10px;
-}
-
-.button, .modalButton{
-    font-size: 17pt;
-    margin: 10px;
-    padding: 8px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
-    scale: 1.05;
-    transition: scale 0.05s;
-}
-
-button img, .modalButton img{
-    width: 22px;
-    height: 22px;
-    display: block;
-    float: left;
-    margin-left: 0px;
-    margin-right: 5px;
-    margin-top: 7px;
-    border-radius: 0px;
-}
-
-hr {
-    border-color: rgb(200, 200, 200);
 }
 
 #startHidden{
@@ -458,7 +429,7 @@ nav{
     position: fixed;
     margin: auto;
     display: block;
-    z-index: -1;
+    z-index: -10;
     pointer-events: none;
 }
 
@@ -617,16 +588,48 @@ div article{
     padding: 22px 16px;
 }
 
-/*=-=-=-=-=-=-=-=-= Forms =-=-=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-= UI Components -=-=-=-=-=-=-=*/
 
+hr, .divider, .button, .modalButton, table, pre, .hoverText hover-text{
+    border: 1px solid rgb(117, 117, 117);
+}
+
+[data-theme='light'] hr, [data-theme='light'] .divider, [data-theme='light'] .button, [data-theme='light'] .modalButton, [data-theme='light'] table, [data-theme='light'] pre, [data-theme='light'] .hoverText hover-text{
+    border: 1px solid #c3c3c3;
+}
+
+/*Buttons*/
+.button, .modalButton{
+    font-size: 17pt;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
+    scale: 1.05;
+    transition: scale 0.05s;
+}
+
+button img, .modalButton img{
+    width: 22px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 7px;
+    border-radius: 0px;
+}
+
+/*Forms*/
 form input, .inputArray input, .inputSubmit{
     border: 2px solid rgb(246, 151, 151);
     font-size: 20pt;
 }
 
-
 form input[type=text], form input[type=password], .inputArray input{
-    color: #bb3e00;
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
@@ -653,8 +656,7 @@ input[type=submit]:hover, .inputArray button:hover{
     background-image: linear-gradient(to bottom, rgb(246, 151, 151), rgb(244, 118, 118));
 }
 
-/*=-=-=-= Item Container & Navigation =-=-=-=*/
-
+/*Listbox*/
 .listbox {
     margin-bottom: 20px;
 }
@@ -688,13 +690,95 @@ input[type=submit]:hover, .inputArray button:hover{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
+/*Tables*/
 table {
+    width: auto;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
-/*=-=-=-=-=-=-=-= Hovertext =-=-=-=-=-=-=-=*/
+tr{
+    display: block;
+    border-radius: 5px;
+}
 
+
+
+tr:nth-child(even) {
+    background-color: #8a8a8a17;
+}
+
+[data-theme='light'] tr:nth-child(even) {
+    background-color: #9090900d;
+}
+
+td{
+    width: 100px;
+    padding: 10px;
+}
+
+/*Code Blocks*/
+
+pre{
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+code, code span{
+    display: inline-block;
+    font-size: 12pt;
+    white-space: no-wrap;
+    color: white;
+    font-family: 'Monaco', monospace;
+    letter-spacing: -0.05em;
+}
+
+[data-theme='light'] code{
+    color: black;
+}
+
+code .comment{
+    color: rgb(90, 160, 90);
+}
+
+code .green{
+    color: rgb(71, 229, 71);
+}
+
+code .purple{
+    color: rgb(209, 98, 209);
+}
+
+code .sky{
+    color: rgb(139, 201, 242);
+}
+
+code .blue{
+    color: rgb(98, 164, 239);
+}
+
+code .yellow{
+    color: rgb(240, 226, 134);
+}
+
+code .gold{
+    color: rgb(255, 225, 76);
+}
+
+code .orange{
+    color: rgb(255, 177, 134);
+}
+
+
+
+.lightBlue{
+
+}
+
+/*Hovertext*/
 .hoverText{
     position: relative;
 }
@@ -708,7 +792,6 @@ table {
     left: 50%;
     transform: translate(-50%, 0);
     width: max-content;
-    border: 1px solid gray;
     font-size: 12pt;
     text-align: center;
     border-radius: 10px;
@@ -1020,8 +1103,8 @@ hover-text img{
     }
 
     main{
-        padding-top: 0px;
-        margin-top: -45px;
+        padding-top: 5px;
+        margin-top: -15px;
         padding-bottom: 75px;
     }
 

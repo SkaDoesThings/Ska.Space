@@ -4,13 +4,9 @@
         <title>Ska.Space - Settings</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="global/css/style.css">
-		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp"/>
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/icons/nav/settings.png"/>
 
 		<style>
-			#page{
-				padding-top: 50px;
-			}
-
 			hr{
 				width: 95%;
 				margin-bottom: 0px;
@@ -234,7 +230,7 @@
 
 			@media only screen and (max-width: 800px) {
 				main{
-					padding-top: 5px;
+					padding-top: 15px;
 				}
 
 				#pageSettings{
@@ -289,8 +285,8 @@
 
         <div id="leavingPage"></div>
 
-		<br><br>
 		<main>
+			<article> </article>
 			<div id="pageSettings" class="lightBox centered">
 				<div id="menuButtons">
 					<h2 class="offMobile">Settings</h2>
@@ -411,7 +407,8 @@
 							<option value="red">red
 							<option value="white">white</option>
 						</select>
-
+						<br>
+						<input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
 					</div>
 					
 					<div id="settingLogin" class="centered">

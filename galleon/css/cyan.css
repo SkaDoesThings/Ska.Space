@@ -44,6 +44,7 @@
 
 .cyanDisplay{
     width: 50%;
+    min-width: 250px;
     background: linear-gradient(to top, #3842722a, #fab1f74a), linear-gradient(to right, #3842725f, #fab1f70c);
     margin-left: 25%;
     border-bottom: 40px solid #384272;
@@ -69,11 +70,5 @@
 
     .medium{
         max-width: 80%;
-    }
-}
-
-@media only screen and (min-width: 800px) {
-    .cyanDisplay{
-        min-width: 300px;
     }
 }
