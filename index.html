@@ -69,7 +69,7 @@
                         </ul>
                     </div>
                     <div class="windowContent centeredMobile">
-                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play(1)"><hover-text>the silly</hover-text></span></h1>
+                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play('Yippee')"><hover-text>the silly</hover-text></span></h1>
                         <span>Welcome to my website, visitor from afar. This page branches off into many spaces that I developed. Feel free to explore them below or learn more about me</span><br><br>
                         <div class="homeSpace">
                             <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community Projects</hover-text>Galleon</a>
@@ -87,10 +87,10 @@
                                 <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
                                 <div class="userIcons"> 
-                                    <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play(4)">
-                                    <img src="global/media/icons/emotes/snap.webp" class="viewable" onclick="play(3)">
-                                    <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
-                                    <img src="global/media/icons/emotes/sip.webp" class="viewable" onclick="play(2)">
+                                    <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play('JoJo')">
+                                    <img src="global/media/icons/emotes/snap.webp">
+                                    <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play('Boom')">
+                                    <img src="global/media/icons/emotes/sip.webp">
                                 </div>
                             </div>
                             <div class="profileBody">
@@ -119,46 +119,19 @@
     </body>
     <script src="global/scripts/scripts.js"></script>
 	<script>
-        var audio;
         function play(selection) {
-            switch(selection) {
-                case 0: {
-                    audio = document.getElementById("audioBoom");
-                    break;
-                }
-                case 1: {
-                    audio = document.getElementById("audioYippee");
-                    break;
-                }
-                case 2: {
-                    audio = document.getElementById("audioHolehMoleh");
-                    break;
-                }
-                case 3: {
-                    audio = document.getElementById("audioSnapped");
-                    break;
-                }
-                case 4: {
-                    audio = document.getElementById("audioJoJo");
-                    break;
-                }
-            }
-        audio.play();
+            audio = document.getElementById("audio" + selection);
+            audio.play();
         }
         
         function shakeWindow(){
             document.getElementById('welcome').classList.remove('shake');
             setTimeout(function(){             
                 document.getElementById('welcome').classList.add('shake');
-            }, 10);
+            }, 5);
         }
 	</script>
-    <script type="text/javascript" id="hcb"> 
-        if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24iBYyfxGNvQHukmSMP.LwF%2F"+"&opts=16798&num=10&ts=1725773801432");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); 
-    </script>
     <audio id="audioBoom" src="global/media/audio/boom.mp3"></audio>
     <audio id="audioYippee" src="global/media/audio/yippee.mp3"></audio>
-    <audio id="audioHolehMoleh" src="global/media/audio/holymoly.ogg"></audio>
-    <audio id="audioSnapped" src="global/media/audio/snapped.mp3"></audio>
     <audio id="audioJoJo" src="global/media/audio/giorno.mp3"></audio>
 </html>

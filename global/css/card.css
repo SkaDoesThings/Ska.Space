@@ -2,6 +2,20 @@ main {
     animation: titleMoveIn 0.75s forwards;
 }
 
+.gradientRedWhite{
+    width: fit-content;
+    font-size: 28pt;
+    background: linear-gradient(45deg, #ffbbbe, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+[data-theme='light'] .gradientRedWhite{
+    background: none;
+    color: var(--text-color);
+}
+
 /*=-=-=-=-=-=-=-= Code From SpencOS =-=-=-=-=-=-=-=*/
 
 .windowContent{
@@ -10,6 +24,7 @@ main {
 }
 
 .appHeader{
+    background-color: var(--primary-background);
     width: 100%;
     height: 35px;
     border-bottom: 1px solid gray;
@@ -58,6 +73,7 @@ main {
     border-radius: 10px;
     position: relative;
     transition: width 0.2s, height 0.2s;
+    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
 }
 
 .profileCard{

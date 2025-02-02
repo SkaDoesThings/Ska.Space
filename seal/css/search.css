@@ -18,16 +18,6 @@ article{
     box-shadow: none;
 }
 
-[data-theme='light'] article{
-    background-color: transparent;
-    border: 0px;
-}
-
-[data-theme='dark'] article{
-    background-color: transparent;
-    border: 0px;
-}
-
 main{
     padding-top: 30vh;
 }
@@ -70,7 +60,6 @@ input[type='search']:hover {
 }
 
 input[type='submit'] {
-    background: transparent !important;
     display: inline-block;
     position: absolute;
     margin-left: -75px;

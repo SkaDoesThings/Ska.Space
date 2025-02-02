@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Ska.Space - Hi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../global/css/style.css">
+        <link rel="stylesheet" href="../global/css/posts.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
+        <link rel="preload" as="image" href="global/media/backgrounds/genshin.webp">
+    </head>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 140%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1
+        }
+    </style>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="index.html"><img src="../global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
+            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+            <img src="../global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+            <span>Ska.Space</span>
+            </button>
+            <button onclick="openNav()" id="navToggle"></button>
+            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
+            <a href="../settings.html"><img src="../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
+            <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Current Space</h2> 
+                <a href="hi.html" class="active">Hi</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="../index.html"><img src="../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="../galleon/home.html"><img src="../global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
+                    <a href="../seal/search.html"><img src="../global/media/images/sealco.png" alt="Logo for Seal Zone">Seal Zone</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage"></div>
+        
+        <div id="background">
+
+        </div>
+
+        <main>
+            <video controls autoplay>
+                <source src="../global/media/videos/Rick Astley - Never Gonna Give You Up.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> 
+        </main>
+
+    </body>
+    <script src="../global/scripts/scripts.js"></script>
+</html>

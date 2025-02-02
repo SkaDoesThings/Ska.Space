@@ -10,11 +10,13 @@
 }
 
 #featuredBoxes div{
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-border);
     display: inline-flex;
     flex-direction: column;
     width: 400px;
     min-height: 180px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,6 +58,8 @@
 }
 
 #listBoxes a{
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-border);
     display: flex;
     width: 90%;
     height: auto;
@@ -106,6 +110,9 @@
 /*In Posts*/
 
 .blog article{
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-border);
+    padding: 0px;
     max-width: 900px;
 }
 
@@ -131,12 +138,12 @@
 }
 
 #blogDetails img{
+    display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin: 0px;
+    margin: -3px;
     margin-right: 5px;
-    display: inline-table;
 }
 
 #shareButton{
@@ -210,9 +217,9 @@
 
 /*Moblin' Time*/
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 900px) {
     #featuredBoxes div{
-        width: 90%;
+        width: 100%;
         height: auto;
         min-height: 0px;
         margin: 0px;
@@ -231,6 +238,11 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .blog article{
+        width: 97%;
+        padding-top: 20px;
+    }
+
     #returnButton{
         position: absolute;
         top: 0;
