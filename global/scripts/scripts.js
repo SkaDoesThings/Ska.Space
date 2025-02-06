@@ -1,30 +1,15 @@
-let theme = localStorage.getItem('data-theme');
-const checkbox = document.getElementById("switchTheme");
-const changeThemeToDark = () =>{
-    document.documentElement.setAttribute("data-theme", "dark")
-    localStorage.setItem("data-theme", "dark")
-    console.log("I give you dark")
+let currentTheme = localStorage.getItem('data-theme');
+if (currentTheme) {
+  changeTheme(currentTheme);
+} else {
+  changeTheme('dark');
 }
 
-const changeThemeToLight = () =>{
-    document.documentElement.setAttribute("data-theme", "light")
-    localStorage.setItem("data-theme", 'light')
-    console.log("I give you light")
+function changeTheme(theme) {  
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("data-theme", theme);
+  console.log("I give you " + theme);
 }
-
-if(theme === 'light'){
-    changeThemeToLight()
-}
-
-checkbox.addEventListener('change', ()=> {
-    let theme = localStorage.getItem('data-theme');
-    if (theme ==='light'){
-        changeThemeToDark()
-    }else{
-        changeThemeToLight()
-    }
-});
-
 
 var fader = document.getElementById('leavingPage');
 fader.classList.add('fadeIn');
@@ -54,8 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
 
-    document.getElementById("myDropdown").style.display = "none";
-    document.getElementById('pageLoader').style.display = "block";
+    if(UIStateSpaces = 1){
+      uiFunction('Spaces');
+    }
+    if(UIStateTheme = 1){
+      uiFunction('Theme');
+    }
+x
       });
     }
 });
@@ -130,13 +120,6 @@ function scrollFunction() {
   }
 }
 
-//To Top Button
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-
 //Drop Down Menu
 var dropdown = false;
 function dropdownFunction() {
@@ -149,12 +132,42 @@ function dropdownFunction() {
   dropdown = !dropdown;
 }
 
+//UI Toggles
+var UIStateSpaces = false;
+var UIStateTheme = false;
+function uiFunction(name) {
+  switch(name) {
+    case "Spaces": {
+      if(UIStateSpaces == false) {
+        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.15s forwards";
+        document.getElementById("myDropdown").style.display = "block";
+      }
+      else {
+        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.15s forwards";
+        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 200);
+      }
+      UIStateSpaces = !UIStateSpaces;
+      break;
+    }
+    case "Theme": {
+      if(UIStateTheme == false) {
+        document.getElementById("themeMenu").style.animation = "slideDownBelow 0.15s forwards";
+        document.getElementById("themeMenu").style.display = "block";
+      }
+      else {
+        document.getElementById("themeMenu").style.animation = "slideUpAbove 0.15s forwards";
+        setTimeout(function(){document.getElementById("themeMenu").style.display = "none";}, 200);
+      }
+      UIStateTheme = !UIStateTheme;
+      break;
+    }
+  }
+}
+
 //Modal Viewer
 var btn = document.querySelectorAll("button.modal-button");
 var imgbtn = document.querySelectorAll("img.modal-button");
-
 var modals = document.querySelectorAll('.modal');
-
 var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
@@ -193,28 +206,6 @@ window.onclick = function(event) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none"; 
      }
     }
-}
-
-// Page Content Swaps
-function inlinePageInfo(selection) {
-  document.getElementById("inlineInfoMain").style.display = "none";
-  document.getElementById("inlineInfoAbout").style.display = "none";
-  document.getElementById("inlineInfoCloud").style.display = "none";
-
-  switch(selection){
-    case 0: {
-      document.getElementById("inlineInfoMain").style.display = "block";
-      break;
-    }
-    case 1: {
-      document.getElementById("inlineInfoAbout").style.display = "block";
-      break;
-    }
-    case 2: {
-      document.getElementById("inlineInfoCloud").style.display = "block";
-      break;
-    }
-  }
 }
 
 function copyUrl() {

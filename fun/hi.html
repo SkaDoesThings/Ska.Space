@@ -27,12 +27,12 @@
     <body>
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="../global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
-            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+            <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
             <img src="../global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
             <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
+            <label for="switchTheme" class="navIcon iconTypeTheme" title="Theme" onclick="uiFunction('Theme')"></label>
             <a href="../settings.html"><img src="../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
             <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
@@ -46,6 +46,16 @@
                 </div>
             </div>
         </nav>
+
+        <div id="themeMenu">
+            <button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
+            <button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
+            <button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
+            <button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
+            <button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
+            <button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
+            <button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
+        </div>
 
         <div id="leavingPage"></div>
         

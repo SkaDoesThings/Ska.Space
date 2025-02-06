@@ -1,4 +1,4 @@
-body{
+[data-theme='dark'] body{
   background: linear-gradient(45deg, rgb(40, 51, 98), rgb(119, 93, 160));
 }
 

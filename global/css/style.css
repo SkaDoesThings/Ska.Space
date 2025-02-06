@@ -7,15 +7,10 @@ html{
 
 body {
     margin: 0 auto;
-    background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
-    background-size: 36em 36em;
+    background: var(--page-wallpaper);
+    background-size: var(--wallpaper-size);
     background-position: center;
     background-color: var(--page-background);
-}
-
-[data-theme='light'] body {
-    background: url('../media/backgrounds/lightmode.webp') center;
-    background-size: 400px;
 }
 
 [data-theme='dark'] #lobby {
@@ -24,7 +19,7 @@ body {
 
 .divider{
     display: block;
-    background-color: rgb(117, 117, 117, 0.2);
+    background-color: var(--primary-background);
     border: 1px solid var(--primary-border);
     border-radius: 10px;
     line-height: 1.3;
@@ -97,22 +92,24 @@ hr {
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
 }
 
-/*=-=-=-=-=-=-= ( Universal Colors ) =-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-= ( Universal Themes ) =-=-=-=-=-=-=*/
 
 :root{
     --page-background: rgb(45, 42, 42);
+    --page-wallpaper: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
+    --wallpaper-size: 36em 36em;
+    --text-color: rgb(245, 245, 245);
+
     --primary-background: rgb(43, 40, 40);
-    --secondary-background: rgb(112, 107, 107);
+    --secondary-background: rgb(96, 92, 92);
     --tertiary-background: rgb(82, 79, 79);
 
     --blurred-background: rgb(59, 57, 57, 0.7);
     --blurred-attribute: blur(25px);
-    
-    --text-color: rgb(245, 245, 245);
 
     --primary-color: rgb(246, 151, 151); 
     --secondary-color: rgb(252, 100, 100);
-    --tertiary-color: rgb(83, 58, 58);
+    --tertiary-color: rgb(100, 71, 71);
 
     --primary-border: rgb(88, 86, 86);
     --secondary-border: rgb(117, 117, 117);
@@ -120,21 +117,103 @@ hr {
 
 [data-theme='light'] {
     --page-background: rgb(235, 235, 235);
+    --page-wallpaper: url('../media/backgrounds/lightmode.webp') center;
+    --wallpaper-size: 400px;
+    --text-color: rgb(51, 51, 51);
+
     --primary-background: rgb(235, 235, 235);
     --secondary-background: rgb(235, 235, 235);
     --tertiary-background: rgb(240, 240, 240);
-
     --blurred-background: rgb(235, 235, 235, 1);
     --blurred-attribute: blur(0px);
 
-    --text-color: rgb(51, 51, 51);
-
-    --primary-color: rgb(255, 136, 136); 
+    --primary-color: rgb(248, 135, 135); 
     --secondary-color: rgb(255, 79, 79);
-    --tertiary-color: #e2d5d5;
+    --tertiary-color: #f0e6e6;
 
     --primary-border: #c3c3c3;
     --secondary-border: #c3c3c3;
+}
+
+[data-theme='oled'] {
+    --page-background: rgb(0, 0, 0);
+    --page-wallpaper: none;
+
+    --primary-background: rgb(15, 15, 15);
+    --secondary-background: rgb(15, 15, 15);
+    --tertiary-background: rgb(15, 15, 15);
+
+    --blurred-background: rgb(25, 25, 25, 0.8);
+}
+
+[data-theme='blue'] {
+    --page-background: rgb(23, 30, 39);
+    --page-wallpaper: none;
+    --text-color: rgb(226, 229, 255);
+
+    --primary-background: rgb(29, 41, 57);
+    --secondary-background: rgb(29, 42, 53);
+    --tertiary-background: rgb(29, 42, 53);
+    --blurred-background: rgb(28, 42, 53, 0.8);
+
+    --primary-color: rgb(106, 156, 186); 
+    --secondary-color: rgb(86, 142, 185);
+    --tertiary-color: rgb(58, 60, 83);
+
+    --primary-border: rgb(46, 48, 79);
+    --secondary-border: rgb(76, 75, 100);
+}
+
+
+[data-theme='red'] {
+    --page-background: rgb(132, 90, 90);
+    --page-wallpaper: none;
+    --text-color: rgb(255, 226, 226);
+
+    --primary-background: rgb(111, 70, 70);
+    --secondary-background: rgb(142, 96, 96);
+    --tertiary-background: rgb(120, 74, 74);
+    --blurred-background: rgb(84, 55, 55);
+    --blurred-attribute: blur(0px);
+    
+    --tertiary-color: rgb(105, 67, 67);
+
+    --primary-border: rgb(87, 65, 65);
+    --secondary-border: rgb(163, 123, 123);
+}
+
+
+[data-theme='twilight'] {
+    --page-background: rgb(171, 103, 103);
+    --page-wallpaper: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
+    --wallpaper-size: cover;
+}
+
+[data-theme='twilight'], [data-theme='rgb'] {
+    --primary-background: rgb(45, 40, 40, 0.5);
+    --secondary-background: rgb(105, 102, 102);
+    --tertiary-background: rgb(45, 40, 40, 0.5);
+    --blurred-background: rgb(45, 40, 40, 0.5);
+    --secondary-color: rgb(245, 245, 245);
+    --tertiary-color: rgba(45, 40, 40, 0.3);
+}
+
+[data-theme='rgb'] {
+    --page-wallpaper: none;
+}
+
+[data-theme='rgb'] body{
+    animation: rainbow-bg 4.5s linear infinite;
+}
+
+[data-theme='dark'] #themeButtonDark,
+[data-theme='light'] #themeButtonLight,
+[data-theme='red'] #themeButtonRed,
+[data-theme='blue'] #themeButtonBlue,
+[data-theme='oled'] #themeButtonOLED,
+[data-theme='twilight'] #themeButtonTwilight,
+[data-theme='rgb'] #themeButtonRGB{
+    border: 1px solid var(--primary-color);
 }
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
@@ -238,6 +317,7 @@ nav{
     width: fit-content;
     height: 40px;
     margin: 0px;
+    padding: 0px 5px;
     margin-top: 8px;
     min-width: 60px;
     cursor: pointer;
@@ -258,6 +338,7 @@ nav{
 }
 
 .siteName:hover{
+    border: 0px;
     padding-left: 25px;
 }
 
@@ -285,7 +366,7 @@ nav{
 }   
 
 #linkContainer a:hover, .siteName:hover{
-    background-color: rgb(246, 151, 151);
+    background-color: var(--primary-color);
 }
 
 #linkContainer a.active{
@@ -367,7 +448,7 @@ nav{
     background-repeat: no-repeat;
 }
 
-[data-theme='dark'] .iconTypeTheme{
+[data-theme='dark'] .iconTypeTheme, [data-theme='oled'] .iconTypeTheme, [data-theme='blue'] .iconTypeTheme{
     background-image: url('../media/icons/nav/themeDark.png');
 }
 
@@ -386,7 +467,7 @@ nav{
 }
 
 #leavingPage{
-    background-color: var(--primary-background);
+    background-color: var(--page-background);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -394,6 +475,29 @@ nav{
     display: block;
     z-index: -10;
     pointer-events: none;
+}
+
+#themeMenu {
+    background-color: var(--secondary-background);
+    border: 2px solid var(--secondary-border);
+    display: none;
+    position: fixed;
+    width: 160px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 56px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+#themeMenu button{
+    display: block;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
@@ -555,14 +659,20 @@ div article{
 /*=-=-=-=-=-=-= UI Components -=-=-=-=-=-=-=*/
 
 /*Buttons*/
-.button, .modalButton{
+button, .modalButton{
     background-color: var(--tertiary-background);
     border: 1px solid var(--secondary-border);
-    font-size: 17pt;
-    margin: 10px;
-    padding: 8px;
+    font-size: 14pt;
+    margin: 5px;
+    padding: 8px 8px;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+button:hover, .modalButton:hover{
+    background-color: var(--tertiary-color);
+    border: 1px solid var(--primary-color);
 }
 
 button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
@@ -577,7 +687,7 @@ button img, .modalButton img{
     float: left;
     margin-left: 0px;
     margin-right: 5px;
-    margin-top: 7px;
+    margin-top: 3px;
     border-radius: 0px;
 }
 
@@ -803,7 +913,7 @@ hover-text img{
 }
 
 .homeSpace a{
-    background-color: rgb(67, 50, 48);
+    background-color: var(--tertiary-color);
     border: 2px solid var(--primary-color);
     display: inline-flex;
     text-align: center;
@@ -816,9 +926,7 @@ hover-text img{
     cursor: pointer;
   }
 
-[data-theme='light'] .homeSpace a {
-    background-color: #f2f2f2;
-}
+
   
 .homeSpace img{
     margin-right: 5px;
@@ -984,11 +1092,9 @@ hover-text img{
         margin-top: 56px;
         padding-top: 5px;
         padding-bottom: 10px;
-        border-top: none;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        animation: slideDownBelow 0.2s forwards;
         z-index: 3;
     }
 
@@ -1104,6 +1210,8 @@ hover-text img{
     #myDropdown {
         position: relative;
         background: transparent;
+        opacity: 1;
+        scale: 1;
         background-color: rgba(0, 0, 0, 0);
         width: 100%;
         margin-top: 20px;
@@ -1111,6 +1219,16 @@ hover-text img{
         padding-bottom: 130px;
         overflow: auto;
         overflow-x: hidden;
+        animation: none;
+    }
+
+    #themeMenu {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        bottom: 54px;
+        margin-right: 5px;
     }
 
     .columnContainer {
@@ -1214,8 +1332,13 @@ hover-text img{
 }
 
 @keyframes slideDownBelow {
-    0% { margin-top: 0px; opacity: 0; scale: 0.5; }
-    100% { margin-top: 56px; opacity: 1; scale: 1; }
+    0% { transform: translateY(-20px); opacity: 0; scale: 0.8; }
+    100% { transform: translateY(0px); opacity: 1; scale: 1; }
+}
+
+@keyframes slideUpAbove {
+    0% { transform: translateY(0px); opacity: 1; scale: 1; }
+    100% { transform: translateY(-20px); opacity: 0; scale: 0.8; }
 }
 
 @keyframes bannerReveal {
@@ -1259,7 +1382,22 @@ hover-text img{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(0px, 0px) rotate(0deg); }
-  }
+}
+
+@keyframes rainbow-bg{
+    0%, 100% { background-color: rgba(255, 0, 0, 0.3); }
+    8%{ background-color: rgb(255,127,0, 0.3); }
+    16%{ background-color: rgb(255,255,0, 0.3); }
+    25%{ background-color: rgb(127,255,0, 0.3); }
+    33%{ background-color: rgb(0,255,0, 0.3); }
+    41%{ background-color: rgb(0,255,127, 0.3); }
+    50%{ background-color: rgb(0,255,255, 0.3); }
+    58%{ background-color: rgb(0,127,255, 0.3); }
+    66%{ background-color: rgb(0,0,255, 0.3); }
+    75%{ background-color: rgb(127,0,255, 0.3); }
+    83%{ background-color: rgb(255,0,255, 0.3); }
+    91%{ background-color: rgb(255,0,127, 0.3); }
+}
 
 /*=-=-=-=-=-=-=-=-= Accessibility =-=-=-=-=-=-=-=-=*/
 

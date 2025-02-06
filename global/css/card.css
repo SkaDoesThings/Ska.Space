@@ -176,33 +176,39 @@ main {
     margin-top: 10px;
 }
 
-[data-theme='dark'] #myProfile{
+[data-theme='dark'] #myProfile, [data-theme='oled'] #myProfile, [data-theme='blue'] #myProfile {
     background: linear-gradient(to bottom, #171111, #9c1f1f);    
 
 }
-[data-theme='dark'] .profileCard{
+[data-theme='dark'] .profileCard, [data-theme='oled'] .profileCard, [data-theme='blue'] .profileCard {
     background: linear-gradient(to bottom, rgb(7, 6, 6), #1b1414, #461e1e, #4a0e0e);
     color: #a9a9a9 !important;
 }
 
-[data-theme='dark'] .userPicture{
+[data-theme='dark'] .userPicture, [data-theme='oled'] .userPicture, [data-theme='blue'] .userPicture {
     border: 6px solid #1d1919;
 }
 
-[data-theme='dark'] .userStatus{
+[data-theme='dark'] .userStatus, [data-theme='oled'] .userStatus, [data-theme='blue'] .userStatus {
     background-color: #1d1919;
     border: 5px solid #1d1919;
 }
 
-[data-theme='dark'] .profileBody, [data-theme='dark'] .userIcons{
+[data-theme='dark'] .profileBody, [data-theme='dark'] .userIcons,
+[data-theme='oled'] .profileBody, [data-theme='oled'] .userIcons, 
+[data-theme='blue'] .profileBody, [data-theme='blue'] .userIcons {
     background-color: rgba(0, 0, 0, 0.374);
 }
 
-[data-theme='dark'] .profileCard span, [data-theme='dark'] .name, [data-theme='dark']{
+[data-theme='dark'] .profileCard span, [data-theme='dark'] .name,
+[data-theme='oled'] .profileCard span, [data-theme='oled'] .name,
+[data-theme='blue'] .profileCard span, [data-theme='blue'] .name {
     color: #e4e5e9;
 }
 
-[data-theme='dark'] .userRoles span{
+[data-theme='dark'] .userRoles span,
+[data-theme='oled'] .userRoles span,
+[data-theme='blue'] .userRoles span {
     background-color: #21212181;
     color: #e4e5e9;
 }
@@ -219,7 +225,6 @@ main {
     width: auto;
     padding: 5px;
     font-size: 11pt;
-    background-color: #00000015;
     border: 2px solid gray;
     border-radius: 10px;
     text-decoration: none;

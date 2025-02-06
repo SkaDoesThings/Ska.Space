@@ -194,6 +194,11 @@ form image{
     animation: customizeContentAppear 0.5s forwards;
 }
 
+#buttonCustomize{
+    font-size: 10pt;
+    margin: 0px;
+}
+
 .customizeOption{
     display: flex;
     align-items: center;
@@ -202,12 +207,19 @@ form image{
     color: rgb(87, 87, 87);
     width: 150px;
     height: 40px;
+    font-size: 10pt;
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
 }
+
+#customizeList img, #buttonCustomize img{
+    width: 26px;
+    height: 26px;
+}
+
 
 .customizeOption:hover, .closeList:hover {
     scale: 1.05;
@@ -224,7 +236,8 @@ form image{
 
 .closeList{
     width: 40px;
-    margin: 5px;
+    height: 30px;
+    font-size: 7pt;
     margin-top: 5px;
     border: 1px solid gray;
     border-radius: 15px;

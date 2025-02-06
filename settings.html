@@ -181,20 +181,14 @@
 			/*Theming Button*/
 
 			.box{
-				background-color: rgb(222, 222, 222);
+				background-color: var(--primary-background);
 			}   
 
-			[data-theme='dark'] .box{
-				background-color: rgb(37, 36, 36);
-			}
 
 			.lightBox{
-				background-color: rgb(235, 235, 235);
+				background-color: var(--primary-background);
 			}   
 
-			[data-theme='dark'] .lightBox{
-				background-color: rgb(55, 55, 55);
-			}
 
 			table, table tr:nth-child(even){
 				background: none;
@@ -207,7 +201,7 @@
 
 			/*It's Mobilin' Time*/
 
-			@media only screen and (max-width: 1000px) {
+			@media only screen and (max-width: 1200px) {
 				.menuContent{
 					width: 78%;
 				}
@@ -241,7 +235,7 @@
 
 				#pageSettings{
 					width: 100%;
-					height: calc(100vh - 60px);
+					height: calc(100vh - 55px);
 					border: 0px;
 				}
 
@@ -270,7 +264,7 @@
 	<body>
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
-            <button class="siteName dropbtn offMobile" onclick="dropdownFunction()" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+            <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
                 <img src="global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
                 <span>Ska.Space</span>
             </button>
@@ -292,7 +286,6 @@
         <div id="leavingPage"></div>
 
 		<main>
-			<article> </article>
 			<div id="pageSettings" class="lightBox centered">
 				<div id="menuButtons">
 					<h2 class="offMobile">Settings</h2>
@@ -306,7 +299,7 @@
 					</button>
 					<button onclick="settingPage(1)" id="navStyle">
 						<img src="global/media/images/settings/styleIcon.webp" class="invert"/>
-						<span class="navButtonText">Style</span>
+						<span class="navButtonText">Appearance</span>
 					</button>
 					<!--Only show these screens if logged out-->
 					<button onclick="settingPage(2)" id="navLogin">
@@ -322,6 +315,7 @@
 						<img src="global/media/images/settings/billingIcon.webp" class="invert"/>
 						<span class="navButtonText">Account</span>
 					</button>
+					
 				</div>
 
 				<div id="menuContent" class="box">
@@ -387,35 +381,14 @@
 
 					<!--Some CSS style changes (dark mode) if we have time-->
 					<div id="settingStyle" class="centered">
-						<h1>Style</h1><br><br>
-						
-						<span>Background Color</span><br>
-						<select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1"><br>
-							<option value="black">black
-							<option value="orange">orange
-							<option value="flamingred">fuschia
-							<option value="lightyellow">light yellow
-							<option value="green">green
-							<option value="cyan">cyan
-							<option value="yellow">yellow
-							<option value="red">red
-							<option value="white">white</option>
-						</select><br>
-						
-						<br><span>Text Color</span><br>
-						<select name="clr" onchange="document.fgColor=this.options[this.selectedIndex].value" size="1"><br>
-							<option value="black">black
-							<option value="orange">orange
-							<option value="flamingred">fuschia
-							<option value="lightyellow">light yellow
-							<option value="cyan">cyan
-							<option value="yellow">yellow
-							<option value="red">red
-							<option value="white">white</option>
-						</select>
-						<br>
-						<input type="checkbox" id="switchTheme" class="navIcon" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme" title="Theme"></label>
-					</div>
+						<h1>Appearance</h1><br>
+						<button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
+						<button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
+						<button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
+						<button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
+						<button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
+						<button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
+						<button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
 					
 					<div id="settingLogin" class="centered">
 						<h1>User Center</h1><br>
