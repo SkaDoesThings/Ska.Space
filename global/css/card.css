@@ -327,6 +327,10 @@ main {
     .window{
         margin-bottom: 30px;
     }    
+
+    .gradientRedWhite{
+        width: auto;
+    }
 }
 
 @keyframes titleMoveIn {

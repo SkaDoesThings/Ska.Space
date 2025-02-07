@@ -250,7 +250,9 @@
     }
     
     #listBoxes a {
+        width: 87%;
         display: block;
+
     }
 
     #listBoxes img {
