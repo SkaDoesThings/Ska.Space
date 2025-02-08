@@ -669,6 +669,7 @@ button, .modalButton{
     padding: 8px 8px;
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
     transition: background-color 0.15s, border-color 0.15s;
 }
 
@@ -926,10 +927,9 @@ hover-text img{
     margin: 5px;
     padding: 7px 10px;
     cursor: pointer;
-  }
+    user-select: none;
+}
 
-
-  
 .homeSpace img{
     margin-right: 5px;
     width: 26px;
