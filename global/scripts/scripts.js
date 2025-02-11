@@ -39,13 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
 
-    if(UIStateSpaces = 1){
-      uiFunction('Spaces');
+    if ($(window).width() > 800) {
+      if(UIStateSpaces = 1){
+        uiFunction('Spaces');
+      }
+      if(UIStateTheme = 1){
+        uiFunction('Theme');
+      }
     }
-    if(UIStateTheme = 1){
-      uiFunction('Theme');
-    }
-x
       });
     }
 });

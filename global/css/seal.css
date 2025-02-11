@@ -33,7 +33,6 @@ main{
 
 .searchText{
     font-size: 40pt;
-    color: white;
 }
 
 input[type='search'] {
@@ -44,7 +43,7 @@ input[type='search'] {
     border: 2px solid #d3d3d3;
     border-radius: 10px;
     box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
-    transition: background-color 0.5s;
+    transition: background-color 0.2s;
 }
 
 [data-theme='light'] input[type='search']{
@@ -161,7 +160,7 @@ form image{
     background-color: rgba(203, 203, 203, 0.5);
     border-radius: 15px;
     border: 1px solid rgb(185, 185, 185);
-    transition: width 0.5s, height 0.5s;
+    transition: width 0.3s, height 0.3s;
 }
 
 [data-theme='dark'] #customize{
@@ -185,13 +184,13 @@ form image{
     height: 40px;
     border-radius: 15px;
     cursor: pointer;
-    animation: customizeContentAppear 0.5s forwards;
+    animation: customizeContentAppear 0.3s forwards;
 }
 
 #customizeList{
     display: none;
     border-radius: 15px;
-    animation: customizeContentAppear 0.5s forwards;
+    animation: customizeContentAppear 0.3s forwards;
 }
 
 #buttonCustomize{

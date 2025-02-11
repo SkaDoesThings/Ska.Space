@@ -1,7 +1,5 @@
 [data-theme='dark'] body{
-    background: linear-gradient(45deg, #3c3e48 10%,transparent 10%,transparent 90%,#3c3e48 90%),linear-gradient(135deg, transparent 40%, #3c3e4880 40%, #3c3e4880 60%, transparent 0),linear-gradient(45deg, transparent 40%, #3c3e48 40%, #3c3e48 60%, transparent 0);
-    background-size: 36em 36em;
-    background-color: #373839;
+    background: linear-gradient(45deg, rgb(35, 37, 49), rgb(43, 51, 58));
 }
 
 .columnContainer{
@@ -63,10 +61,6 @@
 }   
 
 @media only screen and (max-width: 800px) {
-    article{
-        border: 0px;
-    }
-
     .medium{
         max-width: 80%;
     }

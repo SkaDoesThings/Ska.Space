@@ -2,6 +2,10 @@ main {
     animation: titleMoveIn 0.75s forwards;
 }
 
+#bodyHome article{
+    max-width: 1300px;
+}
+
 .gradientRedWhite{
     width: fit-content;
     font-size: 28pt;

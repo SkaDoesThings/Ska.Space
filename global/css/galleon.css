@@ -1,10 +1,9 @@
 [data-theme='dark'] body{
-  background: linear-gradient(45deg, rgb(40, 51, 98), rgb(119, 93, 160));
+  background: linear-gradient(45deg, rgb(46, 50, 69), rgb(64, 53, 81));
 }
 
 article img{
   width: 100%;
-  max-width: 1000px;
 }
 
 .necoArc{
@@ -47,10 +46,6 @@ article img{
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.specialTitle{
-  margin-top: 80px;
 }
 
 .inviteButton{
@@ -97,10 +92,17 @@ article img{
   color: white;
 }
 
+
+@media only screen and (max-width: 900px) and (min-width: 500px){
+  .brieflyHidden{
+      display: none;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .inviteButton{
       width: 64px;
-      text-indent: -9999px;
+      font-size: 0px;
   }
 
   .columnContainer{

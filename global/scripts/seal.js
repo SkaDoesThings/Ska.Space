@@ -5,7 +5,7 @@ function openSealOptions() {
     document.getElementById("buttonCustomize").style.display = "none";
     
     document.getElementById("customize").style.width = "180px";
-    document.getElementById("customize").style.height = "240px";
+    document.getElementById("customize").style.height = "190px";
 }
 
 function closeList() {
