@@ -1182,6 +1182,7 @@ hover-text img{
         width: 100%;
         height: auto;
         margin-top: 61px;
+        padding-top: 5px;
         border-top: 1px solid var(--secondary-border);
         overflow-y: auto;
     }
@@ -1202,16 +1203,15 @@ hover-text img{
     }
 
     #myDropdown {
+        display: block !important;
+        animation: none !important;
         position: relative;
         background: transparent;
         opacity: 1;
         scale: 1;
         background-color: rgba(0, 0, 0, 0);
         width: 100%;
-        margin-top: 20px;
-        margin-left: 0px;
         overflow-x: hidden;
-        animation: none;
     }
 
     #myDropdown a{

@@ -38,17 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.remove('fadeIn');
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
-
-    if ($(window).width() > 800) {
-      if(UIStateSpaces = 1){
-        uiFunction('Spaces');
-      }
-      if(UIStateTheme = 1){
-        uiFunction('Theme');
-      }
+    
+    if(UIStateSpaces = 1){
+      uiFunction('Spaces');
     }
-      });
-    }
+    if(UIStateTheme = 1){
+      uiFunction('Theme');
+    }  
+  });
+  }
 });
 
 window.addEventListener('pageshow', function (event) {
