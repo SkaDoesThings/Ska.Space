@@ -220,6 +220,27 @@ main {
 
 /*<---------- Regular Profile Stuff ---------->*/
 
+.socials, .links{
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.socials a{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    transition: background-color 0.2s, width 0.3s, height 0.3s, background-position 0.2s, border-radius 0.2s;
+    cursor: pointer;
+}  
+
+.imageTypeSocials:active{
+    transform: scale(1.1);
+}
+
 .links img{
     width: 15px;
     height: 15px;
@@ -249,42 +270,14 @@ main {
     background-color: rgba(246, 151, 151, 0.3);
 }
 
-.socials{
-    height: 30px;
-    margin-top: 10px;
-}
-
-.socials a{
-    display: inline-block;
-    width: 26px;
-    height: 26px;
-    background-size: 30px;
-    border-radius: 50%;
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    transition: background-color 0.2s, width 0.3s, height 0.3s, background-position 0.2s, border-radius 0.2s;
-    cursor: pointer;
-}  
-
-.imageTypeSocials:active{
-    transform: scale(1.1);
-}
-
 .mainJoinSteam{
     border: 2px solid #0275A5;
     background: url(../media/icons/logos/logoSteam.webp) no-repeat center;
 }
 
-.mainJoinDiscord{
-    border: 2px solid #5865F2;
-    background: url(../media/icons/logos/logoDiscord.webp) no-repeat center;
+.mainJoinSteam:hover{
+    background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
     background-size: 32px;
-}
-
-.mainJoinInstagram{
-    border: 2px solid #f258af;
-    background: url(../media/icons/logos/instagram.webp) no-repeat center;
 }
 
 .mainJoinGitHub{
@@ -292,15 +285,14 @@ main {
     background: url(../media/icons/logos/github.webp) no-repeat center;
 }
 
-.mainJoinOSU{
-    border: 3px solid #E75D9B;
-    background: url(../media/icons/logos/logoOSU.png) no-repeat center;
+.mainJoinGitHub:hover{
+    background-color: #8d8c8c;
 }
 
-
-.mainJoinSteam:hover{
-    background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
-    background-size: 32px;
+.mainJoinDiscord{
+    border: 2px solid #5865F2;
+    background: url(../media/icons/logos/logoDiscord.webp) no-repeat center;
+    background-size: 28px !important;
 }
 
 .mainJoinDiscord:hover{
@@ -308,17 +300,34 @@ main {
     background-size: 30px;
 }
 
-.mainJoinInstagram:hover{
-    background-color: #93366a;
+.mainJoinInstagram{
+    border: 2px solid #f258af;
+    background: url(../media/icons/logos/instagram.webp) no-repeat center;
 }
 
-.mainJoinGitHub:hover{
-    background-color: #8d8c8c;
+.mainJoinInstagram:hover{
+    background-color: #753c4a;
+}
+
+.mainJoinTwitter {
+    border: 2px solid rgb(130, 160, 196);
+    background: url(../media/icons/logos/x.png) center center / 64px no-repeat;
+    transition: background-color 0.2s, border 0.2s;
+}
+
+.mainJoinTwitter:hover{
+    background-color: rgb(20, 20, 20);
+    background-size: 32px;
+}
+
+.mainJoinOSU{
+    border: 2px solid #E75D9B;
+    background: url(../media/icons/logos/logoOSU.png) no-repeat center;
 }
 
 .mainJoinOSU:hover{
     background: #E75D9B url(../media/icons/logos/logoOSU.png) no-repeat center;
-    background-size: 36px;
+    background-size: 34px;
 }
 
 /*It's Mobilin' Time*/
