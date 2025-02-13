@@ -288,7 +288,7 @@ form image{
         width: 90%;
     }
 
-    input[type='search'], input[type='submit']{
+    input[type='search'], main form input[type="submit"]{
         height: 50px;
     }
 

@@ -251,11 +251,10 @@ main {
     width: auto;
     padding: 5px;
     font-size: 11pt;
-    border: 2px solid gray;
+    border: 2px solid var(--primary-border);
     border-radius: 10px;
     text-decoration: none;
     text-align: left;
-    color: rgb(245, 245, 245);
     transition: background-color 0.2s;
 }
 

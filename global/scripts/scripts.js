@@ -165,7 +165,7 @@ function uiFunction(name) {
       }
       else{
         imageViewer.style.animation = "disappearOpacity 0.1s forwards";
-        imageDisplay.style.animation = "disappearScale 0.4s forwards";
+        imageDisplay.style.animation = "disappearScale 0.2s forwards";
         setTimeout(function(){imageViewer.style.display = "none";}, 100);
       }
       UIStateViewer = !UIStateViewer;

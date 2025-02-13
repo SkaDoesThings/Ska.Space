@@ -143,6 +143,10 @@ hr {
     --secondary-background: rgb(15, 15, 15);
     --tertiary-background: rgb(15, 15, 15);
 
+    --primary-color: rgb(199, 120, 120); 
+    --secondary-color: rgb(219, 76, 76);
+    --tertiary-color: rgb(79, 57, 57);
+
     --blurred-background: rgb(25, 25, 25, 0.8);
 }
 
@@ -245,6 +249,12 @@ h1 {
 h2{
     font-size: 1.5rem;
     font-weight: normal;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centered {
@@ -513,14 +523,6 @@ nav{
     flex: 1;
 }
 
-.flexPointFive {
-    flex: 0.5;
-}
-
-.flexPointThree {
-    flex: 0.3;
-}
-
 .columnContainer{
     width: 100%;
     margin: 0 auto;
@@ -598,7 +600,6 @@ div article{
 }
 
 /*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/
-
 .modal {
     display: none;
     position: fixed;
@@ -606,7 +607,7 @@ div article{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }
@@ -619,7 +620,7 @@ div article{
 }
 
 .modal-body {
-    padding: 22px 16px;
+    padding: 12px 16px;
 }
 
 .modal-content {
