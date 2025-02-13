@@ -60,31 +60,26 @@ window.addEventListener('pageshow', function (event) {
   document.getElementById('pageLoader').style.display = "none";
 });
 
-
-document.querySelector("main").addEventListener('click', (e, checkbox = document.querySelector('input'))=>{ 
-  if(checkbox.checked) { checkbox.checked = false; e.stopPropagation(); }
-});
-
 //Image viewer thanks! https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click
 
 function getPics() {} //just for this demo
 const imgs = document.querySelectorAll('.viewable');
-const fullPage = document.querySelector('#imageViewer');
-const backDrop = document.querySelector('#imageBackdrop');
-const chosenImage = document.querySelector('#imageDisplay');
+const imageViewer = document.querySelector('#imageViewer');
+const imageBackdrop = document.querySelector('#imageBackdrop');
+const imageDisplay = document.querySelector('#imageDisplay');
 
 imgs.forEach(img => {
   img.addEventListener('click', function() {
-    chosenImage.style.backgroundImage = 'url(' + img.src + ')';
-    backDrop.style.backgroundImage = 'url(' + img.src + ')';
-    fullPage.style.display = 'block';
+    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
+    uiFunction('Viewer');
   });
 });
 
 function backgroundViewer(given){
-    chosenImage.style.backgroundImage = 'url(' + given + ')';
-    backDrop.style.backgroundImage = 'url(' + given + ')';
-    fullPage.style.display = 'block';
+    imageDisplay.style.backgroundImage = 'url(' + given + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + given + ')';
+    uiFunction('Viewer');
 }
 
 var opened = false;
@@ -134,30 +129,66 @@ function dropdownFunction() {
 //UI Toggles
 var UIStateSpaces = false;
 var UIStateTheme = false;
+var UIStateViewer = false;
 function uiFunction(name) {
   switch(name) {
     case "Spaces": {
       if(UIStateSpaces == false) {
-        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.15s forwards";
+        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.1s forwards";
         document.getElementById("myDropdown").style.display = "block";
       }
       else {
-        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.15s forwards";
-        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 200);
+        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.1s forwards";
+        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 100);
       }
       UIStateSpaces = !UIStateSpaces;
       break;
     }
     case "Theme": {
       if(UIStateTheme == false) {
-        document.getElementById("themeMenu").style.animation = "slideDownBelow 0.15s forwards";
+        document.getElementById("themeMenu").style.animation = "slideDownBelow 0.1s forwards";
         document.getElementById("themeMenu").style.display = "block";
       }
       else {
-        document.getElementById("themeMenu").style.animation = "slideUpAbove 0.15s forwards";
-        setTimeout(function(){document.getElementById("themeMenu").style.display = "none";}, 200);
+        document.getElementById("themeMenu").style.animation = "slideUpAbove 0.1s forwards";
+        setTimeout(function(){document.getElementById("themeMenu").style.display = "none";}, 100);
       }
       UIStateTheme = !UIStateTheme;
+      break;
+    }
+    case "Viewer": {
+      if (UIStateViewer == false) {
+        imageViewer.style.display = "block";
+        imageViewer.style.animation = "appearOpacity 0.2s forwards";
+        imageBackdrop.style.animation = "appearOpacity 0.6s forwards";
+        imageDisplay.style.animation = "appearScale 0.3s forwards";
+      }
+      else{
+        imageViewer.style.animation = "disappearOpacity 0.1s forwards";
+        imageDisplay.style.animation = "disappearScale 0.4s forwards";
+        setTimeout(function(){imageViewer.style.display = "none";}, 100);
+      }
+      UIStateViewer = !UIStateViewer;
+    }
+  }
+}
+
+var UIStateModal = false;
+function uiModularFunction(name, item) {
+  switch(name) {
+    case "Modal": {
+        var modalContent = item.querySelector(".modal-content");
+        if(UIStateModal == false) {
+        item.style.animation = "appearOpacity 0.15s forwards";
+        item.style.display = "block";
+        modalContent.style.animation = "appearScale 0.3s forwards";
+      }
+      else{
+        item.style.animation = "disappearOpacity 0.1s forwards";
+        setTimeout(function(){item.style.display = "none";}, 200);
+        modalContent.style.animation = "disappearScale 0.3s forwards";
+      }
+      UIStateModal = !UIStateModal;
       break;
     }
   }
@@ -174,42 +205,43 @@ for (var i = 0; i < btn.length; i++) {
  btn[i].onclick = function(e) {
     e.preventDefault();
     modal = document.querySelector(e.target.getAttribute("href"));
-    modal.style.display = "block";
+    uiModularFunction('Modal', modal);
  }
 }
-
 
 // When the user clicks img button, open the modal
 for (var i = 0; i < imgbtn.length; i++) {
   imgbtn[i].onclick = function(e) {
      e.preventDefault();
      modal = document.querySelector(e.target.getAttribute("href"));
-     modal.style.display = "block";
-
+     uiModularFunction('Modal', modal);
   }
- }
+}
 
 // When the user clicks on <span> (x), close the modal
 for (var i = 0; i < spans.length; i++) {
  spans[i].onclick = function() {
     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== 'undefined') {
+        uiModularFunction('Modal', modals[index]);
+      }
     }
- }
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
      for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none"; 
+      if (typeof modals[index].style !== 'undefined') {
+        uiModularFunction('Modal', modals[index]);
+      }
      }
-    }
+  }
 }
 
 function copyUrl() {
-  let url = document.location.href
-
+  let url = document.location.href;
   navigator.clipboard.writeText(url).then(function() {
       console.log('Copied!');
   }, function() {
