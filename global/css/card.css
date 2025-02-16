@@ -310,7 +310,7 @@ main {
 
 .mainJoinTwitter {
     border: 2px solid rgb(130, 160, 196);
-    background: url(../media/icons/logos/x.png) center center / 64px no-repeat;
+    background: url(../media/icons/logos/x.webp) center center / 64px no-repeat;
     transition: background-color 0.2s, border 0.2s;
 }
 
@@ -321,11 +321,11 @@ main {
 
 .mainJoinOSU{
     border: 2px solid #E75D9B;
-    background: url(../media/icons/logos/logoOSU.png) no-repeat center;
+    background: url(../media/icons/logos/logoOSU.webp) no-repeat center;
 }
 
 .mainJoinOSU:hover{
-    background: #E75D9B url(../media/icons/logos/logoOSU.png) no-repeat center;
+    background: #E75D9B url(../media/icons/logos/logoOSU.webp) no-repeat center;
     background-size: 34px;
 }
 

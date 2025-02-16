@@ -1,15 +1,31 @@
-let currentTheme = localStorage.getItem('data-theme');
-if (currentTheme) {
-  changeTheme(currentTheme);
-} else {
-  changeTheme('dark');
-}
+const data = ['theme', 'setting-debug-outlines']
+
+data.forEach(setting => {
+  let state = localStorage.getItem('data-' + setting);
+  document.documentElement.setAttribute("data-" + setting, state);
+});
 
 function changeTheme(theme) {  
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("data-theme", theme);
   console.log("I give you " + theme);
 }
+
+function changeSetting(setting) {  
+  let currentState = localStorage.getItem('data-' + setting);
+  let newState;
+  
+  if (currentState == "false"){
+    newState = "true";
+  }
+  else{
+    newState = "false";
+  }
+  document.documentElement.setAttribute("data-" + setting, newState);
+  localStorage.setItem("data-" + setting, newState);
+  console.log("Set data-" + setting + " to " + newState);
+}
+
 
 var fader = document.getElementById('leavingPage');
 fader.classList.add('fadeIn');
@@ -164,9 +180,9 @@ function uiFunction(name) {
         imageDisplay.style.animation = "appearScale 0.3s forwards";
       }
       else{
-        imageViewer.style.animation = "disappearOpacity 0.1s forwards";
-        imageDisplay.style.animation = "disappearScale 0.2s forwards";
-        setTimeout(function(){imageViewer.style.display = "none";}, 100);
+        imageViewer.style.animation = "disappearOpacity 0.15s forwards";
+        imageDisplay.style.animation = "disappearScale 0.3s forwards";
+        setTimeout(function(){imageViewer.style.display = "none";}, 150);
       }
       UIStateViewer = !UIStateViewer;
     }
@@ -184,9 +200,9 @@ function uiModularFunction(name, item) {
         modalContent.style.animation = "appearScale 0.3s forwards";
       }
       else{
-        item.style.animation = "disappearOpacity 0.1s forwards";
-        setTimeout(function(){item.style.display = "none";}, 200);
-        modalContent.style.animation = "disappearScale 0.3s forwards";
+        item.style.animation = "disappearOpacity 0.15s forwards";
+        setTimeout(function(){item.style.display = "none";}, 150);
+        modalContent.style.animation = "disappearScale 0.4s forwards";
       }
       UIStateModal = !UIStateModal;
       break;

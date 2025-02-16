@@ -216,8 +216,13 @@ hr {
 [data-theme='blue'] #themeButtonBlue,
 [data-theme='oled'] #themeButtonOLED,
 [data-theme='twilight'] #themeButtonTwilight,
-[data-theme='rgb'] #themeButtonRGB{
+[data-theme='rgb'] #themeButtonRGB,
+[setting-debug-outlines='true'] {
     border: 1px solid var(--primary-color);
+}
+
+[data-setting-debug-outlines='true'] *{
+    border: 1px solid red !important;
 }
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
@@ -403,7 +408,7 @@ nav{
 /*Start of Mobile Support*/
 #navToggle{
     display: none;
-    background: rgba(235, 235, 235, 0.8) url('../media/images/navburger.png') no-repeat center;
+    background: rgba(235, 235, 235, 0.8) url('../media/images/navburger.webp') no-repeat center;
     border: 1px var(--primary-border) solid;
     width: 50px;
     height: 40px;
@@ -448,18 +453,22 @@ nav{
     transition: transform 0.7s ease-in-out;
 }
 
-.iconLeft{
+.floatLeft, .iconLeft{
     float: left;
+}
+
+.floatRight{
+    float: right;
 }
 
 .iconTypeTheme{
     background-size: 100%;
-    background-image: url('../media/icons/nav/themeLight.png');
+    background-image: url('../media/icons/nav/themeLight.webp');
     background-repeat: no-repeat;
 }
 
 [data-theme='dark'] .iconTypeTheme, [data-theme='oled'] .iconTypeTheme, [data-theme='blue'] .iconTypeTheme{
-    background-image: url('../media/icons/nav/themeDark.png');
+    background-image: url('../media/icons/nav/themeDark.webp');
 }
 
 .iconTypeList{
@@ -510,6 +519,10 @@ nav{
     width: 150px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#themeMenu h2{
+    text-align: center;
 }
 
 /*=-=-=-=-=-=-=-=-= Formatting =-=-=-=-=-=-=-=-=*/
@@ -766,6 +779,7 @@ table {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    margin: 2px;
 }
 
 tr:nth-child(even) {
@@ -778,8 +792,7 @@ tr:nth-child(even) {
 
 td{
     border: 1px solid var(--secondary-border);
-    width: fit-content;
-    min-width: 100px;
+    width: auto;
     padding: 10px;
 }
 
@@ -1119,6 +1132,10 @@ hover-text img{
     
     .flexRightSide{
         margin-left: 5%;
+    }
+
+    table td{
+        min-width: 100px;
     }
 }
 

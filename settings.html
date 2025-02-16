@@ -108,7 +108,7 @@
 				animation: switchPage 0.5s forwards;
 			}
 
-			#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA, #settingCredits{
+			#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA, #settingCredits, #settingDevTools{
 				display: none;
 				animation: switchPage 0.5s forwards;
 			}
@@ -117,17 +117,6 @@
 				border-radius: 0px;
 				width: 32px;
 				height: auto;
-			}
-
-			.imageTable td:nth-child(odd) {
-				padding-left: 10px;
-				border-left: 2px solid black;
-			}
-
-			.imageTable td:nth-child(even) {
-				padding-left: 10px;
-				padding-right: 10px;
-				border-right: 2px solid black;
 			}
 
 			/*Content on the Screens*/
@@ -190,9 +179,9 @@
 				background-color: var(--primary-background);
 			}   
 
-
-			table, table tr:nth-child(even){
-				background: none;
+			
+			table tr{
+				border: var(--primary-border);
 			}
 
 			table td{
@@ -252,7 +241,7 @@
 			}
 
 			@media (prefers-reduced-motion) {
-				#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA {
+				#settingAccount, #settingStyle, #settingLogin, #settingLogout, #settingNewUser, #settingADA, #settingDevTools {
 					animation: none;
 				}
 				
@@ -295,37 +284,42 @@
 						<img src="global/media/images/settings/homeIcon.webp" class="invert"/>
 						<span class="navButtonText">Home</span>
 					</button>
-					<button onclick="settingPage(5)" id="navCredits">
-						<img src="global/media/images/settings/createIcon.webp" class="invert"/>
-						<span class="navButtonText">Credits</span>
-					</button>
 					<button onclick="settingPage(1)" id="navStyle">
 						<img src="global/media/images/settings/styleIcon.webp" class="invert"/>
 						<span class="navButtonText">Appearance</span>
 					</button>
+					<button onclick="settingPage(6)" id="navDevTools">
+						<img src="global/media/icons/nav/settings.png" class="invert"/>
+						<span class="navButtonText">Dev Tools</span>
+					</button>
+					<button onclick="settingPage(5)" id="navCredits">
+						<img src="global/media/images/settings/createIcon.webp" class="invert"/>
+						<span class="navButtonText">Credits</span>
+					</button>
 					<!--Only show these screens if logged out-->
 					<button onclick="settingPage(2)" id="navLogin">
 						<img src="global/media/images/settings/loginIcon.webp" class="invert"/>
-						<span>Login</span>
+						<span>Login Test</span>
 					</button>
 					<!--Only show these screens if logged in-->
-					<button onclick="settingPage(3)" id="navLogout">
+					<button onclick="settingPage(3)" id="navLogout" style="display: none">
 						<img src="global/media/images/settings/logoutIcon.webp" class="invert"/>
 						<span class="navButtonText">Logout</span>
 					</button>
-					<button onclick="settingPage(4)" id="navAccount">
+					<button onclick="settingPage(4)" id="navAccount" style="display: none">
 						<img src="global/media/images/settings/billingIcon.webp" class="invert"/>
 						<span class="navButtonText">Account</span>
 					</button>
 					
-				</div>
+				</div>	
 
 				<div id="menuContent" class="box">
 					<!--Home page for welcomes and quick settings-->
 					<div id="settingHome" class="centered">
 						<h1>Settings Home</h1>
 						<span>This page is very incomplete</span><br><br>
-						<h2>Behind the Scenes</h2>
+
+						<h2>Some Links</h2>
 						<table class="featuredRow">
 							<tr>
 								<td>
@@ -339,20 +333,21 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<div class="featuredBox">
-										
-									</div>
-								</td>
-								<td>
-									<div class="featuredBox">
-										
-									</div>
-								</td>
-							</tr>
-						</table>
+						</table><br>
 						<h2>:3</h2>
+					</div>
+
+					<!--Some CSS style changes (dark mode) if we have time-->
+					<div id="settingStyle" class="centered">
+						<h1>Appearance</h1><br>
+						<h2>Theme</h2><br>
+						<button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
+						<button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
+						<button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
+						<button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
+						<button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
+						<button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
+						<button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
 					</div>
 			
 					<div id="settingCredits" class="centered">
@@ -381,17 +376,11 @@
 						<h1>Media</h1>		
 					</div>
 
-					<!--Some CSS style changes (dark mode) if we have time-->
-					<div id="settingStyle" class="centered">
-						<h1>Appearance</h1><br>
-						<button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
-						<button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
-						<button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
-						<button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
-						<button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
-						<button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
-						<button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
-					
+					<div id="settingDevTools">
+						<h1>Dev Tools</h1><br>
+						<button id="themeButtonRGB" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
+					</div>
+
 					<div id="settingLogin" class="centered">
 						<h1>User Center</h1><br>
 						<h2>Utilize your Seal account today</h2><br>
