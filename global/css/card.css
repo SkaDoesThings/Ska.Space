@@ -24,7 +24,7 @@ main {
 
 .windowContent{
     width: fit-content;
-    padding: 30px;
+    padding: 4%;
     padding-top: 20px;
 }
 
@@ -339,11 +339,22 @@ main {
     }
 
     .window{
-        margin-bottom: 30px;
-    }    
+        margin-bottom: 20px;
+    }
 
     .gradientRedWhite{
         width: auto;
+        font-size: 26pt;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .offPhones{
+        display: none;
+    }
+
+    .windowContent{
+        padding: 10px;
     }
 }
 
