@@ -1,4 +1,10 @@
-const data = ['theme', 'setting-debug-outlines']
+// Change localstorage settings on page load
+
+if (!localStorage.getItem('data-theme')) {
+  localStorage.setItem("data-theme", "dark");
+}
+
+const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion']
 
 data.forEach(setting => {
   let state = localStorage.getItem('data-' + setting);
@@ -15,11 +21,11 @@ function changeSetting(setting) {
   let currentState = localStorage.getItem('data-' + setting);
   let newState;
   
-  if (currentState == "false"){
-    newState = "true";
+  if (currentState == "true"){
+    newState = "false";
   }
   else{
-    newState = "false";
+    newState = "true";
   }
   document.documentElement.setAttribute("data-" + setting, newState);
   localStorage.setItem("data-" + setting, newState);
@@ -27,9 +33,11 @@ function changeSetting(setting) {
 }
 
 
+
+//Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
 var fader = document.getElementById('leavingPage');
 fader.classList.add('fadeIn');
-//Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
+
 document.addEventListener('DOMContentLoaded', function() {
   if (!window.AnimationEvent) { return; }
   var anchors = document.getElementsByTagName('a');

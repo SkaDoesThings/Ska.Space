@@ -353,9 +353,3 @@ main {
     80% { opacity: 1; }
     100% { transform: scale(1); }
 }
-
-@media (prefers-reduced-motion) {
-    #topArea, .columnContainer, .columnContainer article, #myProfile, .theSilly{
-        animation: none;
-    }
-}
