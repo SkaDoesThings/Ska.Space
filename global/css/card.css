@@ -221,9 +221,9 @@ main {
 /*<---------- Regular Profile Stuff ---------->*/
 
 .socials, .links{
-    height: 30px;
+    height: 35px;
     margin-top: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .socials a{

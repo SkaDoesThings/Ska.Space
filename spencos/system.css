@@ -220,12 +220,12 @@ span, p, a, h1, h2, li{
   width: 100%;
   list-style-type: none;
   height: auto;
-  padding-left: 20px;
+  padding-left: 40px;
   padding-right: 20px;
 }
 
 #startIcons li{
-  display:inline-block;
+  display: inline-block;
   width: 64px;
   height: 64px;
   padding: 10px;
@@ -745,7 +745,7 @@ nav a:active img, #startIcons a:active img{
   width: 100vw;
   height: 100vh;
   position: fixed;
-  margin: auto;
+  margin: 0 auto;
   top: 0;
   bottom: 0;
   left: 0;

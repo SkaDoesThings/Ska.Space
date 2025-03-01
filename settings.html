@@ -31,6 +31,7 @@
 
 			#menuButtons{
 				background-color: var(--quartary-color);
+				border: 1px solid var(--primary-border);
 				margin-top: 10px;
 				margin-left: 10px;
 				width: 17%;
@@ -48,7 +49,6 @@
 			}
 
 			#menuButtons button span{
-				color: #e2e0d5;
 				font-size: 14pt;
 				margin-left: 5px;
 			}
@@ -74,13 +74,13 @@
 
 			#menuContent{
 				margin-top: 10px;
-				margin-right: 10px;
+				margin-left: auto;
+				margin-right: auto;
 				width: 80%;
 				max-width: 100%;
 				border-radius: 10px;
 				height: 98%;
 				overflow-x: hidden;
-				float: right;
 			}
 
 			@keyframes switchPage {
@@ -93,15 +93,7 @@
 					transform: scale(1.0);
 				}
 			}
-
-			.buttonLogout{
-				bottom: 0;
-			}
-
-			#navHome{
-				color: var(--secondary-color);
-			}
-
+			
 			.settingPage{
 				display: none;
 				animation: switchPage 0.5s forwards;
