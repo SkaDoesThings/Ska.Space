@@ -9,9 +9,20 @@
 		<style>
 			hr{
 				width: 95%;
-				margin-bottom: 0px;
+				margin-bottom: 15px;
+				margin-top: 15px;
 				border-width: 1px;
 				border-style: solid;
+			}
+
+			h1{
+				text-align: center;
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+
+			h2{
+				margin: 5px;
 			}
 
 			#pageSettings{
@@ -76,10 +87,12 @@
 				margin-top: 10px;
 				margin-left: auto;
 				margin-right: auto;
-				width: 80%;
+				width: 70%;
 				max-width: 100%;
 				border-radius: 10px;
 				height: 98%;
+				padding-left: 5%;
+				padding-right: 5%;
 				overflow-x: hidden;
 			}
 
@@ -207,6 +220,14 @@
 					border: 0px;
 				}
 
+				#menuContent button{
+					width: 100%;
+				}
+
+				h2{
+					text-align: center;
+				}
+
 			}
 
 			@media only screen and (max-width: 450px) {
@@ -219,7 +240,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="supportMovingBG">
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo / Home Button" alt="Site Logo and Home Button"/></a>
             <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
@@ -245,9 +266,9 @@
         <div id="leavingPage"></div>
 
 		<main>
-			<div id="pageSettings" class="lightBox centered">
+			<div id="pageSettings" class="lightBox">
 				<div id="menuButtons">
-					<h2 class="offMobile">Settings</h2>
+					<h2 class="offMobile centered">Settings</h2>
 					<button onclick="settingPage('settingHome')" id="settingHomeButton">
 						<img src="global/media/images/settings/homeIcon.webp" class="invert"/>
 						<span class="navButtonText">Home</span>
@@ -269,7 +290,7 @@
 						<span class="navButtonText">Media Credits</span>
 					</button>
 					<!--Currently Hidden Pages-->
-					<button onclick="settingPage('settingLogin')" id="settingLoginButton" style="display: none;">
+					<button onclick="settingPage('settingLogin')" id="settingLoginButtoBn" style="display: none;">
 						<img src="global/media/images/settings/loginIcon.webp" class="invert"/>
 						<span>Login Test</span>
 					</button>
@@ -277,7 +298,7 @@
 						<img src="global/media/images/settings/logoutIcon.webp" class="invert"/>
 						<span class="navButtonText">Logout</span>
 					</button>
-					<button onclick="settingPage('settingAccount')" id="settingAccountButton" style="display: none">
+					<button onclick="settingPage('settingAccount')" id="settingAccountutton" style="display: none">
 						<img src="global/media/images/settings/billingIcon.webp" class="invert"/>
 						<span class="navButtonText">Account</span>
 					</button>
@@ -288,14 +309,14 @@
 					<div id="settingHome" class="settingPage centered">
 						<h1>Home</h1>
 						<span>Work in Progress</span><br><br>
-
-						<h2>:3</h2>
+						<h2>:3</h2><br><br>
+						<span>Note: When returning to a previous page, a refresh may be required</span>
 					</div>
 
 					<!--Some CSS style changes (dark mode) if we have time-->
-					<div id="settingStyle" class="settingPage centered">
-						<h1>Appearance</h1><br>
-						<h2>Theme</h2><br>
+					<div id="settingStyle" class="settingPage ">
+						<h1>Appearance</h1>
+						<h2>Theme</h2>
 						<button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
 						<button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
 						<button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
@@ -303,20 +324,28 @@
 						<button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
 						<button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
 						<button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
+						<div class="offMobile">
+							<hr><h2>Toggles</h2>
+							<button id="settingButtonMovingBG" onclick="changeSetting('setting-style-movingbg')">Moving Backgrounds</button><br>
+							<span>* Default theme only, resource intensive</span>
+						</div>
 					</div>
 
 					<div id="settingAccessibility" class="settingPage">
-						<h1>Accessibility</h1><br>
+						<h1>Accessibility</h1>
+						<h2>Toggles</h2>
 						<button id="settingButtonReducedMotion" onclick="changeSetting('setting-acc-reduced-motion')">Reduced Motion</button>
 					</div>
 
 					<div id="settingDevTools" class="settingPage">
-						<h1>Dev Tools</h1><br>
+						<h1>Dev Tools</h1>
+						<h2>Toggles</h2>
 						<button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
-						<br>
+						<hr><h2>Sub-Menus</h2>
 						<button id="showHiddenItem" onclick="showHiddenItem()">Hidden Tabs</button>
-						<div id="startHidden">
+						<div id="startHidden" class="centered">
 							<h2 class="divider">Hidden Tabs</h2>
+							<p>Proof of concept, does not represent functionality</p>
 							<button onclick="settingPage('settingLogin')">Login</button>
 							<button onclick="settingPage('settingLogout')">Logout</button>
 							<button onclick="settingPage('settingAccount')">Account</button>
@@ -324,8 +353,8 @@
 					</div>
 
 					<div id="settingLogin" class="settingPage centered">
-						<h1>User Center</h1><br>
-						<h2>Utilize your Seal account today</h2><br>
+						<h1>User Center</h1>
+						<h2>Utilize your Seal account today</h2>
 
 						<div class="columnContainer">
 
@@ -354,7 +383,7 @@
 					</div>
 
 					<div id="settingCredits" class="settingPage centered">
-						<h1>Media Credits</h1><br><br>
+						<h1>Media Credits</h1>
 						<h2>SoonTM</h2><br><br>
 
 						<h1>Icons</h1>

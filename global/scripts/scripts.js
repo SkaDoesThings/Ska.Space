@@ -4,7 +4,7 @@ if (!localStorage.getItem('data-theme')) {
   localStorage.setItem("data-theme", "dark");
 }
 
-const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion']
+const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-movingbg']
 
 data.forEach(setting => {
   let state = localStorage.getItem('data-' + setting);

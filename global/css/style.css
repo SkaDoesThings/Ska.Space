@@ -152,10 +152,10 @@ hr {
 
 
 [data-theme='red'] {
-    --page-background: rgb(132, 90, 90);
+    --page-background: rgb(107, 74, 74);
     --page-wallpaper: none;
     --text-color: rgb(255, 226, 226);
-    --primary-background: rgb(111, 70, 70);
+    --primary-background: rgb(89, 55, 55);
     --secondary-background: rgb(142, 96, 96);
     --tertiary-background: rgb(120, 74, 74);
     --blurred-background: rgb(84, 55, 55);
@@ -191,7 +191,7 @@ hr {
 
 [data-theme='dark'] #themeButtonDark, [data-theme='light'] #themeButtonLight, [data-theme='red'] #themeButtonRed, [data-theme='blue'] #themeButtonBlue, 
 [data-theme='oled'] #themeButtonOLED, [data-theme='twilight'] #themeButtonTwilight, [data-theme='rgb'] #themeButtonRGB, 
-[data-setting-debug-outlines='true'] #settingButtonOutlines, [data-setting-acc-reduced-motion='true'] #settingButtonReducedMotion {
+[data-setting-debug-outlines='true'] #settingButtonOutlines, [data-setting-acc-reduced-motion='true'] #settingButtonReducedMotion, [data-setting-style-movingbg='true'] #settingButtonMovingBG {
     border: 1px solid var(--secondary-color);
 }
 
@@ -1055,7 +1055,7 @@ hover-text img{
         visibility: hidden;
     }
 
-    [data-theme='dark'] .movingBG {
+    [data-theme='dark'][data-setting-style-movingbg='true'] .supportMovingBG {
         animation: backgroundMove 30s linear infinite;
     }
 
