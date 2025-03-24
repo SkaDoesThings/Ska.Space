@@ -56,7 +56,7 @@ hr{
 button {
     background-color: var(--element-background);
     border: 1px solid var(--border-primary);
-    width: 150px;
+    width: 130px;
     font-size: 10pt;
     margin: 5px;
     padding: 6px 8px;
@@ -93,32 +93,34 @@ button img{
 /*=-=-=-=-=-=-=- ( App UI ) -=-=-=-=-=-=-=*/
 
 .sidebar{
-display: block;
-background-color: var(--background-secondary);
-width: 150px;
-min-width: 150px;
-height: 100vh;
-padding: 10px;
+    display: block;
+    background-color: var(--background-secondary);
+    width: 150px;
+    min-width: 150px;
+    height: 100vh;
+    padding: 10px;
 }
 
 .menuButtons button{
-width: 150px;
-display: block;
-background-color: transparent;
-border: transparent;
-text-align: left;
-text-indent: 5px;
-margin-left: auto;
-margin-right: auto;
+    width: 150px;
+    display: block;
+    background-color: transparent;
+    border: transparent;
+    text-align: left;
+    text-indent: 5px;
+    line-height: 27px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menuButtons button:first-child{
-background-color: var(--element-hover);
+    background-color: var(--element-hover);
 }
 
 .pageView{
-min-width: 100%;
-margin: 10px auto;
+    min-width: 100%;
+    margin: 10px;
+    margin-top: 0px;
 }
 
 .pageView h2{
@@ -126,16 +128,16 @@ margin: 10px auto;
 }
 
 .content{
-display: inline-flex;
-background-color: var(--element-hover);
-width: 100%;
-height: 100vh;
-padding: 10px;
+    display: inline-flex;
+    background-color: var(--element-hover);
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
 }  
 
 .columnContainer{
-display: flex;
-flex-direction: row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 
@@ -143,8 +145,9 @@ flex-direction: row-reverse;
 
 /*Settings*/
 #wallpaperPreview{
+    background-image: url(images/wallpaper.webp);
     background-color: var(--background-secondary);
-    width: 100%;
+    width: 90%;
     max-width: 300px;
     height: 150px;
     background-size: cover;

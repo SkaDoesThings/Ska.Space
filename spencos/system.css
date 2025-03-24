@@ -633,7 +633,7 @@ animation-delay: -.4s;
   .app{
     max-width: 100%;
     width: 100vw !important;
-    height: calc(100% - 80px) !important;
+    height: calc(100% - 75px) !important;
     border-radius: 0px;
   } 
 

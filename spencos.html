@@ -147,12 +147,7 @@
                             <div class="columnContainer">
                                 <div class="content">
                                     <div class="pageView centeredMobile">
-                                        <div id="SettingsPageHome" class="page mainPage">
-                                            <h2>Home</h2>
-                                            <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
-                                            <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
-                                        </div>
-                                        <div id="SettingsPageStyle" class="page">
+                                        <div id="SettingsPageStyle" class="page mainPage">
                                             <h2>Appearance</h2>
                                             <h3>Wallpaper</h3>
                                             <div id="wallpaperPreview"></div>
@@ -160,6 +155,8 @@
                                             <button onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
                                             <hr><h3>Theme</h2>
                                             <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button>
+                                            <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
+                                            <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
                                         </div>
                                         <div id="SettingsPageAcc" class="page">
                                             <h2>Accessibility</h2>
@@ -169,14 +166,18 @@
                                             <h2>Dev Tools</h2>
                                             <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
                                         </div>
+                                        <div id="SettingsPageHome" class="page">
+                                            <h2>About SpencOS</h2>
+                                            <span>SoonTM</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="sidebar">
                                     <div class="menuButtons">
-                                        <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="global/images/seal/wallpaperSet.png" class="invert">Home</button>
                                         <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="global/images/seal/wallpaperSet.png" class="invert">Appearance</button>
                                         <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="global/images/seal/wallpaperSet.png" class="invert">Accessibility</button>
                                         <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="global/images/seal/wallpaperSet.png" class="invert">Dev Tools</button>
+                                        <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="global/images/seal/wallpaperSet.png" class="invert">About SpencOS</button>
                                     </div>
                                 </div>
                             </div>
