@@ -1,3 +1,51 @@
+// Change localstorage settings on page load
+
+if (!localStorage.getItem('data-theme')) {
+  localStorage.setItem("desktop-theme", "dark");
+}
+
+function changeTheme(theme) {  
+  document.documentElement.setAttribute("desktop-theme", theme);
+  localStorage.setItem("desktop-theme", theme);
+  console.log("I give you " + theme);
+}
+
+const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-movingbg']
+
+data.forEach(setting => {
+  let state = localStorage.getItem('desktop-' + setting);
+  document.documentElement.setAttribute("desktop-" + setting, state);
+});
+
+function changeSetting(setting) {  
+  let currentState = localStorage.getItem('desktop-' + setting);
+  let newState;
+  
+  if (currentState == "true"){
+    newState = "false";
+  }
+  else{
+    newState = "true";
+  }
+  document.documentElement.setAttribute("desktop-" + setting, newState);
+  localStorage.setItem("desktop-" + setting, newState);
+  console.log("Set desktop-" + setting + " to " + newState);
+}
+
+
+const checkbox = document.getElementById("switchTheme");
+
+checkbox.addEventListener('change', ()=> {
+    let theme = localStorage.getItem('desktop-theme');
+    if (theme ==='light'){
+        changeTheme('dark')
+    }else{
+        changeTheme('light')
+    }
+});
+
+
+
 //Window Controls
 dragElement(document.getElementById("About Ska"));
 dragElement(document.getElementById("Settings"));
@@ -342,6 +390,7 @@ function switchBackground() {
   var backgroundImage = localStorage.getItem('wallpaper');
   if (backgroundImage) {
     $('body').css('background-image', 'url(' + backgroundImage + ')');    
+    $('#wallpaperPreview').css('background-image', 'url(' + backgroundImage + ')');    
     closeList();
   } 
 }
@@ -357,36 +406,6 @@ function clearBackground() {
     localStorage.removeItem('wallpaper')
     window.location.reload()
 }
-
-
-//Theme
-
-let theme = localStorage.getItem('desktop-theme');
-const checkbox = document.getElementById("switchTheme");
-const changeThemeToDark = () =>{
-    document.documentElement.setAttribute("desktop-theme", "dark")
-    localStorage.setItem("desktop-theme", "dark")
-    console.log("I give you dark")
-}
-
-const changeThemeToLight = () =>{
-    document.documentElement.setAttribute("desktop-theme", "light")
-    localStorage.setItem("desktop-theme", 'light')
-    console.log("I give you light")
-}
-
-if(theme === 'light'){
-    changeThemeToLight()
-}
-
-checkbox.addEventListener('change', ()=> {
-    let theme = localStorage.getItem('desktop-theme');
-    if (theme ==='light'){
-        changeThemeToDark()
-    }else{
-        changeThemeToLight()
-    }
-});
 
 //Microsoft Copilot made this code, couldn't find anything on the internet
 
@@ -421,4 +440,45 @@ function onMouseMove(e) {
   
   if (currentX < startX) { selection.style.left = `${currentX}px`; } 
   if (currentY < startY) { selection.style.top = `${currentY}px`; }
+}
+
+
+const targetDivs = document.querySelectorAll('.app');
+
+const observer = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    const element = entry.target;
+    const width = entry.contentRect.width;
+
+    if (width < 500 && !element.classList.contains("mobile")) {
+      element.classList.add('mobile')
+    } else if (width > 500 && element.classList.contains("mobile")) {
+      element.classList.remove('mobile')
+    }
+  }
+});
+
+targetDivs.forEach((div) => observer.observe(div))
+
+// Back to my code
+
+function pageView(appName, selection){
+  selected = (appName + selection)
+
+  const buttonList = document.querySelector('#' + appName + ' .menuButtons');
+  const buttons = buttonList.querySelectorAll('button');
+
+  buttons.forEach(button => {
+    button.style.backgroundColor = "transparent";
+    });
+
+  const pagesList = document.querySelector('#' + appName + ' .pageView');
+  const pages = pagesList.querySelectorAll('.page');
+  
+  pages.forEach(page => {
+    page.style.display = "none";
+  });
+
+  document.getElementById(selected).style.display = "block";
+  document.getElementById(selected + "Button").style.backgroundColor = "var(--element-hover)";
 }

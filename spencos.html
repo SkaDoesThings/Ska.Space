@@ -4,6 +4,7 @@
         <title>SpencOS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="spencos/system.css">
+        <link rel="stylesheet" href="spencos/apps.css">
         <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
     </head>
     <body>
@@ -41,8 +42,8 @@
                     <li onclick="uiFunction('Audio', 'toggle')"><img src="spencos/images/icons/soundOff.png" id="audioToggle" class="invert">Audio</li>
                     <li onclick="document.getElementById('switchTheme').click()"><img src="spencos/images/icons/theme.png" class="invert">Theme</li>
                     <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
-                    <li onclick="document.getElementById('test').click()"><img src="seal/images/wallpaperSet.png" class="invert">Wallpaper</li>
-                    <li onclick="clearBackground()"><img src="seal/images/wallpaperClear.png" class="invert">Clear WP</li>
+                    <li onclick="document.getElementById('test').click()"><img src="global/images/seal/wallpaperSet.png" class="invert">Wallpaper</li>
+                    <li onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="invert">Clear WP</li>
                 </ul>
             </div>
 
@@ -62,12 +63,12 @@
                 <div class="apps">
                     <div class="app" id="SpiderWeb">
                         <div class="appHeader" id="SpiderWebHeader">
-                            <ul class="appActions">
+                            <ul>
                                 <img src="spencos/images/apps/SpiderWebIcon.webp">
                                 <span>SpiderWeb - Not Functional</span>
-                                <li class="appLi typeClose" onclick="appFunction('SpiderWeb', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('SpiderWeb', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('SpiderWeb', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('SpiderWeb', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('SpiderWeb', 'maximize')">+</li>
+                                <li  onclick="appFunction('SpiderWeb', 'toggle')">-</li>
                             </ul>
                         </div>
                         <embed type="text/html" src="seal/search.html" class="webapp">          
@@ -75,12 +76,12 @@
 
                     <div class="app" id="Ska.Space">
                         <div class="appHeader" id="Ska.SpaceHeader">
-                            <ul class="appActions">
+                            <ul>
                                 <img src="spencos/images/apps/Ska.SpaceIcon.webp">
                                 <span>Ska.Space</span>
-                                <li class="appLi typeClose" onclick="appFunction('Ska.Space', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('Ska.Space', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('Ska.Space', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('Ska.Space', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Ska.Space', 'maximize')">+</li>
+                                <li  onclick="appFunction('Ska.Space', 'toggle')">-</li>
                             </ul>
                         </div>
                         <embed type="text/html" src="index.html" class="webapp">          
@@ -88,11 +89,11 @@
 
                     <div class="app native" id="About Ska">
                         <div class="appHeader" id="About SkaHeader">
-                            <ul class="appActions">
+                            <ul>
                                 <img src="spencos/images/apps/About SkaIcon.webp">
                                 <span>About Ska</span>
-                                <li class="appLi typeClose" onclick="appFunction('About Ska', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('About Ska', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('About Ska', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('About Ska', 'toggle')">-</li>
                             </ul>
                         </div>
                         <div id="myProfile">
@@ -134,53 +135,100 @@
                     <div class="app native" id="Settings">
                         <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
                         <div class="appHeader" id="SettingsHeader">
-                            <ul class="appActions">
-                                <img src="spencos/images/apps/SettingsIcon.webp">
+                            <ul>
+                                <img src="spencos/images/apps/SettingsIcon.webp" class="invert">
                                 <span>Settings</span>
-                                <li class="appLi typeClose" onclick="appFunction('Settings', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('Settings', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('Settings', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('Settings', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Settings', 'maximize')">+</li>
+                                <li onclick="appFunction('Settings', 'toggle')">-</li>
                             </ul>
                         </div>
                         <div id="pageSettings">
-                            <div id="settingHome"><center>
-                                <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
-                                <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme" class="navIcon iconTypeTheme"></label>
-                                <button class="customizeOption" onclick="document.getElementById('test').click();"><img src="seal/images/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>
-                                <button class="customizeOption" onclick="clearBackground()"><img src="seal/images/wallpaperClear.png" class="spaceNavIcon invert">Clear Wallpaper</button>
-                                <button class="customizeOption" onclick="document.getElementById('switchTheme').click();"><img src="seal/images/switchTheme.png" class="spaceNavIcon invert">Switch Theme</button>
-                            </div></center>
+                            <div class="columnContainer">
+                                <div class="content">
+                                    <div class="pageView centeredMobile">
+                                        <div id="SettingsPageHome" class="page mainPage">
+                                            <h2>Home</h2>
+                                            <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
+                                            <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
+                                        </div>
+                                        <div id="SettingsPageStyle" class="page">
+                                            <h2>Appearance</h2>
+                                            <h3>Wallpaper</h3>
+                                            <div id="wallpaperPreview"></div>
+                                            <button onclick="document.getElementById('test').click();"><img src="global/images/seal/wallpaperSet.png" class="invert">Select Image</button>
+                                            <button onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
+                                            <hr><h3>Theme</h2>
+                                            <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button>
+                                        </div>
+                                        <div id="SettingsPageAcc" class="page">
+                                            <h2>Accessibility</h2>
+                                            <button id="settingButtonReducedMotion" onclick="changeSetting('setting-acc-reduced-motion')">Reduced Motion</button>
+                                        </div>
+                                        <div id="SettingsPageDevTools" class="page">
+                                            <h2>Dev Tools</h2>
+                                            <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sidebar">
+                                    <div class="menuButtons">
+                                        <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="global/images/seal/wallpaperSet.png" class="invert">Home</button>
+                                        <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="global/images/seal/wallpaperSet.png" class="invert">Appearance</button>
+                                        <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="global/images/seal/wallpaperSet.png" class="invert">Accessibility</button>
+                                        <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="global/images/seal/wallpaperSet.png" class="invert">Dev Tools</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="app" id="Cloud">
                         <div class="appHeader" id="CloudHeader">
-                            <ul class="appActions">
+                            <ul>
                                 <img src="spencos/images/apps/CloudIcon.webp">
                                 <span>Cloud</span>
-                                <li class="appLi typeClose" onclick="appFunction('Cloud', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('Cloud', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('Cloud', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('Cloud', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Cloud', 'maximize')">+</li>
+                                <li onclick="appFunction('Cloud', 'toggle')">-</li>
                             </ul>
                         </div>
-                        <embed type="text/html" src="games.html" class="webapp">          
+                        <embed type="text/html" src="spencos/apps/cloud.html" class="webapp">          
                     </div>
 
                     <div class="app native" id="Cyan">
                         <div class="appHeader" id="CyanHeader">
-                            <ul class="appActions">
+                            <ul>
                                 <img src="spencos/images/apps/CyanIcon.webp">
                                 <span>Cyan</span>
-                                <li class="appLi typeClose" onclick="appFunction('Cyan', 'close')"><a>x</a></li>
-                                <li class="appLi" onclick="appFunction('Cyan', 'maximize')"><a>+</a></li>
-                                <li class="appLi" onclick="appFunction('Cyan', 'toggle')"><a>-</a></li>
+                                <li class="typeClose" onclick="appFunction('Cyan', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Cyan', 'maximize')">+</li>
+                                <li onclick="appFunction('Cyan', 'toggle')">-</li>
                             </ul>
                         </div>
                         <div>
-                            <audio controls>
-                            <source src="spencos/audio/eshop.mp3" type="audio/mp3">
-                            Your browser does not support the audio element.
-                            </audio>
+                            <div class="columnContainer">
+                                <div class="content">
+                                    <div class="pageView centeredMobile">
+                                        <div id="CyanPageLibrary" class="page mainPage">
+                                            <h2>Library</h2>
+                                            <audio controls>
+                                                <source src="spencos/audio/eshop.mp3" type="audio/mp3">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+                                        <div id="CyanPageFollowing" class="page">
+                                            <h2>Following</h2>     
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="sidebar">
+                                    <div class="menuButtons">
+                                        <button id="CyanPageHomeButton" class="defaultButton" onclick="pageView('Cyan', 'PageLibrary')"><img src="global/images/seal/wallpaperSet.png" class="invert">Library</button>
+                                        <button id="CyanPageFollowingButton" onclick="pageView('Cyan', 'PageFollowing')"><img src="global/images/seal/wallpaperSet.png" class="invert">Following</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>  

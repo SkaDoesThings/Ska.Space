@@ -4,18 +4,18 @@ if (!localStorage.getItem('data-theme')) {
   localStorage.setItem("data-theme", "dark");
 }
 
+function changeTheme(theme) {  
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("data-theme", theme);
+  console.log("I give you " + theme);
+}
+
 const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-movingbg']
 
 data.forEach(setting => {
   let state = localStorage.getItem('data-' + setting);
   document.documentElement.setAttribute("data-" + setting, state);
 });
-
-function changeTheme(theme) {  
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("data-theme", theme);
-  console.log("I give you " + theme);
-}
 
 function changeSetting(setting) {  
   let currentState = localStorage.getItem('data-' + setting);
