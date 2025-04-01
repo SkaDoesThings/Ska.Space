@@ -48,6 +48,7 @@ checkbox.addEventListener('change', ()=> {
 
 //Window Controls
 dragElement(document.getElementById("About Ska"));
+dragElement(document.getElementById("Ska"));
 dragElement(document.getElementById("Settings"));
 dragElement(document.getElementById("Ska.Space"));
 dragElement(document.getElementById("Cloud"));
@@ -203,7 +204,8 @@ function clickTaskbar() {
 }
 
 function shutdown() {
-  document.getElementById("shutdown").style.display = "block";
+  document.getElementById("shutdown").style.display = "flex";
+
 
   setTimeout(() => {
     window.location.href = "../index.html";

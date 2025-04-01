@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="spencos/system.css">
         <link rel="stylesheet" href="spencos/apps.css">
+        <link rel="stylesheet" href="global/css/posts.css">
+        <link rel="stylesheet" href="global/css/card.css">
         <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
     </head>
     <body>
@@ -21,6 +23,7 @@
                     <li onclick="appFunction('Cloud', 'toggle')"><img src="spencos/images/apps/CloudIcon.webp">Cloud</li>
                     <li onclick="appFunction('Cyan', 'toggle')"><img src="spencos/images/apps/CyanIcon.webp">Cyan🎧</li>
                     <li onclick="appFunction('About Ska', 'toggle')"><img src="spencos/images/apps/About SkaIcon.webp">About Ska</li> 
+                    <li onclick="appFunction('Ska', 'toggle')"><img src="spencos/images/apps/SkaIcon.webp">Ska</li>
                 </ul>
 
                 <div id="startBottom">
@@ -49,7 +52,6 @@
 
             <!--Desktop, Holds Wallpaper and Apps-->
             <div id="desktop" onclick="clickDesktop()">
-                <h1 id="title">SpencOS Web</h1>
 
 
             <div id="container">
@@ -72,6 +74,145 @@
                             </ul>
                         </div>
                         <embed type="text/html" src="seal/search.html" class="webapp">          
+                    </div>
+
+                    <div class="app" id="Ska">
+                        <div class="appHeader" id="SkaHeader">
+                            <ul>
+                                <img src="spencos/images/apps/SkaIcon.webp">
+                                <span>Ska.Space</span>
+                                <li class="typeClose" onclick="appFunction('Ska', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Ska', 'maximize')">+</li>
+                                <li  onclick="appFunction('Ska.Space', 'toggle')">-</li>
+                            </ul>
+                        </div>
+                        <div class="columnContainer">
+                            <div class="content">
+                                <div class="pageView centeredMobile">
+                                    <div id="SkaPageAbout" class="page mainPage">
+                                        <div id="welcome" class="flexOne box window">
+                                            <div class="windowContent centeredMobile">
+                                                <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru." class="mainImage vertical viewable" onclick="play('Yippee')"><hover-text>the silly</hover-text></span></h1>
+                                                <span>I'm Spencer and I enjoy many things revolving around technology and the internet</span>
+                                                <div class="offPhones">
+                                                    <p>Feel free to explore some spaces below or learn more about me</p>
+                                                    <div class="homeSpace">
+                                                        <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/.webp"><hover-text>My Community Projects</hover-text>Galleon</a>
+                                                        <a href="seal/search.html" class="hoverText slideUp"><img src="global/images/seal/.webp"><hover-text>Seal Search & More!</hover-text>Seal Zone</a>
+                                                    </div>
+                                                    <p class="offMobile">My motto is 'always be silly' since why not</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flexRightSide">
+                                            <div id="myProfile">
+                                                <div class="profileCard nitro">
+                                                    <div class="profileHeader">
+                                                        <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                                        <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
+                                                        <img src="global/media/icons/emotes/idle.webp" class="userStatus">
+                                                        <div class="userIcons"> 
+                                                            <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play('JoJo')">
+                                                            <img src="global/media/icons/emotes/snap.webp">
+                                                            <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play('Boom')">
+                                                            <img src="global/media/icons/emotes/sip.webp">
+                                                        </div>
+                                                    </div>
+                                                    <div class="profileBody">
+                                                        <span class="name">Ska✨</span><br>
+                                                        <span class="user">@ska.exe &#x2022 <a href="owo.html">bnuuy</a></span><br>
+                                                        <span class="bio">⭐ Feel free to message me anytime<br>🍂 You can find me on the sites below</span>
+                                                        <div class="socials centered">
+                                                            <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
+                                                            <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                                            <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
+                                                            <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
+                                                            <a href="https://www.x.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                                            <a href="https://osu.ppy.sh/users/8787709" target="_blank" class="mainJoinOSU hoverText slideUp"><hover-text>@SKA915</hover-text></a>
+                                                        </div>
+                                                        <div class="links centered">
+                                                            <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.webp" class="small" class="mainJoinSteam"/>Games</a>
+                                                            <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
+                                                            <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                    <div id="SkaPageProjects" class="page">
+                                        <h1 id="pageTitle">Projects</h1>
+                                        <div id="featuredBoxes">
+                                            <div>
+                                                <a href="https://github.com/SkaDoesThings/Ska.Space">
+                                                    <h1><img src="global/media/images/ska/wumpus.webp">Ska.Space</h1>
+                                                    <span>2024-2025 &#x2022 HTML, CSS, JS</span>
+                                                    <h2>The website you are currently viewing! Being a developer first started here, and this place has expanded ever since</h2>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="https://github.com/SkaDoesThings/SpencOS">
+                                                    <h1><img src="global/media/icons/logos/tree.png">SpencOS</h1>
+                                                    <span>2022 &#x2022 C#</span>
+                                                    <h2>An 'OS' designed in WinForms. Contains apps such as Ropapsi and even a calculator before iPadOS</h2>
+                                                    </h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <button id="showHiddenItem" onclick="showHiddenItem()">View More</button>
+                                        <div id="startHidden">
+                                            <h2 class="divider">School-Era Sites (Images)</h2>
+                                            <div class="listbox centered">
+                                                <a onclick="backgroundViewer('../global/media/images/projects/amoray.webp')">Amoray Pizza (2022)</a>
+                                                <a onclick="backgroundViewer('../global/media/images/projects/carbon.webp')">Carbon Disrupters (2022)</a>
+                                                <a onclick="backgroundViewer('../global/media/images/projects/laser.webp')">Laser Engraving (2022)</a>
+                                                <a >PHP Site (2022)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="SkaPagePosts" class="page">
+                                        <h1 id="pageTitle">Posts</h1>
+                                        <div id="listBoxes">
+                                            <a href="post/developing-this-website.html">
+                                                <div>
+                                                    <h1>Developing This Website</h1>
+                                                    <span>August 14th, 2024 &#x2022 Dev</span>
+                                                    <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
+                                                </div>
+                                                <img src="post/media/dusk.webp">
+                                            </a>
+                                            <a href="post/post-template.html">
+                                                <div>
+                                                    <h1>Markdown Testing</h1>
+                                                    <span>August 14th, 2024 &#x2022 Misc</span>
+                                                    <h2>Displays the markdown I use on my website, also serves as good filler</h2>
+                                                </div>
+                                                <img src="global/media/banners/sky.webp">
+                                            </a>
+                                            <div id="startHidden">
+                                                <h1 class="divider">Other Posts</h1>
+                                                <a href="post/bee-movie-script.html">
+                                                    <div>
+                                                        <h1>Bee Movie Script</h1>
+                                                        <span>December 21st, 2025 &#x2022 Fun</span>
+                                                        <h2>You like jazz too? 🎺</h2>
+                                                    </div>
+                                                    <img src="post/media/beemovie.webp" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar">
+                                <div class="menuButtons">
+                                    <button id="SkaPageAboutButton" onclick="pageView('Ska', 'PageAbout')"><img src="global/images/seal/wallpaperSet.png" class="invert">About Ska</button>
+                                    <button id="SkaPageProjectsButton" onclick="pageView('Ska', 'PageProjects')"><img src="global/images/seal/wallpaperSet.png" class="invert">Projects</button>
+                                    <button id="SkaPagePostsButton" onclick="pageView('Ska', 'PagePosts')"><img src="global/images/seal/wallpaperSet.png" class="invert">Posts</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
                     </div>
 
                     <div class="app" id="Ska.Space">
@@ -225,7 +366,7 @@
                                 </div>
                                 <div class="sidebar">
                                     <div class="menuButtons">
-                                        <button id="CyanPageHomeButton" class="defaultButton" onclick="pageView('Cyan', 'PageLibrary')"><img src="global/images/seal/wallpaperSet.png" class="invert">Library</button>
+                                        <button id="CyanPageLibraryButton" class="defaultButton" onclick="pageView('Cyan', 'PageLibrary')"><img src="global/images/seal/wallpaperSet.png" class="invert">Library</button>
                                         <button id="CyanPageFollowingButton" onclick="pageView('Cyan', 'PageFollowing')"><img src="global/images/seal/wallpaperSet.png" class="invert">Following</button>
                                     </div>
                                 </div>
@@ -250,10 +391,18 @@
             </nav>
         </div>
         <div id="shutdown">
-            <div id="shutdownContent">
+            <div class="splashContent">
                 <span class="loader"></span>
                 <h1>Shutting Down</h1>
             </div>
+        </div>
+
+
+
+        <div id="splash">
+
+            <img src="global/media/icons/logos/tree.png" id="splashLogo">
+            <h1 id="splashText">SpencOS</h1>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="spencos/system.js"></script>
