@@ -3,10 +3,10 @@
     <head>
         <title>SpencOS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/card.css">
         <link rel="stylesheet" href="spencos/system.css">
         <link rel="stylesheet" href="spencos/apps.css">
         <link rel="stylesheet" href="global/css/posts.css">
-        <link rel="stylesheet" href="global/css/card.css">
         <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
     </head>
     <body>
@@ -22,8 +22,7 @@
                     <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
                     <li onclick="appFunction('Cloud', 'toggle')"><img src="spencos/images/apps/CloudIcon.webp">Cloud</li>
                     <li onclick="appFunction('Cyan', 'toggle')"><img src="spencos/images/apps/CyanIcon.webp">Cyan🎧</li>
-                    <li onclick="appFunction('About Ska', 'toggle')"><img src="spencos/images/apps/About SkaIcon.webp">About Ska</li> 
-                    <li onclick="appFunction('Ska', 'toggle')"><img src="spencos/images/apps/SkaIcon.webp">Ska</li>
+                    <li onclick="appFunction('Ska', 'toggle')"><img src="spencos/images/apps/SkaIcon.webp">About Ska</li>
                 </ul>
 
                 <div id="startBottom">
@@ -80,10 +79,10 @@
                         <div class="appHeader" id="SkaHeader">
                             <ul>
                                 <img src="spencos/images/apps/SkaIcon.webp">
-                                <span>Ska.Space</span>
+                                <span>About Ska</span>
                                 <li class="typeClose" onclick="appFunction('Ska', 'close')">x</li>
                                 <li class="typeSize" onclick="appFunction('Ska', 'maximize')">+</li>
-                                <li  onclick="appFunction('Ska.Space', 'toggle')">-</li>
+                                <li onclick="appFunction('Ska', 'toggle')">-</li>
                             </ul>
                         </div>
                         <div class="columnContainer">
@@ -206,7 +205,7 @@
                             </div>
                             <div class="sidebar">
                                 <div class="menuButtons">
-                                    <button id="SkaPageAboutButton" onclick="pageView('Ska', 'PageAbout')"><img src="global/images/seal/wallpaperSet.png" class="invert">About Ska</button>
+                                    <button id="SkaPageAboutButton" onclick="pageView('Ska', 'PageAbout')"><img src="global/images/seal/wallpaperSet.png" class="invert">Hello</button>
                                     <button id="SkaPageProjectsButton" onclick="pageView('Ska', 'PageProjects')"><img src="global/images/seal/wallpaperSet.png" class="invert">Projects</button>
                                     <button id="SkaPagePostsButton" onclick="pageView('Ska', 'PagePosts')"><img src="global/images/seal/wallpaperSet.png" class="invert">Posts</button>
                                 </div>
@@ -306,6 +305,8 @@
                                         <div id="SettingsPageDevTools" class="page">
                                             <h2>Dev Tools</h2>
                                             <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
+                                            <hr><h2>More</h2>
+                                            <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'block'">Splash Screen</button>
                                         </div>
                                         <div id="SettingsPageHome" class="page">
                                             <h2>About SpencOS</h2>

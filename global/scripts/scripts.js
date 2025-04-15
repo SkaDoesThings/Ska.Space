@@ -4,6 +4,15 @@ if (!localStorage.getItem('data-theme')) {
   localStorage.setItem("data-theme", "dark");
 }
 
+function changeThemeToggle() {
+  let state = localStorage.getItem('data-theme');
+  if (state == "dark")
+    changeTheme('light')
+  else{
+    changeTheme('dark')
+  }
+}
+
 function changeTheme(theme) {  
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("data-theme", theme);
@@ -63,15 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
     fader.classList.add('fadeOut');
     fader.style.zIndex = "2";
     
-    if(UIStateSpaces = 1){
-      uiFunction('Spaces');
-    }
-    if(UIStateTheme = 1){
-      uiFunction('Theme');
-    }  
+    clickPage()
   });
   }
 });
+
+function clickPage() {
+  if(UIStateSpaces = 1){
+    uiFunction('Spaces');
+  }
+}
+
 
 window.addEventListener('pageshow', function (event) {
   if (!event.persisted) {
@@ -166,18 +177,6 @@ function uiFunction(name) {
         setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 100);
       }
       UIStateSpaces = !UIStateSpaces;
-      break;
-    }
-    case "Theme": {
-      if(UIStateTheme == false) {
-        document.getElementById("themeMenu").style.animation = "slideDownBelow 0.1s forwards";
-        document.getElementById("themeMenu").style.display = "block";
-      }
-      else {
-        document.getElementById("themeMenu").style.animation = "slideUpAbove 0.1s forwards";
-        setTimeout(function(){document.getElementById("themeMenu").style.display = "none";}, 100);
-      }
-      UIStateTheme = !UIStateTheme;
       break;
     }
     case "Viewer": {

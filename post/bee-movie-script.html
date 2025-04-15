@@ -28,7 +28,7 @@
                 <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <label for="switchTheme" class="navIcon iconTypeTheme" title="Theme" onclick="uiFunction('Theme')"></label>
+            <label for="switchTheme" class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')"></label>
             <a href="../settings.html"><img src="../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
             <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
@@ -46,22 +46,12 @@
             </div>
         </nav>
 
-        <div id="themeMenu">
-            <button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
-            <button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
-            <button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
-            <button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
-            <button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
-            <button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
-            <button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
-        </div>
-
         <div id="leavingPage"></div>
         
         <div id="imageViewer" onclick="uiFunction('Viewer')">
             <div id="imageBackdrop"></div>
             <div id="imageDisplay"></div>
-            <h2 class="offMobile">Click anywhere to close image</h2>
+            <button title="Close">x</button>
         </div>
 
         <main class="blog">

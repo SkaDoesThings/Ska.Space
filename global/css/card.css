@@ -58,15 +58,19 @@ main {
     text-align: center;
     font-size: 22px;
     cursor: pointer;
+    transition: background-color 0.1s;
 }
 
 .appActions li:hover{
     background-color: rgba(128, 128, 128, 0.2);
 }
 
+.appActions .typeClose{
+    border-top-right-radius: 10px;
+}
+
 .appActions .typeClose:hover{
     background-color: rgb(252, 100, 100);
-    border-top-right-radius: 10px;
 }
 
 /*<---------- Special Discord-like Profile hehe ---------->*/

@@ -426,12 +426,12 @@ nav{
 
 .iconTypeTheme{
     background-size: 100%;
-    background-image: url('../media/icons/nav/themeLight.webp');
+    background-image: url('../media/icons/nav/themeDark.webp');
     background-repeat: no-repeat;
 }
 
-[data-theme='dark'] .iconTypeTheme, [data-theme='oled'] .iconTypeTheme, [data-theme='blue'] .iconTypeTheme{
-    background-image: url('../media/icons/nav/themeDark.webp');
+[data-theme='light'] .iconTypeTheme {
+    background-image: url('../media/icons/nav/themeLight.webp');
 }
 
 .iconTypeList{
@@ -459,28 +459,6 @@ nav{
     pointer-events: none;
 }
 
-#themeMenu {
-    background: var(--secondary-background);
-    border: 1px solid var(--secondary-border);
-    display: none;
-    position: fixed;
-    width: 160px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    right: 0;
-    margin-right: 10px;
-    margin-top: 56px;
-    padding: 5px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-}
-
-#themeMenu button{
-    display: block;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 #linkContainer h2, #themeMenu h2{
     font-weight: bold;
@@ -791,7 +769,8 @@ hover-text img{
     height: 46px;
     top: 65px;
     right: 10px;
-    font-size: 16pt;
+    font-size: 20pt;
+    padding-bottom: 10px;
     line-height: 0;
     text-align: center;
     font-weight: bold;
@@ -822,7 +801,7 @@ hover-text img{
 
 .modal-content {
     background-color: var(--primary-background);
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     position: fixed;
     margin: auto;
     padding: 0;
@@ -831,7 +810,7 @@ hover-text img{
     height: max-content;
     left: 0;
     right: 0;
-    top: 0;
+    top: -60px;
     bottom: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -850,9 +829,9 @@ hover-text img{
 
 .close {
     float: right;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .close:hover {
@@ -1044,6 +1023,11 @@ hover-text img{
 }
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
+@media only screen and (min-width: 1400px) {
+    nav{
+    }
+}
+
 @media only screen and (min-width: 800px) {
     body{
         background-attachment: fixed;
@@ -1223,14 +1207,6 @@ hover-text img{
         border-width: 2px;
     }
 
-    #themeMenu {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        bottom: 54px;
-    }
-
     .columnContainer {
         background-color: rgba(95, 141, 55, 0);
         display: inline-block;
@@ -1403,7 +1379,7 @@ hover-text img{
         scroll-behavior: none;
     }
 
-    main, article, #myDropdown, #themeMenu, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
+    main, article, #myDropdown, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
         animation-duration: 0s !important;
     }
 
@@ -1420,7 +1396,7 @@ hover-text img{
     scroll-behavior: none;
 }
 
-[data-setting-acc-reduced-motion='true'] :is(main, article, #myDropdown, #themeMenu, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
+[data-setting-acc-reduced-motion='true'] :is(main, article, #myDropdown, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
     animation-duration: 0s !important;
 }
 

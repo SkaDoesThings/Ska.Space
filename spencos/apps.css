@@ -1,6 +1,5 @@
 /*=-=-=-=-=- ( Base Properties ) -=-=-=-=-=*/
 
-
 [id="Ska.Space"] {
     width: 1200px;
     height: 700px;
@@ -119,7 +118,7 @@ button img{
 }
 
 .menuButtons button:first-child{
-    background-color: var(--element-hover);
+  background-color: var(--element-hover);
 }
 
 .pageView{
@@ -134,17 +133,21 @@ button img{
 
 .content{
     display: inline-flex;
-    background-color: var(--element-hover);
+    background-color: var(--background-tertiary);
     width: 100%;
     height: 100vh;
     padding: 10px;
     overflow-y: auto;
-
+    border-top-left-radius: 10px;
 }  
 
 .columnContainer{
     display: flex;
     flex-direction: row-reverse;
+}
+
+.menuButtons button:hover{
+  background-color: var(--element-hover) !important;
 }
 
 
@@ -173,41 +176,44 @@ button img{
     margin-right: auto;
   }
   
-  .mobile .sidebar{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: none;
-    height: 50px;
-  }
-  
-  .mobile .menuButtons{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    margin-left: 15px;
-  }
-  
-  .mobile .menuButtons button{
-    display: flex;
-    flex-direction: column;
-    text-wrap: break-word;
-    display: inline-block;
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 0px;
-    padding: 0px;
-  }
-  
-  .mobile .menuButtons button img{
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    margin-left: 8px;
-  }
+.mobile .sidebar{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: none;
+  height: 60px;
+  padding: 0;
+  border-top: 1px solid var(--border-primary);
+}
 
-  .mobile #wallpaperPreview{
-    margin: auto;
-  }
+.mobile .content{
+  border-top-left-radius: 0px;
+}
+
+.mobile .menuButtons{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mobile .menuButtons button{
+  display: block;
+  width: 70px;
+  height: 50px;
+  text-align: center;
+  font-size: 0px;
+}
+
+.mobile .menuButtons button img{
+  width: 36px;
+  height: 36px;
+  display: flex;
+  margin-left: 10px;
+}
+
+.mobile #wallpaperPreview{
+  margin: auto;
+}
