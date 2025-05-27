@@ -107,6 +107,7 @@ main {
     margin-left: 10px;
     border: 6px solid #EDF8FC;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .userStatus {
