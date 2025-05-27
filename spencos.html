@@ -17,12 +17,14 @@
             <div id="start">
                 <h1>Dashboard</h1>
                 <ul id="startIcons" onclick="clickDesktop()">
-                    <li onclick="appFunction('Ska.Space', 'toggle')"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</li>
-                    <li onclick="appFunction('SpiderWeb', 'toggle')"><img src="spencos/images/apps/SpiderWebIcon.webp">SpiderWeb</li>
                     <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
-                    <li onclick="appFunction('Cloud', 'toggle')"><img src="spencos/images/apps/CloudIcon.webp">Cloud</li>
                     <li onclick="appFunction('Cyan', 'toggle')"><img src="spencos/images/apps/CyanIcon.webp">Cyan🎧</li>
                     <li onclick="appFunction('Ska', 'toggle')"><img src="spencos/images/apps/SkaIcon.webp">About Ska</li>
+                    <hr>
+                    <li onclick="appFunction('Ska.Space', 'toggle')"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</li>
+                    <li onclick="appFunction('Cloud', 'toggle')"><img src="spencos/images/apps/CloudIcon.webp">Cloud</li>
+                    <li onclick="appFunction('SpiderWeb', 'toggle')"><img src="spencos/images/apps/SpiderWebIcon.webp">SpiderWeb</li>
+                    <li onclick="appFunction('Posts', 'toggle')"><img src="spencos/images/apps/PostsIcon.webp">Posts</li>
                 </ul>
 
                 <div id="startBottom">
@@ -212,21 +214,7 @@
                             </div>
                         </div>
                     </div>   
-                    </div>
-
-                    <div class="app" id="Ska.Space">
-                        <div class="appHeader" id="Ska.SpaceHeader">
-                            <ul>
-                                <img src="spencos/images/apps/Ska.SpaceIcon.webp">
-                                <span>Ska.Space</span>
-                                <li class="typeClose" onclick="appFunction('Ska.Space', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('Ska.Space', 'maximize')">+</li>
-                                <li  onclick="appFunction('Ska.Space', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <embed type="text/html" src="index.html" class="webapp">          
-                    </div>
-
+                    
                     <div class="app native" id="About Ska">
                         <div class="appHeader" id="About SkaHeader">
                             <ul>
@@ -326,20 +314,7 @@
                         </div>
                     </div>
 
-                    <div class="app" id="Cloud">
-                        <div class="appHeader" id="CloudHeader">
-                            <ul>
-                                <img src="spencos/images/apps/CloudIcon.webp">
-                                <span>Cloud</span>
-                                <li class="typeClose" onclick="appFunction('Cloud', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('Cloud', 'maximize')">+</li>
-                                <li onclick="appFunction('Cloud', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <embed type="text/html" src="spencos/apps/cloud.html" class="webapp">          
-                    </div>
-
-                    <div class="app native" id="Cyan">
+                    <div class="app" id="Cyan">
                         <div class="appHeader" id="CyanHeader">
                             <ul>
                                 <img src="spencos/images/apps/CyanIcon.webp">
@@ -375,6 +350,46 @@
                         </div>
                     </div>
                 </div>  
+
+                <div class="app" id="Ska.Space">
+                    <div class="appHeader" id="Ska.SpaceHeader">
+                        <ul>
+                            <img src="spencos/images/apps/Ska.SpaceIcon.webp">
+                            <span>Ska.Space</span>
+                            <li class="typeClose" onclick="appFunction('Ska.Space', 'close')">x</li>
+                            <li class="typeSize" onclick="appFunction('Ska.Space', 'maximize')">+</li>
+                            <li  onclick="appFunction('Ska.Space', 'toggle')">-</li>
+                        </ul>
+                    </div>
+                    <embed type="text/html" src="index.html" class="webapp">          
+                </div>
+
+                <div class="app webview" id="Cloud">
+                    <div class="appHeader" id="CloudHeader">
+                        <ul>
+                            <img src="spencos/images/apps/CloudIcon.webp">
+                            <span>Cloud</span>
+                            <li class="typeClose" onclick="appFunction('Cloud', 'close')">x</li>
+                            <li class="typeSize" onclick="appFunction('Cloud', 'maximize')">+</li>
+                            <li onclick="appFunction('Cloud', 'toggle')">-</li>
+                        </ul>
+                    </div>
+                    <embed type="text/html" src="games.html" class="webapp">          
+                </div>
+
+                <div class="app webview" id="Posts">
+                    <div class="appHeader" id="PostsHeader">
+                        <ul>
+                            <img src="spencos/images/apps/PostsIcon.webp">
+                            <span>Posts</span>
+                            <li class="typeClose" onclick="appFunction('Posts', 'close')">x</li>
+                            <li class="typeSize" onclick="appFunction('Posts', 'maximize')">+</li>
+                            <li onclick="appFunction('Posts', 'toggle')">-</li>
+                        </ul>
+                    </div>
+                    <embed type="text/html" src="posts.html" class="webapp">          
+                </div>
+
             </div>
 
             <!--Taskbar, Holds Potential Apps-->

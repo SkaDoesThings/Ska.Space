@@ -38,6 +38,10 @@
   height: 400px;
 }
 
+#Posts{
+  width: 1300px;
+  height: 700px;
+}
 
 .page{
     display: none;
@@ -45,6 +49,19 @@
 
 .mainPage{
     display: block;
+}
+
+.webview{
+  padding-bottom: 0px;
+}
+
+.webview .appHeader{
+  position: absolute;
+}
+
+.webview .webapp{
+  margin-top: -20px;
+  height: calc(100% + 20px)
 }
 
 /*=-=-=-=-=-=-=- ( Components ) -=-=-=-=-=-=-=*/
@@ -216,4 +233,17 @@ button img{
 
 .mobile #wallpaperPreview{
   margin: auto;
+}
+
+.mobileIfWebapp.webview{
+  padding-bottom: 30px;
+}
+
+.mobileIfWebapp.webview .appHeader{
+  position: relative;
+}
+
+.mobileIfWebapp.webview .webapp{
+  margin-top: 0px;
+  height: calc(100% + 54px);
 }

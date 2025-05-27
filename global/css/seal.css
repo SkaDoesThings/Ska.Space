@@ -4,7 +4,9 @@ body{
 }
 
 [data-theme='dark'] body{
-    /*background: url('../../../global/media/backgrounds/darkmode.webp') center no-repeat;*/
+    background: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
+    background-size: cover;
+    background-color: rgb(45, 42, 42);
 }
 
 [data-theme='light'] body{

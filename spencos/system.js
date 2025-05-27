@@ -54,6 +54,7 @@ dragElement(document.getElementById("Ska.Space"));
 dragElement(document.getElementById("Cloud"));
 dragElement(document.getElementById("SpiderWeb"));
 dragElement(document.getElementById("Cyan"));
+dragElement(document.getElementById("Posts"));
 
 let apps = document.querySelectorAll('.app');
 apps.forEach(function(app) {
@@ -456,6 +457,12 @@ const observer = new ResizeObserver((entries) => {
       element.classList.add('mobile')
     } else if (width > 500 && element.classList.contains("mobile")) {
       element.classList.remove('mobile')
+    }
+
+    if (width <= 800 && !element.classList.contains("mobileIfWebapp")) {
+      element.classList.add('mobileIfWebapp')
+    } else if (width > 800 && element.classList.contains("mobileIfWebapp")) {
+      element.classList.remove('mobileIfWebapp')
     }
   }
 });

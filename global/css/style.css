@@ -88,10 +88,11 @@ hr {
 
 :root{
     --page-background: rgb(45, 42, 42);
-    --page-wallpaper: linear-gradient(45deg, #2F2D2D 10%,transparent 10%,transparent 90%,#2F2D2D 90%),linear-gradient(135deg, transparent 40%, #2F2D2D80 40%, #2F2D2D80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #2F2D2D 40%, #2F2D2D 60%, transparent 0);
-    --wallpaper-size: 44em 44em;
+    --page-wallpaper: url('../media/backgrounds/skatile.png') center;
+    --loading-wallpaper: url('../media/backgrounds/skatile.png') center;
+    --wallpaper-size: 350px 350px;
     --text-color: rgb(245, 245, 245);
-    --primary-background: rgb(43, 40, 40);
+    --primary-background: rgba(43, 40, 40);
     --secondary-background: rgb(96, 92, 92);
     --tertiary-background: rgb(82, 79, 79);
     --blurred-background: rgb(59, 57, 57, 0.7);
@@ -107,6 +108,7 @@ hr {
 [data-theme='light'] {
     --page-background: rgb(235, 235, 235);
     --page-wallpaper: url('../media/backgrounds/lightmode.webp') center;
+    --loading-wallpaper: url('../media/backgrounds/lightmode.webp') center;
     --wallpaper-size: 400px;
     --text-color: rgb(51, 51, 51);
     --primary-background: rgb(235, 235, 235);
@@ -125,6 +127,7 @@ hr {
 [data-theme='oled'] {
     --page-background: rgb(0, 0, 0);
     --page-wallpaper: none;
+    --loading-wallpaper: rgb(0, 0, 0);
     --primary-background: rgb(15, 15, 15);
     --secondary-background: rgb(15, 15, 15);
     --tertiary-background: rgb(15, 15, 15);
@@ -138,6 +141,7 @@ hr {
 [data-theme='blue'] {
     --page-background: rgb(23, 30, 39);
     --page-wallpaper: none;
+    --loading-wallpaper: rgb(23, 30, 39);
     --text-color: rgb(226, 229, 255);
     --primary-background: rgb(29, 41, 57);
     --secondary-background: rgb(29, 42, 53);
@@ -154,6 +158,7 @@ hr {
 [data-theme='red'] {
     --page-background: rgb(107, 74, 74);
     --page-wallpaper: none;
+    --loading-wallpaper: rgb(107, 74, 74);;
     --text-color: rgb(255, 226, 226);
     --primary-background: rgb(89, 55, 55);
     --secondary-background: rgb(142, 96, 96);
@@ -169,6 +174,7 @@ hr {
 [data-theme='twilight'] {
     --page-background: rgb(171, 103, 103);
     --page-wallpaper: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
+    --loading-wallpaper: rgb(107, 74, 74);;
     --wallpaper-size: cover;
     --secondary-background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
     --secondary-border: rgb(191, 149, 149);
@@ -449,7 +455,8 @@ nav{
 }
 
 #leavingPage{
-    background-color: var(--page-background);
+    background: var(--loading-wallpaper);
+    background-size: 350px 350px;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -1095,6 +1102,10 @@ hover-text img{
 }
 
 @media only screen and (max-width: 800px) {
+    #leavingPage{
+        padding-top: 30px;
+    }
+    
     .onMobile{
         display: block;
     }
