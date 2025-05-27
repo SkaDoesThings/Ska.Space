@@ -7,9 +7,9 @@ html{
 
 body {
     margin: 0 auto;
+    background-position: center;
     background: var(--page-wallpaper);
     background-size: var(--wallpaper-size);
-    background-position: center;
     background-color: var(--page-background);
 }
 
@@ -88,8 +88,8 @@ hr {
 
 :root{
     --page-background: rgb(45, 42, 42);
-    --page-wallpaper: url('../media/backgrounds/skatile.png') center;
-    --loading-wallpaper: url('../media/backgrounds/skatile.png') center;
+    --page-wallpaper: url('../media/backgrounds/skatile.png') left;
+    --loading-wallpaper: url('../media/backgrounds/skatile.png') left;
     --wallpaper-size: 350px 350px;
     --text-color: rgb(245, 245, 245);
     --primary-background: rgba(43, 40, 40);
@@ -1030,11 +1030,6 @@ hover-text img{
 }
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
-@media only screen and (min-width: 1400px) {
-    nav{
-    }
-}
-
 @media only screen and (min-width: 800px) {
     body{
         background-attachment: fixed;
@@ -1102,10 +1097,15 @@ hover-text img{
 }
 
 @media only screen and (max-width: 800px) {
-    #leavingPage{
-        padding-top: 30px;
+    /*Disable wallpaper loading screen due to positioning issues*/
+    [data-theme='dark'] {
+        --loading-wallpaper: rgb(45, 42, 42);
+    }    
+    [data-theme='light'] {
+        --loading-wallpaper: rgb(235, 235, 235);
     }
-    
+
+    /*More Code*/
     .onMobile{
         display: block;
     }
