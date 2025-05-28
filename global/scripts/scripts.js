@@ -121,10 +121,8 @@ var opened = false;
 //Mobile navigation
 function openNav() {
   if (opened == false){
-    document.getElementById("navbox").style.height = "401px";
-  
-    document.getElementById("navbox").style.borderTopLeftRadius = "20px";
-    document.getElementById("navbox").style.borderTopRightRadius = "20px";
+    document.getElementById("navbox").style.height = "351px";
+    setTimeout(function(){document.getElementById("navbox").style.overflowY = "auto";}, 150);
   }
   else if (opened == true){
       closeThatNav();
@@ -134,9 +132,8 @@ function openNav() {
 
 function closeThatNav() {
   document.getElementById("navbox").style.height = "56px";
-
-  document.getElementById("navbox").style.borderTopLeftRadius = "0px";
-  document.getElementById("navbox").style.borderTopRightRadius = "0px";
+  document.getElementById("navbox").style.overflowY = "hidden";
+  document.getElementById("navbox").scrollTop = 0;
 }
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar

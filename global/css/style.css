@@ -296,14 +296,15 @@ nav{
     backdrop-filter: var(--blurred-attribute);   
     -webkit-backdrop-filter: blur(35px);
     position: fixed;
-    height: 56px;
     width: 100%;
+    height: 56px;
     box-sizing: border-box;
     padding: 0 10px;
-    z-index: 5;
-    transition: height 0.15s, border-radius 0.3s;
+    transition: padding 0.15s, height 0.15s, border-radius 0.3s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-}   
+    scroll-behavior: smooth;
+    z-index: 5;
+}
 
 .siteName{
     background: transparent;
@@ -1030,6 +1031,7 @@ hover-text img{
 }
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
+
 @media only screen and (min-width: 800px) {
     body{
         background-attachment: fixed;
@@ -1155,8 +1157,13 @@ hover-text img{
     }
 
     nav {
+        width: 98%;
+        border: 1px solid var(--primary-border);
+        border-radius: 20px;
+        margin: 5px auto;
         bottom: 0;
-        border-top: 1px solid var(--primary-border);
+        left: 0;
+        right: 0;
     }
 
     #navToggle{
