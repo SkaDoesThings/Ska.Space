@@ -1,5 +1,4 @@
 // Change localstorage settings on page load
-
 if (!localStorage.getItem('data-theme')) {
   localStorage.setItem("data-theme", "dark");
 }
@@ -40,8 +39,6 @@ function changeSetting(setting) {
   localStorage.setItem("data-" + setting, newState);
   console.log("Set data-" + setting + " to " + newState);
 }
-
-
 
 //Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
 var fader = document.getElementById('leavingPage');
@@ -96,7 +93,6 @@ window.addEventListener('pageshow', function (event) {
 });
 
 //Image viewer thanks! https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click
-
 function getPics() {} //just for this demo
 const imgs = document.querySelectorAll('.viewable');
 const imageViewer = document.querySelector('#imageViewer');
@@ -117,8 +113,8 @@ function backgroundViewer(given){
     uiFunction('Viewer');
 }
 
-var opened = false;
 //Mobile navigation
+var opened = false;
 function openNav() {
   if (opened == false){
     document.getElementById("navbox").style.height = "351px";
@@ -160,18 +156,19 @@ function dropdownFunction() {
 
 //UI Toggles
 var UIStateSpaces = false;
-var UIStateTheme = false;
 var UIStateViewer = false;
 function uiFunction(name) {
   switch(name) {
     case "Spaces": {
       if(UIStateSpaces == false) {
-        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.1s forwards";
         document.getElementById("myDropdown").style.display = "block";
+        document.getElementById("myDropdown").style.pointerEvents = "none";
+        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.3s forwards";
+        setTimeout(function(){document.getElementById("myDropdown").style.pointerEvents = "all";}, 100);
       }
       else {
-        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.1s forwards";
-        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 100);
+        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.2s forwards";
+        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 200);
       }
       UIStateSpaces = !UIStateSpaces;
       break;
@@ -273,3 +270,12 @@ function showHiddenItem() {
   document.getElementById("showHiddenItem").style.display = "none";
   document.getElementById("startHidden").style.display = "block";
 }
+
+
+//Make all buttons bouncy
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.add('clicked');
+    setTimeout(() => button.classList.remove('clicked'), 300); // Reset after animation
+  });
+});

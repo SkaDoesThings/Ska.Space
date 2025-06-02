@@ -39,14 +39,6 @@ main{
     animation: appearOpacityDelayed 0.3s forwards;
 }
 
-.fadeOut{
-    animation: appearOpacity 0.15s forwards;
-}
-
-.fadeIn{
-    animation: disappearOpacity 0.3s forwards;
-}
-
 article{
     margin-left: auto;
     margin-right: auto;
@@ -513,7 +505,8 @@ button, .modalButton{
     border-radius: 10px;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.15s, border-color 0.15s;
+    transform-origin: center;
+    transition: scale 0.05s, background-color 0.15s, border-color 0.15s;
 }
 
 button:hover, .modalButton:hover{
@@ -521,9 +514,12 @@ button:hover, .modalButton:hover{
     border: 1px solid var(--primary-color);
 }
 
-button:active, a:active, .modalButton:active, .viewable:active, .navIcon:active{
+button:active, .modalButton:active {
+    scale: 0.95;
+}
+
+a:active, .viewable:active, .navIcon:active{
     scale: 1.05;
-    transition: scale 0.05s;
 }
 
 button img, .modalButton img{
@@ -712,19 +708,6 @@ hover-text::after {
     border-color: var(--primary-border) transparent transparent transparent;
 }
 
-.slideDown hover-text{
-    margin-top: 5px;
-}
-
-.slideDown:hover hover-text{
-    margin-top: 35px;
-}
-
-.slideDown hover-text::after {
-    bottom: 100%;
-    border-color: transparent transparent var(--primary-border) transparent;
-}
-
 hover-text img{
     width: 32px;
 }
@@ -759,10 +742,10 @@ hover-text img{
     height: 100vh;
     background-size: cover;
     filter: blur(150px) brightness(0.7);
-  }
+}
 
 #imageDisplay {
-    margin-top: 10vh;
+    margin-top: 13vh;
     width: 80vw;
     height: 80vh;
     background-size: contain;
@@ -1042,10 +1025,6 @@ hover-text img{
         visibility: hidden;
     }
 
-    [data-theme='dark'][data-setting-style-movingbg='true'] .supportMovingBG {
-        animation: backgroundMove 30s linear infinite;
-    }
-
     #linkContainer a:nth-child(2) { 
         margin-left: 10px;
     }
@@ -1290,9 +1269,30 @@ hover-text img{
 
 /*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
 
+.fadeOut{
+    animation: appearOpacity 0.15s forwards;
+}
+
+.fadeIn{
+    animation: disappearOpacity 0.3s forwards;
+}
+
+.clicked {
+  animation: clickedObject 0.3s forwards ease-out;
+}
+
+.shake {
+    animation: shake 0.1s forwards;
+    animation-iteration-count: 3;
+}
+
+[data-theme='dark'][data-setting-style-movingbg='true'] .supportMovingBG {
+    animation: backgroundMove 60s linear infinite;
+}
+
 @keyframes backgroundMove {
     0% { background-position: 0px 0px; } 
-    100% { background-position: 705px 705px; }
+    100% { background-position: 1200px 600px; }
 }
 
 @keyframes appearOpacity {
@@ -1304,6 +1304,14 @@ hover-text img{
     0% { opacity: 1; }
     15% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+@keyframes clickedObject {
+    0% {  scale: 0.95; filter: brightness(100%) }
+    30% {  scale: 1.025; filter: brightness(80%); }
+    60% {  scale: 1; }
+    80% {  scale: 1.015; }
+    100% { opacity: 1; filter: brightness(100%)  }
 }
 
 @keyframes appearOpacityDelayed {
@@ -1324,17 +1332,22 @@ hover-text img{
 }
 
 @keyframes slideDownBelow {
-    0% { transform: translateY(-20px); opacity: 0; scale: 0.8; }
-    100% { transform: translateY(0px); opacity: 1; scale: 1; }
+    0% { transform: translateY(-80px); opacity: 0; }
+    25% { transform: translateY(-5px); scale: 1; }
+
+    60% { transform: translateY(10px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 1; }
 }
 
 @keyframes slideUpAbove {
-    0% { transform: translateY(0px); opacity: 1; scale: 1; }
-    100% { transform: translateY(-20px); opacity: 0; scale: 0.8; }
+    0% { transform: translateY(0px); opacity: 1;}
+    25% { transform: translateY(5px); opacity: 1; }
+    30% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(-20px); opacity: 0; }
 }
 
 @keyframes bannerReveal {
-    0% { opacity: 0; transform: translateY(-50px); scale: 0.9; }
+    0% { opacity: 0; transform: translateY(-50px,); scale: 0.9; }
     5%{ opacity: 0; }
     50%{ opacity: 1; transform: translateY(3px); }
     100% { transform: translateY(0px); scale: 1; }
@@ -1355,11 +1368,6 @@ hover-text img{
     62% { box-shadow: -.2em -.2em 0 0 currentcolor; }
     75% { box-shadow: 0px -.2em 0 0 currentcolor; }
     87% { box-shadow: .2em -.2em 0 0 currentcolor; }
-}
-
-.shake {
-    animation: shake 0.1s forwards;
-    animation-iteration-count: 3;
 }
 
 @keyframes shake {
