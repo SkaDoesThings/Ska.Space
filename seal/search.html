@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<nav id="navbox" class="transparency">
-            <a href="../index.html"><img src="../global/images/seal/seal.png" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Seal Search"/></a>
+            <a href="../index.html"><img src="../global/images/seal/sealco." class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Seal Search"/></a>
             <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
 				<img src="../global/media/images/navburger.webp" class="iconTypeList invert" title="nyoho" alt="Icon For Nav">
 				<span class="spaceName">Ska.Space</span>
@@ -59,29 +59,35 @@
 
 		<main id="seal" class="centered" onclick="clickPage()">
 			<img src="../global/images/seal/sealsearch.webp" class="vertical viewable searchLogo">
-			<span class="mainText searchText">Seal Search</span><br>
+			<span class="mainText">Seal Search</span><br>
 
 			<form action="https://www.bing.com/search" method="get" id="searchBing">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Search the Worldwide Web"/>
 				<input type="submit" value="🌌" class="searchGo"/>
 			</form>
 			<form action="https://www.google.com/search" method="get" id="searchGoogle">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Google It, You Know It"/> 
 				<input type="submit" value="↪️" class="searchGo"/>
 			</form>
 			<form action="https://www.youtube.com/search" method="get" id="searchYouTube">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Search YouTube"/>
 				<input type="submit" value="📺" class="searchGo"/>
 			</form>
 			<form action="https://x.com/search" method="get" id="searchX">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Search the Containment Zone"/>
 				<input type="submit" value="🦜" class="searchGo"/>
 			</form>
 			<form action="https://reddit.com/search" method="get" id="searchReddit">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Search the Echochambers"/>
 				<input type="submit" value="🌿" class="searchGo"/>
 			</form>
 			<form action="https://duckduckgo.com/" method="get" id="searchDuck">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
 				<input type="search" autofocus name="q" class="searchBar" placeholder="Search DuckDuckGo"/>
 				<input type="submit" value="🦆" class="searchGo"/>
 			</form>
@@ -90,7 +96,7 @@
 				<button onclick="selectSearch('Google');" id="selectGoogle">Google</button>
 				<button onclick="selectSearch('Bing');" id="selectBing">Bing</button>
 				<button onclick="selectSearch('YouTube');" id="selectYouTube">YouTube</button>
-				<button onclick="selectSearch('X');" id="selectX">𝕏</button>
+				<button onclick="selectSearch('X');" id="selectX">𝕏 (Twitter)</button>
 				<button onclick="selectSearch('Reddit');" id="selectReddit">Reddit</button>
 				<button class="modal-button" href="#shortcutModal">+</button>
 			</div>

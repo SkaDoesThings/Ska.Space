@@ -15,30 +15,34 @@
     display: inline-flex;
     flex-direction: column;
     width: 400px;
-    min-height: 180px;
-    margin: 5px;
+    min-height: 150px;
+    margin: 3px;
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #featuredBoxes a{
-    height: 160px;
+    height: 140px;
     padding: 15px;
     padding-top: 10px;
     border-radius: 9px;
     text-decoration: none;
     text-align: left;
+    line-height: 2;
     scale: 1;
 }
 
 #featuredBoxes div:active{
-    scale: 1.05;
+    scale: 1.03;
 }
 
-#featuredBoxes h2{
-    font-size: 14pt;
-    margin-top: 10px;
+#featuredBoxes h1{
+    font-size: 18pt;
+}
+
+#featuredBoxes h2, #featuredBoxes span{
+    font-size: 12pt;
 }
 
 #featuredBoxes img{
@@ -219,7 +223,7 @@
 
 @media only screen and (max-width: 900px) {
     #featuredBoxes div{
-        width: 100%;
+        width: 95%;
         height: auto;
         min-height: 0px;
         margin: 0px;

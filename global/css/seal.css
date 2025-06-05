@@ -27,17 +27,23 @@ main{
 /*Search Area*/
 
 .searchLogo{
-    opacity: 0.8;
     width: 128px;
     padding: 10px;
     margin-bottom: 20px;
+    margin-left: -20px;
 }
 
-.searchText{
-    font-size: 40pt;
+.searchIcon{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+    margin-top: 15px;
+    opacity: 0.4;
 }
 
 input[type='search'] {
+    background-color: var(--blurred-background);
     width: 725px;
     height: 55px;
     padding: 20px;
@@ -45,22 +51,17 @@ input[type='search'] {
     border: 2px solid #d3d3d3;
     border-radius: 10px;
     box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+    text-indent: 25px;
     transition: background-color 0.2s;
 }
 
-[data-theme='light'] input[type='search']{
-    background-color: rgb(245, 245, 245, 0.7);
-}
-
-[data-theme='dark'] input[type='search']{
-    background-color: rgb(57, 58, 59, 0.7);
-}
-
-input[type='search']:hover {
+input[type='search']:hover, input[type='search']:focus {
+    background-color: var(--blurred-background);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 main form input[type="submit"] {
+    background-color: transparent;
     display: inline-block;
     position: absolute;
     margin: 0px;
@@ -81,7 +82,7 @@ main form input[type="submit"] {
 .searchGo:active{
     scale: 1.05;
 }
-
+ 
 form image{
     width: 64px;
     height: 64px;
@@ -92,7 +93,7 @@ form image{
 }
 
 #selectYouTube, #selectBing, #selectDuck, #selectReddit, #selectX {
-    opacity: 0.8
+    opacity: 0.7;
 }
 
 .engines{
@@ -115,17 +116,11 @@ form image{
     height: auto;
     border: 0px;
     padding: 10px;
-    margin-bottom: 20px;
     transition: width 0.2s, height 0.2s, border-radius 0.6s;
 }
 
 .listbox a, .engines button {
-    background-color: rgb(37, 36, 36, 0.5);
-    transition: background-color 0.2s, border-radius 0.2s;
-}
-
-[data-theme='light'] .listbox a, [data-theme='light'] .engines button {
-    background-color: rgb(245, 245, 245, 0.7);
+    background-color: var(--blurred-background);
 }
 
 .listbox a:hover, .engines button:hover{
@@ -140,13 +135,8 @@ form image{
 /*Customize Settings Area*/
 
 .contentColor{
-    background-color: rgba(235, 235, 235, 0.3);
-    color: rgb(87, 87, 87);
-}
-
-[data-theme='dark'] .contentColor{
-    background-color:rgb(37, 36, 36, 0.3);
-    color: rgb(245, 245, 245);
+    background-color: var(--blurred-background);
+    color: var(--text-color);
 }
 
 #customize {
@@ -156,28 +146,23 @@ form image{
     margin: 10px;
     right: 0;
     bottom: 0;
-    background-color: rgba(203, 203, 203, 0.5);
+    background-color: var(--blurred-background);
     border-radius: 15px;
     border: 1px solid rgb(185, 185, 185);
     transition: width 0.3s, height 0.3s;
-}
-
-[data-theme='dark'] #customize{
-    background-color: rgb(87, 87, 87, 0.7);
 }
 
 #customize span{
     font-size: 8pt;
 }
 
-#customize .spaceNavIcon{
+#customize img{
+    width: 22px;
+    height: 22px;
     margin-right: 5px;
 }
 
 .openMenu{
-    display: inline-flex;
-    align-items: center;
-    color: #000;
     border: 1px solid rgb(185, 185, 185);
     width: 120px;
     height: 40px;
@@ -195,14 +180,13 @@ form image{
 #buttonCustomize{
     font-size: 10pt;
     margin: 0px;
+    line-height: 2;
 }
 
 .customizeOption{
     display: flex;
     align-items: center;
-    background-color: rgba(235, 235, 235);
-    border: 1px solid gray;
-    color: rgb(87, 87, 87);
+    border: 1px solid var(--secondary-border);
     width: 150px;
     height: 40px;
     font-size: 10pt;
@@ -213,31 +197,12 @@ form image{
     cursor: pointer;
 }
 
-#customizeList img, #buttonCustomize img{
-    width: 26px;
-    height: 26px;
-}
-
-
-.customizeOption:hover, .closeList:hover {
-    scale: 1.05;
-}
-
-.customizeOption:active, .closeList:active {
-    scale: 1.1;
-}
-
-[data-theme='dark'] .customizeOption{
-    background-color: rgb(87, 87, 87);
-    color: rgb(245, 245, 245);
-}
-
 .closeList{
     width: 40px;
     height: 30px;
-    font-size: 7pt;
+    font-size: 9pt;
     margin-top: 5px;
-    border: 1px solid gray;
+    border: 1px solid var(--secondary-border);
     border-radius: 15px;
     cursor: pointer;
 }
@@ -247,7 +212,7 @@ form image{
 }
 
 #quickLinks li {
-    display: inline-block
+    display: inline-block;
 }
 
 #quickLinks button{
@@ -270,13 +235,9 @@ form image{
 
 @media only screen and (min-width: 800px){
     nav{
-        background-color: transparent !important;
-        box-shadow: none !important;
-        backdrop-filter: blur(0px) !important;
-    }
-    
-    [data-theme='light'] #navbox {
-        background-color: rgb(235, 235, 235, 0.7);
+        background-color: transparent;
+        box-shadow: none;
+        backdrop-filter: blur(0px);
     }
 }
 
