@@ -10,7 +10,7 @@ function changeTheme(theme) {
   console.log("I give you " + theme);
 }
 
-const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-movingbg']
+const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen']
 
 data.forEach(setting => {
   let state = localStorage.getItem('desktop-' + setting);
@@ -55,6 +55,7 @@ dragElement(document.getElementById("Cloud"));
 dragElement(document.getElementById("SpiderWeb"));
 dragElement(document.getElementById("Cyan"));
 dragElement(document.getElementById("Posts"));
+dragElement(document.getElementById("Media"));
 
 let apps = document.querySelectorAll('.app');
 apps.forEach(function(app) {
@@ -205,12 +206,11 @@ function clickTaskbar() {
 }
 
 function shutdown() {
-  document.getElementById("shutdown").style.display = "flex";
-
+  document.getElementById("shutdown").style.display = "block";
 
   setTimeout(() => {
     window.location.href = "../index.html";
-  }, 1100);
+  }, 1800);
 }
 
 var UIStateStart = 0;
@@ -316,6 +316,7 @@ function switchUI(type){
 
 var flipflop = 0;
 
+// App engine
 function appFunction(name, type) {
   var appName = document.getElementById(name);
   var taskbarName = (name + "Icon");
@@ -328,30 +329,18 @@ function appFunction(name, type) {
           break;
         }
         else{
-          if(document.getElementById(taskbarName) == null){
-            var menu = document.getElementById("taskbar");
-            var newlink = document.createElement("a");
-            newlink.setAttribute("id", name + "Icon");
-            newlink.setAttribute("class", "active");
-            newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
-            newlink.innerHTML = ("<img src='spencos/images/apps/" + name + "Icon.webp'>" + name) 
-            menu.appendChild(newlink);
-          }
-          appName.classList.add('opened')
-          document.getElementById(taskbarName).classList.add('active')
-          appName.style.display = "block";
-          document.getElementById(taskbarName).style.display = "inline-flex";
-          appName.style.animation = "popup 0.4s ease 1 normal forwards";
-          windowToTop(appName)
+          openApp(name);
           break;
-      }
+        }
+        
       case "close":
-          appName.classList.remove('opened')
-          document.getElementById(taskbarName).classList.remove('active')
-          document.getElementById(taskbarName).style.display = "none";
-          appName.style.animation = "popout 0.4s ease 1 normal forwards";
-          var menu = document.getElementById("taskbar");
-          menu.removeChild(document.getElementById(taskbarName));
+        appName.classList.remove('opened')
+        document.getElementById(taskbarName).classList.remove('active')
+        document.getElementById(taskbarName).style.display = "none";
+        appName.style.animation = "popout 0.4s ease 1 normal forwards";
+        var menu = document.getElementById("taskbar");
+        menu.removeChild(document.getElementById(taskbarName));
+        setTimeout(function(){appName.style.display = "none";}, 400);
         break;
 
       case "maximize":
@@ -375,9 +364,39 @@ function appFunction(name, type) {
           flipflop = 1;
           break;
         }
+      case "open":
+        if(!appName.classList.contains('opened')) {
+          openApp(name)
+        }
+        else{
+          windowToTop(appName);
+        }
         break;
       }
     }
+
+// Specific app engine functions
+function openApp(name) {
+  var appName = document.getElementById(name);
+  var taskbarName = (name + "Icon");
+
+  if(document.getElementById(taskbarName) == null){
+    var menu = document.getElementById("taskbar");
+    var newlink = document.createElement("a");
+    newlink.setAttribute("id", name + "Icon");
+    newlink.setAttribute("class", "active");
+    newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
+    newlink.innerHTML = ("<img src='spencos/images/apps/" + name + "Icon.webp'>" + name) 
+    menu.appendChild(newlink);
+
+  }
+  appName.classList.add('opened')
+  document.getElementById(taskbarName).classList.add('active');
+  appName.style.display = "block";
+  document.getElementById(taskbarName).style.display = "inline-flex";
+  appName.style.animation = "popup 0.4s ease 1 normal forwards";
+  windowToTop(appName);
+}
 
 //Wallpaper
 $(switchBackground);
@@ -490,4 +509,25 @@ function pageView(appName, selection){
 
   document.getElementById(selected).style.display = "block";
   document.getElementById(selected + "Button").style.backgroundColor = "var(--element-hover)";
+}
+
+// Image viewer
+
+const imgs = document.querySelectorAll('.viewable');
+const imageViewer = document.querySelector('#imageViewer');
+const imageBackdrop = document.querySelector('#imageBackdrop');
+const imageDisplay = document.querySelector('#imageDisplay');
+
+imgs.forEach(img => {
+  img.addEventListener('click', function() {
+    appFunction('Media', 'open');
+    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
+  });
+});
+
+function backgroundViewer(given){
+    appFunction('Media', 'open');
+    imageDisplay.style.backgroundImage = 'url(' + given + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + given + ')';
 }

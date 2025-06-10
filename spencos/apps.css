@@ -43,6 +43,11 @@
   height: 700px;
 }
 
+#Media{
+  width: 80%;
+  height: 80%;
+}
+
 .page{
     display: none;
 }
@@ -149,12 +154,11 @@ button img{
 }
 
 .content{
-    display: inline-flex;
+    display: block;
     background-color: var(--background-tertiary);
     width: 100%;
     height: 100vh;
     padding: 10px;
-    overflow-y: auto;
     border-top-left-radius: 10px;
 }  
 
@@ -184,6 +188,43 @@ button img{
     border: 5px solid var(--background-secondary)
   }
 
+
+/*=-=-=-=-=-=-=- ( Image Viewer ) -=-=-=-=-=-=-=*/
+
+#Media .appHeader{
+  position: absolute;
+}
+
+#imageViewer, #imageBackdrop, #imageDisplay{
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#imageBackdrop, #imageDisplay{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imageBackdrop {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(150px) brightness(0.7);
+}
+
+#imageDisplay {
+    width: 80%;
+    height: calc(100% - 35px);
+    margin-top: 35px;
+    background-size: contain;
+}
 
 /*=-=-=-=-=-=- ( App Mobile ) -=-=-=-=-=-=*/
 
@@ -246,4 +287,8 @@ button img{
 .mobileIfWebapp.webview .webapp{
   margin-top: 0px;
   height: calc(100% + 54px);
+}
+
+.mobile #imageDisplay {
+  width: 100%;
 }

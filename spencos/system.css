@@ -96,12 +96,38 @@ h3{
   filter: invert(0);
 }
 
-[desktop-setting-debug-outlines='true'] #settingButtonOutlines, [desktop-setting-acc-reduced-motion='true'] #settingButtonReducedMotion {
-    border: 1px solid var(--color-primary);
-}
-
 [desktop-setting-debug-outlines='true'] *{
   border: 1px solid red !important;
+}
+
+/*Buttons toggled off by default*/
+[desktop-setting-debug-outlines='true'] #settingButtonOutlines, [desktop-setting-acc-reduced-motion='true'] #settingButtonReducedMotion,
+[desktop-setting-style-nightlight='true'] #settingButtonNightlight {
+  border: 1px solid var(--color-primary);
+}
+
+/*Buttons toggled on by default*/
+#settingButtonSplashscreen {
+  border: 1px solid var(--color-primary);
+}
+
+[desktop-setting-style-splashscreen='true'] #settingButtonSplashscreen{
+  border: 1px solid var(--border-primary);
+}
+
+/*Layers*/
+#nightlight{
+  display: none;
+  background-color: rgba(181, 81, 0, 0.3);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+}
+
+[desktop-setting-style-nightlight='true'] #nightlight {
+  display: block;
 }
 
 /*Desktop*/
@@ -377,7 +403,7 @@ nav a {
  text-decoration: none;
  user-select: none;
  cursor: pointer;
- transition: background-color 0.1s;
+ transition: background-color 0.1s, padding 0.1s, font-size 0.1s;
  animation: easeInFromBottom 0.2s;
 }
 
@@ -492,6 +518,13 @@ nav a:active img, #startIcons a:active img{
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+    @keyframes fadeInAndAway {
+    0% { opacity: 0; background-color: rgba(0, 0, 0, 0); }
+    20% { opacity: 1; background-color: rgba(0, 0, 0, 0); }
+    80% { opacity: 1; background-color: rgba(0, 0, 0, 0); }
+    100% { opacity: 1; background-color: black; }
+  }
   
   @keyframes popup {
     0% { opacity: 0; transform: scale(0); }
@@ -594,22 +627,23 @@ nav a:active img, #startIcons a:active img{
   left: 0;
   right: 0;
   z-index: 100;
-  animation: fadeIn 0.2s forwards;
+  animation: fadeInAndAway 1.8s forwards;
+}
+
+[desktop-setting-style-splashscreen='true'] #splash {
+  display: none;
 }
 
 .splashContent{
-  width: 100vw;
-  height: 100vh;
+  width: 300px;
+  height: 200px;
   position: fixed;
-  margin: 0 auto;
-  top: 0;
+  margin: auto;
+  padding: auto;
+  top: -40px;
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-#splash{
-  display: none;
 }
 
 #splashLogo, #splashText{
@@ -658,22 +692,22 @@ nav a:active img, #startIcons a:active img{
 
 .loader:before,
 .loader:after {
-content: '';
-display: block;
-position: absolute;
-top: 0;
-left: 0;
-width: inherit;
-height: inherit;
-border-radius: 50%;
-transform: rotateX(70deg);
-animation: 1s spin linear infinite;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
 }
 
 .loader:after {
-color: #FF3D00;
-transform: rotateY(70deg);
-animation-delay: -.4s;
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: -.4s;
 }
 
 /*Desktop Selector*/
@@ -703,6 +737,17 @@ animation-delay: -.4s;
 }
 
 @media only screen and (max-width: 700px) {
+
+  nav a { 
+    width: 10px;
+    font-size: 0px;
+    padding: 8px 15px;
+  }
+  
+  nav a img{
+    margin-left: -8px;
+  }
+
   #splash{
     visibility: hidden;
   }

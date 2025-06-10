@@ -10,6 +10,9 @@
         <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
     </head>
     <body>
+        <!--Visual Effects-->
+        <div id="nightlight"></div>
+
         <!--Animation Div-->
         <div id="content">
 
@@ -36,7 +39,7 @@
             <!--Notifications stored here-->
             <div id="notify">
                 <h1>Notifications</h1>
-                <img src="spencos/images/cat.gif">
+                <img src="spencos/images/cat.gif" class="viewable">
                 <h2>Nothing to see here~</h2>
             </div>
 
@@ -64,6 +67,20 @@
 
                 <!--Apps are stored here-->
                 <div class="apps">
+                    <div class="app" id="Media">
+                        <div class="appHeader" id="ImageViewerHeader">
+                            <ul>
+                                <img src="spencos/images/apps/MediaIcon.webp">
+                                <span>Image Viewer</span>
+                                <li class="typeClose" onclick="appFunction('Media', 'close')">x</li>
+                                <li class="typeSize" onclick="appFunction('Media', 'maximize')">+</li>
+                                <li onclick="appFunction('Media', 'toggle')">-</li>
+                            </ul>
+                        </div>
+                        <div id="imageBackdrop"></div>
+                        <div id="imageDisplay"></div>   
+                    </div>
+
                     <div class="app" id="SpiderWeb">
                         <div class="appHeader" id="SpiderWebHeader">
                             <ul>
@@ -110,7 +127,7 @@
                                                 <div class="profileCard nitro">
                                                     <div class="profileHeader">
                                                         <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
-                                                        <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
+                                                        <img src="global/media/images/ska/pfp.webp" class="userPicture viewable" title="PFP by @nbb3_G">
                                                         <img src="global/media/icons/emotes/idle.webp" class="userStatus">
                                                         <div class="userIcons"> 
                                                             <img src="global/media/icons/emotes/stand.webp" class="viewable" onclick="play('JoJo')">
@@ -228,7 +245,7 @@
                             <div class="profileCard nitro">
                                 <div class="profileHeader">
                                     <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
-                                    <img src="global/media/images/ska/pfp.webp" class="userPicture modal-button" href="#profileModal" title="PFP by @nbb3_G">
+                                    <img src="global/media/images/ska/pfp.webp" class="userPicture viewable" title="PFP by @nbb3_G">
                                     <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
                                     <div class="userIcons hoverText slideUp"> 
@@ -277,12 +294,13 @@
                                     <div class="pageView centeredMobile">
                                         <div id="SettingsPageStyle" class="page mainPage">
                                             <h2>Appearance</h2>
-                                            <h3>Wallpaper</h3>
+                                            <h3>Wallpaper & Theme</h3>
                                             <div id="wallpaperPreview"></div>
                                             <button onclick="document.getElementById('test').click();"><img src="global/images/seal/wallpaperSet.png" class="invert">Select Image</button>
                                             <button onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
-                                            <hr><h3>Theme</h2>
                                             <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button>
+                                            <hr><h3>Effects</h2>
+                                            <button id="settingButtonNightlight" onclick="changeSetting('setting-style-nightlight')">Night Light</button>
                                             <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
                                             <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
                                         </div>
@@ -293,12 +311,14 @@
                                         <div id="SettingsPageDevTools" class="page">
                                             <h2>Dev Tools</h2>
                                             <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
-                                            <hr><h2>More</h2>
-                                            <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'block'">Splash Screen</button>
+                                            <hr><h2>Splash Screen</h2>
+                                            <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
+                                            <button id="settingButtonSplashscreen" class="offMobile" onclick="changeSetting('setting-style-splashscreen')">Enable Splash</button>
                                         </div>
                                         <div id="SettingsPageHome" class="page">
                                             <h2>About SpencOS</h2>
-                                            <span>SoonTM</span>
+                                            <h3>Version 6.10.2025 Beta</h3><br>
+                                            <h3>Welcome to Spencer's Operating System, a clean and fairly-realistic OS experience right inside your browser developed using HTML, CSS, and JS</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -349,7 +369,7 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
 
                 <div class="app" id="Ska.Space">
                     <div class="appHeader" id="Ska.SpaceHeader">
@@ -406,21 +426,18 @@
                 <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
             </nav>
         </div>
+
         <div id="shutdown">
             <div class="splashContent">
                 <span class="loader"></span>
                 <h1>Shutting Down</h1>
             </div>
         </div>
-
-
-
         <div id="splash">
-
             <img src="global/media/icons/logos/tree.png" id="splashLogo">
             <h1 id="splashText">SpencOS</h1>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="spencos/system.js"></script>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="spencos/system.js"></script>
 </html>
