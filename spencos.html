@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="spencos/system.css">
         <link rel="stylesheet" href="spencos/apps.css">
         <link rel="stylesheet" href="global/css/posts.css">
-        <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.png">
+        <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.webp">
     </head>
     <body>
         <!--Visual Effects-->
@@ -46,9 +46,9 @@
             <div id="ccenter">
                 <h1>Action Center</h1>
                 <ul id="startIcons" class="typeCCenter">
-                    <li onclick="uiFunction('Audio', 'toggle')"><img src="spencos/images/icons/soundOff.png" id="audioToggle" class="invert">Audio</li>
+                    <li onclick="changeSetting('audio')"><img id="audioToggle" class="audioIcon invert">Audio</li>
                     <li onclick="document.getElementById('switchTheme').click()"><img src="spencos/images/icons/theme.png" class="invert">Theme</li>
-                    <li onclick="appFunction('Settings', 'toggle')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
+                    <li onclick="appFunction('Settings', 'open'); uiFunction('CCenter')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
                     <li onclick="document.getElementById('test').click()"><img src="global/images/seal/wallpaperSet.png" class="invert">Wallpaper</li>
                     <li onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="invert">Clear WP</li>
                 </ul>
@@ -170,7 +170,7 @@
                                             </div>
                                             <div>
                                                 <a href="https://github.com/SkaDoesThings/SpencOS">
-                                                    <h1><img src="global/media/icons/logos/tree.png">SpencOS</h1>
+                                                    <h1><img src="global/media/icons/logos/tree.webp">SpencOS</h1>
                                                     <span>2022 &#x2022 C#</span>
                                                     <h2>An 'OS' designed in WinForms. Contains apps such as Ropapsi and even a calculator before iPadOS</h2>
                                                     </h2>
@@ -414,14 +414,14 @@
 
             <!--Taskbar, Holds Potential Apps-->
             <nav id="taskbar">
-                <a id="startButton" onclick="uiFunction('Start')"><img src="global/media/icons/logos/tree.png"></a>
+                <a id="startButton" onclick="uiFunction('Start')"><img src="global/media/icons/logos/tree.webp"></a>
                 <div id="peekBar" onclick="uiFunction('Peek')"></div>
                 <div id="navright" onclick="uiFunction('Notify')">
                     <h1 id="date-time"></h1>
                 </div>
                 <div id="statusBar" onclick="uiFunction('CCenter')">
                     <img src="spencos/images/icons/wifi.png" class="invert">
-                    <img src="spencos/images/icons/soundOff.png" id="audioIcon" class="invert">
+                    <img class="audioIcon invert">
                 </div>
                 <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
             </nav>
@@ -434,7 +434,7 @@
             </div>
         </div>
         <div id="splash">
-            <img src="global/media/icons/logos/tree.png" id="splashLogo">
+            <img src="global/media/icons/logos/tree.webp" id="splashLogo">
             <h1 id="splashText">SpencOS</h1>
         </div>
     </body>

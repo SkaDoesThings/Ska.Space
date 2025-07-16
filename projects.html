@@ -15,7 +15,7 @@
 			<span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <label for="switchTheme" class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')"></label>
+            <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
             <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
 			<a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
@@ -46,14 +46,14 @@
 			<article>
 				<h1 id="pageTitle">Projects</h1>
 				<div id="featuredBoxes">
-					<div>
+					<div class="box">
 						<a href="https://github.com/SkaDoesThings/Ska.Space">
 							<h1><img src="global/media/images/ska/wumpus.webp">Ska.Space</h1>
 							<span>2024-2025 &#x2022 HTML, CSS, JS</span>
 							<h2>The website you are currently viewing! My development journey actually started here</h2>
 						</a>
 					</div>
-					<div>
+					<div class="box">
 						<a href="https://github.com/SkaDoesThings/Cyan">
 							<h1><img src="global/images/cyan/cyan.webp">Cyan Bot</h1>
 							<span>2025 &#x2022 Python</span>
@@ -61,17 +61,17 @@
 							</h2>
 						</a>
 					</div>
-					<div>
+					<div class="box">
 						<a href="https://github.com/SkaDoesThings/SpencOS">
-							<h1><img src="global/media/icons/logos/tree.png">SpencOS</h1>
+							<h1><img src="global/media/icons/logos/tree.webp">SpencOS</h1>
 							<span>2022 &#x2022 C#</span>
 							<h2>An 'OS' designed in WinForms. Contains apps such as Ropapsi and even a calculator before iPadOS</h2>
 							</h2>
 						</a>
 					</div>
 				</div>
-				<button id="showHiddenItem" onclick="showHiddenItem()">View More</button>
-				<div id="startHidden">
+				<button id="hiddenButtonOtherProjects" class="hiddenButton center" onclick="showHiddenItem('OtherProjects')">View More</button>
+				<div id="hiddenItemOtherProjects" class="hiddenItem">
 					<h2 class="divider">School-Era Sites (Images)</h2>
 					<div class="listbox centered">
 						<a onclick="backgroundViewer('../global/media/images/projects/amoray.webp')">Amoray Pizza (2022)</a>

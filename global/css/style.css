@@ -70,7 +70,7 @@ hr {
 
 /*Content containers*/
 .box, .blog article {
-    background-color: var(--primary-background);
+    background: var(--primary-background);
     border: 1px solid var(--primary-border);
     border-radius: 10px;
     box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
@@ -78,7 +78,8 @@ hr {
 
 /*=-=-=-=-=-=-= ( Universal Themes ) =-=-=-=-=-=-=*/
 
-:root{
+/*Default Style (Dark)*/
+:root {
     --page-background: rgb(45, 42, 42);
     --page-wallpaper: url('../media/backgrounds/skatile.png') center;
     --loading-wallpaper: url('../media/backgrounds/skatile.png') center;
@@ -95,6 +96,10 @@ hr {
     --quartary-color: #efb461;
     --primary-border: rgb(88, 86, 86);
     --secondary-border: rgb(117, 117, 117);
+    --gradient-grays: linear-gradient(180deg, rgb(54, 53, 53), rgb(40, 41, 43));
+    --gradient-shine: linear-gradient(10deg, rgb(88, 86, 86), rgb(152, 150, 150), rgb(88, 86, 86));
+    
+    --icon-theme: url('../media/icons/nav/themeDark.webp');
 }
 
 [data-theme='light'] {
@@ -114,6 +119,8 @@ hr {
     --quartary-color: #f7ad45;
     --primary-border: #c3c3c3;
     --secondary-border: #c3c3c3;
+
+    --icon-theme: url('../media/icons/nav/themeLight.webp');
 }
 
 [data-theme='oled'] {
@@ -324,7 +331,6 @@ nav{
 }
 
 .siteName:hover{
-    border: 0px;
     padding-left: 25px;
 }
 
@@ -424,14 +430,9 @@ nav{
 }
 
 .iconTypeTheme{
-    background-size: 100%;
-    background-image: url('../media/icons/nav/themeDark.webp');
-    background-repeat: no-repeat;
+    content: var(--icon-theme);
 }
 
-[data-theme='light'] .iconTypeTheme {
-    background-image: url('../media/icons/nav/themeLight.webp');
-}
 
 .iconTypeList{
     display: inline-block;
@@ -514,12 +515,12 @@ button:hover, .modalButton:hover{
     border: 1px solid var(--primary-color);
 }
 
-button:active, .modalButton:active {
-    scale: 0.95;
-}
-
 a:active, .viewable:active, .navIcon:active{
     scale: 1.05;
+}
+
+button:active, .modalButton:active, #channels a:active {
+    scale: 0.95;
 }
 
 button img, .modalButton img{
@@ -1268,6 +1269,11 @@ hover-text img{
 
 /*=-=-=-=-=-=-=-=- ( Animations ) -=-=-=-=-=-=-=-=*/
 
+.hiddenItem{
+    display: none;
+    animation: appearOpacity 0.15s forwards;
+}
+
 .fadeOut{
     animation: appearOpacity 0.15s forwards;
 }
@@ -1333,7 +1339,6 @@ hover-text img{
 @keyframes slideDownBelow {
     0% { transform: translateY(-80px); opacity: 0; }
     25% { transform: translateY(-5px); scale: 1; }
-
     60% { transform: translateY(10px); opacity: 1; }
     100% { transform: translateY(0px); opacity: 1; }
 }

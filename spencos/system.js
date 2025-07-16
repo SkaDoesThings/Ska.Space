@@ -10,8 +10,7 @@ function changeTheme(theme) {
   console.log("I give you " + theme);
 }
 
-const data = ['theme', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen']
-
+const data = ['theme', 'audio', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen']
 data.forEach(setting => {
   let state = localStorage.getItem('desktop-' + setting);
   document.documentElement.setAttribute("desktop-" + setting, state);
@@ -47,15 +46,11 @@ checkbox.addEventListener('change', ()=> {
 
 
 //Window Controls
-dragElement(document.getElementById("About Ska"));
-dragElement(document.getElementById("Ska"));
-dragElement(document.getElementById("Settings"));
-dragElement(document.getElementById("Ska.Space"));
-dragElement(document.getElementById("Cloud"));
-dragElement(document.getElementById("SpiderWeb"));
-dragElement(document.getElementById("Cyan"));
-dragElement(document.getElementById("Posts"));
-dragElement(document.getElementById("Media"));
+
+const applist = ['Ska.Space', 'Settings', 'Ska', 'About Ska', 'Cloud', 'SpiderWeb', 'Cyan', 'Posts', 'Media']
+applist.forEach(app => {
+  dragElement(document.getElementById(app));
+});
 
 let apps = document.querySelectorAll('.app');
 apps.forEach(function(app) {
@@ -249,26 +244,6 @@ function uiFunction(name) {
 
     case "CCenter": {
       switchUI("CCenter");
-      break;
-    }
-
-    case "Audio": {
-      var audioToggle = document.getElementById('audioToggle').src;
-      var audioIcon = document.getElementById('audioIcon').src;
-      switch(desktopStateAudio) {
-        case 0:
-          document.getElementById("ccenter").style.animation = "slideUp 0.25s ease 1 normal forwards";
-          document.getElementById("ccenter").style.display = "block";
-          document.getElementById('audioIcon').src = 'spencos/images/icons/soundOn.png';
-          document.getElementById('audioToggle').src = 'spencos/images/icons/soundOn.png';
-          desktopStateAudio = 1
-          break;
-        case 1:
-          document.getElementById('audioIcon').src = 'spencos/images/icons/soundOff.png';
-          document.getElementById('audioToggle').src = 'spencos/images/icons/soundOff.png';
-          desktopStateAudio = 0;
-          break;
-      }
       break;
     }
   }

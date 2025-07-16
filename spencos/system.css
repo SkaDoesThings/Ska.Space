@@ -29,7 +29,7 @@ span, p, a, h1, h2, h3, li, button, #date-time {
 }
 
 h1{
-  font-size: 22pt;
+  font-size: 18pt;
   text-align: center;
 }
 
@@ -185,7 +185,8 @@ h3{
 #ccenter{
   display: none;
   width: 305px;
-  height: 300px;
+  height: auto;
+  padding-bottom: 10px;
   bottom: calc(0% + 50px);
   right: calc(0% + 5px);
   z-index: 51;
@@ -496,6 +497,14 @@ nav a:active img, #startIcons a:active img{
   height: 24px;
 }
 
+
+.audioIcon{
+  content: url('images/icons/soundOff.png');
+}
+
+[desktop-audio='true'] .audioIcon{
+  content: url('images/icons/soundOn.png');
+}
 
 /*Animations*/
 

@@ -286,7 +286,7 @@ button img{
 
 .mobileIfWebapp.webview .webapp{
   margin-top: 0px;
-  height: calc(100% + 54px);
+  height: calc(100% + 56px);
 }
 
 .mobile #imageDisplay {

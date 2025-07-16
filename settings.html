@@ -110,13 +110,29 @@
 						<h2>Toggles</h2>
 						<button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
 						<hr><h2>Sub-Menus</h2>
-						<button id="showHiddenItem" onclick="showHiddenItem()">Hidden Tabs</button>
-						<div id="startHidden" class="centered">
-							<h2 class="divider">Hidden Tabs</h2>
+						<button id="hiddenButtonHiddenTabs" class="hiddenButton" onclick="showHiddenItem('HiddenTabs')">Hidden Setting Tabs</button>
+						<button id="hiddenButtonUnlistedPages" class="hiddenButton" onclick="showHiddenItem('UnlistedPages')">Unlisted Pages</button>
+						<div id="hiddenItemHiddenTabs" class="hiddenItem centered">
+							<h2 class="divider">Hidden Setting Tabs</h2>
 							<p>Proof of concept, does not represent functionality</p>
 							<button onclick="settingPage('settingLogin')">Login</button>
 							<button onclick="settingPage('settingLogout')">Logout</button>
 							<button onclick="settingPage('settingAccount')">Account</button>
+						</div>
+						<div id="hiddenItemUnlistedPages" class="hiddenItem centered">
+							<h2 class="divider">Unlisted Pages</h2>
+							<div class="homeSpace">
+								<h2>Official</h2>
+								<a href="404.html">404</a>
+								<h2>WIP</h2>
+								<a href="galleon/app.html">GG App</a>
+								<a href="gallery.html">Gallery</a>
+								<h2>Misc</h2>
+								<a href="fun/owo.html">owo</a>
+								<a href="fun/hi.html">hi</a>
+								<h2>Utility</h2>
+								<a href="view/discord.html">Discord Redirect</a>
+							</div>
 						</div>
 					</div>
 

@@ -266,13 +266,12 @@ function copyUrl() {
   })
 }
 
-function showHiddenItem() {
-  document.getElementById("showHiddenItem").style.display = "none";
-  document.getElementById("startHidden").style.display = "block";
+function showHiddenItem(name) {
+  document.getElementById("hiddenButton" + name).style.display = "none";
+  document.getElementById("hiddenItem" + name).style.display = "block";
 }
 
-
-//Make all buttons bouncy
+// Make all buttons bouncy
 document.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {
     button.classList.add('clicked');

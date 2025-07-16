@@ -29,7 +29,6 @@ main {
 }
 
 .appHeader{
-    background-color: var(--primary-background);
     border-bottom: 1px solid var(--primary-border);
     width: 100%;
     height: 35px;

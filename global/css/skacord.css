@@ -1,0 +1,221 @@
+#bannerContainer{
+    background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+}
+
+#bannerMain{
+    background-image: url('../global/media/banners/sky.webp');
+}
+
+main{
+    transition: margin 0.25s;
+}
+
+#content{
+    background-color: black;
+    width: 95%;
+    height: 80vh;
+    margin: 50px auto;
+    max-width: none;
+    overflow-y: hidden;
+}
+
+#sidebar{
+    background-color:rgb(38, 38, 38);
+    border-right: 1px solid var(--primary-border);
+    width: 350px;
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: margin 0.2s;
+	z-index: 1;
+}
+
+#spacesList{
+    width: 75px;
+    height: 100%;
+    float: left;
+    overflow: auto;
+}
+
+#spacesList img{
+    width: 55px;
+    height: 55px;
+    margin: 7px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    transition: border-radius 0.2s, border 0.2s;
+}
+
+#spacesList img:hover{
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+#pagesList{
+    background-color:rgb(48, 48, 48);
+    border-left: 1px solid var(--primary-border);
+    width: 274px;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    float: left;
+}
+
+
+#spacesList a span  {
+    visibility: hidden;
+    opacity: 0;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 8px 0px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 1;
+    transition: padding 0.2s, margin 0.2s, visibility 0.2s, opacity 0.2s;
+}
+  
+#spacesList a:hover span {
+    visibility: visible;
+    opacity: 1;
+    padding: 8px 10px;
+    margin-left: 10px;
+}
+
+#spacesList hr{
+    margin-top: 0px;
+    width: 50px;
+}
+
+#spacesList .active img{
+    border: 2px solid white;
+}
+
+#spacesList .active img{
+    border-radius: 25px;
+}
+
+#spacesList .active:before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 40px;
+    border-right: 4px solid white;
+    border-radius: 10px;
+    margin-top: 16px;
+    margin-left: -4px;
+}
+
+#spacesList a:hover:before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 30px;
+    border-right: 4px solid white;
+    border-radius: 10px;
+    margin-top: 23px;
+    margin-left: -4px;
+}
+
+.category{
+	width: 100%;
+	height: auto;
+    margin-top: 10px;
+}
+
+.category span::after{
+	color: var(--text-color);
+	content: "+";
+	float: right;
+	margin-right: 10px;
+}
+
+#channels {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#channels a{
+	background-color: #00000000;
+    border: 1px solid transparent;
+	display: block;
+	width: 100%;
+	text-indent: 5px;
+	height: 35px;
+	font-size: large;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	line-height: 1.8;
+    transition: background-color 0.15s, border-radius 0.15s;
+}
+
+#channels a:hover{
+    background-color: var(--primary-color);
+	border: 1px solid var(--primary-border);
+}
+
+#channels .active{
+	background-color: var(--tertiary-color);
+}
+
+#bottomArea{
+    display: flex;
+    width: 350px;
+    height: 60px;
+    background-color: rgb(54, 54, 54);
+    border-top: 1px solid var(--primary-border);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    bottom: 0;
+}
+
+#channelLoading{
+    display: none;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (min-width: 800px) {
+    main{
+        padding-left: 350px;
+    }
+
+    #sidebar{
+        height: calc(100vh - 140px);
+        margin: 5px;
+        margin-top: 70px;
+        animation: sidebarAppear 0.25s forwards;
+    }
+
+    #channelLoading{
+        left: 350px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #sidebar{
+        height: 100vh;
+        animation: sidebarDisappear 0.25s forwards;
+    }
+}
+
+@keyframes sidebarAppear {
+    0% { transform: translateX(-500px); } 
+    100% { transform: translateX(0px); }
+}
+
+@keyframes sidebarDisappear {
+    0% { transform: translateX(0px); } 
+    100% { transform: translateX(-500px); }
+}

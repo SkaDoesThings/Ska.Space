@@ -15,7 +15,7 @@
             <span>Ska.Space</span>
             </button>
             <button onclick="openNav()" id="navToggle"></button>
-            <label for="switchTheme" class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')"></label>
+            <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
             <a href="settings.html"><img src="global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" title="Settings & More" alt="Settings"></a>
             <a href="seal/search.html"><img src="global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
@@ -45,7 +45,7 @@
             <article> 
                 <h1 id="pageTitle">Posts</h1>
                 <div id="listBoxes">
-                    <a href="post/developing-this-website.html">
+                    <a href="post/developing-this-website.html" class="box">
                         <div>
                             <h1>Developing This Website</h1>
                             <span>August 14th, 2024 &#x2022 Dev</span>
@@ -53,7 +53,7 @@
                         </div>
                         <img src="post/media/dusk.webp">
                     </a>
-                    <a href="post/post-template.html">
+                    <a href="post/post-template.html" class="box">
                         <div>
                             <h1>Markdown Testing</h1>
                             <span>August 14th, 2024 &#x2022 Misc</span>
@@ -61,9 +61,9 @@
                         </div>
                         <img src="global/media/banners/sky.webp">
                     </a>
-                    <div id="startHidden">
+                    <div id="hiddenItemOtherPosts" class="hiddenItem">
                         <h1 class="divider">Other Posts</h1>
-                        <a href="post/bee-movie-script.html">
+                        <a href="post/bee-movie-script.html" class="box">
                             <div>
                                 <h1>Bee Movie Script</h1>
                                 <span>December 21st, 2025 &#x2022 Fun</span>
@@ -73,7 +73,7 @@
                         </a>
                     </div>
                 </div>
-                <button id="showHiddenItem" onclick="showHiddenItem()">Other Posts</button>
+                <button id="hiddenButtonOtherPosts" class="hiddenButton center" onclick="showHiddenItem('OtherPosts')">Other Posts</button>
             </article>
         </main>
     </body>
