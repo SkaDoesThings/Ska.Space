@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <title>Ska.Space - Components</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/card.css">
+		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
+    </head>
+    <body>
+        <nav id="navbox" class="transparency">
+            <a href="settings.html"><- Return to Settings</a>
+            <a onclick="changeThemeToggle('Theme')" style="float: right;">Change Theme</a>
+        </nav>
+
+        <div id="leavingPage"></div>
+
+        <!-- Credit Modal -->
+        <div id="modalViewer" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modalOne">
+                <div class="modal-header">
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                    <h2>Modal One</h2>
+                </div>
+                <div class="modal-body centered">
+                    <p>Hello There</p>
+                    <button onclick="uiFlexFunction('Modal', 'Two')">View Two</button>
+                    <button onclick="uiFlexFunction('Modal', 'Three')">View Three</button>
+                </div>
+            </div>
+            <div class="modal-content" id="modalTwo">
+                <div class="modal-header">
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                    <h2>Modal Two</h2>
+                </div>
+                <div class="modal-body centered">
+                    <p>General Kenobi</p>
+                    <button onclick="uiFlexFunction('Modal', 'One')">View One</button>
+                    <button onclick="uiFlexFunction('Modal', 'Three')">View Three</button>
+                </div>
+             </div>
+             <div class="modal-content" id="modalThree">
+                <div class="modal-header">
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                    <h2>Modal Three</h2>
+                </div>
+                <div class="modal-body centered">
+                    <p>Now it's image time</p>
+                    <img src="global/media/icons/emotes/stand.webp" class="viewable" style="width: 256px;"><br>
+                    <button onclick="uiFlexFunction('Modal', 'One')">View One</button>
+                    <button onclick="uiFlexFunction('Modal', 'Two')">View Two</button>
+                </div>
+             </div>
+        </div>
+
+
+        <div id="imageViewer" onclick="uiFunction('Viewer')">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>   
+            <button title="Close">x</button>
+        </div>
+
+        <main onclick="clickPage()">
+            <article>
+                <h1>a</h1>
+                <a href="settings.html">Regular</a>
+                <div class="homeSpace">
+                    <a href="settings.html">HomeSpace</a>
+                </div>
+
+                <hr><h1>Buttons</h1>
+                <button>Button</button>
+                <button class="bannerButton bannerButtonAnimate" style="position: relative;">Float Prompt</button>
+
+                <hr><h1>Models</h1>
+                <button onclick="uiFlexFunction('Modal', 'One')">Model 1</button>
+                <button onclick="uiFlexFunction('Modal', 'Two')">Model 2</button>
+
+                <hr><h1>BubbleList</h1>
+	            <div class="bubbleList centered">
+                    <div><span>👋 One</span><p>Hello</p></div>
+					<div><span>😺 Two</span><p>World</p></div> 
+                </div>
+
+                <hr><h1>Forms</h1>
+                <form>
+                    <span class="subtitle">Email:</span><br>
+                    <input type="text" name="email" value="" class="formInput typeLarge"><br>
+                    <span class="subtitle">Password:</span><br>
+                    <input type="password" name="password" value="" class="formInput typeLarge"><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </article>
+        </main>
+    </body>
+    <script src="global/scripts/scripts.js"></script>
+</html>

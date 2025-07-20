@@ -18,7 +18,7 @@
 				<span class="spaceName">Ska.Space</span>
 				<span class="sectionName">Cyan Bot</span>
             </button>
-            <button onclick="openNav()" id="navToggle"></button>
+            <button onclick="uiFunction('Drawer')" id="navToggle"></button>
             <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
             <a href="../settings.html"><img src="../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
             <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
@@ -37,9 +37,9 @@
         </nav>
 
         <!-- Credit Modal -->
-        <div id="myModal2" class="modal">
+        <div id="modalViewer" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
+            <div id="modalCredits" class="modal-content">
                 <div class="modal-header">
                     <span class="close">×</span>
                     <h2>Cyan Image Credits</h2>
@@ -93,7 +93,7 @@
                         </article>
                     </div><br><br>
                     <span>Currently made using the <a href="https://github.com/Cog-Creators/Red-DiscordBot" target="_blank">RedBot</a> base and various helpful cogs</span><br><br>
-                    <button class="modalButton modal-button" href="#myModal2">Image Credits</button></span><br>
+                    <button class="modalButton modal-button" onclick="uiFlexFunction('Modal', 'Credits')">Image Credits</button></span><br>
                 </div>
             </article>
         </main>

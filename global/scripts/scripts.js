@@ -74,13 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-function clickPage() {
-  if(UIStateSpaces = 1){
-    uiFunction('Spaces');
-  }
-}
-
-
 window.addEventListener('pageshow', function (event) {
   if (!event.persisted) {
     return;
@@ -93,7 +86,6 @@ window.addEventListener('pageshow', function (event) {
 });
 
 //Image viewer thanks! https://stackoverflow.com/questions/67815853/how-do-i-make-an-image-full-screen-on-click
-function getPics() {} //just for this demo
 const imgs = document.querySelectorAll('.viewable');
 const imageViewer = document.querySelector('#imageViewer');
 const imageBackdrop = document.querySelector('#imageBackdrop');
@@ -113,50 +105,15 @@ function backgroundViewer(given){
     uiFunction('Viewer');
 }
 
-//Mobile navigation
-var opened = false;
-function openNav() {
-  if (opened == false){
-    document.getElementById("navbox").style.height = "351px";
-    setTimeout(function(){document.getElementById("navbox").style.overflowY = "auto";}, 150);
-  }
-  else if (opened == true){
-      closeThatNav();
-  }
-  opened = !opened;
-}
-
-function closeThatNav() {
-  document.getElementById("navbox").style.height = "56px";
-  document.getElementById("navbox").style.overflowY = "hidden";
-  document.getElementById("navbox").scrollTop = 0;
-}
-
-// When the user scrolls down 20px from the top of the document, slide down the navbar
-function scrollFunction() {
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      document.getElementById("buttonTop").style.marginRight = "15px";
-  }
-    else{
-      document.getElementById("buttonTop").style.marginRight = "-100px";
-  }
-}
-
-//Drop Down Menu
-var dropdown = false;
-function dropdownFunction() {
-  if (dropdown == false) {
-    document.getElementById("myDropdown").style.display = "block";
-  }
-  else if (dropdown == true){
-    document.getElementById("myDropdown").style.display = "none";
-  }
-  dropdown = !dropdown;
-}
-
 //UI Toggles
 var UIStateSpaces = false;
+var UIStateDrawer = false;
 var UIStateViewer = false;
+var UIStateModal = false;
+
+var modal = document.getElementById("modalViewer");
+const modalContents = modal.querySelectorAll('.modal-content');
+
 function uiFunction(name) {
   switch(name) {
     case "Spaces": {
@@ -173,6 +130,17 @@ function uiFunction(name) {
       UIStateSpaces = !UIStateSpaces;
       break;
     }
+    case "Drawer": {
+      if (UIStateDrawer == false){
+        document.getElementById("navbox").style.height = "351px";
+        setTimeout(function(){document.getElementById("navbox").style.overflowY = "auto";}, 150);
+        UIStateDrawer = true;
+      }
+      else if (UIStateDrawer == true){
+          closeThatNav();
+      }
+      break;
+    }
     case "Viewer": {
       if (UIStateViewer == false) {
         imageViewer.style.display = "block";
@@ -186,24 +154,23 @@ function uiFunction(name) {
         setTimeout(function(){imageViewer.style.display = "none";}, 150);
       }
       UIStateViewer = !UIStateViewer;
+      break;
     }
-  }
-}
-
-var UIStateModal = false;
-function uiModularFunction(name, item) {
-  switch(name) {
     case "Modal": {
-        var modalContent = item.querySelector(".modal-content");
-        if(UIStateModal == false) {
-        item.style.animation = "appearOpacity 0.15s forwards";
-        item.style.display = "block";
-        modalContent.style.animation = "appearScale 0.3s forwards";
+      console.log("State " + UIStateModal)
+      if(UIStateModal == false) {
+        modal.style.display = "block";
+        modal.style.animation = "appearOpacity 0.15s forwards";
       }
-      else{
-        item.style.animation = "disappearOpacity 0.15s forwards";
-        setTimeout(function(){item.style.display = "none";}, 150);
-        modalContent.style.animation = "disappearScale 0.4s forwards";
+      else {
+        // Ensure all inner-models are closed
+        modalContents.forEach(content => {
+          content.style.animation = "disappearScale 0.4s forwards";
+          setTimeout(function(){content.style.display = "none";}, 150);
+        });
+      
+        modal.style.animation = "disappearOpacity 0.15s forwards";
+        setTimeout(function(){modal.style.display = "none";}, 150);
       }
       UIStateModal = !UIStateModal;
       break;
@@ -211,49 +178,56 @@ function uiModularFunction(name, item) {
   }
 }
 
-//Modal Viewer
-var btn = document.querySelectorAll("button.modal-button");
-var imgbtn = document.querySelectorAll("img.modal-button");
-var modals = document.querySelectorAll('.modal');
-var spans = document.getElementsByClassName("close");
+function uiFlexFunction(name, item) {
+  switch(name) {
+    case "Modal": {
+        var modalContent = document.getElementById("modal" + item);
 
-// When the user clicks the button, open the modal
-for (var i = 0; i < btn.length; i++) {
- btn[i].onclick = function(e) {
-    e.preventDefault();
-    modal = document.querySelector(e.target.getAttribute("href"));
-    uiModularFunction('Modal', modal);
- }
-}
+        // Open model backdrop if closed
+        if(UIStateModal == false) {
+          uiFunction('Modal');
+        }
+        // If model backdrop already open, close all other models. Makes for a seamless transition
+        else{
+          modalContents.forEach(content => {
+            if(content != modalContent) {
+                content.style.animation = "disappearScaleFull 0.4s forwards";
+                setTimeout(function(){content.style.display = "none";}, 150);
+              }
+          });
+        }
 
-// When the user clicks img button, open the modal
-for (var i = 0; i < imgbtn.length; i++) {
-  imgbtn[i].onclick = function(e) {
-     e.preventDefault();
-     modal = document.querySelector(e.target.getAttribute("href"));
-     uiModularFunction('Modal', modal);
-  }
-}
-
-// When the user clicks on <span> (x), close the modal
-for (var i = 0; i < spans.length; i++) {
- spans[i].onclick = function() {
-    for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') {
-        uiModularFunction('Modal', modals[index]);
-      }
+        // Display the selected model
+        modalContent.style.display = "block";
+        modalContent.style.animation = "appearScale 0.3s forwards";
+      break;
     }
   }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') {
-        uiModularFunction('Modal', modals[index]);
-      }
-     }
+  if (event.target.classList.contains('modal')) {
+      uiFunction('Modal');
+  }
+}
+
+function closeThatNav() {
+  document.getElementById("navbox").style.height = "56px";
+  document.getElementById("navbox").scrollTop = 0;
+  // Patch to fix desktop nav cutoff issue
+  if (window.matchMedia("(max-width: 800px)").matches){
+    document.getElementById("navbox").style.overflowY = "hidden";
+    console.log('test');
+  }
+  // Patch to fix double click issue when navigating back
+  UIStateSpaces = false;
+  UIStateDrawer = false;
+}
+
+function clickPage() {
+  if(UIStateSpaces = 1){
+    uiFunction('Spaces');
   }
 }
 
