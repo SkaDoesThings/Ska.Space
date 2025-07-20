@@ -42,9 +42,67 @@
                 </div>
             </div>
         </nav>
-		
+	
         <div id="leavingPage"></div>
         
+		<!-- Details Modal -->
+        <div id="modalViewer" class="modal">
+			<!-- Modal navigation -->
+			<div id="modalNavigation" class="centered">
+				<h2>Navigation</h2>
+				<button onclick="uiFlexFunction('Modal', 'One')">Discuss</button>
+				<button onclick="uiFlexFunction('Modal', 'Two')">Customize</button>
+				<button onclick="uiFlexFunction('Modal', 'Three')">Expand</button>
+				<button onclick="uiFlexFunction('Modal', 'Four')">Enjoy</button>
+			</div>
+            <!-- Modal content -->
+            <div class="modal-content" id="modalOne">
+                <div class="modal-header">
+					<h2>More Info - Discuss</h2>
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                </div>
+                <div class="modal-body centered">
+					<p>Find you're missing something? You can even make your own 'group chat' using forums. Pretty cool!</p>
+					<img src="../global//images/galleon/forumExamples.webp" loading="lazy" class="viewable">
+                </div>
+            </div>
+			 <div class="modal-content" id="modalTwo">
+                <div class="modal-header">
+					<h2>More Info - Customize</h2>
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                </div>
+                <div class="modal-body centered">
+                    <p>Roles: Thanks to Discord you can now select colors and roles easily!</p>
+					<img src="../global/images/galleon/customizePromo.webp" loading="lazy" class="viewable"><hr>  
+					<p>Emoji: Here are some you can use! My favorites are Gil from <a href="https://www.guilded.gg" target="_blank">Guilded</a>, which the server used to be on, and my silly mascot emojis <img src="../global/images/galleon/ggarc.webp" class="viewable emoji"></p>
+					<img src="../global/images/galleon/emojiPromo.webp" loading="lazy" class="viewable"><hr>
+					<p>Thank you boosters for the extra features!</p>
+                </div>
+            </div>
+			 <div class="modal-content" id="modalThree">
+                <div class="modal-header">
+					<h2>More Info - Expand</h2>
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                </div>
+                <div class="modal-body centered">
+                    <p>I have been working on this server since 2016, so suffice to say a lot has changed! For fun, here's an old screenshot from 2017 before Discord even had categories :p</p>
+					<img src="../global/images/galleon/oldExample.webp" loading="lazy" class="viewable">
+                </div>
+            </div>
+			 <div class="modal-content" id="modalFour">
+                <div class="modal-header">
+					<h2>More Info - Enjoy</h2>
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
+                </div>
+                <div class="modal-body centered">
+					<p>Bots: Listen to music from all platforms with <a href="../cyan/home.html">Cyan</a>, collect cards with Karuta/Mudae, and grow your level with Mee6</p>
+                    <img src="../global/images/galleon/bots.webp" loading="lazy" class="viewable"><hr>
+					<p>Minecraft: I host a 24/7 server with creative and survival worlds</p>
+					<img src="../global/images/galleon/llamalisted.webp" loading="lazy" class="viewable">
+                </div>
+            </div>
+        </div>
+
         <div id="imageViewer" onclick="uiFunction('Viewer')">
             <div id="imageBackdrop"></div>
             <div id="imageDisplay"></div>
@@ -57,17 +115,17 @@
 					<div class="bannerContent bannerLogo centered">
 						<img src="../global/media/images/glogo.webp" class="mainImage vertical">
 						<span class="mainText">GreatlyGaming</span>
-						<h2>Gaming is great, and so are you</h2>
+						<h1>Gaming is great, and so are you</h1>
 					</div>
 				</div>
-				<a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.png" class="necoArc">Join Today!</button></a>
+				<a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.webp" class="necoArc">Join Today!</button></a>
 			</div>
 			
 			<article>
 				<div class="columnContainer">
 					<article>
 						<h1 class="centered offMobile">Welcome</h1>
-						<h2 class="centeredMobile">You've crossed paths with a laid-back community founded in 2016 that connects people who enjoy the digital world of gaming, anime, tech, VR, and more!</h2>
+						<h2 class="centeredMobile">You've crossed paths with a laid-back community founded by <a href="../index.html">Ska</a> in 2016 that connects people who enjoy the digital world of gaming, anime, tech, VR, and more!</h2>
 						<div class="centered">
 							<button class="inviteButton mainJoinDiscord" onclick="window.open('https://discord.gg/EcTssJF5Md', '_blank');">Discord</button>
 							<button class="inviteButton mainJoinSteam" onclick="window.open('https://steamcommunity.com/groups/GreatlyGaming', '_blank');">Steam</button>
@@ -78,13 +136,12 @@
 					</article>
 				</div><br>
 				<div class="bubbleList centered"> 
-					<div><span>👋 Discuss</span><p>Talk about whatever suits your interests, there will always be a place for it</p></div>
-					<div><span>😺 Explore</span><p>Countless roles, colors, and emojis to express yourself best</p></div>
-					<div><span>📩 Expand</span><p>A design that is always reinterated on to discover what's best</p></div>
-					<div><span>🚀 Enjoy</span><p>Power up with bots, movie / game nights, and even Minecraft servers!</div>
-				</div><br>
-			</article><br>
-
+					<div onclick="uiFlexFunction('Modal', 'One')"><span>👋 Discuss</span><p>Talk about whatever suits your interests, there will always be a place for it</p></div>
+					<div onclick="uiFlexFunction('Modal', 'Two')"><span>😺 Customize</span><p>Countless roles, colors, and emojis to express yourself best</p></div>
+					<div onclick="uiFlexFunction('Modal', 'Three')"><span>📩 Expand</span><p>A design that is always reinterated on to discover what's best</p></div>
+					<div onclick="uiFlexFunction('Modal', 'Four')"><span>🚀 Enjoy</span><p>Power up with bots, movie / game nights, and even Minecraft servers!</div>
+				</div><p class="centered">Click the cards if you want to view examples</p>
+			</article>
 			<img src="../global/media/icons/emotes/sailboat.webp" class="sailImage viewable">
 		</main>
 	</body>

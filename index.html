@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="global/css/card.css">
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/images/ska/wumpus.webp" />
     </head>
-    <body class="supportMovingBG">
+    <body id="bodyHome" class="supportMovingBG">
         <nav id="navbox" class="transparency">
             <a href="index.html"><img src="global/media/images/ska/wumpus.webp" class="navIcon iconLeft rounded mobileCenter" title="Logo & Home Button" alt="Site Logo and Home Button"/></a>
             <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
@@ -40,8 +40,8 @@
             <!-- Modal content -->
             <div class="modal-content" id="modalProfile">
                 <div class="modal-header">
-                    <span class="close" onclick="uiFunction('Modal')">×</span>
                     <h2>Profile Image Credits</h2>
+                    <span class="close" onclick="uiFunction('Modal')">×</span>
                 </div>
                 <div class="modal-body centered">
                     <p>🎨PFP by <a href="https://twitter.com/nbb3_G/status/1659994951281934338" target="_blank">@nbb3_G</a> on 𝕏 (Twitter)</p>        
@@ -50,7 +50,6 @@
                 </div>
             </div>
         </div>
-
 
         <div id="imageViewer" onclick="uiFunction('Viewer')">
             <div id="imageBackdrop"></div>
@@ -101,12 +100,12 @@
                                 <span class="user">@ska.exe &#x2022 <a href="fun/owo.html" class="hoverText slideUp">bnuuy<hover-text>ᯓ★</hover-text></hover></a></span><br>
                                 <span class="bio">⭐ Feel free to message me anytime<br>🍂 You can find me on the sites below</span>
                                 <div class="socials centered">
-                                    <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>@SkaGaming</hover-text></a>
-                                    <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
-                                    <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
-                                    <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
-                                    <a href="https://www.x.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
-                                    <a href="https://osu.ppy.sh/users/8787709" target="_blank" class="mainJoinOSU hoverText slideUp"><hover-text>@SKA915</hover-text></a>
+                                    <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="hoverText slideUp"><img src="global/media/icons/logos/logoSteam.webp" class="logoSteam"><hover-text>@SkaGaming</hover-text></a>
+                                    <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><img src="global/media/icons/logos/github.webp" class="logoGitHub"><hover-text>@SkaDoesThings</hover-text></a>
+                                    <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><img src="global/media/icons/logos/logoDiscord.webp" class="logoDiscord"><hover-text>@ska.exe</hover-text></a>
+                                    <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><img src="global/media/icons/logos/instagram.webp" class="logoInstagram"><hover-text>@ska.zip</hover-text></a>
+                                    <a href="https://www.x.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><img src="global/media/icons/logos/x.webp" class="logoTwitter"><hover-text>@SkaDoesThings</hover-text></a>
+                                    <a href="https://osu.ppy.sh/users/8787709" target="_blank" class="mainJoinOSU hoverText slideUp"><img src="global/media/icons/logos/logoOSU.webp" class="logoOSU"><hover-text>@SKA915</hover-text></a>
                                 </div>
                                 <div class="links centered">
                                     <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.webp" class="small" class="mainJoinSteam"/>Games</a>

@@ -185,20 +185,28 @@ main {
     margin-top: 10px;
 }
 
-[data-theme='dark'] #myProfile, [data-theme='oled'] #myProfile, [data-theme='blue'] #myProfile {
-    background: linear-gradient(to bottom, #171111, #9c1f1f);    
+[data-theme='dark'] #myProfile, 
+[data-theme='oled'] #myProfile, 
+[data-theme='blue'] #myProfile {
+    background: linear-gradient(to bottom, #111517, #9c1f1f);    
 
 }
-[data-theme='dark'] .profileCard, [data-theme='oled'] .profileCard, [data-theme='blue'] .profileCard {
-    background: linear-gradient(to bottom, rgb(7, 6, 6), #1b1414, #461e1e, #4a0e0e);
-    color: #a9a9a9 !important;
+[data-theme='dark'] .profileCard, 
+[data-theme='oled'] .profileCard, 
+[data-theme='blue'] .profileCard {
+    background: linear-gradient(to bottom, rgb(6, 6, 7), #15141b, #461e1e, #4a0e0e);
+    color: #a9a9a9;
 }
 
-[data-theme='dark'] .userPicture, [data-theme='oled'] .userPicture, [data-theme='blue'] .userPicture {
+[data-theme='dark'] .userPicture, 
+[data-theme='oled'] .userPicture, 
+[data-theme='blue'] .userPicture {
     border: 6px solid #1d1919;
 }
 
-[data-theme='dark'] .userStatus, [data-theme='oled'] .userStatus, [data-theme='blue'] .userStatus {
+[data-theme='dark'] .userStatus, 
+[data-theme='oled'] .userStatus, 
+[data-theme='blue'] .userStatus {
     background-color: #1d1919;
     border: 5px solid #1d1919;
 }
@@ -230,19 +238,29 @@ main {
     margin-bottom: 15px;
 }
 
-.socials a{
+.socials img{
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-size: 30px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    padding: 5px;
-    transition: background-color 0.2s, width 0.3s, height 0.3s, background-position 0.2s, border-radius 0.2s;
+    border-width: 2px;
+    padding: 2px;
+    border-style: solid;
+    transition: background-color 0.2s, transform 0.15s, border-radius 0.2s ease-out;
     cursor: pointer;
+    -webkit-user-drag: none;
 }  
 
-.imageTypeSocials:active{
-    transform: scale(1.1);
+.socials img:hover, .links a:hover {
+    transform: translateY(-1px);
+}
+
+.socials img:hover{
+    border-radius: 35%;
+}
+
+.socials img:active{
+    scale: 1.05;
 }
 
 .links img{
@@ -259,7 +277,7 @@ main {
     border-radius: 10px;
     text-decoration: none;
     text-align: left;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .links img{
@@ -273,64 +291,54 @@ main {
     background-color: rgba(246, 151, 151, 0.3);
 }
 
-.mainJoinSteam{
-    border: 2px solid #0275A5;
-    background: url(../media/icons/logos/logoSteam.webp) no-repeat center;
+.logoSteam{
+    border-color: rgb(2, 117, 165);
 }
 
-.mainJoinSteam:hover{
-    background: #0275A5 url(../media/icons/logos/logoSteamHover.webp) no-repeat center;
-    background-size: 32px;
+.logoSteam:hover{
+    background-color: rgba(2, 116, 165, 0.8);
+    content: url(../media/icons/logos/logoSteamHover.webp);
 }
 
-.mainJoinGitHub{
-    border: 2px solid #b8b8b8;
-    background: url(../media/icons/logos/github.webp) no-repeat center;
+.logoGitHub{
+    border-color: rgb(184, 184, 184);
 }
 
-.mainJoinGitHub:hover{
-    background-color: #8d8c8c;
+.logoGitHub:hover{
+    background-color: rgba(184, 184, 184, 0.6);
 }
 
-.mainJoinDiscord{
-    border: 2px solid #5865F2;
-    background: url(../media/icons/logos/logoDiscord.webp) no-repeat center;
-    background-size: 28px !important;
+.logoDiscord{
+    border-color: rgb(88, 101, 242);
 }
 
-.mainJoinDiscord:hover{
-    background: #5865F2 url(../media/icons/logos/logoDiscordHover.webp) no-repeat center;
-    background-size: 30px;
+.logoDiscord:hover{
+    background-color: rgba(88, 101, 242, 0.7);
+    content: url(../media/icons/logos/logoDiscordHover.webp);
 }
 
-.mainJoinInstagram{
-    border: 2px solid #f258af;
-    background: url(../media/icons/logos/instagram.webp) no-repeat center;
+.logoInstagram{
+    border-color: rgb(242, 88, 175);
 }
 
-.mainJoinInstagram:hover{
-    background-color: #753c4a;
+.logoInstagram:hover{
+    background-color: rgba(242, 88, 175, 0.3)
 }
 
-.mainJoinTwitter {
+.logoTwitter {
     border: 2px solid rgb(115, 155, 205);
-    background: url(../media/icons/logos/x.webp) center center / 64px no-repeat;
-    transition: background-color 0.2s, border 0.2s;
+} 
+
+.logoTwitter:hover{
+    background-color: rgba(115, 156, 205, 0.6);
 }
 
-.mainJoinTwitter:hover{
-    background-color: rgb(20, 20, 20);
-    background-size: 32px;
+.logoOSU{
+    border-color: rgb(231, 93, 155);
 }
 
-.mainJoinOSU{
-    border: 2px solid #E75D9B;
-    background: url(../media/icons/logos/logoOSU.webp) no-repeat center;
-}
-
-.mainJoinOSU:hover{
-    background: #E75D9B url(../media/icons/logos/logoOSU.webp) no-repeat center;
-    background-size: 34px;
+.logoOSU:hover{
+    background-color: rgb(231, 93, 155, 0.6);
 }
 
 /*It's Mobilin' Time*/
