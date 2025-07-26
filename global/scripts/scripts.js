@@ -121,6 +121,7 @@ function uiFunction(name) {
         document.getElementById("myDropdown").style.display = "block";
         document.getElementById("myDropdown").style.pointerEvents = "none";
         document.getElementById("myDropdown").style.animation = "slideDownBelow 0.3s forwards";
+        // Patch to prevent mouse overlap
         setTimeout(function(){document.getElementById("myDropdown").style.pointerEvents = "all";}, 100);
       }
       else {
@@ -145,7 +146,7 @@ function uiFunction(name) {
       if (UIStateViewer == false) {
         imageViewer.style.display = "block";
         imageViewer.style.animation = "appearOpacity 0.2s forwards";
-        imageBackdrop.style.animation = "appearOpacity 0.6s forwards";
+        imageBackdrop.style.animation = "appearOpacity 0.4s forwards";
         imageDisplay.style.animation = "appearScale 0.3s forwards";
       }
       else{

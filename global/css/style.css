@@ -501,7 +501,7 @@ nav{
 /*=-=-=-=-=-=-= UI Components -=-=-=-=-=-=-=*/
 
 /*Buttons*/
-button, .modalButton{
+button, .button{
     background-color: var(--tertiary-background);
     border: 1px solid var(--primary-border);
     font-size: 14pt;
@@ -514,7 +514,7 @@ button, .modalButton{
     transition: scale 0.05s, background-color 0.15s, border-color 0.15s;
 }
 
-button:hover, .modalButton:hover{
+button:hover, .button:hover{
     background-color: var(--tertiary-color);
     border: 1px solid var(--primary-color);
 }
@@ -523,11 +523,11 @@ a:active, .viewable:active, .navIcon:active{
     scale: 1.05;
 }
 
-button:active, .modalButton:active, #channels a:active {
+button:active, .button:active, #channels a:active {
     scale: 0.95;
 }
 
-button img, .modalButton img{
+button img, .button img{
     width: 22px;
     height: 22px;
     display: block;
@@ -1077,7 +1077,7 @@ hover-text img{
         position: absolute;
         width: 250px;
         height: auto;
-        margin-top: 56px;
+        margin-top: 70px;
         padding: 5px;
         padding-bottom: 10px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -1103,6 +1103,25 @@ hover-text img{
         border-bottom: 1px solid var(--secondary-border);
         padding: 2px;
     }    
+
+    #myDropdown::before, #myDropdown::after{
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 35px;
+        background-color: var(--secondary-background);
+        border: 1px solid var(--secondary-border);
+    }
+
+    #myDropdown::before{
+         top: -20px;
+         left: 15px;
+    }
+
+    #myDropdown::after{
+        top: -20px;
+        right: 15px;
+    }
 
     .dedicatedPage{
         float: right !important; 
@@ -1184,6 +1203,7 @@ hover-text img{
 
     nav {
         width: 98%;
+        max-width: 500px;
         border: 1px solid var(--primary-border);
         border-radius: 20px;
         margin: 5px auto;
