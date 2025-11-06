@@ -102,7 +102,8 @@ h3{
 
 /*Buttons toggled off by default*/
 [desktop-setting-debug-outlines='true'] #settingButtonOutlines, [desktop-setting-acc-reduced-motion='true'] #settingButtonReducedMotion,
-[desktop-setting-style-nightlight='true'] #settingButtonNightlight {
+[desktop-setting-style-nightlight='true'] #settingButtonNightlight, [desktop-setting-taskbar-no-names='true'] #settingButtonTaskbarNames,
+[desktop-setting-taskbar-center='true'] #settingButtonTaskbarCenter {
   border: 1px solid var(--color-primary);
 }
 
@@ -428,6 +429,7 @@ nav a img{
 }
 
 #startButton{
+float: left;
  display: inline-flex;
  padding: 3px 3px;
  margin: 4px;
@@ -736,17 +738,9 @@ nav a:active img, #startIcons a:active img{
   display: none;
 }
 
-/*Native Mobile*/
-
-@media only screen and (min-width: 700px) {
-  .app{
-    top: 30px;
-    left: 30px;
-  }
-}
+/*Remove Taskbar Labels on Mobile & Setting*/
 
 @media only screen and (max-width: 700px) {
-
   nav a { 
     width: 10px;
     font-size: 0px;
@@ -755,6 +749,52 @@ nav a:active img, #startIcons a:active img{
   
   nav a img{
     margin-left: -8px;
+  }
+}
+
+
+[desktop-setting-taskbar-no-names='true'] nav a { 
+  width: 10px;
+  font-size: 0px;
+  padding: 8px 15px;
+}
+  
+[desktop-setting-taskbar-no-names='true'] nav a img{
+    margin-left: -8px;
+}
+
+/*Native Mobile*/
+
+@media only screen and (min-width: 700px) {
+  .app{
+    top: 30px;
+    left: 30px;
+  }
+
+  [desktop-setting-taskbar-center='true'] nav {
+    text-align: center;
+  }
+
+  [desktop-setting-taskbar-center='true'] nav a {
+    float: none;
+    margin-left: auto inherit;
+    margin-right: auto inherit;
+  }
+
+  [desktop-setting-taskbar-center='true'] #startButton {
+    margin-right: 110px;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .onMobile{
+      display: block;
+  }
+
+  .offMobile{
+      display: none;
+      visibility: hidden;
   }
 
   #splash{

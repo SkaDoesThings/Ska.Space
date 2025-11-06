@@ -69,15 +69,15 @@
                         </ul>
                     </div>
                     <div class="windowContent centeredMobile">
-                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" class="mainImage vertical viewable" onclick="play('Yippee')"><hover-text>the silly</hover-text></span></h1>
+                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" id="padoru" class="mainImage vertical" onclick="padoru()"><hover-text>the silly</hover-text></span></h1>
                         <span>I'm Spencer and I enjoy many things revolving around technology and the internet</span>
                         <div class="offPhones">
                             <p>Feel free to explore some spaces below or learn more about me</p>
                             <div class="homeSpace">
-                                <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community Projects</hover-text>Galleon</a>
+                                <a href="galleon/home.html" class="hoverText slideUp"><img src="global/media/images/glogo.webp"><hover-text>My Community & Game Servers</hover-text>GreatlyGaming</a>
                                 <a href="seal/search.html" class="hoverText slideUp"><img src="global/images/seal/sealco.webp"><hover-text>Seal Search & More!</hover-text>Seal Zone</a>
                             </div>
-                            <p class="offMobile">In life it's important to 'always be silly' because why not ✦</p>
+                            <p class="offMobile">In life it's always important to explore and stay silly ✦</p>
                         </div>
                     </div>
                 </div>
@@ -128,9 +128,19 @@
         }
         
         function shakeWindow(){
-            document.getElementById('welcome').classList.remove('shake');
+            document.getElementById('welcome').style.animation = "none";
             setTimeout(function(){             
-                document.getElementById('welcome').classList.add('shake');
+                document.getElementById('welcome').style.animation = "shake 0.1s forwards";
+                document.getElementById('welcome').style.animationIterationCount = "3";
+            }, 5);
+        }
+
+        function padoru(){
+            play('Yippee');
+            document.getElementById('padoru').style.animation = "none";
+            setTimeout(function(){             
+                document.getElementById('padoru').style.animation = "spinItem 0.3s linear";
+                document.getElementById('padoru').style.animationIterationCount = "3";
             }, 5);
         }
 	</script>

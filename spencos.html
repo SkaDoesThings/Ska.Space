@@ -299,6 +299,11 @@
                                             <button onclick="document.getElementById('test').click();"><img src="global/images/seal/wallpaperSet.png" class="invert">Select Image</button>
                                             <button onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
                                             <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button>
+                                            <div class="offMobile">
+                                                <hr><h3>Taskbar</h2>
+                                                <button id="settingButtonTaskbarNames" onclick="changeSetting('setting-taskbar-no-names')">Hide App Labels</button>
+                                                <button id="settingButtonTaskbarCenter" onclick="changeSetting('setting-taskbar-center')">Center Apps</button>
+                                            </div>
                                             <hr><h3>Effects</h2>
                                             <button id="settingButtonNightlight" onclick="changeSetting('setting-style-nightlight')">Night Light</button>
                                             <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
@@ -311,9 +316,11 @@
                                         <div id="SettingsPageDevTools" class="page">
                                             <h2>Dev Tools</h2>
                                             <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
-                                            <hr><h2>Splash Screen</h2>
-                                            <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
-                                            <button id="settingButtonSplashscreen" class="offMobile" onclick="changeSetting('setting-style-splashscreen')">Enable Splash</button>
+                                            <div class="offMobile">
+                                                <hr><h2>Splash Screen</h2>
+                                                <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
+                                                <button id="settingButtonSplashscreen" class="offMobile" onclick="changeSetting('setting-style-splashscreen')">Enable Splash</button>
+                                            </div>
                                         </div>
                                         <div id="SettingsPageHome" class="page">
                                             <h2>About SpencOS</h2>

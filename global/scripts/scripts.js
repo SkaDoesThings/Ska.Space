@@ -112,7 +112,10 @@ var UIStateViewer = false;
 var UIStateModal = false;
 
 var modal = document.getElementById("modalViewer");
-const modalContents = modal.querySelectorAll('.modal-content');
+
+if (modal) {
+  modalContents = modal.querySelectorAll('.modal-content');
+}
 
 function uiFunction(name) {
   switch(name) {

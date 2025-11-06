@@ -10,7 +10,10 @@ function changeTheme(theme) {
   console.log("I give you " + theme);
 }
 
-const data = ['theme', 'audio', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen']
+const data = ['theme', 'audio', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen',
+  'setting-taskbar-appnames', 'setting-taskbar-center'
+]
+
 data.forEach(setting => {
   let state = localStorage.getItem('desktop-' + setting);
   document.documentElement.setAttribute("desktop-" + setting, state);

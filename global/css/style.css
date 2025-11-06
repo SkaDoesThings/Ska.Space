@@ -86,7 +86,7 @@ hr {
     --wallpaper-size: 300px 300px;
     --text-color: rgb(245, 245, 245);
     --primary-background: rgb(40, 41, 43);
-    --secondary-background: rgb(92, 93, 96);
+    --secondary-background: rgb(90, 91, 94);
     --tertiary-background: rgb(79, 79, 82);
     --blurred-background: rgb(59, 57, 57, 0.7);
     --blurred-attribute: blur(25px);
@@ -1353,11 +1353,6 @@ hover-text img{
   animation: clickedObject 0.3s forwards ease-out;
 }
 
-.shake {
-    animation: shake 0.1s forwards;
-    animation-iteration-count: 3;
-}
-
 [data-theme='dark'][data-setting-style-movingbg='true'] .supportMovingBG {
     animation: backgroundMove 60s linear infinite;
 }
@@ -1461,6 +1456,19 @@ hover-text img{
     100% { transform: translate(0px, 0px) rotate(0deg); }
 }
 
+@keyframes spinItem {
+    0%{
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    50%{
+        transform: rotateY(180deg) rotateX(15deg);
+    }
+    100%{
+        transform: rotateY(360deg) rotateX(0deg);
+    }
+}
+
+
 @keyframes rainbow-bg{
     0%, 100% { background-color: rgba(255, 0, 0, 0.3); }
     8%{ background-color: rgb(255,127,0, 0.3); }
@@ -1483,7 +1491,7 @@ hover-text img{
         scroll-behavior: none;
     }
 
-    main, article, #myDropdown, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
+    main, article, #myDropdown, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
         animation-duration: 0s !important;
     }
 
