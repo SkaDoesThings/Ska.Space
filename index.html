@@ -62,14 +62,14 @@
                 <div id="welcome" class="flexOne box window">
                     <div class="appHeader">
                         <ul class="appActions">
-                            <span>📝 Notepad</span>
+                            <span class="offMobile">📝 Notepad</span><span class="onMobile">✨ Ska.Space</span>
                             <li class="typeClose" onclick="shakeWindow()">x</li>
                             <li onclick="shakeWindow()">+</li>
                             <li onclick="shakeWindow()">-</li>
                         </ul>
                     </div>
                     <div class="windowContent centeredMobile">
-                        <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru.webp" id="padoru" class="mainImage vertical" onclick="padoru()"><hover-text>the silly</hover-text></span></h1>
+                        <h1 class="gradientRedWhite">Ska Appears!<img src="global/media/images/ska/padoru.webp" id="padoru" class="mainImage vertical clickable" onclick="padoru()"></h1>
                         <span>I'm Spencer and I enjoy many things revolving around technology and the internet</span>
                         <div class="offPhones">
                             <p>Feel free to explore some spaces below or learn more about me</p>
@@ -85,7 +85,7 @@
                     <div id="myProfile">
                         <div class="profileCard nitro">
                             <div class="profileHeader">
-                                <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/snow.webp')"></div>
                                 <img src="global/media/images/ska/pfp.webp" class="userPicture" onclick="uiFlexFunction('Modal', 'Profile')"title="PFP by @nbb3_G">
                                 <img src="global/media/icons/emotes/idle.webp" class="userStatus">
                                 <div class="userIcons"> 

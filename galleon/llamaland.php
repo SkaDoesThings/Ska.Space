@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+	<head>
+		<title>LlamaLand</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../global/css/style.css">
+		<link rel="stylesheet" href="../global/css/galleon.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../global/media/images/llama.jpg"/>
+        <style>
+            [data-theme='dark'] body{
+                background-color :rgb(37, 36, 36);
+                background-image: url('../global/images/galleon/dirt.webp');
+                background-size: 500px;
+                background-repeat: repeat;
+                opacity: 1;
+            }
+            
+            [data-theme='dark'] article{
+                background-image: url('../global/images/galleon/stone.webp');
+                background-size: 100px;
+                background-repeat: repeat;
+                opacity: 1;
+            }            
+        </style>
+	</head>
+	<body>
+        <nav id="navbox" class="transparency">
+            <a href="../index.html"><img src="../global/media/images/glogo.webp" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Galleon"/></a>
+            <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
+				<img src="../global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
+				<span class="spaceName">Ska.Space</span>
+				<span class="sectionName">Galleon</span>
+            </button>
+            <button onclick="uiFunction('Drawer')" id="navToggle"></button>
+            <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
+            <a href="../settings.html"><img src="../global/media/icons/nav/settings.png" class="navIcon iconTypeGear invert rotate" alt="Settings"></a>
+            <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
+            <div id="linkContainer">
+                <h2 class="onMobile">Galleon</h2> 
+                <a href="home.html" >Group</a>
+				<a href="llamaland.html" class="active">LlamaLand</a>
+                <div id="myDropdown" class="dropdown-content">
+                    <hr class="onMobile"><h2>Spaces</h2>
+                    <a href="../index.html"><img src="../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
+                    <a href="../galleon/home.html" class="active"><img src="../global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
+                    <a href="../cyan/home.html"><img src="../global/images/cyan/cyan.webp" alt="Logo for Galleon">Cyan Bot</a>
+                    <a href="../seal/search.html"><img src="../global/media/images/sealco.png" alt="Logo for Seal Zone">Seal Zone</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="leavingPage"></div>
+        
+        <div id="imageViewer" onclick="uiFunction('Viewer')">
+            <div id="imageBackdrop"></div>
+            <div id="imageDisplay"></div>
+            <button title="Close">x</button>
+        </div>
+
+		<main class="pageLlama" onclick="clickPage()">
+			<article class="centered">
+                <img src="../global/media/images/llama.jpg" class="sailImage viewable">
+				<h1>LlamaLand</h1>
+                <h2>A private Minecraft community since ~2014</h2><br>		
+
+                <span>Not much else to see here. If you want to join, be sure to message <a href="../index.html">Ska</a> about it and perhaps they'll let you in</span>		
+			
+<?php
+	require __DIR__ . '/src/MinecraftQuery.php';
+	require __DIR__ . '/src/MinecraftQueryException.php';
+	
+	use xPaw\MinecraftQuery;
+	use xPaw\MinecraftQueryException;
+	
+	$Query = new MinecraftQuery( );
+	
+	try
+	{
+		$Query->Connect( 'localhost', 25565 );
+		
+		print_r( $Query->GetInfo( ) );
+		print_r( $Query->GetPlayers( ) );
+	}
+	catch( MinecraftQueryException $e )
+	{
+		echo $e->getMessage( );
+	}
+?>
+            </article>
+		</main>
+	</body>
+	<script src="../global/scripts/scripts.js"></script>
+</html>

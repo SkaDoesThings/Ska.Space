@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html desktop-theme="dark">
+    <head>
+        <title>SpencOS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/card.css">
+        <link rel="stylesheet" href="system.css">
+        <link rel="stylesheet" href="apps.css">
+        <link rel="shortcut icon" type="image/x-icon" href="global/media/icons/logos/tree.webp">
+    </head>
+    <body>
+        <!--Visual Effects-->
+        <div id="nightlight"></div>
+
+        <!--Animation Div-->
+        <div id="content">
+            <!--Desktop, Holds Wallpaper and Apps-->
+            <div id="desktop" onclick="clickDesktop()">
+
+            <div id="container">
+                <div class="app native" id="RSOD">
+                    <div class="appHeader" id="RSODHeader">
+                        <ul>
+                            <img src="spencos/images/apps/SpiderWebIcon.webp">
+                            <span>RSOD</span>
+                            <a href="../index.html"><li class="typeClose">x</li></a>
+                        </ul>
+                    </div>
+                    <h1>- An Error Occured -</h1>  
+                    <h2>There was a problem with your system</h2>
+                    <h2><a href="../spencos.html">Click here to restart</a></h2>   
+                </div>
+            <!--Taskbar, Holds Potential Apps-->
+            <nav id="taskbar">
+                <a id="startButton" onclick="uiFunction('Start')"><img src="../global/media/icons/logos/tree.webp"></a>
+                <div id="peekBar" onclick="uiFunction('Peek')"></div>
+                <div id="navright" onclick="uiFunction('Notify')">
+                    <h1 id="date-time"></h1>
+                </div>
+                <div id="statusBar" onclick="uiFunction('CCenter')">
+                    <img src="images/icons/wifi.png" class="invert">
+                    <img class="audioIcon invert">
+                </div>
+                <a id="RSODIcon" style="display: inline-flex;"><img src="images/apps/Ska.SpaceIcon.webp">RSOD</a>
+            </nav>
+        </div>
+    </body>
+</html>

@@ -249,6 +249,14 @@ function showHiddenItem(name) {
   document.getElementById("hiddenItem" + name).style.display = "block";
 }
 
+function animateItem(id, type){
+  switch(type) {
+    case "spin": {
+      document.getElementById(id).style.transform = "rotate(360deg)";
+    }
+  }
+}
+
 // Make all buttons bouncy
 document.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {

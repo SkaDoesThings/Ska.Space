@@ -420,9 +420,13 @@ nav{
     float: right;
     margin-left: 5px;
     margin-right: 3px;
-    margin-top: 10px;
+    margin-top: 11px;
     transition: transform 0.7s ease-in-out;
     cursor: pointer;
+}
+
+#iconSettings:active{
+    transform: rotate(-30deg);
 }
 
 .floatLeft, .iconLeft{
@@ -780,6 +784,10 @@ hover-text img{
 .viewable{
     cursor: pointer;
     transition: box-shadow 0.2s;
+}
+
+.clickable{
+    cursor: pointer;
 }
 
 /*Thanks to https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*/

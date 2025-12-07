@@ -1,5 +1,23 @@
 /*=-=-=-=-=- ( Base Properties ) -=-=-=-=-=*/
 
+#RSOD{
+  display: block;
+  position: fixed;
+  width: 600px !important;
+  height: 300px !important;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 60px;
+  resize: none;
+}
+
+#RSOD h2 {
+    text-indent: 20px;
+}
+
+
 [id="Ska.Space"] {
     width: 1200px;
     height: 700px;
