@@ -14,7 +14,7 @@
 tw-story{
 	background-color: rgb(40, 41, 43);
     background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover !important;
   	background-position: center;
 }  
 
@@ -29,15 +29,17 @@ img{
 /*Section Backgrounds*/
 
 tw-story[tags~="sky"] {
-  background-color: rgb(41, 75, 92);
+    background-color: rgb(41, 75, 92);
+    background: linear-gradient(0deg, rgb(41, 75, 92) 0%,rgb(61, 55, 62) 100%);
 }
 
 tw-story[tags~="forest"] {
   background-color: rgb(30, 51, 33);
+  background: linear-gradient(0deg, rgb(20, 41, 33) 0%, rgb(30, 51, 33) 100%);
 }
 
 tw-story[tags~="babayaga"] {
-  background-color: rgb(45, 30, 45);
+  background: linear-gradient(0deg, rgba(25, 50, 45) 0%, rgba(45, 30, 45) 100%);
 }
 
 tw-story[tags~="cabin"] {
@@ -45,7 +47,24 @@ tw-story[tags~="cabin"] {
 }
 
 tw-story[tags~="conflict"] {
-  background-color: rgb(66, 36, 36);
+   background: linear-gradient(0deg, rgb(36, 26, 26) 0%, rgb(66, 36, 36) 100%);
+}
+
+tw-story[tags~="castle"] {
+    background: linear-gradient(0deg, rgba(75, 50, 35) 0%, rgba(45, 55, 65) 100%);
+}
+
+tw-story[tags~="castle_entrance"] {
+    background-color: rgb(41, 75, 92);
+    background: linear-gradient(180deg, rgb(41, 65, 82) 0%,rgb(61, 55, 62) 75%);
+}
+
+tw-story[tags~="castle_hall"] {
+    background: linear-gradient(0deg, rgba(50, 50, 50) 0%, rgba(35, 35, 45) 100%);
+}
+
+tw-story[tags~="castle_cold"] {
+    background: linear-gradient(0deg, rgba(30, 40, 50) 0%, rgba(60, 60, 85) 100%);
 }
 
 tw-story[tags~="storm1"] {
@@ -66,7 +85,7 @@ tw-story[tags~="storm4"] {
 }
 
 tw-story[tags~="sunset"] {
-  background: linear-gradient(0deg,rgba(171, 97, 62, 1) 0%, rgba(27, 53, 94, 1) 100%);
+  background: linear-gradient(-10deg,rgba(165, 97, 62, 1) 0%, rgba(27, 53, 80, 1) 100%);
 }
 
 /*Art Images*/
@@ -100,6 +119,36 @@ tw-story[tags~="img_peek_in"] {
   background-image: url('AnikaGameImages/babayaga_crop.png');
 }
 
+tw-story[tags~="img_ivan_frame"] {
+  background-image: url('AnikaGameImages/ivan_frame.png');
+}
+
+tw-story[tags~="img_ivan_brothers"] {
+  background-image: url('AnikaGameImages/ivan_brothers.webp');
+}
+
+tw-story[tags~="img_ivan_free"] {
+  background-image: url('AnikaGameImages/ivan_free.webp');
+}
+
+tw-story[tags~="img_ivan_dead"] {
+  background-image: url('AnikaGameImages/ivan_dead.webp');
+  background-position: bottom;
+}
+
+tw-story[tags~="img_ivan_encounter"] {
+  background-image: url('AnikaGameImages/ivan_encounter.webp');
+}
+
+tw-story[tags~="img_ivan_throne"] {
+  background-image: url('AnikaGameImages/ivan_throne.webp');
+  background-position: top;
+}
+
+tw-story[tags~="img_wildman"] {
+  background-image: url('AnikaGameImages/wildman.png');
+}
+
 /*Section Properties
 
 tw-story[tags~="no-undo"] tw-sidebar tw-icon[title="Undo"] {
@@ -114,26 +163,26 @@ tw-story[tags~="no-undo"] tw-sidebar tw-icon[title="Undo"] {
 
 100% {opacity: 1;}
 } */
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">//test</script><tw-tag name="no-undo" color="red"></tw-tag><tw-tag name="forest" color="green"></tw-tag><tw-tag name="babayaga" color="purple"></tw-tag><tw-tag name="peek-in" color="purple"></tw-tag><tw-tag name="cabin" color="orange"></tw-tag><tw-tag name="purple" color="purple"></tw-tag><tw-tag name="sky" color="blue"></tw-tag><tw-tag name="conflict" color="orange"></tw-tag><tw-tag name="skjy" color="green"></tw-tag><tw-tag name="storm1" color="blue"></tw-tag><tw-tag name="storm2" color="blue"></tw-tag><tw-tag name="storm3" color="blue"></tw-tag><tw-tag name="storm4" color="blue"></tw-tag><tw-tag name="sunset" color="yellow"></tw-tag><tw-tag name="sky1" color="orange"></tw-tag><tw-tag name="img_babayaga_mad" color="blue"></tw-tag><tw-tag name="img_babayaga_cabin" color="blue"></tw-tag><tw-tag name="img_babayaga_talk" color="purple"></tw-tag><tw-tag name="img_introp" color="red"></tw-tag><tw-tag name="img_intro" color="blue"></tw-tag><tw-tag name="img_forest" color="red"></tw-tag><tw-tag name="forest_frame" color="blue"></tw-tag><tw-tag name="img_forest_frame" color="blue"></tw-tag><tw-tag name="\" color="green"></tw-tag><tw-tag name="img_peek_in" color="yellow"></tw-tag><tw-tag name="img_title" color="blue"></tw-tag><tw-passagedata pid="1" name="Title Screen" tags="no-undo img_title" position="125,50" size="100,100">//Anika: The Run From Death//
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">//test</script><tw-tag name="no-undo" color="red"></tw-tag><tw-tag name="forest" color="green"></tw-tag><tw-tag name="babayaga" color="purple"></tw-tag><tw-tag name="peek-in" color="purple"></tw-tag><tw-tag name="cabin" color="orange"></tw-tag><tw-tag name="purple" color="purple"></tw-tag><tw-tag name="sky" color="red"></tw-tag><tw-tag name="conflict" color="orange"></tw-tag><tw-tag name="skjy" color="green"></tw-tag><tw-tag name="storm1" color="blue"></tw-tag><tw-tag name="storm2" color="blue"></tw-tag><tw-tag name="storm3" color="blue"></tw-tag><tw-tag name="storm4" color="blue"></tw-tag><tw-tag name="sunset" color="yellow"></tw-tag><tw-tag name="sky1" color="orange"></tw-tag><tw-tag name="img_babayaga_mad" color="blue"></tw-tag><tw-tag name="img_babayaga_cabin" color="blue"></tw-tag><tw-tag name="img_babayaga_talk" color="purple"></tw-tag><tw-tag name="img_introp" color="red"></tw-tag><tw-tag name="img_intro" color="blue"></tw-tag><tw-tag name="img_forest" color="red"></tw-tag><tw-tag name="forest_frame" color="blue"></tw-tag><tw-tag name="img_forest_frame" color="blue"></tw-tag><tw-tag name="\" color="green"></tw-tag><tw-tag name="img_peek_in" color="yellow"></tw-tag><tw-tag name="img_title" color="blue"></tw-tag><tw-tag name="img_ivan_brothers" color="red"></tw-tag><tw-tag name="img_ivan_frame" color="orange"></tw-tag><tw-tag name="img_ivan_dead" color="blue"></tw-tag><tw-tag name="img_ivan_free" color="purple"></tw-tag><tw-tag name="castle" color="purple"></tw-tag><tw-tag name="castle_hall" color="yellow"></tw-tag><tw-tag name="castle_cold" color="yellow"></tw-tag><tw-tag name="castle_entrance" color="green"></tw-tag><tw-tag name="img_ivan_throne" color="green"></tw-tag><tw-tag name="img_ivan_encounter" color="green"></tw-tag><tw-tag name="img_wildman" color="green"></tw-tag><tw-passagedata pid="1" name="Title Screen" tags="no-undo img_title" position="125,50" size="100,100">//Anika: The Run From Death//
 
 [[Play|Intro]]
 
-(Names Redacted)
+(Names Redacted For Privacy)
 
 (set: $karma to 0)</tw-passagedata><tw-passagedata pid="2" name="Intro-Anika" tags="img_intro" position="375,50" size="100,100">You are Anika the Warrior, a boastful knight and (text-colour:(hsl:0,0.8039,0.5,0.45))[violent] hero(?) known by many throughout Russia.
 
-On his journeys across the land, Anika ended up in Jerusalem and destroyed the Holy Sephere.
+On his journeys across the land, Anika ended up in Jerusalem and destroyed the Holy Sepulchre.
 
-An unknown man came to Anika, and when the arrogant warrior challenged him, the man revealed himself to not be a man, but Death itself. Death had come for Anika to kill him as punishment for his life of violence and anger.
+An unknown man came to Anika, and when the arrogant warrior challenged him, the man revealed himself to not be a man, but Death itself. In a fatal turn of events, death had come for Anika to kill him as punishment for his life of violence and anger.
 
-Death ignored Anika’s cries for mercy and charged at him fully prepared to slash its scythe. But miraculously, Anika managed to dodge the attack and escape. Now on the run across Russia from Death… Can he escape unscathed? Or will he succumb to Death’s cold embrace?
+Death ignored Anika’s cries for mercy and charged at him fully prepared to slash its scythe. But miraculously, Anika managed to dodge the attack and escape. Anika returned to his homeland in Russia to find answers. Now on the run across Russia from Death… Can he escape unscathed? Or will he succumb to Death’s cold embrace?
 
-[[Continue|Flee]]</tw-passagedata><tw-passagedata pid="3" name="Flee" tags="forest img_forest_frame" position="500,50" size="100,100">As Anika fled from his almost certainly inevitable end, he ended up in the countryside of Russia.
+[[Continue|Flee]]</tw-passagedata><tw-passagedata pid="3" name="Flee" tags="forest img_forest_frame" position="500,50" size="100,100">After Anika fled from his almost certainly inevitable end, he eventually ended up in the countryside of Russia.
 
 (link: &quot;Take a moment to breathe. &quot;) [(show: ?breathe)] |breathe)[The lingering adrenaline of undergoing a near death experience has left Anika dazed and confused. But despite the swirling thoughts consuming his mind, along with any degree of hope of surviving crumbling apart, the thought of Death still following his trail jolts him up before he has time to recover.
 
 [[Continue walking.|Vasalisa 1]]
-]	</tw-passagedata><tw-passagedata pid="4" name="Vasalisa 1" tags="forest img_forest" position="125,350" size="100,100">The fear of getting lost in the endless swaths of trees, with potential danger lurking behind every corner, normally feels oppresive. Yet this time, it provides a sense of security.
+]</tw-passagedata><tw-passagedata pid="4" name="Vasalisa 1" tags="forest img_forest" position="125,350" size="100,100">The fear of getting lost in the endless swaths of trees, with potential danger lurking behind every corner, normally feels oppressive. Yet this time, it provides a sense of security.
 
 (link: &quot;Wait, what&#39;s that sound?&quot;) [(show: ?the_sound)] |the_sound)[A young girl appears from behind a tree, clutching a doll close to herself.
 
@@ -159,11 +208,11 @@ Due to all of these warnings, though, Vasalisa claims she will finally reconside
 
 [[What if Baba Yaga could help me with death?|Baba Yaga 1]]</tw-passagedata><tw-passagedata pid="8" name="Intro" tags="img_title" position="250,50" size="100,100">[[Blue text|Intro]] moves forward and reveals information.
 
-If you downloaded this game and do not see any background images, ensure the &#39;AnikaGameImages&#39; folder exists in the same folder as the game file, or that your browser supports .webp
+If you downloaded this game and do not see any background images, ensure the &#39;AnikaGameImages&#39; folder exists in the same folder as the game file, and is not a .zip folder. Also ensure your browser supports .webp
 
 Humanity often commits to decisions that some may deem regrettable, and others may not. It is important to consider the journey you wish to fulfill.
 
-[[Understood.|Intro-Anika]]</tw-passagedata><tw-passagedata pid="9" name="Baba Yaga 1" tags="babayaga" position="550,350" size="100,100">Anika, walking up to Baba Yaga&#39;s fenceline, was filled with questions. &quot;Who weaves bones and skulls across the paremeter, and who were these people previously?&quot;
+[[Understood.|Intro-Anika]]</tw-passagedata><tw-passagedata pid="9" name="Baba Yaga 1" tags="babayaga" position="550,350" size="100,100">Anika, walking up to Baba Yaga&#39;s fenceline, was filled with questions. &quot;Who weaves bones and skulls across the perimeter, and who were these people previously?&quot;
 
 But he realizes there is no justification to question what serves as reminder of his own violence.
 
@@ -185,21 +234,21 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 (link: &quot;Anika felt frustrated, but the fear of Death knocking on the door snaps him out of it.&quot;)[(show: ?text1)] |text1)[(text-colour:(#93b893))[&quot;Take this flaming feather, it appeared on my doorstep and I do not want anything to do with it. Perhaps it will prove useful in your future endeavors.&quot;]
 
 [[Accept the item.|Baba Yaga 3]]]
-(set: $golden_feather to true)</tw-passagedata><tw-passagedata pid="12" name="Traverse 2" tags="sky no-undo" position="925,350" size="100,100">Anika ran from Baba Yaga’s cabin as fast as possible, and upon leaving the forest found a strange structure made of stone at the base of a hill. As Anika cautiously started walking up to it, he heard voices call out &quot;help!&quot;
+(set: $golden_feather to true)</tw-passagedata><tw-passagedata pid="12" name="Traverse 2" tags="no-undo sky" position="925,350" size="100,100">Anika ran from Baba Yaga’s cabin as fast as possible, and upon leaving the forest found a strange structure made of stone at the base of a hill. As Anika cautiously started walking up to it, he heard voices call out &quot;help!&quot;
 
 (link: &quot;Who&#39;s speaking?&quot;)[(show: ?the_sound)] |the_sound)[&quot;Help!&quot; the sound echos again.
 
-[[Visit the entrance of the structure.|Prince Ivan 1]]]</tw-passagedata><tw-passagedata pid="13" name="Prince Ivan 1" tags="" position="1050,350" size="100,100">Anika walked into what he discovered is a dungeon. The voices belong to a cell holding two men, who upon seeing him, started begging him to be released. The men told Anika that they were falsely accused of a crime and cast away to this dungeon. Anika looked at the men suspiciously. They started aruging further about how unfair it is that everybody else they know is able to roam so freely.
+[[Visit the entrance of the structure.|Prince Ivan 1]]]</tw-passagedata><tw-passagedata pid="13" name="Prince Ivan 1" tags="img_ivan_brothers" position="1050,350" size="100,100">Anika walked into what he discovered is a dungeon. The voices belong to a cell holding two men, who upon seeing him, started begging him to be released. The men told Anika that they were falsely accused of a crime and cast away to this dungeon. Anika looked at the men suspiciously. They started aruging further about how unfair it is that everybody else they know is able to roam so freely.
 
 (link: &quot;Leave the men inside the cell.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Prince Ivan 2-1&quot;)]
 
 (link: &quot;Release the men.&quot;)[(goto: &quot;Prince Ivan 2-2&quot;)]
 
-(set: $golden_feather to true)</tw-passagedata><tw-passagedata pid="14" name="Prince Ivan 2-1" tags="no-undo" position="1175,300" size="100,100">Anika chose to ignore the men in the cell, leaving the dungeon to promptly meet another man in the entrance way, completely startling both of them.
+(set: $golden_feather to true)</tw-passagedata><tw-passagedata pid="14" name="Prince Ivan 2-1" tags="no-undo img_ivan_throne" position="1175,300" size="100,100">Anika chose to ignore the men in the cell, leaving the dungeon to promptly meet another man in the entrance way, completely startling both of them. He escorted them to the castle at the top of the hills, and furthermore a throne room of all places which baffled Anika.
 
-(link: &quot;Who are you?&quot;) [(show: ?prince_ivan)] |prince_ivan)[&quot;You may call me Prince Ivan, although I am now known as King Ivan throughout these lands after my father stepped down from the throne. Those men are my brothers, who I have imprisoned for treason. Have they been causing you trouble(text-style:&quot;fade-in-out&quot;)[?]&quot;
+(link: &quot;Who are you, exactly?&quot;) [(show: ?prince_ivan)] |prince_ivan)[&quot;You may call me Prince Ivan, although I am now known as King Ivan throughout these lands after my father stepped down from the throne. Those men are my brothers, who I have imprisoned for treason. Have they been causing you trouble(text-style:&quot;fade-in-out&quot;)[?]&quot;
 
-[[They have not. I understand the situation and wish you a good day.|Prince Ivan 3]]]</tw-passagedata><tw-passagedata pid="15" name="Prince Ivan 2-2" tags="no-undo" position="1175,425" size="100,100">Anika chose to free the men, allowing them to escape into the nearby woods. He left the dungeon, only to promptly meet another man in the entrance way.
+[[They have not. I must get going now and wish you a good day.|Prince Ivan 3]]]</tw-passagedata><tw-passagedata pid="15" name="Prince Ivan 2-2" tags="no-undo img_ivan_free" position="1175,425" size="100,100">Anika chose to free the men, allowing them to escape into the nearby woods. He was also about to leave the dungeon, when he promptly met another man who was annoyed after investigating the scene.
 
 (link: &quot;Who are you?&quot;) [(show: ?prince_ivan)] |prince_ivan)[You may call me Prince Ivan, although I am now known as King Ivan throughout these lands after my father stepped down from the throne. Those men are my brothers, who I have imprisoned for treason, that is until you let them out.
 
@@ -208,7 +257,7 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 (link: &quot;Help King Ivan.&quot;)[(goto: &quot;Prince Ivan 2-2-1&quot;)]
 
 (link: &quot;Kill King Ivan.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Prince Ivan 2-2-2&quot;)]]
-]</tw-passagedata><tw-passagedata pid="16" name="Prince Ivan 2-2-1" tags="no-undo" position="1300,425" size="100,100">Anika agreed they should both set out after the brothers. Knowing well they are not far away, and by convienently following a trail left behind from their panicked scurry, they swiftly caught up and ambushed the two men. Anika and King Ivan managed to defeat and recapture them, King Ivan giving Anika both his thanks and forgiveness.
+]</tw-passagedata><tw-passagedata pid="16" name="Prince Ivan 2-2-1" tags="no-undo img_ivan_encounter" position="1300,425" size="100,100">Anika agreed they should both set out after the brothers. Knowing well they are not far away, and by convienently following a trail left behind from their panicked scurry, they swiftly caught up and ambushed the two men. Anika and King Ivan managed to defeat and recapture them, King Ivan giving Anika both his thanks and forgiveness.
 
 [[Thank King Ivan for his grace and depart.|Traverse3]]</tw-passagedata><tw-passagedata pid="17" name="Prince Ivan 2-2-2" tags="conflict no-undo" position="1300,550" size="100,100">In a dazed panic, Anika attacked King Ivan who had naively ventured out alone.
 
@@ -216,15 +265,15 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 
 (link: &quot;Swing it again.&quot;)[(show: ?hide)] |hide)[Prince Ivan hid behind trees for cover in-between clashes, but that strategy can only last so long. 
 
-(link: &quot;Deal the final blow.&quot;)[(show: ?defeat)] |defeat)[In his final breaths, King Ivan questioned what makes Anika so ruthless. He told Anika that if, he had any heart left within him to undo this grave misunderstanding, to call out for the gray wolf. But before the request could be considered, Anika sensed Death approaching the scene and ran as fast as he could. 
+(link: &quot;Deal the final blow.&quot;)[(show: ?defeat)] |defeat)[In his final breaths, King Ivan questioned what makes Anika so ruthless. He told Anika that if, he had any heart left within him to undo this grave misunderstanding, to call out for the gray wolf. But before the request could be considered, Anika sensed Death approaching the scene.
 
-[[Run away.|Traverse3]]
+[[Hide King Ivan in the cell.|Prince Ivan 2-3]]
 ]]]
 
 (set: $killed_ivan to true)
 </tw-passagedata><tw-passagedata pid="18" name="Traverse3" tags="forest" position="1450,350" size="100,100">Anika found himself in the wilderness of Russia’s country once again. (if: $golden_feather is true)[&quot;Perhaps that flaming feather belongs to his firebird as the tales proclaim? I should have negotiated better, but then again what use would any of the brothers have in saving me from my impending doom.&quot;]
 
-[[How can I sense Death nearby already? I need to pick up my pace.|Wild Man 1]]</tw-passagedata><tw-passagedata pid="19" name="Wild Man 1" tags="forest" position="1575,350" size="100,100">Along his travels, he found a wagon of traders being attacked by a hairy beast. It was tearing through the cart as if it was paper. through Anika thought to himself for a moment… &quot;It //has// been a while since I have been able to test my might in battle.&quot;
+[[How can I sense Death nearby already? I need to pick up my pace.|Wild Man 1]]</tw-passagedata><tw-passagedata pid="19" name="Wild Man 1" tags="forest img_wildman" position="1575,350" size="100,100">Along his travels, he found a wagon of traders being attacked by a hairy beast. It was tearing through the cart as if it was paper. through Anika thought to himself for a moment… &quot;It //has// been a while since I have been able to test my might in battle.&quot;
 
 (link: &quot;Attack The Wild Man.&quot;)[(goto: &quot;Wild Man 2-1&quot;)]
 
@@ -232,14 +281,14 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 
 (link: &quot;Swing your sword.&quot;)[(show: ?swing)] |swing)[The mix of the beast’s roars and the warrior’s cries echoed in the forest.
 
-(link: &quot;Swing it again.&quot;)[(show: ?hide)] |hide)[As the clash continued Anika managed to get the upperhand and successfully start landing more hits rather then defending against them.
+(link: &quot;Swing it again.&quot;)[(show: ?hide)] |hide)[As the clash continued Anika managed to get the upper hand and successfully start landing more hits rather then defending against them.
 
 (link: &quot;Deal the final blow.&quot;)[(show: ?defeat)] |defeat)[The Wild Man was swiftly slain before any counterattacks could be dealt.
 
 (link: &quot;&#39;Thank you so much for saving us, we were left defenseless and hopeless against an ambush so far out from civilization.&#39;&quot;)[(show: ?thanks)] |thanks)[The people in the wagon thanked him profusely before heading on their way. Anika felt pride then… for channeling his aggressive demeanor into saving humans in danger for once. Although his celebration is suddenly cut short as he senses Death nearby ready to claim The Wild Man.
 
 [[Run away.|Traverse4-1]]
-]]]]</tw-passagedata><tw-passagedata pid="21" name="Wild Man 2-2" tags="no-undo" position="1700,425" size="100,100">Anika hestiates to attack The Wild Man, wondering about his own safety and whether there is any chance for negotiation. &quot;He appears really strong, what if I could convince him to help me against Death? Then again, who could realistically defeat such a powerful force anyway?&quot;
+]]]]</tw-passagedata><tw-passagedata pid="21" name="Wild Man 2-2" tags="no-undo forest img_wildman" position="1700,425" size="100,100">Anika hestiates to attack The Wild Man, wondering about his own safety and whether there is any chance for negotiation. &quot;He appears really strong, what if I could convince him to help me against Death? Then again, who could realistically defeat such a powerful force anyway?&quot;
 
 (link: &quot;But then, he sensed Death nearby.&quot;)[(show: ?hmm)] |hmm)[His uncertainty left him still for too long, and he failed to act on his chance to be a hero. Death was arriving to the scene to claim the souls of the people the The Wild Man was tearing into. 
 
@@ -258,19 +307,19 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 
 (if: $karma &lt;= 1)[[[Wh- what is this matter?|Redemption]]](if: $karma is 2 or $karma is 3)[[[Wh- what is this matter?|Neutral]]](if: $karma &gt; 3)[[[Wh- what is this matter?|Purgatory]]]]]]
 
-(if: $timer is 2 or $timer &gt; 2)[(stop:)]]</tw-passagedata><tw-passagedata pid="25" name="Redemption" tags="no-undo storm4" position="650,700" size="100,100">&quot;Every time I almost caught up with you to talk, you managed to run away. Destorying Jerusalem’s church is irredeemable and punishment is guarenteed, but over the course of your journey you have shown great potential toward redeeming yourself. I followed a clean trail left behind by you, contary to your normal behavior. Humans darastically change with a spotlight of death over them all the same, but to see this in you of all people suggests there you still have room for growth in this realm.&quot;
+(if: $timer is 2 or $timer &gt; 2)[(stop:)]]</tw-passagedata><tw-passagedata pid="25" name="Redemption" tags="no-undo storm4" position="650,700" size="100,100">&quot;Every time I almost caught up with you to talk, you managed to run away. Destroying Jerusalem’s church is irredeemable and punishment is guaranteed, but over the course of your journey you have shown great potential toward redeeming yourself. I followed a clean trail left behind by you, contrary to your normal behavior. Humans drastically change with a spotlight of death over them all the same, but to see this in you of all people suggests there you still have room for growth in this realm.&quot;
 
 &quot;(if: $babayaga_oven is true)[I also overheard whispers from the barrier of life and death that you also forced Baba Yaga into the oven, which is pretty funny. ]I will let you have a second chance without any consequences. If you are careful with your actions, and live a long life, you may not see me for a while.&quot;
 
 (link: &quot;Really? This makes no sense to me&quot;)[(show: ?sense)] |sense)[&quot;You sure you want me to change my mind? I will if you continue to talk.&quot;
 
 [[I am thankful, farewell.|Redemption 2]]
-]</tw-passagedata><tw-passagedata pid="26" name="Max: 2 Karma" tags="" position="925,575" size="100,100"></tw-passagedata><tw-passagedata pid="27" name="Max: 1 Karma" tags="" position="425,600" size="100,100"></tw-passagedata><tw-passagedata pid="28" name="Max: 3 Karma" tags="" position="1450,575" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="Max: 4 Karma" tags="" position="1850,575" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="Max: 5 Karma" tags="" position="2500,575" size="100,100"></tw-passagedata><tw-passagedata pid="31" name="Purgatory" tags="no-undo storm4" position="650,950" size="100,100">Death scorns Anika. &quot;Not only was the destruction of Jerusalem’s church disgraceful, but many of the acts you have commited only make your fate more deserved. You were gravely negligent toward supporting others given the circumstances you understood.(if: $killed_ivan is true)[ Think about how unnessesary it was to kill King Ivan. I sense that feather in your pocket, it could have gained his trust.](if: $wildman_option2 is true)[ Think about those traders you abandoned, that was a mess for me to clean up.](if: $leave_vasalisa is true)[ Rumors whisper that Vasalisa is trapped at Baba Yaga&#39;s hut again and is growing deeply hungry too, she is too trusting of her.] You are making me work overtime.&quot; 
+]</tw-passagedata><tw-passagedata pid="26" name="Max: 2 Karma" tags="" position="925,575" size="100,100"></tw-passagedata><tw-passagedata pid="27" name="Max: 1 Karma" tags="" position="425,600" size="100,100"></tw-passagedata><tw-passagedata pid="28" name="Max: 3 Karma" tags="" position="1450,675" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="Max: 4 Karma" tags="" position="1850,575" size="100,100"></tw-passagedata><tw-passagedata pid="30" name="Max: 5 Karma" tags="" position="2500,575" size="100,100"></tw-passagedata><tw-passagedata pid="31" name="Purgatory" tags="no-undo storm4" position="650,950" size="100,100">Death scorns Anika. &quot;Not only was the destruction of Jerusalem’s church disgraceful, but many of the acts you have commited only make your fate more deserved. You were gravely negligent toward supporting others given the circumstances you understood.(if: $killed_ivan is true)[ Think about how unnessesary it was to kill King Ivan. I sense that feather in your pocket, it could have gained his trust.](if: $wildman_option2 is true)[ Think about those traders you abandoned, that was a mess for me to clean up.](if: $leave_vasalisa is true)[ Rumors whisper that Vasalisa is trapped at Baba Yaga&#39;s hut again and is growing deeply hungry too, she is too trusting of her.] You are making me work overtime.&quot; 
 
 (link: &quot;No.. I can do better!&quot;)[(show: ?yes)] |yes)[Death drew its scythe as Anika pleaded for his life, pleads that went ignored as Death struck him down. Anika was damned to an afterlife of agony and suffering in a land of fire.
 
 [[The End|Endscreen]]
-]</tw-passagedata><tw-passagedata pid="32" name="Neutral" tags="no-undo storm4" position="650,825" size="100,100">&quot;Destorying Jerusalem’s church is irredeemable and punishment is guarenteed, but over the course of your journey you have shown potential toward redeeming yourself. The trail left behind you is cleaner than normal, but still not perfect. Humans darastically change with a spotlight of death over them all the same, but to see this in you suggests there you still have room for growth in this realm.&quot;
+]</tw-passagedata><tw-passagedata pid="32" name="Neutral" tags="no-undo storm4" position="650,825" size="100,100">&quot;Destroying Jerusalem’s church is irredeemable and punishment is guaranteed, but over the course of your journey you have shown potential toward redeeming yourself. The trail left behind you is cleaner than normal, but still not perfect. Humans drastically change with a spotlight of death over them all the same, but to see this in you suggests there you still have room for growth in this realm.&quot;
 
 &quot;(if: $babayaga_oven is true)[I also overheard whispers from the barrier of life and death that you also forced Baba Yaga into the oven, which is pretty funny. ]I will let you have a second chance, but you must discard your blade and all other forms of weaponry. If your presence is ever involved while I am doing business, similar judgement will be passed again.&quot;
 
@@ -281,7 +330,7 @@ A dusty dinner table lies on the other side, almost glistening like snow. He doe
 
 The storm had passed no sooner then it arrived. The air was calm, and a soft glow beamed through the clouds. Anika walked away into the sunset of Russia.
 
-[[The End|Endscreen]]</tw-passagedata><tw-passagedata pid="34" name="Neutral 2" tags="sunset" position="800,825" size="100,100">Death vanished into the distant forest’s shadows. Anika stood there for a moment.. and prompty began to smash his sword against a rock outside until it shattered. He decided that, after traveling such a great distance, it would be better to start life anew away from all of his past troubles.
+[[The End|Endscreen]]</tw-passagedata><tw-passagedata pid="34" name="Neutral 2" tags="sunset" position="800,825" size="100,100">Death vanished into the distant forest’s shadows. Anika stood there for a moment.. and promptly began to smash his sword against a rock outside until it shattered. He decided that, after traveling such a great distance, it would be better to start life anew away from all of his past troubles.
 
 The storm had passed no sooner then it arrived. The air was calm, and a soft glow beamed through the clouds. Anika walked away into the sunset of Russia.
 
@@ -293,11 +342,11 @@ Click [(link: &quot;here&quot;)[(goto: &quot;Title Screen&quot;)]] if you wish t
 
 The howling and faint glow grow (link: &quot;stronger&quot;)[(show: ?one)] |one)[(link: &quot;stronger, and stronger&quot;)[(show: ?two)] |two)[[(link: &quot;stronger, and stronger, and stronger yet.&quot;)[(show: ?three)] |three)[stronger, and stronger, and stronger yet.
 
-&quot;Surely someone could arrive and save the day, like many of the tales I have read!&quot; [[[But nobody came-|Death Itself 4]]]]]]]</tw-passagedata><tw-passagedata pid="37" name="Traverse4-1" tags="" position="1850,300" size="100,100">After once again scrambling through the countryside and surpressing thoughts toward his ruthless experiences of killing The Wild Man(if: $ivan_option3 is true)[, and King Ivan which deep down he knew was a particularly egregious case], Anika suddenly found himself in front of an old castle. Its appearance suggests there have not been any visitors for decades, yet the grand doors wrapping around the arched entrace are wide open.
+&quot;Surely someone could arrive and save the day, like many of the tales I have read!&quot; [[[But nobody came-|Death Itself 4]]]]]]]</tw-passagedata><tw-passagedata pid="37" name="Traverse4-1" tags="castle_entrance" position="1850,300" size="100,100">After once again scrambling through the countryside and suppressing thoughts toward his ruthless experiences of killing The Wild Man(if: $ivan_option3 is true)[, and King Ivan which deep down he knew was a particularly egregious case], Anika suddenly found himself in front of an old castle. Its appearance suggests there have not been any visitors for decades, yet the grand doors wrapping around the arched entrance are wide open.
 
-[[Enter the castle|Koshchei 1]]</tw-passagedata><tw-passagedata pid="38" name="Traverse4-2" tags="" position="1850,425" size="100,100">After once again scrambling through the countryside and surpressing thoughts toward the lives taken(if: $ivan_option3 is true)[, along with King Ivan which deep down he knew was a particularly egregious case but did not care enough],  Anika suddenly found himself in front of an old castle. Its appearance suggests there have not been any visitors for decades, yet the grand doors wrapping around the arched entrace are wide open.
+[[Enter the castle|Koshchei 1]]</tw-passagedata><tw-passagedata pid="38" name="Traverse4-2" tags="castle_entrance" position="1850,425" size="100,100">After once again scrambling through the countryside and suppressing thoughts toward the lives taken(if: $ivan_option3 is true)[, along with King Ivan which deep down he knew was a particularly egregious case but did not care enough],  Anika suddenly found himself in front of an old castle. Its appearance suggests there have not been any visitors for decades, yet the grand doors wrapping around the arched entrance are wide open.
 
-[[Enter the castle|Koshchei 1]]</tw-passagedata><tw-passagedata pid="39" name="Koshchei 1" tags="" position="2000,375" size="100,100">Anika finds himself in the main lobby of the castle with ceiling-high doors and windows to be found in every direction. Candles are floating amongst the scenery filling the structure with even more light. The atmopshere is as pleasant as the cool breeze outside.
+[[Enter the castle|Koshchei 1]]</tw-passagedata><tw-passagedata pid="39" name="Koshchei 1" tags="castle" position="2000,375" size="100,100">Anika finds himself in the main lobby of the castle with ceiling-high doors and windows to be found in every direction. Candles are floating amongst the scenery filling the structure with even more light. The atmopshere is as pleasant as the cool breeze outside.
 
 [[Peek out the window to your left|Window View]]
 
@@ -307,27 +356,27 @@ The howling and faint glow grow (link: &quot;stronger&quot;)[(show: ?one)] |one)
 
 (if: $knows_koshchei is not true)[(set: $knows_koshchei to false)]</tw-passagedata><tw-passagedata pid="40" name="Window View" tags="storm1" position="1950,175" size="100,100">Anika gazes at fields of grass, supported by mountinous clouds that loom above the distant skyline of trees. He takes a deep breath and feels relieved to be out of the forest. He wonders how far away from home this castle really is, and if a kingdom once stood amongst these plains. 
 
-[[Return to the main hall.|Koshchei 1]]</tw-passagedata><tw-passagedata pid="41" name="Hallway View" tags="no-undo" position="2050,175" size="100,100">On the walls reside picture frames with the name &quot;King Koshchei&quot;, containing numbers that suggest he lived hundreds of years ago. This sounds familiar to Anika, as he has heard of tales of this man. But then he noticed the portrait was subtly moving, along with the rest of the paintings in this hallway. &quot;Something really strange is going on in this castle&quot;, he thought.
+[[Return to the main hall.|Koshchei 1]]</tw-passagedata><tw-passagedata pid="41" name="Hallway View" tags="no-undo castle_hall" position="2050,175" size="100,100">On the walls reside picture frames with the name &quot;King Koshchei&quot;, containing numbers that suggest he lived hundreds of years ago. This sounds familiar to Anika, as he has heard of tales of this man. But then he noticed the portrait was subtly moving, along with the rest of the paintings in this hallway. &quot;Something really strange is going on in this castle&quot;, he thought.
 
 [[Return to the main hall.|Koshchei 1]]
 
-(set: $knows_katche to true)</tw-passagedata><tw-passagedata pid="42" name="Koshchei 2" tags="" position="2125,375" size="100,100">Anika calmly walks up to the door concealing the unknown, understanding that he is no more likely to die from an attack by guards then from Death itself unless he finds help soon. To his surprise, it begins opening without him laying as much as a finger on it.
+(set: $knows_katche to true)</tw-passagedata><tw-passagedata pid="42" name="Koshchei 2" tags="castle" position="2125,375" size="100,100">Anika calmly walks up to the door concealing the unknown, understanding that he is no more likely to die from an attack by guards then from Death itself unless he finds help soon. To his surprise, it begins opening without him laying as much as a finger on it.
 
-(if: $knows_katche is true)[(link: &quot;Is that him on the throne?&quot;)[(goto: &quot;Koshchei 3-1&quot;)]](if: $knows_katche is not true)[(link: &quot;Who&#39;s that on the throne?&quot;)[(goto: &quot;Koshchei 3-2&quot;)]]</tw-passagedata><tw-passagedata pid="43" name="Koshchei 3-1" tags="" position="2250,300" size="100,100">The decrepit old man is shocked to see a visitor, and introduces himself as Koshchei.
+(if: $knows_katche is true)[(link: &quot;Is that him on the throne?&quot;)[(goto: &quot;Koshchei 3-1&quot;)]](if: $knows_katche is not true)[(link: &quot;Who&#39;s that on the throne?&quot;)[(goto: &quot;Koshchei 3-2&quot;)]]</tw-passagedata><tw-passagedata pid="43" name="Koshchei 3-1" tags="castle" position="2250,300" size="100,100">The decrepit old man is shocked to see a visitor, and introduces himself as Koshchei.
 
 (link: &quot;Pleasure to meet you. Are you really the same Koshchei I saw on the paintings?&quot;)[(show: ?answer)] |answer)[&quot;Indeed I am, it is no secret of mine. Although, to conceal my identity, the new generations outside this castle only know me as Katche. What has brought you to these barren lands?&quot;
 
 (link: &quot;The tales proclaim you are a soul Death has been after for many centuries, may I learn how you have avoided your fate all these years?&quot;)[(show: ?response)] |response)[&quot;Ah, I see. I will reveal my secret to you given the worried expression on your face, although do not expect similar success. The tale goes [[something like..|Koshchei 4]]&quot;]
-]</tw-passagedata><tw-passagedata pid="44" name="Koshchei 3-2" tags="" position="2250,425" size="100,100">The decrepit old man is shocked to see a visitor, and introduces himself as Koshchei.
+]</tw-passagedata><tw-passagedata pid="44" name="Koshchei 3-2" tags="castle" position="2250,425" size="100,100">The decrepit old man is shocked to see a visitor, and introduces himself as Koshchei.
 
 (link: &quot;Pleasure to meet you.&quot;)[(show: ?answer)] |answer)[What has brought you to these barren lands?
 
 (link: &quot;The tales proclaim you are a soul Death has been after for many centuries, may I learn how you have avoided your fate all these years?&quot;)[(show: ?response)] |response)[Ah, I see. I will reveal my secret to you given the worried expression on your face, although do not expect similar success. The tale goes [[something like..|Koshchei 4]]]
-]</tw-passagedata><tw-passagedata pid="45" name="Koshchei 4" tags="" position="2375,375" size="100,100">In that moment before Koshchei could recount where to start, the temperature in the atmosphere began to rapidly drop. Anika was worried that Death would soon arrive, but an idea popped into his head. Whatever he decided, it must be quick before the Koshchei catches on.
+]</tw-passagedata><tw-passagedata pid="45" name="Koshchei 4" tags="castle_cold" position="2375,375" size="100,100">In that moment before Koshchei could recount where to start, the temperature in the atmosphere began to rapidly drop. Anika was worried that Death would soon arrive, but an idea popped into his head. Whatever he decided, it must be quick before the Koshchei catches on.
 
-(link: &quot;Snitch on Katche to Death in attempt to gain its favor.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Koshchei 5-1&quot;)]
+(link: &quot;Snitch on Koshchei to Death in attempt to gain its favor.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Koshchei 5-1&quot;)]
 
-(link: &quot;Leave the castle and figure out a different strategy.&quot;)[(goto: &quot;Koshchei 5-2&quot;)]</tw-passagedata><tw-passagedata pid="46" name="Koshchei 5-1" tags="conflict no-undo" position="2500,300" size="100,100">Anika waited for Death to arrive, and when it finally did he (link: &quot;presented Katche to it&quot;)[(show: ?snitch)] |snitch)[ presented katche to it. 
+(link: &quot;Leave the castle and figure out a different strategy.&quot;)[(goto: &quot;Koshchei 5-2&quot;)]</tw-passagedata><tw-passagedata pid="46" name="Koshchei 5-1" tags="conflict no-undo" position="2500,300" size="100,100">Anika waited for Death to arrive, and when it finally did he (link: &quot;presented Koshchei to it&quot;)[(show: ?snitch)] |snitch)[ presented Koshchei to it. 
 
 &quot;You fool! Why would you dare bring him right to me, let alone snitch so carelessly!&quot;
 
@@ -340,7 +389,7 @@ Using its magic, Death claimed Katche’s soul, so he may finally enter his eter
 (link: &quot;Go, while you still can.&quot;)[(goto: &quot;Death Itself 1&quot;)]
 ]]]</tw-passagedata><tw-passagedata pid="47" name="Koshchei 5-2" tags="no-undo storm1" position="2500,425" size="100,100">Sensing Death nearby, he immediately left Koshchei’s castle, letting the king hide as Death passed by uninterrupted. Despite Anika putting himself in danger, he was content with the possibility that Koshchei would be undiscovered. 
 
-(link: &quot;Run while you still can.&quot;)[(goto: &quot;Death Itself 1&quot;)]</tw-passagedata><tw-passagedata pid="48" name="Prince Ivan 3" tags="" position="1300,300" size="100,100">But before Anika left, he reconized that while King Ivan is a trustworthy individual, he sensed his naivity would not last forever and cause issues with his journey in the future. That is if he managed to live long enough.
+(link: &quot;Run while you still can.&quot;)[(goto: &quot;Death Itself 1&quot;)]</tw-passagedata><tw-passagedata pid="48" name="Prince Ivan 3" tags="img_ivan_throne" position="1300,300" size="100,100">But before Anika left, he recognized that while King Ivan is a trustworthy individual, he sensed his naivety would not last forever and cause issues with his journey in the future. That is if he managed to live long enough.
 
 (link: &quot;Persuade him with the golden feather.&quot;) [(show: ?feather)] |feather)[&quot;You say you found it in the forest? Recently I saw out my window many feathers being plucked from my firebird by my own citizens. Perhaps it was orchestrated by my jealous brothers. Now it is as if they have been scattered into the wind!&quot;
 
@@ -358,7 +407,9 @@ Some connections between tiles do not appear, but they do exist! It is just the 
 
 (if: $karma &lt;= 0)[(link: &quot;Yell at Baba Yaga to get in the oven.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Baba Yaga Oven&quot;)]](if: $karma &gt;= 1)[(link: &quot;Yell at Baba Yaga to get in the oven.&quot;)[(goto: &quot;Baba Yaga Oven&quot;)]]
 
-(if: $karma &lt;= 0)[(link: &quot;Who would do that? Leave without incident.&quot;)[(goto: &quot;Traverse 2&quot;)]](if: $karma &gt;= 1)[(link: &quot;Leave without incident, leaving Vasalisa&#39;s fate uncertain.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Traverse 2&quot;)]]</tw-passagedata></tw-storydata>
+(if: $karma &lt;= 0)[(link: &quot;Who would do that? Leave without incident.&quot;)[(goto: &quot;Traverse 2&quot;)]](if: $karma &gt;= 1)[(link: &quot;Leave without incident, leaving Vasalisa&#39;s fate uncertain.&quot;)[(set: $karma to $karma + 1)(goto: &quot;Traverse 2&quot;)]]</tw-passagedata><tw-passagedata pid="52" name="Prince Ivan 2-3" tags="img_ivan_dead" position="1450,550" size="100,100">Anika left King Ivan at the cell where he first met the brothers, as it was the most discrete area he could think of in the moment.
+
+[[Run as fast as possible to avoid Death.|Traverse3]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
