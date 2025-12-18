@@ -238,7 +238,7 @@ main {
     margin-bottom: 15px;
 }
 
-.socials img{
+.socials a{
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -249,23 +249,16 @@ main {
     transition: background-color 0.2s, transform 0.15s, border-radius 0.2s ease-out;
     cursor: pointer;
     -webkit-user-drag: none;
-}  
-
-.socials img:hover, .links a:hover {
-    transform: translateY(-1px);
 }
 
-.socials img:hover{
+.socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.socials a:hover{
     border-radius: 35%;
-}
-
-.socials img:active{
-    scale: 1.05;
-}
-
-.links img{
-    width: 15px;
-    height: 15px;
+    transform: translateY(-1px);
 }
 
 .links a{
@@ -282,6 +275,8 @@ main {
 
 .links img{
     display: inline-block;
+    width: 15px;
+    height: 15px;
     margin-right: 4px;
     margin-top: -5px;
     vertical-align: middle;
@@ -289,6 +284,7 @@ main {
 
 .links a:hover{
     background-color: rgba(246, 151, 151, 0.3);
+    transform: translateY(-1px);
 }
 
 .logoSteam{
@@ -297,6 +293,9 @@ main {
 
 .logoSteam:hover{
     background-color: rgba(2, 116, 165, 0.8);
+}
+
+.logoSteam:hover img{
     content: url(../media/icons/logos/logoSteamHover.webp);
 }
 
@@ -314,7 +313,10 @@ main {
 
 .logoDiscord:hover{
     background-color: rgba(88, 101, 242, 0.7);
-    content: url(../media/icons/logos/logoDiscordHover.webp);
+}
+
+.logoDiscord:hover img{
+    filter: brightness(0) invert(1);
 }
 
 .logoInstagram{

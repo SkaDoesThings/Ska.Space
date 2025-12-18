@@ -915,7 +915,7 @@ hover-text img{
     margin: 10px;
 }
 
-.homeSpace a{
+.linkButton {
     background-color: var(--tertiary-color);
     border: 2px solid var(--primary-color);
     display: inline-flex;
@@ -930,7 +930,7 @@ hover-text img{
     user-select: none;
 }
 
-.homeSpace img{
+.linkButton img{
     margin-right: 5px;
     width: 26px;
     height: 26px;

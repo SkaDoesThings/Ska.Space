@@ -2,6 +2,14 @@
   background: linear-gradient(45deg, rgb(46, 50, 69), rgb(64, 53, 81));
 }
 
+#bannerContainer{
+  background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+}
+
+#bannerMain{
+  background-image: url('../media/banners/sky.webp');
+}
+
 .promoImageGG{
   display: block;
   width: 90%;
@@ -16,19 +24,18 @@
   content: url('../images/galleon/disPromoLight.webp');
 }
 
-
 .necoArc{
-    width: 120px;
-    height: auto;
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 15px;
+  width: 120px;
+  height: auto;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 15px;
 }
 
 .bannerButton img{
-    margin-top: -90px;
-    transition: width 0.2s, margin-top 0.2s, transform 0.2s;
+  margin-top: -90px;
+  transition: width 0.2s, margin-top 0.2s, transform 0.2s;
 }
 
 .bannerButton:hover img{
@@ -65,50 +72,54 @@
   margin-right: auto;
 }
 
-.inviteButton{
-    width: 140px;
-    height: 55px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
-    font-size: 16pt;
-    text-indent: 45px;
-    cursor: pointer;
-    border-radius: 15px;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, border-radius 0.2s;
+.inviteButton{ 
+  background-color: transparent;
+  margin-top: 20px;
+  font-size: 16pt;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, border-radius 0.2s;
 }
 
 .inviteButton:hover{
-  border: 3px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.inviteButton img{
+  width: 32px;
+  height: 32px;
 }
 
 .mainJoinDiscord{
-    border: 3px solid #5865F2;
-    background: url(../../global/media/icons/logos/logoDiscord.webp) no-repeat 8px 5px;
-    background-position: 8px 5px;
-    background-size: 40px;
+  border: 3px solid #5865F2;
+}
+
+.mainJoinDiscord:hover{
+  background-color: #5865F2;
 }
 
 .mainJoinSteam{
   border: 3px solid #0275A5;
-  background: url(../../global/media/icons/logos/logoSteam.webp) no-repeat 8px 4px;
-  background-size: 38px;
-  background-position: 10px 6px;
-}
-
-.mainJoinDiscord:hover{
-  background: #5865F2 url(../../global/media/icons/logos/logoDiscordHover.webp) no-repeat 8px 5px;
-  background-size: 40px;
-  color: white;
 }
 
 .mainJoinSteam:hover{
-  background: #0275A5 url(../../global/media/icons/logos/logoSteamHover.webp) no-repeat 8px 4px;
-  background-size: 38px;
-  background-position: 10px 6px;
-  color: white;
+  background-color: #0275A5;
+}
+
+.mainJoinRoot {
+  border: 3px solid #2755DD;
+}
+
+.mainJoinRoot:hover {
+  background-color: #2755DD;
+}
+
+.mainJoinDiscord:hover img, .mainJoinRoot:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.mainJoinSteam:hover img{
+  content: url(../../global/media/icons/logos/logoSteamHover.webp);
 }
 
 @media only screen and (max-width: 900px) and (min-width: 600px){

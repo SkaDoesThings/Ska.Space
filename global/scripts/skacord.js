@@ -83,40 +83,39 @@ document.querySelectorAll('a').forEach(button => {
 });
 
 const defaultContent = `
-    <div id="bannerContainer" class="placeholderGalleon">
-	<div id="bannerMain" onclick="backgroundViewer('../global/media/banners/sky.webp')">
-		<div class="bannerContent bannerLogo centered">
-			<img src="../global/media/images/glogo.webp" class="mainImage vertical">
-			<span class="mainText">GreatlyGaming</span>
-			<h2>Gaming is great, and so are you</h2>
-		</div>
-	</div>
-	<a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.png" class="necoArc">Join Today!</button></a>
+<div id="bannerContainer" class="placeholderGalleon">
+    <div id="bannerMain" onclick="backgroundViewer('../global/media/banners/sky.webp')">
+        <div class="bannerContent bannerLogo centered">
+            <img src="../global/media/images/glogo.webp" class="mainImage vertical">
+            <span class="mainText">GreatlyGaming</span>
+            <h1>Gaming is great, and so are you</h1>
+        </div>
+    </div>
+    <a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.webp" class="necoArc">Join Today!</button></a>
 </div>
 
 <article>
-	<div class="columnContainer">
-		<article>
-			<h1 class="centered offMobile">Welcome</h1>
-			<h2 class="centeredMobile">You've crossed paths with a laid-back community founded in 2016 that connects people who enjoy the digital world of gaming, anime, tech, VR, and more!</h2>
-			<div class="centered">
-				<button class="inviteButton mainJoinDiscord" onclick="window.open('https://discord.gg/EcTssJF5Md', '_blank');">Discord</button>
-				<button class="inviteButton mainJoinSteam" onclick="window.open('https://steamcommunity.com/groups/GreatlyGaming', '_blank');">Steam</button>
-			</div>
-		</article>
-		<article class="brieflyHidden">
-			<img src="../global/images/galleon/disPromo.webp" class="viewable">
-		</article>
-	</div><br>
-	<div class="bubbleList centered"> 
-		<div><span>👋 Discuss</span><p>Talk about whatever suits your interests, there will always be a place for it</p></div>
-		<div><span>😺 Explore</span><p>Countless roles, colors, and emojis to express yourself best</p></div>
-		<div><span>📩 Expand</span><p>A design that is always reinterated on to discover what's best</p></div>
-		<div><span>🚀 Enjoy</span><p>Power up with bots, movie / game nights, and even Minecraft servers!</div>
-	</div><br>
-</article><br>
-
-<img src="../global/media/icons/emotes/sailboat.webp" class="sailImage viewable">
+    <div class="columnContainer">
+        <article>
+            <h1 class="centered offMobile">Welcome</h1>
+            <h2 class="centeredMobile">You've crossed paths with a laid-back community founded by <a href="../index.html">Ska</a> to connect people who enjoy the digital world of gaming, anime, tech, VR, and more!</h2>
+            <div class="centered">
+                <a class="linkButton inviteButton mainJoinDiscord" href="https://discord.gg/EcTssJF5Md", target="_blank"><img src="../../global/media/icons/logos/logoDiscord.webp">Discord</a>
+                <a class="linkButton inviteButton mainJoinSteam" href="https://steamcommunity.com/groups/GreatlyGaming" target="_blank"><img src="../../global/media/icons/logos/logoSteam.webp">Steam</a>
+                <a class="linkButton inviteButton mainJoinRoot" href="https://rootapp.gg/ACvQAUMWhgqy9u2zASFfpw" target="_blank"><img src="../../global/media/icons/logos/logoRoot.webp">Root</a>
+            </div>
+        </article>
+        <article class="brieflyHidden">
+            <img src="../global/images/galleon/disPromo.webp" class="promoImageGG viewable">
+        </article>
+    </div><br>
+    <div class="bubbleList centered"> 
+        <div onclick="uiFlexFunction('Modal', 'One')"><span>👋 Discuss</span><p>Talk about whatever suits your interests, there will always be a place for it</p></div>
+        <div onclick="uiFlexFunction('Modal', 'Two')"><span>😺 Customize</span><p>Countless roles, colors, and emojis to express yourself best</p></div>
+        <div onclick="uiFlexFunction('Modal', 'Three')"><span>📩 Expand</span><p>A design that is always reinterated on to discover what's best</p></div>
+        <div onclick="uiFlexFunction('Modal', 'Four')"><span>🚀 Enjoy</span><p>Power up with bots, movie / game nights, and even Minecraft servers!</div>
+    </div><p class="centered">GreatlyGaming 2016-2025</p>
+</article>
     `;
 
 const errorContent = `
