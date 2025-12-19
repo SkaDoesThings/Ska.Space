@@ -41,8 +41,9 @@
             <button title="Close">x</button>
         </div>
 
-        <div id="shortcutModal" class="modal">
-			<div class="modal-content">
+      <div id="modalViewer" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modalShortcuts">
 				<div class="modal-header">
 					<span class="close">×</span>
 					<h2>Add Shortcuts</h2>
@@ -61,15 +62,15 @@
 			<img src="../global/images/seal/sealsearch.webp" class="vertical viewable searchLogo">
 			<span class="mainText">Seal Search</span><br>
 
-			<form action="https://www.bing.com/search" method="get" id="searchBing">
-				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
-				<input type="search" autofocus name="q" class="searchBar" placeholder="Search the Worldwide Web"/>
-				<input type="submit" value="🌌" class="searchGo"/>
-			</form>
 			<form action="https://www.google.com/search" method="get" id="searchGoogle">
 				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
-				<input type="search" autofocus name="q" class="searchBar" placeholder="Google It, You Know It"/> 
+				<input type="search" autofocus name="q" class="searchBar" placeholder="Search the Worldwide Web"/> 
 				<input type="submit" value="↪️" class="searchGo"/>
+			</form>
+			<form action="https://www.bing.com/search" method="get" id="searchBing">
+				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
+				<input type="search" autofocus name="q" class="searchBar" placeholder="Bing It, You Know It"/>
+				<input type="submit" value="🌌" class="searchGo"/>
 			</form>
 			<form action="https://www.youtube.com/search" method="get" id="searchYouTube">
 				<img src="../global/media/icons/nav/search.png" class="searchIcon invert">
@@ -98,7 +99,7 @@
 				<button onclick="selectSearch('YouTube');" id="selectYouTube">YouTube</button>
 				<button onclick="selectSearch('X');" id="selectX">𝕏 (Twitter)</button>
 				<button onclick="selectSearch('Reddit');" id="selectReddit">Reddit</button>
-				<button class="modal-button" href="#shortcutModal">+</button>
+				<button onclick="uiFlexFunction('Modal', 'Shortcuts')">+</button>
 			</div>
 
 			<ul id="quickLinks" class="listbox">
@@ -112,7 +113,7 @@
 				<div id="customizeList">
 					<button class="closeList contentColor" onclick="closeList()">X</button>
 					<input id="test" type="file" onchange="loadImageFile(this)"/>
-					<button class="customizeOption modal-button" href="#shortcutModal"><img src="../global/media/icons/nav/search.png" class="spaceNavIcon invert">Add Shortcuts</button>
+					<button class="customizeOption" onclick="uiFlexFunction('Modal', 'Shortcuts')"><img src="../global/media/icons/nav/search.png" class="spaceNavIcon invert">Add Shortcuts</button>
 					<button class="customizeOption" onclick="document.getElementById('test').click();"><img src="../global/images/seal/wallpaperSet.png" class="spaceNavIcon invert">Select Wallpaper</button>
 					<button class="customizeOption" onclick="clearBackground()"><img src="../global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Wallpaper</button>
 				</div>

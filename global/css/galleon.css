@@ -2,8 +2,12 @@
   background: linear-gradient(45deg, rgb(46, 50, 69), rgb(64, 53, 81));
 }
 
+[data-theme='light'] body{
+    background: linear-gradient(45deg, rgb(235, 239, 250), hsl(284, 40%, 91%));
+}
+
 #bannerContainer{
-  background: linear-gradient(to bottom, rgb(96, 116, 194), rgb(178, 90, 212));
+  background: linear-gradient(to bottom, rgb(142, 148, 175), rgb(210, 173, 224));
 }
 
 #bannerMain{
@@ -56,7 +60,7 @@
 }
 
 [data-theme='light'] .bubbleList div{
-  background-color: rgb(242, 234, 242);
+  background-color: rgb(241, 238, 254);
   border: 2px solid #f6b6ff;
 }
 

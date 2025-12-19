@@ -1,5 +1,3 @@
-
-
 function openSealOptions() {
     document.getElementById("customizeList").style.display = "block";
     document.getElementById("buttonCustomize").style.display = "none";
