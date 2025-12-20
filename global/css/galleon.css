@@ -134,13 +134,9 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .inviteButton{
-      width: 64px;
+      width: 32px;
       font-size: 0px;
-  }
-
-  .columnContainer{
-    margin: 0px;
   }
 } 
