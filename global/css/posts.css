@@ -238,7 +238,7 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
     .blog article{
         width: 97%;
         padding-top: 20px;

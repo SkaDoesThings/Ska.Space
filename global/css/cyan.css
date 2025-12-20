@@ -9,7 +9,7 @@
 #cyanHerself{
     width: 200px;
     height: auto;
-    margin: 0;
+    margin: 0px;
     border: 8px solid white;
 }
 
@@ -35,6 +35,7 @@
 }
 
 .cyanDisplay{
+    display: block;
     width: 50%;
     min-width: 250px;
     background: linear-gradient(to top, #3842722a, #fab1f74a), linear-gradient(to right, #3842725f, #fab1f70c);
@@ -47,7 +48,9 @@
 }
 
 .cyanDisplay img{
-    margin-left: 20px;
+    width: 25vw;
+    min-width: 300px;
+    max-width: 400px;
     margin-bottom: -30px;
 }
 
@@ -61,7 +64,7 @@
   cursor: inherit;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
     .medium{
         max-width: 80%;
     }

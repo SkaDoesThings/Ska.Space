@@ -198,7 +198,7 @@ table td{
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
     main{
         padding-top: 15px;
     }
@@ -211,6 +211,10 @@ table td{
 
     #menuContent button{
         width: 100%;
+    }
+
+    #menuContent .sliderButton{
+        width: 56px;
     }
 
     h2{

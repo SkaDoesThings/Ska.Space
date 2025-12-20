@@ -260,7 +260,7 @@ function animateItem(id, type){
 // Make all buttons bouncy
 document.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {
-    button.classList.add('clicked');
-    setTimeout(() => button.classList.remove('clicked'), 300); // Reset after animation
+    button.classList.remove('clicked');
+    setTimeout(() => button.classList.add('clicked'), 5); // Reset after animation
   });
 });

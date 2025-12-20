@@ -186,7 +186,7 @@ main{
     right: 0;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 750px) {
     main{
         padding-left: 350px;
     }
@@ -203,7 +203,7 @@ main{
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
     #sidebar{
         height: 100vh;
         animation: sidebarDisappear 0.25s forwards;

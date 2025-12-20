@@ -149,6 +149,7 @@ hr {
     --primary-color: rgb(106, 156, 186); 
     --secondary-color: rgb(86, 142, 185);
     --tertiary-color: rgb(58, 60, 83);
+    --quartary-color: rgb(47, 73, 95);
     --primary-border: rgb(46, 48, 79);
     --secondary-border: rgb(76, 75, 100);
 }
@@ -193,12 +194,6 @@ hr {
 
 [data-theme='rgb'] body{
     animation: rainbow-bg 4.5s linear infinite;
-}
-
-[data-theme='dark'] #themeButtonDark, [data-theme='light'] #themeButtonLight, [data-theme='red'] #themeButtonRed, [data-theme='blue'] #themeButtonBlue, 
-[data-theme='oled'] #themeButtonOLED, [data-theme='twilight'] #themeButtonTwilight, [data-theme='rgb'] #themeButtonRGB, 
-[data-setting-debug-outlines='true'] #settingButtonOutlines, [data-setting-acc-reduced-motion='true'] #settingButtonReducedMotion, [data-setting-style-movingbg='true'] #settingButtonMovingBG {
-    border: 1px solid var(--primary-color);
 }
 
 [data-setting-debug-outlines='true'] *{
@@ -491,13 +486,13 @@ nav{
     display: flex;
     justify-content: center;
     border-radius: 10px;
-    max-width: 1300px;
+    max-width: 1400px;
 }
 
 .columnContainer article{
     width: 100%;
-    margin-left: 15px;
-    margin-right: 15px; 
+    margin-left: 10px;
+    margin-right: 10px; 
     height: auto;
     border: 0px;
 }
@@ -515,6 +510,7 @@ button, .button{
     cursor: pointer;
     user-select: none;
     transform-origin: center;
+    text-decoration: none;
     transition: scale 0.05s, background-color 0.15s, border-color 0.15s;
 }
 
@@ -540,6 +536,49 @@ button img, .button img{
     margin-right: 5px;
     margin-top: 3px;
     border-radius: 0px;
+}
+
+[data-theme='dark'] #themeButtonDark, [data-theme='light'] #themeButtonLight, [data-theme='red'] #themeButtonRed, [data-theme='blue'] #themeButtonBlue, 
+[data-theme='oled'] #themeButtonOLED, [data-theme='twilight'] #themeButtonTwilight, [data-theme='rgb'] #themeButtonRGB {
+    border: 1px solid var(--primary-color);
+}
+
+/*State Buttons*/
+
+.sliderButton {
+    width: 56px;
+    height: 30px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin-right: 8px;
+    scale: 1;
+}
+
+.sliderButton:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 2px;
+  background-color: var(--text-color);
+  transition: left 0.3s;
+  border-radius: 50%;
+}
+
+[data-theme='light'] .sliderButton:before {
+    background-color: var(--primary-color);
+}
+
+[data-setting-debug-outlines='true'] #settingButtonOutlines, [data-setting-style-movingbg='true'] #settingButtonMovingBG,
+[data-setting-acc-reduced-motion='true'] #settingButtonReducedMotion {
+    background-color: var(--tertiary-color);
+    border: 1px solid var(--primary-color);
+}
+
+[data-setting-debug-outlines='true'] #settingButtonOutlines:before, [data-setting-style-movingbg='true'] #settingButtonMovingBG:before,
+[data-setting-acc-reduced-motion='true'] #settingButtonReducedMotion:before {
+    left: 27px;
 }
 
 /*Forms*/
@@ -894,7 +933,7 @@ hover-text img{
     background-color: rgba(241, 142, 92, 0.1);
     border: 2px solid var(--secondary-color);
     border-radius: 20px;
-    margin: 10px;
+    margin: 8px;
     text-align: left;
     transition: width 0.2s, font-size 0.2s;
 }
@@ -923,7 +962,7 @@ hover-text img{
     height: auto;
     border-radius: 15px;
     font-size: 14pt;
-    margin: 5px;
+    margin: 3px;
     padding: 7px 10px;
     cursor: pointer;
     user-select: none;
@@ -1063,7 +1102,7 @@ hover-text img{
 
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 750px) {
     body{
         background-attachment: fixed;
     }
@@ -1150,7 +1189,7 @@ hover-text img{
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
     /*Disable wallpaper loading screen due to positioning issues*/
     [data-theme='dark'] {
         --loading-wallpaper: rgb(45, 42, 42);
@@ -1296,7 +1335,7 @@ hover-text img{
 
     #imageDisplay{
         margin-top: 5vh;
-        width: 100vw;
+        width: 100vw;z
     }
 
     .listbox a, .engines button{
@@ -1305,12 +1344,12 @@ hover-text img{
     }
 
     #bannerMain{
-        height: 325px;
-        margin-top: -10px;
+        height: 310px;
+        margin-top: 0px;
     }
 
     .bannerContent{
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     .bubbleList {
@@ -1515,7 +1554,7 @@ hover-text img{
     scroll-behavior: none;
 }
 
-[data-setting-acc-reduced-motion='true'] :is(main, article, #myDropdown, .fadeOut, .fadeIn, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
+[data-setting-acc-reduced-motion='true'] :is(main, article, #myDropdown, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
     animation-duration: 0s !important;
 }
 
