@@ -246,8 +246,8 @@ h2{
 }
 
 #pageTitle{
-    font-size: 38pt;
-    margin-bottom: 30px;
+    font-size: 32pt;
+    margin-bottom: 20px;
     text-align: center;
     animation: appearOpacity 1s forwards;
 }
@@ -1335,7 +1335,7 @@ hover-text img{
 
     #imageDisplay{
         margin-top: 5vh;
-        width: 100vw;z
+        width: 100vw;
     }
 
     .listbox a, .engines button{
