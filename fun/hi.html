@@ -21,7 +21,7 @@
             width: auto;
             height: auto;
             transform: translate(-50%, -50%);
-            z-index: -1
+            z-index: -1;
         }
     </style>
     <body>
@@ -48,16 +48,6 @@
             </div>
         </nav>
 
-        <div id="themeMenu">
-            <button id="themeButtonDark" onclick="changeTheme('dark')">Dark Mode</button>
-            <button id="themeButtonLight" onclick="changeTheme('light')">Light Mode</button>
-            <button id="themeButtonOLED" onclick="changeTheme('oled')">The Abyss</button>
-            <button id="themeButtonRed" onclick="changeTheme('red')">Smooth Red</button>
-            <button id="themeButtonBlue" onclick="changeTheme('blue')">It's Blue!</button>
-            <button id="themeButtonTwilight" onclick="changeTheme('twilight')">Twilight</button>
-            <button id="themeButtonRGB" onclick="changeTheme('rgb')">Gamer Lighting</button>
-        </div>
-
         <div id="leavingPage"></div>
         
         <div id="background">
@@ -65,12 +55,17 @@
         </div>
 
         <main onclick="clickPage()">
-            <video controls autoplay>
-                <source src="../global/media/videos/Rick Astley - Never Gonna Give You Up.mp4" type="video/mp4">
+            <video controls autoplay muted loop playsinline>
+                <source src="../global/media/videos/rickroll_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video> 
         </main>
 
     </body>
+    <audio id="rickroll" src="../global/media/videos/rickroll_audio.mp3"></audio>
     <script src="../global/scripts/scripts.js"></script>
+    <script>
+        audio = document.getElementById("rickroll");
+        audio.play();
+    </script>
 </html>
