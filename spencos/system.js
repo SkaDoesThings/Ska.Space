@@ -359,7 +359,7 @@ function appFunction(name, type) {
         else {
           appName.classList.add('resized')
           appName.style.width = "100%";
-          appName.style.height = "calc(100% - 75px)";
+          appName.style.height = "calc(100% - 48px)";
           appName.style.top = "calc(0%)";
           appName.style.left = "calc(0%)";
           appName.style.borderRadius = "0px";

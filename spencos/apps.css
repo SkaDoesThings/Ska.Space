@@ -291,7 +291,7 @@ button:active {
 }
 
 .mobile .content{
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 .mobile .sidebar{
@@ -299,7 +299,7 @@ button:active {
   bottom: 0;
   width: 100%;
   max-width: none;
-  height: 60px;
+  height: 50px;
   padding: 0;
   border-top: 1px solid var(--border-primary);
 }
@@ -320,7 +320,8 @@ button:active {
 .mobile .menuButtons button{
   display: block;
   width: 70px;
-  height: 50px;
+  height: 40px;
+  margin-top: 5px;
   text-align: center;
   font-size: 0px;
 }
@@ -330,6 +331,7 @@ button:active {
   height: 28px;
   display: flex;
   margin-left: 14px;
+  margin-top: 1px;
 }
 
 .mobile #wallpaperPreview{
