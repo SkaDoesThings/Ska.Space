@@ -46,6 +46,7 @@ h3{
   --page-wallpaper:  url('images/wallpaper.webp');
   --wallpaper-size: cover;
   --text-color: rgb(245, 245, 245);
+  --border-radius: 10px;
 
   --blurred-background: rgba(35, 35, 35, 0.7);  
   --blurred-attribute: blur(25px);
@@ -64,7 +65,7 @@ h3{
   --border-secondary: rgb(65, 65, 65);
 }
 
-[desktop-theme='light'] {
+[dset_theme='light'] {
   --page-background: rgb(235, 235, 235);
   --text-color: rgb(51, 51, 51);
   
@@ -84,6 +85,20 @@ h3{
   --border-secondary: #c3c3c3;
 }
 
+[dset_no_transparency='true'] {
+    --blurred-background: rgba(49, 46, 46, 1);  
+    --blurred-attribute: blur(0px);
+}
+
+[dset_no_transparency='true'][dset_theme='light']  {
+    --blurred-background: rgba(225, 228, 230, 1);  
+    --blurred-attribute: blur(0px);
+}
+
+[dset_square_corners='true'] {
+  --border-radius: 0px;
+}
+
 .active, nav a:hover, #startButton:hover a, #navright:hover, #statusBar:hover, #peekBar:hover, #peekBar:hover, #desktopIcons li:hover, .appHeader ul li:hover {
   background-color: var(--element-hover)
 }
@@ -92,28 +107,12 @@ h3{
   filter: invert(1);
 }
 
-[desktop-theme='light'] .invert{
+[dset_theme='light'] .invert{
   filter: invert(0);
 }
 
-[desktop-setting-debug-outlines='true'] *{
+[dset_debug_outlines='true'] *{
   border: 1px solid red !important;
-}
-
-/*Buttons toggled off by default*/
-[desktop-setting-debug-outlines='true'] #settingButtonOutlines, [desktop-setting-acc-reduced-motion='true'] #settingButtonReducedMotion,
-[desktop-setting-style-nightlight='true'] #settingButtonNightlight, [desktop-setting-taskbar-no-names='true'] #settingButtonTaskbarNames,
-[desktop-setting-taskbar-center='true'] #settingButtonTaskbarCenter {
-  border: 1px solid var(--color-primary);
-}
-
-/*Buttons toggled on by default*/
-#settingButtonSplashscreen {
-  border: 1px solid var(--color-primary);
-}
-
-[desktop-setting-style-splashscreen='true'] #settingButtonSplashscreen{
-  border: 1px solid var(--border-primary);
 }
 
 /*Layers*/
@@ -127,7 +126,7 @@ h3{
   z-index: 100;
 }
 
-[desktop-setting-style-nightlight='true'] #nightlight {
+[dset_nightlight='true'] #nightlight {
   display: block;
 }
 
@@ -150,7 +149,8 @@ h3{
 #start, #notify, #ccenter{
   position: fixed;
   display: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.1s;
 }
 
 #start{
@@ -180,7 +180,7 @@ h3{
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 #ccenter{
@@ -210,13 +210,13 @@ h3{
   height: 64px;
   padding: 10px;
   margin-top: 5px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   transition: background-color 0.1s;
 }
 
 #desktopIcons li img{
   width: 48px;
-  border-radius: 10px;
+  border-radius: var(--border-radius)
 }
 
 #desktopIcons li:hover{
@@ -244,7 +244,7 @@ h3{
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 5px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   font-size: 10pt;
   text-align: center;
   user-select: none;
@@ -258,7 +258,7 @@ h3{
 
 #startIcons li img{
   width: 48px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   transition: scale 0.1s;
 }
 
@@ -303,33 +303,6 @@ h3{
 
 }
 
-
-/*App Windows*/
-
-.app{
-    background-color: var(--background-secondary);
-    min-width: 300px;
-    min-height: 100px;
-    border-radius: 10px;
-    display: none;
-    position: absolute;
-    resize: both;
-    overflow: auto;
-    overflow-y: hidden;
-    padding-bottom: 30px;
-    border: 1px solid var(--border-secondary);
-    box-shadow: 5px 8px 16px 3px rgba(0,0,0,0.2);
-}
-
-.appHeader{
-    background-color: var(--background-secondary);
-    width: 100%;
-    height: 35px;
-    cursor: move;
-    z-index: 50px;
-    user-select: none;
-}
-
 audio{
   display: block;
   margin-left: auto;
@@ -337,46 +310,6 @@ audio{
   margin-top: 25px;
 }
 
-.simpleApp{
-  background-color: var(--background-primary);
-}
-
-.webapp{
-    width: 100%;
-    height: 100%;
-}
-
-.appHeader ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.appHeader ul img{
-  width: 24px; 
-  height: 24px; 
-  margin: 5px
-}
-
-.appHeader ul span{
-  position: absolute;
-  margin-top: 5px;
-  margin-left: 2px;
-}
-
-.appHeader ul li {
-    float: right;
-    width: 45px;
-    height: 35px;
-    text-align: center;
-    font-size: 22px;
-    cursor: pointer;
-    transition: background-color 0.1s;
-}
-
-.typeClose:hover{
-    background-color: var(--color-secondary) !important;
-}
 
 /*Taskbar*/
 nav{
@@ -396,17 +329,21 @@ nav{
 }
 
 nav a { 
- float: left;
- display: none;
- text-align: center;
- padding: 8px 20px;
- margin: 3px;
- border-radius: 5px;
- text-decoration: none;
- user-select: none;
- cursor: pointer;
- transition: background-color 0.1s, padding 0.1s, font-size 0.1s;
- animation: easeInFromBottom 0.2s;
+  float: left;
+  display: none;
+  text-align: center;
+  padding: 8px 20px;
+  margin: 3px;
+  border-radius: 5px;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.1s, padding 0.1s, font-size 0.1s;
+  animation: easeInFromBottom 0.2s;
+}
+
+nav a:hover{
+  scale: 1;
 }
 
 nav a:last-child {
@@ -504,7 +441,7 @@ nav a:active img, #startIcons a:active img{
   content: url('images/icons/soundOff.png');
 }
 
-[desktop-audio='true'] .audioIcon{
+[dset_audio='true'] .audioIcon{
   content: url('images/icons/soundOn.png');
 }
 
@@ -641,7 +578,7 @@ nav a:active img, #startIcons a:active img{
   animation: fadeInAndAway 1.8s forwards;
 }
 
-[desktop-setting-style-splashscreen='true'] #splash {
+[dset_no_splashscreen='true'] #splash {
   display: none;
 }
 
@@ -752,14 +689,13 @@ nav a:active img, #startIcons a:active img{
   }
 }
 
-
-[desktop-setting-taskbar-no-names='true'] nav a { 
+[dset_taskbar_no_names='true'] nav a { 
   width: 10px;
   font-size: 0px;
   padding: 8px 15px;
 }
   
-[desktop-setting-taskbar-no-names='true'] nav a img{
+[dset_taskbar_no_names='true'] nav a img{
     margin-left: -8px;
 }
 
@@ -771,17 +707,17 @@ nav a:active img, #startIcons a:active img{
     left: 30px;
   }
 
-  [desktop-setting-taskbar-center='true'] nav {
+  [dset_taskbar_center='true'] nav {
     text-align: center;
   }
 
-  [desktop-setting-taskbar-center='true'] nav a {
+  [dset_taskbar_center='true'] nav a {
     float: none;
     margin-left: auto inherit;
     margin-right: auto inherit;
   }
 
-  [desktop-setting-taskbar-center='true'] #startButton {
+  [dset_taskbar_center='true'] #startButton {
     margin-right: 110px;
   }
 
@@ -804,8 +740,8 @@ nav a:active img, #startIcons a:active img{
   .app{
     max-width: 100%;
     width: 100vw !important;
-    height: calc(100% - 78px) !important;
-    border-radius: 0px;
+    height: calc(100% - 48px) !important;
+    border-radius: 0px !important;
   } 
 
   #start{
@@ -823,71 +759,6 @@ nav a:active img, #startIcons a:active img{
 }
 
 /*Accessibility*/
-[desktop-setting-acc-reduced-motion='true'] :is(#start, #notify, #ccenter, .app, #shutdown, #Settings .page) {
+[dset_reduced_motion='true'] :is(#start, #notify, #ccenter, .app, #shutdown, #Settings .page) {
   animation-duration: 0s !important;
-}
-
-
-/*Hovertext*/
-.hoverText{
-  position: relative;
-}
-
-.hoverText hover-text {
-  background-color: var(--secondary-background);
-  border: 1px solid var(--primary-border);
-  position: absolute;
-  margin: auto;
-  margin-top: -20px;
-  visibility: hidden;
-  opacity: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: max-content;
-  font-size: 12pt;
-  text-align: center;
-  border-radius: 10px;
-  padding: 8px 0px;
-  z-index: 1;
-  transition: padding 0.2s, margin 0.2s, visibility 0.2s, opacity 0.2s;
-  pointer-events: none;
-  user-select: none;
-}
-
-.hoverText:hover hover-text {
-  visibility: visible;
-  padding: 8px 10px;
-  opacity: 1;
-  margin-top: -45px;
-}
-
-hover-text::after {
-  content: " ";
-  position: absolute;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-}
-
-.slideUp hover-text::after{
-  top: 100%;
-  border-color: var(--primary-border) transparent transparent transparent;
-}
-
-.slideDown hover-text{
-  margin-top: 5px;
-}
-
-.slideDown:hover hover-text{
-  margin-top: 35px;
-}
-
-.slideDown hover-text::after {
-  bottom: 100%;
-  border-color: transparent transparent var(--primary-border) transparent;
-}
-
-hover-text img{
-  width: 32px;
 }

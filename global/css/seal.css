@@ -186,7 +186,7 @@ form image{
 .customizeOption{
     display: flex;
     align-items: center;
-    border: 1px solid var(--secondary-border);
+    border: 1px solid var(--border-secondary);
     width: 150px;
     height: 40px;
     font-size: 10pt;
@@ -202,7 +202,7 @@ form image{
     height: 30px;
     font-size: 9pt;
     margin-top: 5px;
-    border: 1px solid var(--secondary-border);
+    border: 1px solid var(--border-secondary);
     border-radius: 15px;
     cursor: pointer;
 }

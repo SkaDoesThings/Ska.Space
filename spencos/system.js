@@ -1,51 +1,75 @@
 // Change localstorage settings on page load
 
-if (!localStorage.getItem('data-theme')) {
-  localStorage.setItem("desktop-theme", "dark");
+if (!localStorage.getItem('dset_theme')) {
+  localStorage.setItem("dset_theme", "dark");
 }
 
 function changeTheme(theme) {  
-  document.documentElement.setAttribute("desktop-theme", theme);
-  localStorage.setItem("desktop-theme", theme);
+  document.documentElement.setAttribute("dset_theme", theme);
+  localStorage.setItem("dset_theme", theme);
   console.log("I give you " + theme);
 }
 
-const data = ['theme', 'audio', 'setting-debug-outlines', 'setting-acc-reduced-motion', 'setting-style-nightlight','setting-style-splashscreen',
-  'setting-taskbar-appnames', 'setting-taskbar-center'
+const settings = ['theme', 'audio', 'debug_outlines', 'reduced_motion', 'nightlight','no_splashscreen',
+              'taskbar_no_names', 'taskbar_center', 'no_transparency', 'square_corners'
 ]
 
-data.forEach(setting => {
-  let state = localStorage.getItem('desktop-' + setting);
-  document.documentElement.setAttribute("desktop-" + setting, state);
+// Immediately initialize settings on page load
+settings.forEach(setting => {
+  // Grab the current localstorage saved state of each setting
+  let state = localStorage.getItem('dset_' + setting);
+  // Update the website with the state
+  document.documentElement.setAttribute("dset_" + setting, state);
+  // Apply styling to the button
+  const button = document.querySelector(`[data-setting="${setting}"]`);
+  // If button (or slider) exists, update its visual style
+  if (button) {
+    button.setAttribute('data_active', state)
+  }
 });
 
-function changeSetting(setting) {  
-  let currentState = localStorage.getItem('desktop-' + setting);
-  let newState;
+
+// The part where settings are actually toggled
+function changeSetting(setting) {
   
-  if (currentState == "true"){
-    newState = "false";
+  let state = localStorage.getItem('dset_' + setting);
+  if (state == "true") {
+    state = "false";
   }
-  else{
-    newState = "true";
+  else {
+    state = "true";
   }
-  document.documentElement.setAttribute("desktop-" + setting, newState);
-  localStorage.setItem("desktop-" + setting, newState);
-  console.log("Set desktop-" + setting + " to " + newState);
+
+  document.documentElement.setAttribute("dset_" + setting, state);
+  localStorage.setItem("dset_" + setting, state);
+  console.log("Set dset_" + setting + " to " + state);
+
+  // Return the toggle state so more code can be done on buttons
+  return state;
 }
 
+// Global button/slider click listener
+// Note: 'dset' stands for desktop setting
+document.addEventListener('click', (e) => {
+  const button = e.target.closest('.sliderButton');
+  if (!button) return;
+
+  const setting = button.dataset.setting;
+  
+  state = changeSetting(setting)
+  button.setAttribute('data_active', state);
+})
 
 const checkbox = document.getElementById("switchTheme");
 
 checkbox.addEventListener('change', ()=> {
-    let theme = localStorage.getItem('desktop-theme');
+    let theme = localStorage.getItem('dset_theme');
     if (theme ==='light'){
         changeTheme('dark')
     }else{
         changeTheme('light')
     }
 });
-
 
 
 //Window Controls
@@ -365,18 +389,21 @@ function openApp(name) {
     newlink.setAttribute("class", "active");
     newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
     newlink.innerHTML = ("<img src='spencos/images/apps/" + name + "Icon.webp'>" + name) 
+    newlink.draggable = "true"; 
     menu.appendChild(newlink);
 
   }
   appName.classList.add('opened')
   document.getElementById(taskbarName).classList.add('active');
-  appName.style.display = "block";
+  appName.style.display = "flex";
   document.getElementById(taskbarName).style.display = "inline-flex";
   appName.style.animation = "popup 0.4s ease 1 normal forwards";
   windowToTop(appName);
 }
 
-//Wallpaper
+// TODO: Taskbar drag and drop
+
+// Wallpaper
 $(switchBackground);
 var oFReader = new FileReader(),
     rFilter = /^(?:image\/bmp|image\/webp|image\/|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
@@ -407,8 +434,8 @@ function clearBackground() {
     window.location.reload()
 }
 
-//Microsoft Copilot made this code, couldn't find anything on the internet
-
+// Microsoft Copilot made this code, couldn't find anything on the internet
+// _/----------------------------\_
 const container = document.getElementById('container'); 
 const selection = document.getElementById('selection'); 
 
@@ -465,7 +492,7 @@ const observer = new ResizeObserver((entries) => {
 });
 
 targetDivs.forEach((div) => observer.observe(div))
-
+// -\___________________________/-
 // Back to my code
 
 function pageView(appName, selection){

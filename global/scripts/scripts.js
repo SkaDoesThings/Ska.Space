@@ -6,11 +6,28 @@ if (!localStorage.getItem('data-theme')) {
 function changeThemeToggle() {
   let state = localStorage.getItem('data-theme');
   if (state == "dark")
-    changeTheme('light')
+    changeTheme('light');
   else{
-    changeTheme('dark')
+    changeTheme('dark');
   }
 }
+
+function changeThemeTest(theme) {
+  document.body.style.animation = "changeThemeExit 0.8s forwards";
+  document.getElementById("changingTheme").style.animation = "appearOpacity 0.5s forwards";
+  setTimeout(function(){
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("data-theme", theme);
+    console.log("I give you " + theme);
+  }, 600);
+  setTimeout(function(){
+   document.body.style.animation = "changeThemeReturn 0.8s forwards";
+  }, 700);
+  setTimeout(function(){
+      document.getElementById("changingTheme").style.animation = "disappearOpacity 0.5s forwards";
+  }, 1000);
+}
+
 
 function changeTheme(theme) {  
   document.documentElement.setAttribute("data-theme", theme);

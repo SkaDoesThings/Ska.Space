@@ -94,15 +94,15 @@
 }
 
 .box:hover {
-    border: 1px solid var(--primary-color);
-    /*box-shadow: 0 0px 8px 0 var(--primary-color); //disabled for now*/ 
+    border: 1px solid var(--color-primary);
+    /*box-shadow: 0 0px 8px 0 var(--color-primary); //disabled for now*/ 
 }
 
 /*In Posts*/
 
 .blog article{
-    background-color: var(--primary-background);
-    border: 1px solid var(--primary-border);
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-primary);
     padding: 0px;
     max-width: 900px;
 }

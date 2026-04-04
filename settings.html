@@ -3,7 +3,8 @@
 	<head>
         <title>Ska.Space - Settings</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="global/css/style.css">
+        <link rel="stylesheet" href="global/css/universal.css">
+		<link rel="stylesheet" href="global/css/style.css">
 		<link rel="stylesheet" href="global/css/settings.css"> 
 		<link rel="shortcut icon" type="image/x-icon" href="global/media/icons/nav/settings.png"/>
 	</head>
@@ -210,7 +211,7 @@
 		settingsTransition();
 
 		function settingsTransition() {
-			document.getElementById("settingHomeButton").style.backgroundColor = "var(--secondary-color)";
+			document.getElementById("settingHomeButton").style.backgroundColor = "var(--color-secondary)";
 		}
 	
 		/*Select settings to show*/
@@ -229,7 +230,7 @@
 			});
 			
 			document.getElementById(selection).style.display = "block";
-			document.getElementById(selection + "Button").style.backgroundColor = "var(--secondary-color)";
+			document.getElementById(selection + "Button").style.backgroundColor = "var(--color-secondary)";
 		}
 	</script>   
 </html>

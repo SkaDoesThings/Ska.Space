@@ -74,19 +74,6 @@
     display: block;
 }
 
-.webview{
-  padding-bottom: 0px;
-}
-
-.webview .appHeader{
-  position: absolute;
-}
-
-.webview .webapp{
-  margin-top: -20px;
-  height: calc(100% + 20px)
-}
-
 /*=-=-=-=-=-=-=- ( Components ) -=-=-=-=-=-=-=*/
 
 hr{
@@ -97,52 +84,126 @@ hr{
   }
 
 /*Buttons*/
+
 button {
     background-color: var(--element-background);
-    border: 1px solid var(--border-primary);
     width: 130px;
     font-size: 10pt;
-    margin: 5px;
-    padding: 6px 8px;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.15s, border-color 0.15s;
+    margin-left: 2px;
+    margin-right: 2px;
+    line-height: 2;
 }
   
-button:hover, .modalButton:hover{
-    background-color: var(--color-tertiary);
-    border: 1px solid var(--color-primary);
-}
-
 button:active {
     scale: 1.03;
-    transition: scale 0.05s;
+    transition: scale 0.03s;
 }
 
-button img{
-    width: 22px;
-    height: 22px;
-    display: block;
-    float: left;
-    margin-left: 0px;
-    margin-right: 5px;
-    margin-top: 3px;
-    border-radius: 0px;
+[dset_theme='light']  .sliderButton:before {
+    background-color: var(--color-primary);
 }
 
+.sliderButton:active:before {
+    width: 30px;
+}
 
 /*=-=-=-=-=-=-=- ( App UI ) -=-=-=-=-=-=-=*/
 
+.app{
+    display: none;
+    position: absolute;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--border-radius);
+    min-width: 300px;
+    height: 80vh;
+    max-height: 95%;
+    box-shadow: 5px 8px 16px 3px rgba(0,0,0,0.2);
+    transition: border-radius 0.1s;
+    overflow: hidden;
+    resize: both;
+}
+
+.webapp{
+    width: 100%;
+    height: 100%;
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+    width: 100%;
+    overflow: hidden;
+}  
+
+.appHeader{
+    position: absolute;
+    background-color: var(--background-secondary);
+    border-width: 0px;
+    width: 100%;
+    height: 35px;
+    cursor: move;
+    z-index: 50px;
+    user-select: none;
+}
+
+.appHeader ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.appHeader ul img{
+  width: 24px; 
+  height: 24px; 
+  margin: 5px;
+}
+
+.appHeader ul span{
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+
+.appHeader ul li {
+    float: right;
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.typeClose:hover{
+    background-color: var(--color-secondary) !important;
+}
+
+.appBody {      
+  background-color: var(--background-tertiary);
+  padding: 20px;
+  padding-top: 10px;
+  margin-top: 35px;
+  flex: 1;
+  border-top-left-radius: 10px;
+  overflow-y: auto;
+}
+
+.appBody h2{
+    margin-top: 0px;
+}
+
 .sidebar{
-    display: block;
     background-color: var(--background-secondary);
     width: 150px;
     min-width: 150px;
-    height: 100vh;
+    margin-top: 35px;
+    align-self: stretch;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .menuButtons button{
@@ -161,34 +222,9 @@ button img{
   background-color: var(--element-hover);
 }
 
-.pageView{
-    min-width: 100%;
-    margin: 10px;
-    margin-top: 0px;
-}
-
-.pageView h2{
-    margin-top: 0px;
-}
-
-.content{
-    display: block;
-    background-color: var(--background-tertiary);
-    width: 100%;
-    height: 100vh;
-    padding: 10px;
-    border-top-left-radius: 10px;
-}  
-
-.columnContainer{
-    display: flex;
-    flex-direction: row-reverse;
-}
-
 .menuButtons button:hover{
   background-color: var(--element-hover) !important;
 }
-
 
 /*=-=-=-=-=- ( Specific App UI ) -=-=-=-=-=*/
 
@@ -250,8 +286,12 @@ button img{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-  }
-  
+}
+
+.mobile .content{
+  padding-bottom: 60px;
+}
+
 .mobile .sidebar{
   position: absolute;
   bottom: 0;
@@ -262,7 +302,7 @@ button img{
   border-top: 1px solid var(--border-primary);
 }
 
-.mobile .content{
+.mobile .appBody {
   border-top-left-radius: 0px;
 }
 
@@ -284,10 +324,10 @@ button img{
 }
 
 .mobile .menuButtons button img{
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   display: flex;
-  margin-left: 10px;
+  margin-left: 14px;
 }
 
 .mobile #wallpaperPreview{

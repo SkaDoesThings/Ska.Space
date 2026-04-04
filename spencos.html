@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html desktop-theme="dark">
+<html dset_theme="dark">
     <head>
         <title>SpencOS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="global/css/universal.css">
         <link rel="stylesheet" href="global/css/card.css">
         <link rel="stylesheet" href="spencos/system.css">
         <link rel="stylesheet" href="spencos/apps.css">
@@ -46,7 +47,7 @@
             <div id="ccenter">
                 <h1>Action Center</h1>
                 <ul id="startIcons" class="typeCCenter">
-                    <li onclick="changeSetting('audio')"><img id="audioToggle" class="audioIcon invert">Audio</li>
+                    <li onclick="changeSetting('audio')"><img class="audioIcon invert">Audio</li>
                     <li onclick="document.getElementById('switchTheme').click()"><img src="spencos/images/icons/theme.png" class="invert">Theme</li>
                     <li onclick="appFunction('Settings', 'open'); uiFunction('CCenter')"><img src="spencos/images/apps/SettingsIcon.webp" class="invert">Settings</li>
                     <li onclick="document.getElementById('test').click()"><img src="global/images/seal/wallpaperSet.png" class="invert">Wallpaper</li>
@@ -95,17 +96,17 @@
                     </div>
 
                     <div class="app" id="Ska">
-                        <div class="appHeader" id="SkaHeader">
-                            <ul>
-                                <img src="spencos/images/apps/SkaIcon.webp">
-                                <span>About Ska</span>
-                                <li class="typeClose" onclick="appFunction('Ska', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('Ska', 'maximize')">+</li>
-                                <li onclick="appFunction('Ska', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <div class="columnContainer">
-                            <div class="content">
+                        <div class="content">
+                            <div class="appHeader" id="SkaHeader">
+                                <ul>
+                                    <img src="spencos/images/apps/SkaIcon.webp">
+                                    <span>About Ska</span>
+                                    <li class="typeClose" onclick="appFunction('Ska', 'close')">x</li>
+                                    <li class="typeSize" onclick="appFunction('Ska', 'maximize')">+</li>
+                                    <li onclick="appFunction('Ska', 'toggle')">-</li>
+                                </ul>
+                            </div>
+                            <div class="appBody">
                                 <div class="pageView centeredMobile">
                                     <div id="SkaPageAbout" class="page mainPage">
                                         <div id="welcome" class="flexOne box window">
@@ -178,7 +179,7 @@
                                             </div>
                                         </div>
                                         <button id="showHiddenItem" onclick="showHiddenItem()">View More</button>
-                                        <div id="startHidden">
+                                        <div id="startHidden"> 
                                             <h2 class="divider">School-Era Sites (Images)</h2>
                                             <div class="listbox centered">
                                                 <a onclick="backgroundViewer('../global/media/images/projects/amoray.webp')">Amoray Pizza (2022)</a>
@@ -233,64 +234,68 @@
                     </div>   
                     
                     <div class="app native" id="About Ska">
-                        <div class="appHeader" id="About SkaHeader">
-                            <ul>
-                                <img src="spencos/images/apps/About SkaIcon.webp">
-                                <span>About Ska</span>
-                                <li class="typeClose" onclick="appFunction('About Ska', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('About Ska', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <div id="myProfile">
-                            <div class="profileCard nitro">
-                                <div class="profileHeader">
-                                    <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
-                                    <img src="global/media/images/ska/pfp.webp" class="userPicture viewable" title="PFP by @nbb3_G">
-                                    <img src="global/media/icons/emotes/idle.webp" class="userStatus">
+                        <div class="content">
+                            <div class="appHeader" id="About SkaHeader">
+                                <ul>
+                                    <img src="spencos/images/apps/About SkaIcon.webp">
+                                    <span>About Ska</span>
+                                    <li class="typeClose" onclick="appFunction('About Ska', 'close')">x</li>
+                                    <li class="typeSize" onclick="appFunction('About Ska', 'toggle')">-</li>
+                                </ul>
+                            </div>
+                            <div class="appBody">
+                                <div id="myProfile">
+                                    <div class="profileCard nitro">
+                                        <div class="profileHeader">
+                                            <div class="userBanner" onclick="backgroundViewer('global/media/images/ska/skavatar.webp')"></div>
+                                            <img src="global/media/images/ska/pfp.webp" class="userPicture viewable" title="PFP by @nbb3_G">
+                                            <img src="global/media/icons/emotes/idle.webp" class="userStatus">
 
-                                    <div class="userIcons hoverText slideUp"> 
-                                        <img src="global/media/icons/emotes/stand.webp">
-                                        <img src="global/media/icons/emotes/snap.webp">
-                                        <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
-                                        <img src="global/media/icons/emotes/sip.webp">
-                                        <hover-text>Silly Badges</hover-text>
+                                            <div class="userIcons hoverText slideUp"> 
+                                                <img src="global/media/icons/emotes/stand.webp">
+                                                <img src="global/media/icons/emotes/snap.webp">
+                                                <img src="global/media/icons/emotes/nya.webp" class="viewable" onclick="play(0)">
+                                                <img src="global/media/icons/emotes/sip.webp">
+                                                <hover-text>Silly Badges</hover-text>
+                                            </div>
+                                        </div>
+                                        <div class="profileBody">
+                                            <span class="name">Ska✨</span><br>
+                                            <span class="user">@ska.exe &#x2022 The Silly One</span><br>
+                                            <span class="bio">I enjoy gaming, anime, tech, programming, and many other things revolving around the internet!</span><br>
+                                            <div class="socials centered">
+                                                <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
+                                                <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                                <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
+                                                <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
+                                                <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
+                                            </div><br><br>
+                                            <div class="links centered">
+                                                <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
+                                                <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
+                                                <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
+                                            </div><br>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="profileBody">
-                                    <span class="name">Ska✨</span><br>
-                                    <span class="user">@ska.exe &#x2022 The Silly One</span><br>
-                                    <span class="bio">I enjoy gaming, anime, tech, programming, and many other things revolving around the internet!</span><br>
-                                    <div class="socials centered">
-                                        <a href="https://steamcommunity.com/id/skagaming" target="_blank" class="mainJoinSteam hoverText slideUp"><hover-text>SkaGaming</hover-text></a>
-                                        <a href="https://github.com/SkaDoesThings" target="_blank" class="mainJoinGitHub hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
-                                        <a href="https://discord.com/users/239446777483231232" class="mainJoinDiscord hoverText slideUp"><hover-text>@ska.exe</hover-text></a>
-                                        <a href="https://www.instagram.com/ska.zip" target="_blank" class="mainJoinInstagram hoverText slideUp"><hover-text>@ska.zip</hover-text></a>
-                                        <a href="https://www.twitter.com/SkaDoesThings" target="_blank" class="mainJoinTwitter hoverText slideUp"><hover-text>@SkaDoesThings</hover-text></a>
-                                    </div><br><br>
-                                    <div class="links centered">
-                                        <a href="games.html" class="hoverText slideUp"><hover-text>Totally Not Steam</hover-text><img src="global/media/images/trophy.png" class="small" class="mainJoinSteam"/>Games</a>
-                                        <a href="https://anilist.co/user/ska" class="hoverText slideUp" target="_blank"><hover-text>AniList</hover-text><img src="global/media/icons/logos/anilist.webp" class="small"/>Anime</a>
-                                        <a href="https://soundcloud.com/skuwu" class="hoverText slideUp" target="_blank"><hover-text>SoundCloud</hover-text><img src="global/media/icons/logos/soundcloud.webp" class="small"/>Music</a><br>
-                                    </div><br>
-                                </div>
-                            </div>
-                        </div>     
+                            </div>     
+                        </div>
                     </div>
 
                     <div class="app native" id="Settings">
-                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-                        <div class="appHeader" id="SettingsHeader">
-                            <ul>
-                                <img src="spencos/images/apps/SettingsIcon.webp" class="invert">
-                                <span>Settings</span>
-                                <li class="typeClose" onclick="appFunction('Settings', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('Settings', 'maximize')">+</li>
-                                <li onclick="appFunction('Settings', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <div id="pageSettings">
-                            <div class="columnContainer">
-                                <div class="content">
+                        <div class="content">
+                            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                            <div class="appHeader" id="SettingsHeader">
+                                <ul>
+                                    <img src="spencos/images/apps/SettingsIcon.webp" class="invert">
+                                    <span>Settings</span>
+                                    <li class="typeClose" onclick="appFunction('Settings', 'close')">x</li>
+                                    <li class="typeSize" onclick="appFunction('Settings', 'maximize')">+</li>
+                                    <li onclick="appFunction('Settings', 'toggle')">-</li>
+                                </ul>
+                            </div>
+                            <div class="appBody">
+                                <div id="pageSettings">                            
                                     <div class="pageView centeredMobile">
                                         <div id="SettingsPageStyle" class="page mainPage">
                                             <h2>Appearance</h2>
@@ -298,85 +303,86 @@
                                             <div id="wallpaperPreview"></div>
                                             <button onclick="document.getElementById('test').click();"><img src="global/images/seal/wallpaperSet.png" class="invert">Select Image</button>
                                             <button onclick="clearBackground()"><img src="global/images/seal/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
-                                            <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button>
+                                            <button onclick="document.getElementById('switchTheme').click();"><img src="global/images/seal/switchTheme.png" class="invert">Switch Theme</button><br>
+                                            <span><button data-setting="square_corners" class="sliderButton defaultOn"></button>Rounded Corners</span>
                                             <div class="offMobile">
                                                 <hr><h3>Taskbar</h2>
-                                                <button id="settingButtonTaskbarNames" onclick="changeSetting('setting-taskbar-no-names')">Hide App Labels</button>
-                                                <button id="settingButtonTaskbarCenter" onclick="changeSetting('setting-taskbar-center')">Center Apps</button>
+                                                <span><button data-setting="taskbar_no_names" class="sliderButton defaultOff"></button>Hide App Labels</span><br>
+                                                <span><button data-setting="taskbar_center" class="sliderButton defaultOff"></button>Center Apps</span><br>
                                             </div>
                                             <hr><h3>Effects</h2>
-                                            <button id="settingButtonNightlight" onclick="changeSetting('setting-style-nightlight')">Night Light</button>
+                                            <span><button data-setting="no_transparency" class="sliderButton defaultOn"></button>Transparency</span><br>
+                                            <span><button data-setting="nightlight" class="sliderButton defaultOff"></button>Night Light</span><br>
                                             <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
                                             <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
                                         </div>
                                         <div id="SettingsPageAcc" class="page">
                                             <h2>Accessibility</h2>
-                                            <button id="settingButtonReducedMotion" onclick="changeSetting('setting-acc-reduced-motion')">Reduced Motion</button>
+                                            <span><button data-setting="reduced_motion" class="sliderButton defaultOff"></button>Reduced Motion</span><br>
                                         </div>
                                         <div id="SettingsPageDevTools" class="page">
                                             <h2>Dev Tools</h2>
-                                            <button id="settingButtonOutlines" onclick="changeSetting('setting-debug-outlines')">Show Outlines</button>
+                                            <span><button data-setting="debug_outlines" class="sliderButton defaultOff"></button>Show Outlines</span><br>
                                             <div class="offMobile">
                                                 <hr><h2>Splash Screen</h2>
-                                                <button id="settingButtonOutlines" onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
-                                                <button id="settingButtonSplashscreen" class="offMobile" onclick="changeSetting('setting-style-splashscreen')">Enable Splash</button>
+                                                <span><button data-setting="no_splashscreen" class="sliderButton defaultOn offMobile"></button>Enable Splash</span><br>
+                                                <button onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
                                             </div>
                                         </div>
                                         <div id="SettingsPageHome" class="page">
                                             <h2>About SpencOS</h2>
-                                            <h3>Version 6.10.2025 Beta</h3><br>
+                                            <h3>Version 4.4.2026 Beta</h3><br>
                                             <h3>Welcome to Spencer's Operating System, a clean and fairly-realistic OS experience right inside your browser developed using HTML, CSS, and JS</h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="sidebar">
-                                    <div class="menuButtons">
-                                        <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="global/images/seal/wallpaperSet.png" class="invert">Appearance</button>
-                                        <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="global/images/seal/wallpaperSet.png" class="invert">Accessibility</button>
-                                        <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="global/images/seal/wallpaperSet.png" class="invert">Dev Tools</button>
-                                        <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="global/images/seal/wallpaperSet.png" class="invert">About SpencOS</button>
-                                    </div>
+                            </div>
+                            <div class="sidebar">
+                                <div class="menuButtons">
+                                    <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="global/images/seal/wallpaperSet.png" class="invert">Appearance</button>
+                                    <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="global/images/seal/wallpaperSet.png" class="invert">Accessibility</button>
+                                    <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="global/images/seal/wallpaperSet.png" class="invert">Dev Tools</button>
+                                    <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="global/images/seal/wallpaperSet.png" class="invert">About SpencOS</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="app" id="Cyan">
-                        <div class="appHeader" id="CyanHeader">
-                            <ul>
-                                <img src="spencos/images/apps/CyanIcon.webp">
-                                <span>Cyan</span>
-                                <li class="typeClose" onclick="appFunction('Cyan', 'close')">x</li>
-                                <li class="typeSize" onclick="appFunction('Cyan', 'maximize')">+</li>
-                                <li onclick="appFunction('Cyan', 'toggle')">-</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="columnContainer">
-                                <div class="content">
-                                    <div class="pageView centeredMobile">
-                                        <div id="CyanPageLibrary" class="page mainPage">
-                                            <h2>Library</h2>
-                                            <audio controls>
-                                                <source src="spencos/audio/eshop.mp3" type="audio/mp3">
-                                                Your browser does not support the audio element.
-                                            </audio>
-                                        </div>
-                                        <div id="CyanPageFollowing" class="page">
-                                            <h2>Following</h2>     
-                                        </div>   
+                        <div class="content">
+                            <div class="appHeader" id="CyanHeader">
+                                <ul>
+                                    <img src="spencos/images/apps/CyanIcon.webp">
+                                    <span>Cyan</span>
+                                    <li class="typeClose" onclick="appFunction('Cyan', 'close')">x</li>
+                                    <li class="typeSize" onclick="appFunction('Cyan', 'maximize')">+</li>
+                                    <li onclick="appFunction('Cyan', 'toggle')">-</li>
+                                </ul>
+                            </div>
+                            <div class="appBody">
+                                <div class="pageView centeredMobile">
+                                    <div id="CyanPageLibrary" class="page mainPage">
+                                        <h2>Library</h2>
+                                        <audio controls>
+                                            <source src="spencos/audio/eshop.mp3" type="audio/mp3">
+                                            Your browser does not support the audio element.
+                                        </audio>
                                     </div>
+                                    <div id="CyanPageFollowing" class="page">
+                                        <h2>Following</h2>     
+                                    </div>   
                                 </div>
-                                <div class="sidebar">
-                                    <div class="menuButtons">
-                                        <button id="CyanPageLibraryButton" class="defaultButton" onclick="pageView('Cyan', 'PageLibrary')"><img src="global/images/seal/wallpaperSet.png" class="invert">Library</button>
-                                        <button id="CyanPageFollowingButton" onclick="pageView('Cyan', 'PageFollowing')"><img src="global/images/seal/wallpaperSet.png" class="invert">Following</button>
-                                    </div>
+                            </div>
+                            <div class="sidebar">
+                                <div class="menuButtons">
+                                    <button id="CyanPageLibraryButton" class="defaultButton" onclick="pageView('Cyan', 'PageLibrary')"><img src="global/images/seal/wallpaperSet.png" class="invert">Library</button>
+                                    <button id="CyanPageFollowingButton" onclick="pageView('Cyan', 'PageFollowing')"><img src="global/images/seal/wallpaperSet.png" class="invert">Following</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="app" id="Ska.Space">
                     <div class="appHeader" id="Ska.SpaceHeader">
@@ -391,7 +397,7 @@
                     <embed type="text/html" src="index.html" class="webapp">          
                 </div>
 
-                <div class="app webview" id="Cloud">
+                <div class="app" id="Cloud">
                     <div class="appHeader" id="CloudHeader">
                         <ul>
                             <img src="spencos/images/apps/CloudIcon.webp">
@@ -404,7 +410,7 @@
                     <embed type="text/html" src="games.html" class="webapp">          
                 </div>
 
-                <div class="app webview" id="Posts">
+                <div class="app" id="Posts">
                     <div class="appHeader" id="PostsHeader">
                         <ul>
                             <img src="spencos/images/apps/PostsIcon.webp">
@@ -430,7 +436,7 @@
                     <img src="spencos/images/icons/wifi.png" class="invert">
                     <img class="audioIcon invert">
                 </div>
-                <a id="Ska.SpaceIcon" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
+                <a id="Ska.SpaceIcon" draggable="true" onclick="appFunction('Ska.Space', 'toggle')" style="display: inline-flex;"><img src="spencos/images/apps/Ska.SpaceIcon.webp">Ska.Space</a>
             </nav>
         </div>
 
