@@ -79,7 +79,6 @@
 hr{
     width: 98%;
     margin-bottom: 15px;
-    margin-top: 15px;
     border: 1px solid var(--border-primary)
   }
 
@@ -89,8 +88,9 @@ button {
     background-color: var(--element-background);
     width: 130px;
     font-size: 10pt;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
     line-height: 2;
 }
   
@@ -99,7 +99,7 @@ button:active {
     transition: scale 0.03s;
 }
 
-[dset_theme='light']  .sliderButton:before {
+[dset_theme='light'] .sliderButton:before {
     background-color: var(--color-primary);
 }
 
@@ -208,12 +208,14 @@ button:active {
 
 .menuButtons button{
     width: 150px;
+    padding: 6px 8px;
     display: block;
     background-color: transparent;
     border: transparent;
     text-align: left;
     text-indent: 5px;
     line-height: 27px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
 }

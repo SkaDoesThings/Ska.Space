@@ -7,7 +7,7 @@ button, .button{
     border: 1px solid var(--border-primary);
     font-size: 14pt;
     margin: 5px;
-    padding: 6px 8px;
+    padding: 4px 8px;
     border-radius: 10px;
     cursor: pointer;
     user-select: none;
