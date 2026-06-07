@@ -186,12 +186,26 @@ function uiFunction(name) {
       else {
         // Ensure all inner-models are closed
         modalContents.forEach(content => {
-          content.style.animation = "disappearScale 0.4s forwards";
-          setTimeout(function(){content.style.display = "none";}, 150);
+          if (window.matchMedia("(min-width: 750px)").matches){
+            content.style.animation = "disappearScaleFull 0.4s forwards";
+            setTimeout(function(){content.style.display = "none";}, 150);
+          }
+          else {
+            content.style.animation = "disappearSlide 0.4s forwards";
+            setTimeout(function(){content.style.display = "none";}, 400);
+          }
+          
         });
       
-        modal.style.animation = "disappearOpacity 0.15s forwards";
-        setTimeout(function(){modal.style.display = "none";}, 150);
+        if (window.matchMedia("(min-width: 750px)").matches){
+          modal.style.animation = "disappearOpacity 0.15s forwards";
+          setTimeout(function(){modal.style.display = "none";}, 150);
+        }
+        else {
+          modal.style.animation = "disappearOpacity 0.3s forwards";
+          setTimeout(function(){modal.style.display = "none";}, 300);
+        }
+       
       }
       UIStateModal = !UIStateModal;
       break;
@@ -212,15 +226,26 @@ function uiFlexFunction(name, item) {
         else{
           modalContents.forEach(content => {
             if(content != modalContent) {
+              if (window.matchMedia("(min-width: 750px)").matches){
                 content.style.animation = "disappearScaleFull 0.4s forwards";
                 setTimeout(function(){content.style.display = "none";}, 150);
               }
+              else {
+                content.style.animation = "disappearSlide 0.3s forwards";
+                setTimeout(function(){content.style.display = "none";}, 300);
+              }
+            }
           });
         }
 
         // Display the selected model
         modalContent.style.display = "block";
-        modalContent.style.animation = "appearScale 0.3s forwards";
+        if (window.matchMedia("(min-width: 750px)").matches){
+          modalContent.style.animation = "appearScale 0.3s forwards";
+        }
+        else {
+          modalContent.style.animation = "appearSlide 0.4s forwards";
+        }
       break;
     }
   }
@@ -237,7 +262,7 @@ function closeThatNav() {
   document.getElementById("navbox").style.height = "56px";
   document.getElementById("navbox").scrollTop = 0;
   // Patch to fix desktop nav cutoff issue
-  if (window.matchMedia("(max-width: 800px)").matches){
+  if (window.matchMedia("(max-width: 750px)").matches){
     document.getElementById("navbox").style.overflowY = "hidden";
     console.log('test');
   }

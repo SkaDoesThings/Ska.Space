@@ -43,8 +43,8 @@
 }
 
 .bannerButton:hover img{
-    width: 150px;
-    margin-top: -60px;
+    width: 130px;
+    margin-top: -80px;
 }
 
 .bannerButton:active img{
@@ -54,15 +54,15 @@
 }
 
 .bubbleList div{
-  background-color: rgb(76, 66, 94);
-  border: 2px solid #f6b6ff;
+  background-color: rgb(67, 66, 94);
+  border: 2px solid #9a9ad4;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
 [data-theme='light'] .bubbleList div{
   background-color: rgb(241, 238, 254);
-  border: 2px solid #f6b6ff;
+  border: 2px solid #b4b0ff;
 }
 
 .bubbleList div:hover{
