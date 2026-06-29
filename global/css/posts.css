@@ -151,29 +151,37 @@
     margin-right: 5px;
 }
 
-#blogDetails #shareButton{
-    width: 32px;
-    height: 32px;
-    margin: 0px;
-    float: right;
+#returnButton, #shareButton{
+    position: sticky;
+    top: 50px;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 10px;
+    z-index: 2;
+}
+
+#returnButton{
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+#shareButton{
+    height: 26px;
+    margin: 0px;
+    padding-top: 5px;
+    top: 55px;
+    float: right;
     transition: background-color 0.2s;
 }   
+
+#shareButton img{
+    width: 24px;
+    height: 24px;
+}
 
 #shareButton:active{
     scale: 1.2;
 }
 
-#returnButton{
-    position: sticky;
-    top: 50px;
-    padding: 10px;
-    font-size: 20pt;
-    text-decoration: none;
-    z-index: 2;
-    cursor: pointer;
-}
 
 /*Moblin' Time*/
 
@@ -191,13 +199,25 @@
 @media only screen and (max-width: 750px) {
     #articleViewer {
         width: 97%;
-        padding-top: 30px;
+        padding-top: 50px;
     }
 
-    #returnButton{
+    #returnButton hover-text, #shareButton hover-text{
+        display: none;
+    }
+
+    #returnButton {
         position: absolute;
-        top: 0;
-        margin-top: -10px;
+        padding: 20px;
+        top: -10px;
+        left: 0;
+    }
+
+    #shareButton{
+        position: absolute;
+        padding: 20px;
+        top: -5px;
+        right: 0;
     }
     
     #listBoxes a {

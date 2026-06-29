@@ -11,6 +11,7 @@ body {
     background: var(--page-wallpaper);
     background-size: var(--wallpaper-size);
     background-color: var(--page-background);
+    background-attachment: fixed;
     transition: background 0.2s;
 }
 
@@ -308,7 +309,7 @@ nav{
     height: 56px;
     box-sizing: border-box;
     padding: 0 10px;
-    transition: padding 0.15s, height 0.15s, border-radius 0.3s;
+    transition: padding 0.15s, height 0.15s, border-radius 0.15s;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     scroll-behavior: smooth;
     z-index: 5;
@@ -976,10 +977,6 @@ code .orange { color: rgb(255, 177, 134); }
 /*=-=-=-=-=-=-=- ( It's Mobilin' Time ) -=-=-=-=-=-=-=*/
 
 @media only screen and (min-width: 750px) {
-    body{
-        background-attachment: fixed;
-    }
-
     .onMobile{
         display: none;
         visibility: hidden;
@@ -1232,7 +1229,7 @@ code .orange { color: rgb(255, 177, 134); }
     }
 
     #imageDisplay {
-        margin-top: 10vh;
+        margin-top: 7vh;
         width: 100vw;
     }
 
@@ -1270,11 +1267,11 @@ code .orange { color: rgb(255, 177, 134); }
 }
 
 .fadeOut{
-    animation: appearOpacity 0.15s forwards;
+    animation: appearOpacity 0.10s forwards;
 }
 
 .fadeIn{
-    animation: disappearOpacity 0.15s forwards;
+    animation: disappearOpacity 0.20s forwards;
 }
 
 .clicked {

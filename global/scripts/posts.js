@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 article_list.style.display = "block";
                 article_viewer.style.display = "none";
                 article_viewer.classList.remove('fadeIn');
-            }, 150);
+            }, 200);
         } 
         // Going to specific post
         else {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 article_list.style.display = "none";
                 article_viewer.style.display = "block";
                 article_list.classList.remove('fadeIn');
-            }, 150);
+            }, 200);
         }
         
         // Check if post exists

@@ -95,7 +95,7 @@ button img, .button img{
     margin-left: -6px;
 }
 
-/*Hovertext*/
+/*Hovertext Main + Slide Up*/
 
 .hoverText{
     position: relative;
@@ -146,6 +146,24 @@ hover-text::after {
 hover-text img{
     width: 32px;
     height: 32px;
+}
+
+/*Hovertext Slide Down*/
+
+.slideDown hover-text {
+    margin-top: 20px;
+}
+
+.slideDown:hover hover-text {
+    visibility: visible;
+    padding: 8px 10px;
+    opacity: 1;
+    margin-top: 45px;
+}
+
+.slideDown hover-text::after{
+    bottom: 100%;
+    border-color: transparent transparent var(--border-primary);
 }
 
 /*Forms*/
