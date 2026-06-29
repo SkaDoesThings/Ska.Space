@@ -1,0 +1,17 @@
+body{
+    background: #22252C;
+    background-image: none;
+}
+
+div {
+    position: fixed;
+    width: 300px;
+    height: max-content;
+    margin: auto;
+    padding: 20px;
+    top: 0;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+} 

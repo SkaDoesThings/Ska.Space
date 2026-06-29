@@ -86,12 +86,12 @@ const defaultContent = `
 <div id="bannerContainer" class="placeholderGalleon">
     <div id="bannerMain" onclick="backgroundViewer('../global/media/banners/sky.webp')">
         <div class="bannerContent bannerLogo centered">
-            <img src="../global/media/images/glogo.webp" class="mainImage vertical">
+            <img src="local/media/glogo.webp" class="mainImage vertical">
             <span class="mainText">GreatlyGaming</span>
             <h1>Gaming is great, and so are you</h1>
         </div>
     </div>
-    <a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.webp" class="necoArc">Join Today!</button></a>
+    <a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="local/media/ggarc.webp" class="necoArc">Join Today!</button></a>
 </div>
 
 <article>

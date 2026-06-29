@@ -57,6 +57,31 @@ function changeSetting(setting) {
   console.log("Set data-" + setting + " to " + newState);
 }
 
+
+// Update dropdown menu with full site list, check if current space based off span text
+const space_list = document.getElementById("spaceList")
+const current_space = document.getElementById("spaceName").textContent;
+
+const spaces = [
+  { href: "/index.html", img: "/global/media/images/home.png", alt: "Logo for Lobby Space", name: "Ska.Space" },
+  { href: "/greatlygaming/home.html", img: "/greatlygaming/local/media/glogo.webp", alt: "Logo for GreatlyGaming", name: "GreatlyGaming" },
+  { href: "/cyan/home.html", img: "/cyan/local/media/cyan.webp", alt: "Logo of Cyan Bot", name: "Cyan Bot" },
+  { href: "/llamaland/home.html", img: "/llamaland/local/media/llama.webp", alt: "Logo for LlamaLand", name: "LlamaLand" },
+  { href: "/seal/search.html", img: "/seal/local/media/sealco.webp", alt: "Logo for Seal Zone", name: "Seal Zone" },
+]
+
+spaces.forEach (space => {
+  // Add space, and mark the current one as active
+  if (current_space == space.name) {
+    space_list.innerHTML += `<a href="${space.href}" class="active"><img src="${space.img}" alt="space.alt">${space.name}</a>`;
+  }
+  else {
+    space_list.innerHTML += `<a href="${space.href}"><img src="${space.img}" alt="space.alt">${space.name}</a>`;
+  }
+});
+
+
+
 //Global fadeout thanks to https://christopheraue.net/design/fading-pages-on-load-and-unload
 var fader = document.getElementById('leavingPage');
 fader.classList.add('fadeIn');
@@ -138,15 +163,15 @@ function uiFunction(name) {
   switch(name) {
     case "Spaces": {
       if(UIStateSpaces == false) {
-        document.getElementById("myDropdown").style.display = "block";
-        document.getElementById("myDropdown").style.pointerEvents = "none";
-        document.getElementById("myDropdown").style.animation = "slideDownBelow 0.3s forwards";
+        document.getElementById("spaceList").style.display = "block";
+        document.getElementById("spaceList").style.pointerEvents = "none";
+        document.getElementById("spaceList").style.animation = "slideDownBelow 0.3s forwards";
         // Patch to prevent mouse overlap
-        setTimeout(function(){document.getElementById("myDropdown").style.pointerEvents = "all";}, 100);
+        setTimeout(function(){document.getElementById("spaceList").style.pointerEvents = "all";}, 100);
       }
       else {
-        document.getElementById("myDropdown").style.animation = "slideUpAbove 0.2s forwards";
-        setTimeout(function(){document.getElementById("myDropdown").style.display = "none";}, 200);
+        document.getElementById("spaceList").style.animation = "slideUpAbove 0.2s forwards";
+        setTimeout(function(){document.getElementById("spaceList").style.display = "none";}, 200);
       }
       UIStateSpaces = !UIStateSpaces;
       break;

@@ -231,9 +231,15 @@ h1 {
 }
 
 h2{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: normal;
 }
+
+h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 
 .center {
     display: block;
@@ -374,7 +380,7 @@ nav{
     color: rgb(255, 255, 255) !important; 
 }
 
-.spaceName{
+#globalName{
     display: flex;
     justify-content: center;
     font-size: 10px;
@@ -405,7 +411,7 @@ nav{
     left: calc((100% - 50px) / 2);
 }
 
-#myDropdown img, .spaceNavIcon{
+#spaceList img, .spaceNavIcon{
     width: 32px;
     height: 32px;
     margin-right: 5px;
@@ -983,7 +989,7 @@ code .orange { color: rgb(255, 177, 134); }
         margin-left: 10px;
     }
 
-    #myDropdown{
+    #spaceList{
         background-color: var(--background-secondary);
         border: 1px solid var(--border-secondary);
         display: none;
@@ -999,7 +1005,7 @@ code .orange { color: rgb(255, 177, 134); }
         z-index: 3;
     }
 
-    #myDropdown a {
+    #spaceList a {
         width: 88%;
         display: flex;
         margin-top: 5px;
@@ -1007,17 +1013,17 @@ code .orange { color: rgb(255, 177, 134); }
         padding: 5px 10px;
     }
     
-    #myDropdown img {
+    #spaceList img {
         margin-right: 15px;
     }
 
-    #myDropdown h2 {
+    #spaceList h2 {
         border-top: 1px solid var(--border-secondary);
         border-bottom: 1px solid var(--border-secondary);
         padding: 2px;
     }    
 
-    #myDropdown::before, #myDropdown::after{
+    #spaceList::before, #spaceList::after{
         position: absolute;
         content: "";
         width: 10px;
@@ -1026,12 +1032,12 @@ code .orange { color: rgb(255, 177, 134); }
         border: 1px solid var(--border-secondary);
     }
 
-    #myDropdown::before{
+    #spaceList::before{
          top: -20px;
          left: 15px;
     }
 
-    #myDropdown::after{
+    #spaceList::after{
         top: -20px;
         right: 15px;
     }
@@ -1114,7 +1120,6 @@ code .orange { color: rgb(255, 177, 134); }
 
     nav {
         width: 98%;
-        max-width: 500px;
         border: 1px solid var(--border-primary);
         border-radius: 20px;
         margin: 5px auto;
@@ -1141,17 +1146,17 @@ code .orange { color: rgb(255, 177, 134); }
         width: auto;
         margin: auto;
         text-align: center;
-        padding: 10px;
+        padding: 8px;
         padding-top: 0px;
         margin-top: 10px;
         margin-bottom: 10px;
-        font-size: 20pt;
+        font-size: 18pt;
         border: 2px solid rgb(209, 209, 209);
         margin-left: 10px;
         border-radius: 7px;
     }
 
-    #myDropdown {
+    #spaceList {
         display: block !important;
         animation: none !important;
         position: relative;
@@ -1163,7 +1168,7 @@ code .orange { color: rgb(255, 177, 134); }
         overflow-x: hidden;
     }
 
-    #myDropdown a{
+    #spaceList a{
         background-color: var(--background-tertiary);
         font-size: 0px;
         width: 54px;
@@ -1173,13 +1178,13 @@ code .orange { color: rgb(255, 177, 134); }
         border-width: 0px;
     }
 
-    #myDropdown img{
+    #spaceList img{
         width: 42px;
         height: 42px;
         margin: auto;
     }
 
-    #myDropdown .active{
+    #spaceList .active{
         border-width: 2px;
     }
 
@@ -1269,7 +1274,7 @@ code .orange { color: rgb(255, 177, 134); }
 }
 
 .fadeIn{
-    animation: disappearOpacity 0.3s forwards;
+    animation: disappearOpacity 0.15s forwards;
 }
 
 .clicked {
@@ -1437,7 +1442,7 @@ code .orange { color: rgb(255, 177, 134); }
         scroll-behavior: none;
     }
 
-    main, article, #myDropdown, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
+    main, article, #spaceList, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage {
         animation-duration: 0s !important;
     }
 
@@ -1454,7 +1459,7 @@ code .orange { color: rgb(255, 177, 134); }
     scroll-behavior: none;
 }
 
-[data-setting-acc-reduced-motion='true'] :is(main, article, #myDropdown, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
+[data-setting-acc-reduced-motion='true'] :is(main, article, #spaceList, .fadeOut, .fadeIn, .clicked, #bannerContainer, .bannerButton, #imageViewer, #imageBackdrop, #imageDisplay, .modal, .modal-content, .settingPage) {
     animation-duration: 0s !important;
 }
 

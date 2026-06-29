@@ -5,17 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../global/css/universal.css">
 		<link rel="stylesheet" href="../global/css/style.css">
-		<link rel="stylesheet" href="../global/css/galleon.css">
-		<link rel="shortcut icon" type="image/x-icon" href="../global/media/images/glogo.webp"/>
+		<link rel="stylesheet" href="local/css/style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="local/media/glogo.webp"/>
 	</head>
 
 	<body>
         <nav id="navbox" class="transparency">
-            <a href="../index.html"><img src="../global/media/images/glogo.webp" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Galleon"/></a>
+            <a href="../index.html"><img src="local/media/glogo.webp" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Galleon"/></a>
             <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
 				<img src="../global/media/images/navburger.webp" class="navIcon iconTypeList invert iconLeft" title="nyoho" alt="Icon For Nav">
-				<span class="spaceName">Ska.Space</span>
-				<span class="sectionName">Galleon</span>
+				<span id="globalName">Ska.Space</span>
+				<span id="spaceName">GreatlyGaming</span>
             </button>
             <button onclick="uiFunction('Drawer')" id="navToggle"></button>
             <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
@@ -23,14 +23,10 @@
             <a href="../seal/search.html"><img src="../global/media/icons/nav/search.png" class="navIcon iconTypeGear invert offMobile" alt="Seal Search"></a>
             <div id="linkContainer">
                 <h2 class="onMobile">GreatlyGaming</h2> 
-                <a href="home.html" class="active">Group</a>
-				<a href="llamaland.html">LlamaLand</a>
-                <div id="myDropdown" class="dropdown-content">
+                <a href="home.html" class="active">Home</a>
+                <div id="spaceList">
                     <hr class="onMobile"><h2>Spaces</h2>
-                    <a href="../index.html"><img src="../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
-                    <a href="../galleon/home.html" class="active"><img src="../global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
-					<a href="../cyan/home.html"><img src="../global/images/cyan/cyan.webp" alt="Logo for Galleon">Cyan Bot</a>
-					<a href="../seal/search.html"><img src="../global/media/images/sealco.png" alt="Logo for Seal Zone">Seal Zone</a>
+                    <!-- List obtained on page load from scripts.js -->
                 </div>
             </div>
         </nav>
@@ -55,7 +51,7 @@
                 </div>
                 <div class="modal-body centered">
 					<p>Find you're missing something? You can even make your own 'group chat' using forums. Pretty cool!</p>
-					<img src="../global//images/galleon/forumExamples.webp" loading="lazy" class="viewable">
+					<img src="local/media/forumExamples.webp" loading="lazy" class="viewable">
                 </div>
             </div>
 			 <div class="modal-content" id="modalTwo">
@@ -65,9 +61,9 @@
                 </div>
                 <div class="modal-body centered">
                     <p>Roles: Thanks to Discord you can now select colors and roles easily!</p>
-					<img src="../global/images/galleon/customizePromo.webp" loading="lazy" class="viewable"><hr>  
-					<p>Emoji: Here are some you can use! My favorites are Gil from <a href="https://www.guilded.gg" target="_blank">Guilded</a>, which the server used to be on, and my silly mascot emojis <img src="../global/images/galleon/ggarc.webp" class="viewable emoji"></p>
-					<img src="../global/images/galleon/emojiPromo.webp" loading="lazy" class="viewable"><hr>
+					<img src="local/media/customizePromo.webp" loading="lazy" class="viewable"><hr>  
+					<p>Emoji: Here are some you can use! My favorites are Gil from <a href="https://www.guilded.gg" target="_blank">Guilded</a>, which the server used to be on, and my mascot emoji <img src="local/media/ggarc.webp" class="viewable emoji"></p>
+					<img src="local/media/emojiPromo.webp" loading="lazy" class="viewable"><hr>
 					<p>Thank you boosters for the extra features!</p>
                 </div>
             </div>
@@ -78,7 +74,7 @@
                 </div>
                 <div class="modal-body centered">
                     <p>I have been working on this server since 2016, so suffice to say a lot has changed! For fun, here's an old screenshot from 2017 before Discord even had categories :p</p>
-					<img src="../global/images/galleon/oldExample.webp" loading="lazy" class="viewable">
+					<img src="local/media/oldExample.webp" loading="lazy" class="viewable">
                 </div>
             </div>
 			 <div class="modal-content" id="modalFour">
@@ -88,9 +84,9 @@
                 </div>
                 <div class="modal-body centered">
 					<p>Bots: Listen to music from all platforms with <a href="../cyan/home.html">Cyan</a>, collect cards with Karuta/Mudae, and grow your level with Mee6</p>
-                    <img src="../global/images/galleon/bots.webp" loading="lazy" class="viewable"><hr>
+                    <img src="local/media/bots.webp" loading="lazy" class="viewable"><hr>
 					<p>Minecraft: I host a 24/7 server with creative and survival worlds</p>
-					<img src="../global/images/galleon/llamalisted.webp" loading="lazy" class="viewable">
+					<img src="local/media/llamalisted.webp" loading="lazy" class="viewable">
                 </div>
             </div>
         </div>
@@ -105,12 +101,12 @@
 			<div id="bannerContainer" class="placeholderGalleon">
 				<div id="bannerMain" onclick="backgroundViewer('../global/media/banners/sky.webp')">
 					<div class="bannerContent bannerLogo centered">
-						<img src="../global/media/images/glogo.webp" class="mainImage vertical">
+						<img src="local/media/glogo.webp" class="mainImage vertical">
 						<span class="mainText">GreatlyGaming</span>
 						<h1>Gaming is great, and so are you</h1>
 					</div>
 				</div>
-				<a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="../global/images/galleon/ggarc.webp" class="necoArc">Join Today!</button></a>
+				<a href="https://discord.gg/EcTssJF5Md" target="_blank"><button class="bannerButton bannerButtonAnimate" id="servers"><img src="local/media/ggarc.webp" class="necoArc">Join Today!</button></a>
 			</div>
 			
 			<article>
@@ -118,13 +114,13 @@
 					<article>
 						<h2 class="centeredMobile">You've crossed paths with a laid-back community founded by <a href="../index.html">Ska</a> to connect people who enjoy the digital world of gaming, anime, tech, VR, and more!</h2>
 						<div class="centered">
-							<a class="linkButton inviteButton mainJoinDiscord" href="https://discord.gg/EcTssJF5Md", target="_blank"><img src="../../global/media/icons/logos/logoDiscord.webp">Discord</a>
-							<a class="linkButton inviteButton mainJoinSteam" href="https://steamcommunity.com/groups/GreatlyGaming" target="_blank"><img src="../../global/media/icons/logos/logoSteam.webp">Steam</a>
-							<a class="linkButton inviteButton mainJoinRoot" href="https://rootapp.gg/ACvQAUMWhgqy9u2zASFfpw" target="_blank"><img src="../../global/media/icons/logos/logoRoot.webp">Root</a>
+							<a class="linkButton inviteButton mainJoinDiscord" href="https://discord.gg/EcTssJF5Md", target="_blank"><img src="../global/media/icons/logos/logoDiscord.webp">Discord</a>
+							<a class="linkButton inviteButton mainJoinSteam" href="https://steamcommunity.com/groups/GreatlyGaming" target="_blank"><img src="../global/media/icons/logos/logoSteam.webp">Steam</a>
+							<a class="linkButton inviteButton mainJoinRoot" href="https://rootapp.gg/ACvQAUMWhgqy9u2zASFfpw" target="_blank"><img src="../global/media/icons/logos/logoRoot.webp">Root</a>
 						</div>
 					</article>
 					<article class="brieflyHidden">
-						<img src="../global/images/galleon/disPromo.webp" class="promoImageGG viewable">
+						<img src="local/media/disPromo.webp" class="promoImageGG viewable">
 					</article>
 				</div><br>
 				<div class="bubbleList centered"> 

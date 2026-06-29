@@ -3,6 +3,7 @@
     <head>
         <title>About Seal Zone</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="../global/css/universal.css">
         <link rel="stylesheet" href="../global/css/style.css">
 		<link rel="shortcut icon" type="image/x-icon" href="../global/media/images/search.png" />
@@ -10,11 +11,11 @@
     </head>
     <body>
 		<nav id="navbox" class="transparency">
-            <a href="../index.html"><img src="../global/images/seal/sealco.webp" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Seal Search"/></a>
+            <a href="../index.html"><img src="local/media/sealco.webp" class="navIcon iconTypeGear iconLeft mobileCenter" title="Return to Ska.Space" alt="Logo for Seal Search"/></a>
             <button class="siteName offMobile" onclick="uiFunction('Spaces')" title="Open Spaces Menu" alt="Button to Open Spaces Menu">
                 <img src="../global/media/images/navburger.webp" class="iconTypeList invert" title="nyoho" alt="Icon For Nav">
-				<span class="spaceName">Ska.Space</span>
-				<span class="sectionName">Seal Zone</span>
+				<span id="globalName">Ska.Space</span>
+				<span id="spaceName">Seal Zone</span>
             </button>
             <button onclick="uiFunction('Drawer')" id="navToggle"></button>
             <img class="navIcon iconTypeTheme" title="Theme" onclick="changeThemeToggle('Theme')">
@@ -23,12 +24,9 @@
                 <h2 class="onMobile">Seal Zone</h2> 
                 <a href="search.html">Search</a>
                 <a href="about.html" class="active">About</a>
-                <div id="myDropdown" class="dropdown-content">
+                <div id="spaceList">
                     <hr class="onMobile"><h2>Spaces</h2>
-                    <a href="../index.html"><img src="../global/media/images/home.png" alt="Logo for Lobby Space">Ska.Space</a>
-					<a href="../galleon/home.html"><img src="../global/media/images/glogo.webp" alt="Logo for Galleon">Galleon</a>
-                    <a href="../cyan/home.html"><img src="../global/images/cyan/cyan.webp" alt="Logo for Galleon">Cyan Bot</a>
-                    <a href="../seal/search.html" class="active"><img src="../global/media/images/sealco.png" alt="Logo for Seal Zone">Seal Zone</a>
+                    <!-- List obtained on page load from scripts.js -->
                 </div>
             </div>
         </nav>
@@ -43,7 +41,7 @@
         
         <main onclick="clickPage()">
             <article class="centered">       
-                <img src="../global/media/images/sealco.png" class="mainImage viewable vertical">
+                <img src="local/media/sealco.webp" class="mainImage viewable vertical">
                 <span class="mainText bold">Seal Zone</span><br>
                 <h2>Overtaking the world one seal at a time</h2>
                 <br><br>
@@ -51,11 +49,11 @@
                 <p> The fatseal is an exotic creature that is excellent in its ability to be, what humans can only put into words, fat</p>
                 <br><br>
                 <h1>The Fatseal Gallery</h1>
-                <span>Pure Fat<img src="../global/images/seal/sealleft.png" width="256", height="256" class="viewable"></span>
-                <span>Center Seal #1<img src="../global/images/seal/sealfront.jpg" width="256", height="256" class="viewable"></span>
-                <span>Center Seal #2<img src="../global/images/seal/sealfront.jpg" width="256", height="256" class="viewable"></span>
-                <span>Center Seal #3<img src="../global/images/seal/sealfront.jpg" width="256", height="256" class="viewable"></span>
-                <span>Pure Fat<img src="../global/images/seal/sealco.webp" width="256", height="256" class="viewable"></span>
+                <span>Pure Fat<img src="local/media/sealleft.png" width="256", height="256" class="viewable"></span>
+                <span>Center Seal #1<img src="local/media/sealfront.jpg" width="256", height="256" class="viewable"></span>
+                <span>Center Seal #2<img src="local/media/sealfront.jpg" width="256", height="256" class="viewable"></span>
+                <span>Center Seal #3<img src="local/media/sealfront.jpg" width="256", height="256" class="viewable"></span>
+                <span>Pure Fat<img src="local/media/sealco.webp" width="256", height="256" class="viewable"></span>
                 <br>
                 <p>Feel like a seal on the internet and try <a href="search.html">Seal Search</a> today</p><br>
             </article> 

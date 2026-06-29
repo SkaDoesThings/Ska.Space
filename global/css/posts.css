@@ -1,3 +1,17 @@
+#loader {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#articleViewer{
+    display: none;
+}
+
 #featuredBoxes, #listBoxes {
     width: 100%;
     height: auto;
@@ -100,14 +114,14 @@
 
 /*In Posts*/
 
-.blog article{
+#articleViewer {
     background-color: var(--background-primary);
     border: 1px solid var(--border-primary);
     padding: 0px;
     max-width: 900px;
 }
 
-#blogContent{
+#articleContent {
     padding: 50px;
     padding-top: 0px;
     margin-top: 0px;
@@ -115,7 +129,7 @@
     padding-right: 5%;
 }
 
-.blog img{
+#articleViewer img{
     width: 100%;
     height: auto;
     margin-top: 5px;
@@ -137,7 +151,7 @@
     margin-right: 5px;
 }
 
-#shareButton{
+#blogDetails #shareButton{
     width: 32px;
     height: 32px;
     margin: 0px;
@@ -152,7 +166,6 @@
 }
 
 #returnButton{
-    display: absolute;
     position: sticky;
     top: 50px;
     padding: 10px;
@@ -160,50 +173,6 @@
     text-decoration: none;
     z-index: 2;
     cursor: pointer;
-}
-
-
-/*Comments*/
-
-#HCB_comment_box{
-    width: 50%;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-/*Comments*/
-
-[data-theme='light'] #HCB_comment_box{
-    color: black;
-}
-
-#HCB_comment_box img{
-    display: none;
-}
-
-#HCB_comment_box textarea{
-    resize: none;
-}
-
-#HCB_comment_box h3{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -50px !important;
-    line-height: 0px;
-}
-
-#HCB_comment_box span, #HCB_comment_box a{
-    font-size: 13pt;
-}
-
-.home-desc{
-    display: none;
 }
 
 /*Moblin' Time*/
@@ -217,24 +186,18 @@
         margin: 0px;
         margin-bottom: 10px;
     }
-
-    #HCB_comment_box{
-        width: 80%;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
 }
 
 @media only screen and (max-width: 750px) {
-    .blog article{
+    #articleViewer {
         width: 97%;
-        padding-top: 20px;
+        padding-top: 30px;
     }
 
     #returnButton{
         position: absolute;
         top: 0;
-        margin-top: -8px;
+        margin-top: -10px;
     }
     
     #listBoxes a {

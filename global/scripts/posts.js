@@ -1,91 +1,108 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // All specific posts
-    const contentFiles = {
-        "#developing-this-website": "post-content/Developing-This-Website.html",
-        "#post-template": "post-content/post-template.html",
-        "#bee-movie-script": "post-content/bee-movie-script.html"
+    // Directory of each article and its corresponding file path + url
+    const article_files = {
+        "": "articles/article-list.html",
+        "#developing-this-website": "articles/Developing-This-Website.html",
+        "#markdown-testing": "articles/Markdown-Testing.html",
+        "#bee-movie-script": "articles/Bee-Movie-Script.html"
     };
 
-    const articleContent = document.getElementById("articleContent");
+    // Prepare to modify the div with new html content
+    const article_list = document.getElementById("articleList");
+    const article_viewer = document.getElementById("articleViewer");
+    const article_content = document.getElementById("articleContent");
 
-    const loadContent = async (hash) => {
-        const filePath = contentFiles[hash];
-        if (filePath) {
-            try {
-                const response = await fetch(filePath);
-                if (response.ok) {
-                    const content = await response.text();
-                    articleContent.innerHTML = content;
-                    document.title = "Post - " + filePath.replace("post-content/", "").replace(".html", "").split("-").join(" ");
-                } else {
-                articleContent.innerHTML = errorContent;
-                }
-            } catch (error) {
-                articleContent.innerHTML = errorContent;
-            }
-        } else {
-            articleContent.innerHTML = defaultContent;
-            document.title = "Ska.Space - Posts"
+
+    // Attempt to load the url's file path
+    const load_content = async (hash) => {
+        const file_path = article_files[hash];
+
+        // Simulate normal full-page changing by using manual animations
+        // Going to list page
+        if (file_path == "articles/article-list.html") {
+            // Run animation
+            article_list.classList.add('fadeOut');
+            article_viewer.classList.add('fadeIn');
+            setTimeout(function(){
+                article_list.style.display = "block";
+                article_viewer.style.display = "none";
+                article_viewer.classList.remove('fadeIn');
+            }, 150);
+        } 
+        // Going to specific post
+        else {
+            // Reset article to default state (loader) until content loaded
+            // ^ This location fixes abrupt unload as user leaves article
+            article_content.innerHTML = loading;
+            // Run animation
+            article_viewer.classList.add('fadeOut');
+            article_list.classList.add('fadeIn');
+            setTimeout(function(){
+                article_list.style.display = "none";
+                article_viewer.style.display = "block";
+                article_list.classList.remove('fadeIn');
+            }, 150);
         }
+        
+        // Check if post exists
+        if (file_path) {
+            const response = await fetch (file_path);
+            // Post was found, extract the html content!
+            if(response.ok) {
+                const content = await response.text();
 
-        // Make sure the image viewer works for newly loaded images
-        const imgs = document.querySelectorAll('.viewable');
-        imgs.forEach(img => {
-            img.addEventListener('click', function() {
-              imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
-              imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
-              uiFunction('Viewer');
-            });
-        });
+                // Going to list page
+                if (file_path == "articles/article-list.html") {
+                    article_list.innerHTML = content;
+                    document.title = "Ska.Space - Posts";
+                } 
+                // Going to specific post
+                else {
+                    article_content.innerHTML = content;
+                    // Fancy way to remove all of the technical parts of the article_files directory for the page title
+                    document.title = "Post - " + file_path.replace("articles/", "").replace(".html", "").split("-").join(" ");
+                }
+
+                // Patch to make sure the image viewer works for newly loaded images
+                const imgs = document.querySelectorAll('.viewable');
+                imgs.forEach(img => {
+                    img.addEventListener('click', function() {
+                    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
+                    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
+                    uiFunction('Viewer');
+                    });
+                });
+            }
+            // For some reason the post could not load
+            else {
+                article_content.innerHTML = error_content;
+                document.title = "Ska.Space - Failed To Load Post";
+            }
+        }
+        // No post exists, show default content
+        else {
+            article_content.innerHTML = default_content;
+            document.title = "Ska.Space - Unknown Post";
+        }
     };
 
-    window.addEventListener("hashchange", () => {
-        loadContent(window.location.hash);
+    // Whatever the result was, update the page with it 
+    window.addEventListener("hashchange", () => { 
+        load_content(window.location.hash);
     });
-    loadContent(window.location.hash);
+    load_content(window.location.hash);
 });
 
-const defaultContent = `
-    <main id="posts"">
-        <article> 
-            <h1 id="pageTitle">Posts</h1>
-            <div id="listBoxes">
-                <a href="#developing-this-website">
-                    <div>
-                        <h1>Developing This Website</h1>
-                        <span>August 14th, 2024 &#x2022 Dev</span>
-                        <h2>A summary of the different eras and how things have evolved, along with an introduction to the blog section</h2>
-                    </div>
-                    <img src="post/media/dusk.webp">
-                </a>
-                <a href="#post-template">
-                    <div>
-                        <h1>Markdown Testing</h1>
-                        <span>August 14th, 2024 &#x2022 Misc</span>
-                        <h2>Displays the markdown I use on my website, also serves as good filler</h2>
-                    </div>
-                    <img src="global/media/banners/sky.webp">
-                </a>
-                <div id="startHidden">
-                    <h1 class="divider">Other Posts</h1>
-                    <a href="#bee-movie-script">
-                        <div>
-                            <h1>Bee Movie Script</h1>
-                            <span>December 21st, 2025 &#x2022 Fun</span>
-                            <h2>You like jazz too? 🎺</h2>
-                        </div>
-                        <img src="post/media/beemovie.webp" loading="lazy">
-                    </a>
-                </div>
-            </div>
-            <button id="showHiddenItem" onclick="showHiddenItem()">Other Posts</button>
-        </article>
-    </main>
-    `;
-
-const errorContent = `
-<main class="centered">
-    <span class="loader"></span>
-    <p>Failed To Load Post</p>
+const default_content = `
+    <p>This post does not exist</p>
     <a href="posts.html">Return to Post List</a></main>
+`
+
+const error_content = `
+    <p>Failed to load post!</p>
+    <a href="posts.html">Return to Post List</a></main>
+`
+
+const loading = `
+    <span class="loader"></span><br><br>
 `

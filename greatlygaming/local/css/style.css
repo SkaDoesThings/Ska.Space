@@ -7,11 +7,11 @@
 }
 
 #bannerContainer{
-  background: linear-gradient(to bottom, rgb(142, 148, 175), rgb(210, 173, 224));
+  background: linear-gradient(175deg, rgb(93, 111, 190), rgb(214, 186, 225));
 }
 
 #bannerMain{
-  background-image: url('../media/banners/sky.webp');
+  background-image: url('../../../global/media/banners/sky.webp');
 }
 
 .promoImageGG{
@@ -25,7 +25,7 @@
 }
 
 [data-theme='light'] .promoImageGG{
-  content: url('../images/galleon/disPromoLight.webp');
+  content: url('../media/disPromoLight.webp');
 }
 
 .necoArc{
