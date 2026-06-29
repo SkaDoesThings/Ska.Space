@@ -63,11 +63,11 @@ const space_list = document.getElementById("spaceList")
 const current_space = document.getElementById("spaceName").textContent;
 
 const spaces = [
-  { href: "/index.html", img: "/global/media/images/home.png", alt: "Logo for Lobby Space", name: "Ska.Space" },
-  { href: "/greatlygaming/home.html", img: "/greatlygaming/local/media/glogo.webp", alt: "Logo for GreatlyGaming", name: "GreatlyGaming" },
-  { href: "/cyan/home.html", img: "/cyan/local/media/cyan.webp", alt: "Logo of Cyan Bot", name: "Cyan Bot" },
-  { href: "/llamaland/home.html", img: "/llamaland/local/media/llama.webp", alt: "Logo for LlamaLand", name: "LlamaLand" },
-  { href: "/seal/search.html", img: "/seal/local/media/sealco.webp", alt: "Logo for Seal Zone", name: "Seal Zone" },
+  { href: "../../index.html", img: "/global/media/images/home.png", alt: "Logo for Lobby Space", name: "Ska.Space" },
+  { href: "../../greatlygaming/home.html", img: "/greatlygaming/local/media/glogo.webp", alt: "Logo for GreatlyGaming", name: "GreatlyGaming" },
+  { href: "../../cyan/home.html", img: "/cyan/local/media/cyan.webp", alt: "Logo of Cyan Bot", name: "Cyan Bot" },
+  { href: "../../llamaland/home.html", img: "/llamaland/local/media/llama.webp", alt: "Logo for LlamaLand", name: "LlamaLand" },
+  { href: "../../seal/search.html", img: "/seal/local/media/sealco.webp", alt: "Logo for Seal Zone", name: "Seal Zone" },
 ]
 
 spaces.forEach (space => {
