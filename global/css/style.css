@@ -19,20 +19,6 @@ body {
     background: linear-gradient(45deg, rgb(224, 127, 85), rgb(121, 97, 177));
 }
 
-.divider{
-    display: block;
-    background-color: var(--background-primary);
-    border: 1px solid var(--border-primary);
-    border-radius: 10px;
-    line-height: 1.3;
-    margin: 20px;
-    width: 90%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
 main{
     height: 100%;
     padding-top: 70px;
@@ -41,22 +27,23 @@ main{
     animation: appearOpacityDelayed 0.3s forwards;
 }
 
-article{
+article {
+    width: 98%;
+    max-width: 1400px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 95%;
-    max-width: 1500px;
-    height: auto;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
-[data-theme='dark'] .contentTransparent article {
+[data-theme='dark'] .contentTransparent .columnItem {
     background-color: rgb(42, 40, 40, 0.5);
 }
 
-.contentTransparent .columnContainer article {
+.contentTransparent .columnContainer .columnItem {
     background-color: rgb(42, 40, 40, 0);
     box-shadow: none;
 }
@@ -70,12 +57,23 @@ hr {
     border: 1px solid var(--border-primary);
 }
 
+.large-line {
+    border-width: 2px;
+}
+
 /*Content containers*/
 .box, .blog article {
     background: var(--background-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
-    box-shadow: 0px 8px 16px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.2);
+    transition: border 0.1s, box-shadow 0.1s;
+}
+
+
+.glow:hover {
+    border: 1px solid var(--color-primary);
+    box-shadow: 0px 0px 8px 0px var(--color-primary); 
 }
 
 /*=-=-=-=-=-=-= ( Universal Themes ) =-=-=-=-=-=-=*/
@@ -95,7 +93,7 @@ hr {
     --blurred-background: rgb(59, 57, 57, 0.7);
     --blurred-attribute: blur(25px);
 
-    --color-primary: rgb(246, 151, 151); 
+    --color-primary: lab(71.84% 35.65 15.26); 
     --color-secondary: rgb(252, 100, 100);
     --color-tertiary: rgb(100, 71, 71);
     --color-quartary: #efb461;
@@ -197,17 +195,17 @@ hr {
     --page-wallpaper: none;
 }
 
-[data-theme='rgb'] body{
+[data-theme='rgb'] body {
     animation: rainbow-bg 4.5s linear infinite;
 }
 
-[data-setting-debug-outlines='true'] *{
+[data-setting-debug-outlines='true'] * {
     border: 1px solid red !important;
 }
 
 /*=-=-=-=-=-=-=-=- ( Elements ) -=-=-=-=-=-=-=-=*/
 
-span, .text, a, input, h1, h2, h3, p, li, hover-text, button, table{
+span, p, .text, a, input, h1, h2, h3, li, hover-text, button, table{
     color: var(--text-color);
     font-family: 'Segoe UI', Arial, sans-serif;
     word-break: break-word;
@@ -226,21 +224,43 @@ h1, h2, h3{
     margin: 0;
 }
 
-h1 {
+article h1 {
     font-size: 1.7rem;
-    font-weight: bold;
+    font-weight: 700;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
 }
 
-h2{
-    font-size: 1.3rem;
-    font-weight: normal;
+article h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
 }
 
-h3{
+article h3{
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 400;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
+.groupedHeadings h1 {
+    margin-bottom: 0.2rem;
+}
+
+article ul, article ol {
+    margin-top: 0.5rem;
+}
+
+article ul li, article ol li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/*article ul li:last-child, article ol li:last-child {
+    margin-bottom: 1rem;
+}*/
 
 .center {
     display: block;
@@ -252,8 +272,25 @@ h3{
     text-align: center;
 }
 
+.spaced {
+    margin: 20px;
+}
+
+.spacedHeight {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.padded {
+    padding: 20px;
+}
+
 .vertical{
     vertical-align: middle;
+}
+
+.noTextDecoration{
+    text-decoration: none;
 }
 
 #pageTitle{
@@ -261,30 +298,6 @@ h3{
     margin-bottom: 20px;
     text-align: center;
     animation: appearOpacity 1s forwards;
-}
-
-img {
-    border-radius: 10px;
-}
-
-.emoji{
-    width: 32px;
-}
-
-.rounded{
-    border-radius: 50%;
-}
-
-.invert{
-    filter: invert(1);
-}
-
-[data-theme='light'] .invert{
-    filter: invert(0);
-}
-
-.rotate:hover{
-    transform: rotate(360deg);
 }
 
 video {
@@ -296,6 +309,59 @@ video {
 #startHidden{
     display: none;
     animation: appearOpacity 0.2s forwards;
+}
+
+.divider{
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/*=-=-=-=-=-=-=-=- ( Images ) -=-=-=-=-=-=-=-=*/
+
+img {
+    border-radius: 10px;
+}
+
+article img {
+    max-width: 100%;
+}
+
+.emoji {
+    width: 32px;
+}
+
+.img-size-half {
+    width: 50%;
+}
+
+.img-size-quarter {
+    width: 50%;
+}
+
+.rounded {
+    border-radius: 50% !important;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+[data-theme='light'] .invert {
+    filter: invert(0);
+}
+
+.rotate:hover{
+    transform: rotate(360deg);
 }
 
 /*=-=-=-=-=-=-=-=-= Navigation =-=-=-=-=-=-=-=-=*/
@@ -501,19 +567,18 @@ nav{
     flex: 1;
 }
 
-.columnContainer{
-    width: 100%;
+.columnContainer {
     margin: 0 auto;
     display: flex;
-    justify-content: center;
     border-radius: 10px;
-    max-width: 1400px;
 }
 
-.columnContainer article{
+.columnItem {
     width: 100%;
-    margin-left: 10px;
-    margin-right: 10px; 
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 0px 10px;
     height: auto;
     border: 0px;
 }
@@ -739,8 +804,10 @@ code .orange { color: rgb(255, 177, 134); }
     background-color: var(--color-primary);
     height: 35px;
     padding: 0px 15px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+}
+
+.modal-header h2{
+    font-size: 1.3rem;
 }
 
 .modal-body {
@@ -748,21 +815,26 @@ code .orange { color: rgb(255, 177, 134); }
     height: max-content;
     min-height: 60px;
     max-height: 500px;
-    padding: 5px 16px;
+    padding: 10px 15px;
     padding-bottom: 25px;
     overflow-Y: auto;
 }
 
 .close {
+    display: block;
+    width: 48px;
+    height: 40px;
     position: absolute;
-    right: 10px;
-    font-size: 32px;
+    right: 0px;
+    font-size: 28px;
     font-weight: bold;
-    margin-top: -10px;
+    margin-top: -5px;
+    text-align: center;
+    transition: background-color 0.1s;
 }
 
 .close:hover {
-    color: var(--color-tertiary);
+    background-color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
@@ -771,7 +843,7 @@ code .orange { color: rgb(255, 177, 134); }
     max-width: 80%;
 }
 
-#modalNavigation{
+#modalNavigation {
     background-color: var(--blurred-background);
     backdrop-filter: var(--blurred-attribute);
     position: fixed;
@@ -787,7 +859,7 @@ code .orange { color: rgb(255, 177, 134); }
     right: 0;
 }
 
-#modalNavigation button{
+#modalNavigation button {
     width: 125px;
     display: block;
     margin-left: auto;
@@ -796,31 +868,32 @@ code .orange { color: rgb(255, 177, 134); }
 
 /*=-=-=-=-=-=-=-=- ( Box Components ) -=-=-=-=-=-=-=-=*/
 
-.bubbleList{
+.bubbleList {
     width: 100%;
     display: flex;
     align-items: stretch;
     justify-content: center;
 }
   
-.bubbleList div{
+.bubbleList div {
     display: inline-block;
-    width: 23%;
+    width: 100%;
     background-color: rgba(241, 142, 92, 0.1);
     border: 2px solid var(--color-secondary);
     border-radius: 20px;
     margin: 8px;
+    box-sizing: border-box;
     text-align: left;
     transition: width 0.2s, font-size 0.2s;
 }
 
-.bubbleList p{
+.bubbleList p {
     font-size: 1rem;
     margin: 15px;
     margin-top: 2px;
 }
 
-.bubbleList span{
+.bubbleList span {
     display: block;
     font-size: 1.1rem;
     padding-left: 5px;
@@ -920,6 +993,7 @@ code .orange { color: rgb(255, 177, 134); }
 .bannerButtonAnimate{
     margin-top: -105px;
     animation: clickMeHome 2s infinite;  
+    will-change: transform;
 }
 
 .bannerButton:hover{
@@ -1044,6 +1118,10 @@ code .orange { color: rgb(255, 177, 134); }
         margin-right: 8px !important;
     }
     
+    .reverse-flex-pc {
+        flex-direction: row-reverse;
+    }
+
     .flexRightSide{
         margin-left: 5%;
     }
@@ -1084,14 +1162,13 @@ code .orange { color: rgb(255, 177, 134); }
     }
 
     main{
-        padding-top: 5px;
+        padding-top: 10px;
         padding-bottom: 75px;
     }
 
-    article{
-        margin-bottom: 0px;
-        width: 95%;
-        border-radius: 10px;
+    article {
+        width: 97%;
+        padding: 15px 10px;
     }
 
     .flexArea{
@@ -1186,11 +1263,10 @@ code .orange { color: rgb(255, 177, 134); }
     }
 
     .columnContainer {
-        background-color: rgba(95, 141, 55, 0);
         display: inline-block;
     }
 
-    .columnContainer article{
+    .columnContainer .columnItem {
         width: 100%;
         margin: 0px;
         padding: 0px;
@@ -1362,9 +1438,9 @@ code .orange { color: rgb(255, 177, 134); }
 }
     
   @keyframes clickMeHome {
-    0% { margin-top: -105px; }
-    50% { margin-top: -110px; }
-    100% { margin-top: -105px; }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
 }
 
 @keyframes spin {

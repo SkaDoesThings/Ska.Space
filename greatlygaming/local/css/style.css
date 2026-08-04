@@ -10,7 +10,7 @@
   background: linear-gradient(175deg, rgb(93, 111, 190), rgb(214, 186, 225));
 }
 
-#bannerMain{
+.banner-img-gg {
   background-image: url('../../../global/media/banners/sky.webp');
 }
 
@@ -79,8 +79,7 @@
 
 .inviteButton{ 
   background-color: transparent;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 16pt;
   cursor: pointer;
   border-radius: 15px;
@@ -120,12 +119,20 @@
   background-color: #2755DD;
 }
 
-.mainJoinDiscord:hover img, .mainJoinRoot:hover img {
+.mainJoinDiscord:hover img, .mainJoinRoot:hover img, .mainJoinStoat:hover img {
   filter: brightness(0) invert(1);
 }
 
 .mainJoinSteam:hover img{
-  content: url(../../global/media/icons/logos/logoSteamHover.webp);
+  content: url(../../../global/media/icons/logos/logoSteamHover.webp);
+}
+
+.mainJoinStoat {
+  border: 3px solid #667adb;
+}
+
+.mainJoinStoat:hover {
+  background-color: #667adb;
 }
 
 @media only screen and (max-width: 900px) and (min-width: 600px){
@@ -134,7 +141,7 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 550px) {
   .inviteButton{
       width: 32px;
       font-size: 0px;

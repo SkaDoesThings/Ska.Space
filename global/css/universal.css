@@ -103,7 +103,7 @@ button img, .button img{
 
 .hoverText hover-text {
     background-color: var(--background-secondary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-secondary);
     position: absolute;
     margin: auto;
     margin-top: -20px;
@@ -140,7 +140,7 @@ hover-text::after {
 
 .slideUp hover-text::after{
     top: 100%;
-    border-color: var(--border-primary) transparent transparent transparent;
+    border-color: var(--border-secondary) transparent transparent transparent;
 }
 
 hover-text img{
@@ -163,7 +163,7 @@ hover-text img{
 
 .slideDown hover-text::after{
     bottom: 100%;
-    border-color: transparent transparent var(--border-primary);
+    border-color: transparent transparent var(--border-secondary);
 }
 
 /*Forms*/

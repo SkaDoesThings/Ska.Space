@@ -1,7 +1,7 @@
 [data-theme='dark'] body{
     background-color :rgb(37, 36, 36);
     background-image: url('../media/dirt.webp');
-    background-size: 500px;
+    background-size: 100px;
     background-repeat: repeat;
     opacity: 1;
 }
@@ -12,3 +12,41 @@
     background-repeat: repeat;
     opacity: 1;
 }            
+
+.banner-img-ll {
+  background-image: url('../media/banner.webp');
+}
+
+.ip-info {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px;
+}
+
+p {
+    font-weight: bold;
+}
+
+.columnContainer .columnItem {
+    margin-bottom: 30px;
+}
+
+article{
+    border-radius: 0px;
+    border: 1px solid var(--border-primary)
+}
+
+article hr {
+    height: 0px;
+    border-width: 0px;
+}
+
+@media only screen and (max-width: 750px) {
+    article hr {
+        background-color: var(--border-secondary);
+        height: 4px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+}
