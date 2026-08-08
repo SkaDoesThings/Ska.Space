@@ -1,0 +1,53 @@
+<div class="content">
+    <div class="appBody">
+        <div id="pageSettings">                            
+            <div class="pageView centeredMobile">
+                <div id="SettingsPageStyle" class="page mainPage">
+                    <h2>Appearance</h2>
+                    <h3>Wallpaper & Theme</h3>
+                    <div id="wallpaperPreview"></div>
+                    <button onclick="document.getElementById('test').click();"><img src="seal/local/media/wallpaperSet.png" class="invert">Select Image</button>
+                    <button onclick="clearBackground()"><img src="seal/local/media/wallpaperClear.png" class="spaceNavIcon invert">Clear Image</button>
+                    <button onclick="document.getElementById('switchTheme').click();"><img src="seal/local/media/switchTheme.png" class="invert">Switch Theme</button><br>
+                    <span><button data-setting="square_corners" class="sliderButton defaultOn"></button>Rounded Corners</span>
+                    <div class="offMobile">
+                        <hr><h3>Taskbar</h2>
+                        <span><button data-setting="taskbar_no_names" class="sliderButton defaultOff"></button>Hide App Labels</span><br>
+                        <span><button data-setting="taskbar_center" class="sliderButton defaultOff"></button>Center Apps</span><br>
+                    </div>
+                    <hr><h3>Effects</h2>
+                    <span><button data-setting="no_transparency" class="sliderButton defaultOn"></button>Transparency</span><br>
+                    <span><button data-setting="nightlight" class="sliderButton defaultOff"></button>Night Light</span><br>
+                    <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
+                    <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
+                </div>
+                <div id="SettingsPageAcc" class="page">
+                    <h2>Accessibility</h2>
+                    <span><button data-setting="reduced_motion" class="sliderButton defaultOff"></button>Reduced Motion</span><br>
+                </div>
+                <div id="SettingsPageDevTools" class="page">
+                    <h2>Dev Tools</h2>
+                    <span><button data-setting="debug_outlines" class="sliderButton defaultOff"></button>Show Outlines</span><br>
+                    <div class="offMobile">
+                        <hr><h2>Splash Screen</h2>
+                        <span><button data-setting="no_splashscreen" class="sliderButton defaultOn offMobile"></button>Enable Splash</span><br>
+                        <button onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
+                    </div>
+                </div>
+                <div id="SettingsPageHome" class="page">
+                    <h2>About SpencOS</h2>
+                    <h3>Version 4.4.2026 Beta</h3><br>
+                    <h3>Welcome to Spencer's Operating System, a clean and fairly-realistic OS experience right inside your browser developed using HTML, CSS, and JS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="menuButtons">
+            <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="seal/local/media/wallpaperSet.png" class="invert">Appearance</button>
+            <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="seal/local/media/wallpaperSet.png" class="invert">Accessibility</button>
+            <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="seal/local/media/wallpaperSet.png" class="invert">Dev Tools</button>
+            <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="seal/local/media/wallpaperSet.png" class="invert">About SpencOS</button>
+        </div>
+    </div>
+</div>

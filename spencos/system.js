@@ -1,5 +1,37 @@
-// Change localstorage settings on page load
+// =-=-=-= ( Dynamic App List ) =-=-=-=
 
+const installed = [
+  // Native apps
+  { name: 'Settings', id: `Settings`, icon: `spencos/media/apps/SettingsIcon.webp`, path: '/apps/Settings.html', onclick: `appFunction('Settings', 'toggle')`},
+  { name: 'Cyan', id: 'Cyan',  icon: `spencos/media/apps/CyanIcon.webp`, path: '/apps/Cyan.html', onclick: `appFunction('Cyan', 'toggle')`},
+  { name: 'SpiderWeb', id: 'SpiderWeb', icon: `spencos/media/apps/SpiderWebIcon.webp`, path: '/apps/SpiderWeb.html', onclick: `appFunction('SpiderWeb', 'toggle')`},
+
+  // Web apps
+  { name: 'Ska.Space', id: 'Ska.Space', icon: `spencos/media/apps/Ska.SpaceIcon.webp`, path: '/apps/Ska.Space.html', class: 'webapp', onclick: `appFunction('"` + name + `"', 'toggle')`},
+  { name: 'Posts', id: 'Posts', icon: `spencos/media/apps/PostsIcon.webp`, path: '/apps/Posts.html', onclick: `appFunction('"` + name + `"', 'toggle')`},
+  { name: 'Cloud', id: 'Cloud', icon: `spencos/media/apps/CloudIcon.webp`, path: '/apps/Cloud.html', onclick: `appFunction('"` + name + `"', 'toggle')`},
+
+  // Misc apps
+  { name: 'Ska', id: 'Ska', icon: `spencos/media/apps/SkaIcon.webp`, path: '/apps/Ska.html', onclick: `appFunction('Ska', 'toggle')`}
+];
+
+var startList = document.getElementById('startIcons');
+
+installed.forEach(app => {
+  var newApp = document.createElement("li");
+  newApp.setAttribute("onclick", app.onclick)
+  newApp.innerHTML = ("<img src='" + app.icon + "'>" + app.name);
+  startList.appendChild(newApp);
+});
+
+
+// =-=-=-= ( Setting & State Retrieval ) =-=-=-=
+
+const settings = ['theme', 'audio', 'debug_outlines', 'reduced_motion', 'nightlight','no_splashscreen',
+              'taskbar_no_names', 'taskbar_center', 'no_transparency', 'square_corners'
+]
+
+// Change localstorage settings on page load 
 if (!localStorage.getItem('dset_theme')) {
   localStorage.setItem("dset_theme", "dark");
 }
@@ -9,10 +41,6 @@ function changeTheme(theme) {
   localStorage.setItem("dset_theme", theme);
   console.log("I give you " + theme);
 }
-
-const settings = ['theme', 'audio', 'debug_outlines', 'reduced_motion', 'nightlight','no_splashscreen',
-              'taskbar_no_names', 'taskbar_center', 'no_transparency', 'square_corners'
-]
 
 // Immediately initialize settings on page load
 settings.forEach(setting => {
@@ -31,7 +59,6 @@ settings.forEach(setting => {
 
 // The part where settings are actually toggled
 function changeSetting(setting) {
-  
   let state = localStorage.getItem('dset_' + setting);
   if (state == "true") {
     state = "false";
@@ -62,40 +89,17 @@ document.addEventListener('click', (e) => {
 
 const checkbox = document.getElementById("switchTheme");
 
-checkbox.addEventListener('change', ()=> {
+/*checkbox.addEventListener('change', ()=> {
     let theme = localStorage.getItem('dset_theme');
     if (theme ==='light'){
         changeTheme('dark')
     }else{
         changeTheme('light')
     }
-});
+});*/
 
+// =-=-=-= ( Taskbar Clock ) =-=-=-= 
 
-//Window Controls
-
-const applist = ['Ska.Space', 'Settings', 'Ska', 'About Ska', 'Cloud', 'SpiderWeb', 'Cyan', 'Posts', 'Media']
-applist.forEach(app => {
-  dragElement(document.getElementById(app));
-});
-
-let apps = document.querySelectorAll('.app');
-apps.forEach(function(app) {
-  app.addEventListener('click', function() {
-    windowToTop(app);
-  });
-});
-
-function windowToTop(app) {
-  apps.forEach(function(app) {
-    if (app.style.zIndex = 10){
-      app.style.zIndex = 9;
-    }      
-  })
-  app.style.zIndex = 10;
-}
-
-//Clock
 window.addEventListener("load", () => {
   clock();
   function clock() {
@@ -154,51 +158,8 @@ window.addEventListener("load", () => {
   }
 });
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "Header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
+// =-=-=-= ( Main Desktop ) =-=-=-= 
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-
-
-
-
-//Main Desktop
 function clickDesktop() {
   switch(event.which) {
     case 1:
@@ -211,15 +172,16 @@ function clickDesktop() {
       if(UIStateCCenter = 1){
         uiFunction("CCenter");
       }
+      console.log("Left mouse button pressed");
       break;
     case 2:
-      $('#desktop').html('Middle Mouse button pressed.');
+      console.log("Middle mouse button pressed");
       break;
     case 3:
-      $('#desktop').html('Right Mouse button pressed.');
+      console.log("Right mouse button pressed");
       break;
     default:
-      $('#desktop').html('You have a strange Mouse!');
+      console.log("You have a strange mouse!");
   }
 }
 
@@ -316,94 +278,10 @@ function switchUI(type){
   }
 }
 
-var flipflop = 0;
-
-// App engine
-function appFunction(name, type) {
-  var appName = document.getElementById(name);
-  var taskbarName = (name + "Icon");
-    switch(type){
-      case "toggle":
-        if(appName.classList.contains('opened')) {
-          appName.classList.remove('opened')
-          document.getElementById(taskbarName).classList.remove('active')
-          appName.style.animation = "minimize 0.4s ease 1 normal forwards";
-          break;
-        }
-        else{
-          openApp(name);
-          break;
-        }
-        
-      case "close":
-        appName.classList.remove('opened')
-        document.getElementById(taskbarName).classList.remove('active')
-        document.getElementById(taskbarName).style.display = "none";
-        appName.style.animation = "popout 0.4s ease 1 normal forwards";
-        var menu = document.getElementById("taskbar");
-        menu.removeChild(document.getElementById(taskbarName));
-        setTimeout(function(){appName.style.display = "none";}, 400);
-        break;
-
-      case "maximize":
-        if(appName.classList.contains('resized')){
-          appName.classList.remove('resized')
-          appName.style.width = "50%";
-          appName.style.height = "50%";
-          appName.style.top = "calc(25%)";
-          appName.style.left = "calc(25%)";
-          appName.style.borderRadius = "10px";
-          flipflop = 0;
-          break;
-        }
-        else {
-          appName.classList.add('resized')
-          appName.style.width = "100%";
-          appName.style.height = "calc(100% - 48px)";
-          appName.style.top = "calc(0%)";
-          appName.style.left = "calc(0%)";
-          appName.style.borderRadius = "0px";
-          flipflop = 1;
-          break;
-        }
-      case "open":
-        if(!appName.classList.contains('opened')) {
-          openApp(name)
-        }
-        else{
-          windowToTop(appName);
-        }
-        break;
-      }
-    }
-
-// Specific app engine functions
-function openApp(name) {
-  var appName = document.getElementById(name);
-  var taskbarName = (name + "Icon");
-
-  if(document.getElementById(taskbarName) == null){
-    var menu = document.getElementById("taskbar");
-    var newlink = document.createElement("a");
-    newlink.setAttribute("id", name + "Icon");
-    newlink.setAttribute("class", "active");
-    newlink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
-    newlink.innerHTML = ("<img src='spencos/images/apps/" + name + "Icon.webp'>" + name) 
-    newlink.draggable = "true"; 
-    menu.appendChild(newlink);
-
-  }
-  appName.classList.add('opened')
-  document.getElementById(taskbarName).classList.add('active');
-  appName.style.display = "flex";
-  document.getElementById(taskbarName).style.display = "inline-flex";
-  appName.style.animation = "popup 0.4s ease 1 normal forwards";
-  windowToTop(appName);
-}
-
 // TODO: Taskbar drag and drop
 
-// Wallpaper
+// =-=-=-= ( Destkop Wallpaper ) =-=-=-= 
+
 $(switchBackground);
 var oFReader = new FileReader(),
     rFilter = /^(?:image\/bmp|image\/webp|image\/|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
@@ -433,6 +311,29 @@ function clearBackground() {
     localStorage.removeItem('wallpaper')
     window.location.reload()
 }
+
+// =-=-=-= ( Image Viewer ) =-=-=-= 
+
+const imgs = document.querySelectorAll('.viewable');
+const imageViewer = document.querySelector('#imageViewer');
+const imageBackdrop = document.querySelector('#imageBackdrop');
+const imageDisplay = document.querySelector('#imageDisplay');
+
+imgs.forEach(img => {
+  img.addEventListener('click', function() {
+    appFunction('Media', 'open');
+    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
+  });
+});
+
+function backgroundViewer(given){
+    appFunction('Media', 'open');
+    imageDisplay.style.backgroundImage = 'url(' + given + ')';
+    imageBackdrop.style.backgroundImage = 'url(' + given + ')';
+}
+
+// =-=-=-= ( Selection Box ) =-=-=-= 
 
 // Microsoft Copilot made this code, couldn't find anything on the internet
 // _/----------------------------\_
@@ -494,45 +395,3 @@ const observer = new ResizeObserver((entries) => {
 targetDivs.forEach((div) => observer.observe(div))
 // -\___________________________/-
 // Back to my code
-
-function pageView(appName, selection){
-  selected = (appName + selection)
-
-  const buttonList = document.querySelector('#' + appName + ' .menuButtons');
-  const buttons = buttonList.querySelectorAll('button');
-
-  buttons.forEach(button => {
-    button.style.backgroundColor = "transparent";
-    });
-
-  const pagesList = document.querySelector('#' + appName + ' .pageView');
-  const pages = pagesList.querySelectorAll('.page');
-  
-  pages.forEach(page => {
-    page.style.display = "none";
-  });
-
-  document.getElementById(selected).style.display = "block";
-  document.getElementById(selected + "Button").style.backgroundColor = "var(--element-hover)";
-}
-
-// Image viewer
-
-const imgs = document.querySelectorAll('.viewable');
-const imageViewer = document.querySelector('#imageViewer');
-const imageBackdrop = document.querySelector('#imageBackdrop');
-const imageDisplay = document.querySelector('#imageDisplay');
-
-imgs.forEach(img => {
-  img.addEventListener('click', function() {
-    appFunction('Media', 'open');
-    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
-    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
-  });
-});
-
-function backgroundViewer(given){
-    appFunction('Media', 'open');
-    imageDisplay.style.backgroundImage = 'url(' + given + ')';
-    imageBackdrop.style.backgroundImage = 'url(' + given + ')';
-}

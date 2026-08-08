@@ -1,5 +1,5 @@
 html{
-  cursor: url('images/cursor.png'), auto;
+  cursor: url('../media/cursor.png'), auto;
 }
 
 body{
@@ -43,12 +43,12 @@ h3{
 
 :root{
   --page-background: rgb(45, 42, 42);
-  --page-wallpaper:  url('images/wallpaper.webp');
+  --page-wallpaper:  url('../media/wallpaper.webp');
   --wallpaper-size: cover;
   --text-color: rgb(245, 245, 245);
   --border-radius: 10px;
 
-  --blurred-background: rgba(35, 35, 35, 0.7);  
+  --blurred-background: rgba(35, 35, 35, 0.7);
   --blurred-attribute: blur(25px);
   --background-primary: rgb(49, 46, 46);
   --background-secondary: rgb(41, 39, 40);
@@ -438,11 +438,11 @@ nav a:active img, #startIcons a:active img{
 
 
 .audioIcon{
-  content: url('images/icons/soundOff.png');
+  content: url('../media/icons/soundOff.png');
 }
 
 [dset_audio='true'] .audioIcon{
-  content: url('images/icons/soundOn.png');
+  content: url('../media/icons/soundOn.png');
 }
 
 /*Animations*/

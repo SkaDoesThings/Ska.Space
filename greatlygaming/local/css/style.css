@@ -77,7 +77,7 @@
   margin-right: auto;
 }
 
-.inviteButton{ 
+.inviteButtons a { 
   background-color: transparent;
   margin-bottom: 10px;
   font-size: 16pt;
@@ -86,17 +86,17 @@
   transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, border-radius 0.2s;
 }
 
-.inviteButton:hover{
+.inviteButtons a:hover{
   color: white;
 }
 
-.inviteButton img{
+.inviteButtons a img{
   width: 32px;
   height: 32px;
 }
 
 .mainJoinDiscord{
-  border: 3px solid #5865F2;
+  border: 2px solid #5865F2;
 }
 
 .mainJoinDiscord:hover{
@@ -104,7 +104,7 @@
 }
 
 .mainJoinSteam{
-  border: 3px solid #0275A5;
+  border: 2px solid #0275A5;
 }
 
 .mainJoinSteam:hover{
@@ -112,7 +112,7 @@
 }
 
 .mainJoinRoot {
-  border: 3px solid #2755DD;
+  border: 2px solid #2755DD;
 }
 
 .mainJoinRoot:hover {
@@ -128,7 +128,7 @@
 }
 
 .mainJoinStoat {
-  border: 3px solid #667adb;
+  border: 2px solid #667adb;
 }
 
 .mainJoinStoat:hover {
@@ -139,10 +139,14 @@
   .brieflyHidden{
       display: none;
   }
+
+  .inviteButtons {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 550px) {
-  .inviteButton{
+  .inviteButtons a {
       width: 32px;
       font-size: 0px;
   }
