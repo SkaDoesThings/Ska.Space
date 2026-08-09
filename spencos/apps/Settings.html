@@ -2,7 +2,7 @@
     <div class="appBody">
         <div id="pageSettings">                            
             <div class="pageView centeredMobile">
-                <div id="SettingsPageStyle" class="page mainPage">
+                <div class="PageStyle page mainPage">
                     <h2>Appearance</h2>
                     <h3>Wallpaper & Theme</h3>
                     <div id="wallpaperPreview"></div>
@@ -21,11 +21,11 @@
                     <input id="test" class="hidden" type="file" onchange="loadImageFile(this)"/>
                     <input type="checkbox" id="switchTheme" class="hidden" name="theme"/><label for="switchTheme"></label>
                 </div>
-                <div id="SettingsPageAcc" class="page">
+                <div class="PageAcc page">
                     <h2>Accessibility</h2>
                     <span><button data-setting="reduced_motion" class="sliderButton defaultOff"></button>Reduced Motion</span><br>
                 </div>
-                <div id="SettingsPageDevTools" class="page">
+                <div class="PageDevTools page">
                     <h2>Dev Tools</h2>
                     <span><button data-setting="debug_outlines" class="sliderButton defaultOff"></button>Show Outlines</span><br>
                     <div class="offMobile">
@@ -33,8 +33,10 @@
                         <span><button data-setting="no_splashscreen" class="sliderButton defaultOn offMobile"></button>Enable Splash</span><br>
                         <button onclick="document.getElementById('splash').style.display = 'none'; setTimeout(function(){document.getElementById('splash').style.display = 'block'}, 1)">Test Splash</button>
                     </div>
+                    <hr><h2>More</h2>
+                    <span><button onclick='popup("system", "Fake Error", "<p>Hello this is a fake error, there is nothing to worry about</p>", "error");'>Test Popup</button></span>
                 </div>
-                <div id="SettingsPageHome" class="page">
+                <div class="PageHome page">
                     <h2>About SpencOS</h2>
                     <h3>Version 4.4.2026 Beta</h3><br>
                     <h3>Welcome to Spencer's Operating System, a clean and fairly-realistic OS experience right inside your browser developed using HTML, CSS, and JS</h3>
@@ -44,10 +46,10 @@
     </div>
     <div class="sidebar">
         <div class="menuButtons">
-            <button id="SettingsPageStyleButton" onclick="pageView('Settings', 'PageStyle')"><img src="seal/local/media/wallpaperSet.png" class="invert">Appearance</button>
-            <button id="SettingsPageAccButton" onclick="pageView('Settings', 'PageAcc')"><img src="seal/local/media/wallpaperSet.png" class="invert">Accessibility</button>
-            <button id="SettingsPageDevToolsButton" onclick="pageView('Settings', 'PageDevTools')"><img src="seal/local/media/wallpaperSet.png" class="invert">Dev Tools</button>
-            <button id="SettingsPageHomeButton" class="defaultButton" onclick="pageView('Settings', 'PageHome')"><img src="seal/local/media/wallpaperSet.png" class="invert">About SpencOS</button>
+            <button class="PageStyleButton" onclick="pageView(this, 'PageStyle')"><img src="seal/local/media/wallpaperSet.png" class="invert">Appearance</button>
+            <button class="PageAccButton" onclick="pageView(this, 'PageAcc')"><img src="seal/local/media/wallpaperSet.png" class="invert">Accessibility</button>
+            <button class="PageDevToolsButton" onclick="pageView(this, 'PageDevTools')"><img src="seal/local/media/wallpaperSet.png" class="invert">Dev Tools</button>
+            <button class="PageHomeButton" class="defaultButton" onclick="pageView(this, 'PageHome')"><img src="seal/local/media/wallpaperSet.png" class="invert">About SpencOS</button>
         </div>
     </div>
 </div>

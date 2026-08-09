@@ -1,15 +1,16 @@
 // =-=-=-= ( Dynamic App List ) =-=-=-=
 
-const installed = [
+const app_list = [
   // Native apps
   { name: 'Settings', id: `Settings`, icon: `spencos/media/apps/SettingsIcon.webp`, path: '/apps/Settings.html', onclick: `appFunction('Settings', 'toggle')`},
   { name: 'Cyan', id: 'Cyan',  icon: `spencos/media/apps/CyanIcon.webp`, path: '/apps/Cyan.html', onclick: `appFunction('Cyan', 'toggle')`},
   { name: 'SpiderWeb', id: 'SpiderWeb', icon: `spencos/media/apps/SpiderWebIcon.webp`, path: '/apps/SpiderWeb.html', onclick: `appFunction('SpiderWeb', 'toggle')`},
+  { name: 'Photos', id: 'Photos', icon: `spencos/media/apps/PhotosIcon.webp`, path: '/apps/Photos.html', onclick: `appFunction('Photos', 'toggle')`},
 
   // Web apps
-  { name: 'Ska.Space', id: 'Ska.Space', icon: `spencos/media/apps/Ska.SpaceIcon.webp`, path: '/apps/Ska.Space.html', class: 'webapp', onclick: `appFunction('"` + name + `"', 'toggle')`},
-  { name: 'Posts', id: 'Posts', icon: `spencos/media/apps/PostsIcon.webp`, path: '/apps/Posts.html', onclick: `appFunction('"` + name + `"', 'toggle')`},
-  { name: 'Cloud', id: 'Cloud', icon: `spencos/media/apps/CloudIcon.webp`, path: '/apps/Cloud.html', onclick: `appFunction('"` + name + `"', 'toggle')`},
+  { name: 'Ska.Space', id: 'Ska.Space', icon: `spencos/media/apps/Ska.SpaceIcon.webp`, path: '/apps/Ska.Space.html', onclick: `appFunction('Ska.Space', 'toggle')`},
+  { name: 'Posts', id: 'Posts', icon: `spencos/media/apps/PostsIcon.webp`, path: '/apps/Posts.html', onclick: `appFunction('Posts', 'toggle')`},
+  { name: 'Cloud', id: 'Cloud', icon: `spencos/media/apps/CloudIcon.webp`, path: '/apps/Cloud.html', onclick: `appFunction('Cloud', 'toggle')`},
 
   // Misc apps
   { name: 'Ska', id: 'Ska', icon: `spencos/media/apps/SkaIcon.webp`, path: '/apps/Ska.html', onclick: `appFunction('Ska', 'toggle')`}
@@ -17,7 +18,7 @@ const installed = [
 
 var startList = document.getElementById('startIcons');
 
-installed.forEach(app => {
+app_list.forEach(app => {
   var newApp = document.createElement("li");
   newApp.setAttribute("onclick", app.onclick)
   newApp.innerHTML = ("<img src='" + app.icon + "'>" + app.name);
@@ -315,22 +316,31 @@ function clearBackground() {
 // =-=-=-= ( Image Viewer ) =-=-=-= 
 
 const imgs = document.querySelectorAll('.viewable');
-const imageViewer = document.querySelector('#imageViewer');
-const imageBackdrop = document.querySelector('#imageBackdrop');
-const imageDisplay = document.querySelector('#imageDisplay');
 
-imgs.forEach(img => {
-  img.addEventListener('click', function() {
-    appFunction('Media', 'open');
-    imageDisplay.style.backgroundImage = 'url(' + img.src + ')';
-    imageBackdrop.style.backgroundImage = 'url(' + img.src + ')';
-  });
+document.addEventListener('click', (event) => {
+  const img = event.target.closest('.viewable');
+  if (img) {
+    backgroundViewer(img.src);
+  }
 });
 
-function backgroundViewer(given){
-    appFunction('Media', 'open');
-    imageDisplay.style.backgroundImage = 'url(' + given + ')';
-    imageBackdrop.style.backgroundImage = 'url(' + given + ')';
+async function backgroundViewer(given) {
+  await appFunction('Photos', 'open');
+
+  const photoViewers = document.querySelectorAll('.photoViewer');
+    requestAnimationFrame(() => {
+    photoViewers.forEach(photoViewer => {
+      const imageBackdrop = photoViewer.querySelector('.imageBackdrop');
+      const imageDisplay = photoViewer.querySelector('.imageDisplay');
+
+      if (imageBackdrop) {
+        imageBackdrop.style.backgroundImage = 'url(' + given + ')';
+      }
+      if (imageDisplay) {
+        imageDisplay.style.backgroundImage = 'url(' + given + ')';
+      }
+    });
+  });
 }
 
 // =-=-=-= ( Selection Box ) =-=-=-= 
@@ -395,3 +405,46 @@ const observer = new ResizeObserver((entries) => {
 targetDivs.forEach((div) => observer.observe(div))
 // -\___________________________/-
 // Back to my code
+
+// =-=-=-= ( Popup System ) =-=-=-= 
+
+/*Contains default blank values*/
+var session_popup_count = 0;
+function popup(source, title, input, type) {
+  view = document.getElementById('popups'); 
+
+  //console.log(source + title + input + type);
+  
+  var popup = document.createElement("div");
+  popup.setAttribute("id", 'Popup' + session_popup_count);
+  popup.setAttribute("class", 'popup');
+  
+  popup.innerHTML = (`
+    <div class="appHeader" id="` + popup.id + `Header">
+      <ul>
+          <img src='spencos/media/icons/` + type + `.webp'>
+          <span>` + title + `</span>
+          <li class="typeClose" onclick="appFunction('Popup` + session_popup_count + `', 'close')">x</li>
+      </ul>
+    </div>
+    <div class="appBody">
+    ` + input + `
+    </div>
+  `);
+
+  view.appendChild(popup);
+
+  // Make popup window draggable
+  dragElement(popup.id);
+
+  // Allow window heirarchy changing
+  popup.addEventListener('click', function() {
+    windowToTop(popup.id);
+  });
+
+  // Move popup to top of desktop (broken)
+  windowToTop(popup.id);
+
+  // Increase iteration to avoid multi-window conflicts
+  session_popup_count++;
+}

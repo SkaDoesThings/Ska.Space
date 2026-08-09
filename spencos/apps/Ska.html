@@ -1,7 +1,7 @@
 <div class="content">
     <div class="appBody">
         <div class="pageView centeredMobile">
-            <div id="SkaPageAbout" class="page mainPage">
+            <div class="PageAbout page mainPage">
                 <div id="welcome" class="flexOne box window">
                     <div class="windowContent centeredMobile">
                         <h1 class="gradientRedWhite">Ska Appears!<span class="hoverText slideUp"><img src="global/media/images/ska/padoru." class="mainImage vertical viewable" onclick="play('Yippee')"><hover-text>the silly</hover-text></span></h1>
@@ -52,7 +52,7 @@
                     </div>
                 </div><br>
             </div>
-            <div id="SkaPageProjects" class="page">
+            <div class="PageProjects page">
                 <h1 id="pageTitle">Projects</h1>
                 <div id="featuredBoxes">
                     <div>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div id="SkaPagePosts" class="page">
+            <div class="PagePosts page">
                 <h1 id="pageTitle">Posts</h1>
                 <div id="listBoxes">
                     <a href="post/developing-this-website.html">
@@ -118,9 +118,9 @@
     </div>
     <div class="sidebar">
         <div class="menuButtons">
-            <button id="SkaPageAboutButton" onclick="pageView('Ska', 'PageAbout')"><img src="seal/local/media/wallpaperSet.png" class="invert">Hello</button>
-            <button id="SkaPageProjectsButton" onclick="pageView('Ska', 'PageProjects')"><img src="seal/local/media/wallpaperSet.png" class="invert">Projects</button>
-            <button id="SkaPagePostsButton" onclick="pageView('Ska', 'PagePosts')"><img src="seal/local/media/wallpaperSet.png" class="invert">Posts</button>
+            <button class="PageAboutButton" onclick="pageView(this, 'PageAbout')"><img src="seal/local/media/wallpaperSet.png" class="invert">Hello</button>
+            <button class="PageProjectsButton" onclick="pageView(this, 'PageProjects')"><img src="seal/local/media/wallpaperSet.png" class="invert">Projects</button>
+            <button class="PagePostsButton" onclick="pageView(this, 'PagePosts')"><img src="seal/local/media/wallpaperSet.png" class="invert">Posts</button>
         </div>
     </div>
 </div>

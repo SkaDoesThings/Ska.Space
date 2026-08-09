@@ -2,68 +2,80 @@
 
 var flipflop = 0;
 
-function appFunction(name, type) {
+function appFunction(name, action) {
 
   // Check if app is currently loaded, if it is proceed with regular functions
   if(document.getElementById(name)) {
-    var appName = document.getElementById(name);
-    var taskbarName = document.getElementById((name + "Icon"));
-    switch(type){
+
+    var appElement = document.getElementById(name);
+    var taskbarElement = document.getElementById((name + "Icon"));
+
+    switch(action){
       case "toggle":
-        if(appName.classList.contains('opened')) {
-          appName.classList.remove('opened');
-          taskbarName.classList.remove('active');
-          appName.style.animation = "minimize 0.4s ease 1 normal forwards";
+        if(appElement.classList.contains('opened')) {
+          appElement.classList.remove('opened');
+          taskbarElement.classList.remove('active');
+          appElement.style.animation = "minimize 0.4s ease 1 normal forwards";
           break;
         }
         else{
-          appName.classList.add('opened');
-          taskbarName.classList.add('active');
-          appName.style.animation = "popup 0.4s ease 1 normal forwards";
+          appElement.classList.add('opened');
+          taskbarElement.classList.add('active');
+          appElement.style.animation = "popup 0.4s ease 1 normal forwards";
+          // Bring app to top view of desktop
+          windowToTop(name);
           break;
         }
         
       case "close":
-        appName.classList.remove('opened');
-        taskbarName.classList.remove('active');
-        taskbarName.style.display = "none";
-        appName.style.animation = "popout 0.4s ease 1 normal forwards";
-        var appMenu = document.getElementById("taskbar");
-        appMenu.removeChild(taskbarName);
+        // Begin with app closing animation
+        appElement.classList.remove('opened');
+        appElement.style.animation = "popout 0.4s ease 1 normal forwards";
+
+        // Remove from taskbar if it exists (prevents error for closing popups)
+        if (taskbarElement) {
+          taskbarElement.classList.remove('active');
+          taskbarElement.style.display = "none";
+          var appMenu = document.getElementById("taskbar");
+          appMenu.removeChild(taskbarElement);
+        }
+
         // Fully remove the loaded app from the website
         setTimeout(function() {
-            appName.innerHTML = "";
-            appName.remove();
+            var appView = document.getElementById("apps");
+            appElement.innerHTML = "";
+            apps.removeChild(appElement);
         }, 400);
+
         break;
 
       case "maximize":
-        if(appName.classList.contains('resized')){
-          appName.classList.remove('resized')
-          appName.style.width = "50%";
-          appName.style.height = "50%";
-          appName.style.top = "calc(25%)";
-          appName.style.left = "calc(25%)";
-          appName.style.borderRadius = "10px";
+        if(appElement.classList.contains('resized')){
+          appElement.classList.remove('resized')
+          appElement.style.width = "50%";
+          appElement.style.height = "50%";
+          appElement.style.top = "calc(25%)";
+          appElement.style.left = "calc(25%)";
+          appElement.style.borderRadius = "10px";
           flipflop = 0;
           break;
         }
         else {
-          appName.classList.add('resized')
-          appName.style.width = "100%";
-          appName.style.height = "calc(100% - 48px)";
-          appName.style.top = "calc(0%)";
-          appName.style.left = "calc(0%)";
-          appName.style.borderRadius = "0px";
+          appElement.classList.add('resized')
+          appElement.style.width = "100%";
+          appElement.style.height = "calc(100% - 48px)";
+          appElement.style.top = "calc(0%)";
+          appElement.style.left = "calc(0%)";
+          appElement.style.borderRadius = "0px";
           flipflop = 1;
           break;
         }
       case "open":
-        if(!appName.classList.contains('opened')) {
+        if(!appElement.classList.contains('opened')) {
           openApp(name)
         }
         else{
-          windowToTop(appName);
+          windowToTop(appElement);
         }
         break;
       }
@@ -72,22 +84,40 @@ function appFunction(name, type) {
     else {
       openApp(name);
     }
+
+    // Return the final reference I suppose
+    return appFunction;
   }
 
 // Create a new app window according to the name given
-function openApp(name) {
-  var appName = name;
-  var taskbarName = (name + "Icon");
+
+var session_window_count = 0;
+
+function openApp(request) {
+  // Find name of app in app directory
+  var app = app_list.find(app => app.id === request);
+
+  // Create a window name so that each window is distinct (allows for duplicate apps)
+  var window_id = ("App" + session_window_count); 
+  session_window_count++;
+
+  if (!app) {
+    popup("system", "Error", "<span>App not found</span>", "error");
+    console.error("App not found: ", request);
+    return;
+  }
+
+  var taskbarName = (window_id + "Icon");
 
   // Create a taskbar icon for the app
   if(document.getElementById(taskbarName) == null){
     var appMenu = document.getElementById("taskbar");
     var newLink = document.createElement("a");
 
-    newLink.setAttribute("id", name + "Icon");
+    newLink.setAttribute("id", window_id + "Icon");
     newLink.setAttribute("class", "active");
-    newLink.setAttribute("onclick", "appFunction('" + name + "', 'toggle')");
-    newLink.innerHTML = ("<img src='spencos/media/apps/" + name + "Icon.webp'>" + appName);
+    newLink.setAttribute("onclick", "appFunction('" + window_id + "', 'toggle')");
+    newLink.innerHTML = ("<img src='spencos/media/apps/" + app.name + "Icon.webp'>" + app.name);
     newLink.draggable = "true"; 
     appMenu.appendChild(newLink);
     
@@ -96,23 +126,30 @@ function openApp(name) {
   }
 
   // Create a window for the app
-  if (document.getElementById(name) == null) {
+  if (document.getElementById(window_id) == null) {
     var appView = document.getElementById("apps");
-    var newApp = document.createElement("div");
+    var newApp = document.createElement("article");
 
-    newApp.setAttribute("id", name);
-    newApp.setAttribute("class", "app opened");
+    newApp.setAttribute("id", window_id);
+
+    // Add classes to window, including specific app style and checking whether any exist in the document
+    if (app.class) {
+      newApp.setAttribute("class", "app-" + app.name + " " + app.class + " app opened");
+    }
+    else {
+      newApp.setAttribute("class", "app-" + app.name + " app opened");
+    }
     newApp.draggable = "true"; 
 
     // Create window title bar for app
     newApp.innerHTML = (`
-      <div class="appHeader" id="` + name + `Header">
+      <div class="appHeader" id="` + window_id + `Header">
           <ul>
-              <img src='spencos/media/apps/` + name + `Icon.webp'>
-              <span>` + appName + `</span>
-              <li class="typeClose" onclick="appFunction('`+ name + `', 'close')">x</li>
-              <li class="typeSize" onclick="appFunction('`+ name + `', 'maximize')">+</li>
-              <li onclick="appFunction('`+ name + `', 'toggle')">-</li>
+              <img src='` + app.icon + `'>
+              <span>` + app.name + `</span>
+              <li class="typeClose" onclick="appFunction('`+ window_id + `', 'close')">x</li>
+              <li class="typeSize" onclick="appFunction('`+ window_id + `', 'maximize')">+</li>
+              <li onclick="appFunction('`+ window_id + `', 'toggle')">-</li>
           </ul>
       </div>
     `);
@@ -124,25 +161,29 @@ function openApp(name) {
 
     // Allow window heirarchy changing
     newApp.addEventListener('click', function() {
-      windowToTop(name);
+      windowToTop(window_id);
     });
 
     // Force the window to appear on top
-    windowToTop(name);
+    windowToTop(window_id);
 
     // Make app window draggable
-    dragElement(name);
+    dragElement(window_id);
+
+    // Attach app components to the app instance
+    newApp.addEventListener('click', function(event) {
+      const div_id = event.currentTarget.id;
+    });
 
     // Load the app content
-    loadAppContent(name);
+    loadAppContent(window_id, app.name);
   }
-  
 }
 
 // Load app content from external html file
-async function loadAppContent(name) {
-  var appElement = document.getElementById(name);
-  var file_path = ("spencos/apps/" + name + ".html")
+async function loadAppContent(window_id, app_name) {
+  var appElement = document.getElementById(window_id);
+  var file_path = ("spencos/apps/" + app_name + ".html")
 
   if (file_path) {
     const response = await fetch(file_path);
@@ -151,12 +192,15 @@ async function loadAppContent(name) {
       appElement.innerHTML += content;
     }
     else {
-      appElement.innerHTML += "Error loading app content..";
+      appElement.innerHTML += "<h1>Error loading app content..</h1>";
     }
   }
   else {
-    appElement.innerHTML += "Error finding app location..";
+    appElement.innerHTML += "<h1>Error finding app location..</h1>";
   }
+
+  // Make app window draggable again to fix broken dragging after content is loaded
+  dragElement(window_id);
 
   /* Remove loading indicator (if app includes one)
     const loadingElement = appElement.querySelector('.appLoading');
@@ -170,26 +214,28 @@ async function loadAppContent(name) {
 
 function windowToTop(source) {
   let apps = document.querySelectorAll('.app');
-  let source_app = document.getElementById(source);
+  let sourceApp = document.getElementById(source);
 
-  // Move every app down the heirarchy
-  apps.forEach(function(app) {
-    if (app.style.zIndex = 10) {
-      app.style.zIndex = 9;
-    }      
-  })
+  // Move every app and popup down the heirarchy
+  if (apps) {  
+    apps.forEach(function(app) {
+      if (app.style.zIndex = 10) {
+        app.style.zIndex = 9;
+      }      
+    })
+  }
   
   // Move the app that called the function to the front
-  source_app.style.zIndex = 10;
+  sourceApp.style.zIndex = 10;
 }
 
 function dragElement(name) {
     var appElement = document.getElementById(name);
-    var headerElement = document.getElementById(appElement.id + "Header");
+    console.log(appElement);
+    var headerElement = document.getElementById(name + "Header");
+    console.log(headerElement);
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     
-    console.log(headerElement);
-
     if (headerElement) {
         // if present, the header is where you move the DIV from:
         headerElement.onmousedown = dragMouseDown;
@@ -232,24 +278,35 @@ function dragElement(name) {
 
 // =-=-=-= ( App UI Functionality ) =-=-=-= 
 
-function pageView(appName, selection){
-    selected = (appName + selection)
+function pageView(element, selection){
+  try {
+    var appElement = element.closest("article");
+
+    console.log(appElement);
+    console.log(selection);
 
     // Obtain current buttons using id of app name and then the corresponding class
-    const buttonList = document.querySelector('#' + appName + ' .menuButtons');
+    const buttonList = appElement.querySelector('.menuButtons');
+    console.log(buttonList);
     const buttons = buttonList.querySelectorAll('button');
 
     buttons.forEach(button => {
         button.style.backgroundColor = "transparent";
     });
 
-    const pagesList = document.querySelector('#' + appName + ' .pageView');
+    const pagesList = appElement.querySelector('.pageView');
+    console.log(pagesList);
     const pages = pagesList.querySelectorAll('.page');
     
     pages.forEach(page => {
         page.style.display = "none";
     });
 
-    document.getElementById(selected).style.display = "block";
-    document.getElementById(selected + "Button").style.backgroundColor = "var(--element-hover)";
+    appElement.querySelector('.' + selection).style.display = "block";
+    appElement.querySelector('.' + selection + 'Button').style.backgroundColor = "var(--element-hover)";
+  }
+  catch (e) {    
+    popup("system", "Error", "<p>" + e + "</p><p>Tried " + selection + " on " + element + "</p>", "error");
+    return;
+  }
 }
