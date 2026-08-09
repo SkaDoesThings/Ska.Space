@@ -175,6 +175,9 @@ function openApp(request) {
       const div_id = event.currentTarget.id;
     });
 
+    // Enable detection of window size to display mobile UI
+    observer.observe(newApp);
+
     // Load the app content
     loadAppContent(window_id, app.name);
   }
@@ -275,9 +278,23 @@ function dragElement(name) {
     }
 }
 
-
 // =-=-=-= ( App UI Functionality ) =-=-=-= 
 
+// Allows app UI to change between desktop / mobile when window resizes 
+const observer = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    const element = entry.target;
+    const width = entry.contentRect.width;
+
+    if (width < 500 && !element.classList.contains("mobile")) {
+      element.classList.add('mobile')
+    } else if (width > 500 && element.classList.contains("mobile")) {
+      element.classList.remove('mobile')
+    }
+  }
+});
+
+// Consistent system to switch between views within an app
 function pageView(element, selection){
   try {
     var appElement = element.closest("article");

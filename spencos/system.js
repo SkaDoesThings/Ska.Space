@@ -380,29 +380,6 @@ function onMouseMove(e) {
   if (currentY < startY) { selection.style.top = `${currentY}px`; }
 }
 
-
-const targetDivs = document.querySelectorAll('.app');
-
-const observer = new ResizeObserver((entries) => {
-  for (let entry of entries) {
-    const element = entry.target;
-    const width = entry.contentRect.width;
-
-    if (width < 500 && !element.classList.contains("mobile")) {
-      element.classList.add('mobile')
-    } else if (width > 500 && element.classList.contains("mobile")) {
-      element.classList.remove('mobile')
-    }
-
-    if (width <= 800 && !element.classList.contains("mobileIfWebapp")) {
-      element.classList.add('mobileIfWebapp')
-    } else if (width > 800 && element.classList.contains("mobileIfWebapp")) {
-      element.classList.remove('mobileIfWebapp')
-    }
-  }
-});
-
-targetDivs.forEach((div) => observer.observe(div))
 // -\___________________________/-
 // Back to my code
 

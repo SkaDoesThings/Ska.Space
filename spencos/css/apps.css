@@ -292,11 +292,11 @@ button:active {
     margin-right: auto;
 }
 
-.mobile .content{
+.mobile .content {
   padding-bottom: 50px;
 }
 
-.mobile .sidebar{
+.mobile .sidebar {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -310,7 +310,7 @@ button:active {
   border-top-left-radius: 0px;
 }
 
-.mobile .menuButtons{
+.mobile .menuButtons {
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -319,7 +319,7 @@ button:active {
   margin-right: 5px;
 }
 
-.mobile .menuButtons button{
+.mobile .menuButtons button {
   display: block;
   width: 70px;
   height: 40px;
@@ -328,7 +328,7 @@ button:active {
   font-size: 0px;
 }
 
-.mobile .menuButtons button img{
+.mobile .menuButtons button img {
   width: 28px;
   height: 28px;
   display: flex;
@@ -336,19 +336,19 @@ button:active {
   margin-top: 1px;
 }
 
-.mobile #wallpaperPreview{
+.mobile #wallpaperPreview {
   margin: auto;
 }
 
-.mobileIfWebapp.webview{
+.mobileIfWebapp.webview {
   padding-bottom: 30px;
 }
 
-.mobileIfWebapp.webview .appHeader{
+.mobileIfWebapp.webview .appHeader {
   position: relative;
 }
 
-.mobileIfWebapp.webview .webapp{
+.mobileIfWebapp.webview .webapp {
   margin-top: 0px;
   height: calc(100% + 56px);
 }
