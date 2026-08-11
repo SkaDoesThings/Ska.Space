@@ -183,6 +183,8 @@ function openApp(request) {
   }
 }
 
+
+
 // Load app content from external html file
 async function loadAppContent(window_id, app_name) {
   var appElement = document.getElementById(window_id);
@@ -210,6 +212,86 @@ async function loadAppContent(window_id, app_name) {
     if (loadingElement) {
     loadingElement.remove();
   }*/
+
+  // Check if any extra app changes nessesary
+  checkAppConditions(window_id, app_name);
+}
+
+// Update app toggles for applicable apps
+function checkAppConditions(window_id, app_name) {
+  var appElement = document.getElementById(window_id);
+  console.log(appElement);
+
+  // Settings slider & button toggles
+  switch (app_name) {
+    case "Settings": {
+      settings.forEach(setting => {
+        // Grab the current localstorage saved state of each setting
+        let state = localStorage.getItem('dset_' + setting);
+        // Apply styling to the button
+        const button = appElement.querySelector(`[data-setting="${setting}"]`);
+        // If button (or slider) exists, update its visual style
+        if (button) {
+          button.setAttribute('data_active', state)
+        }
+      });
+    }
+  }
+}
+
+
+// Load app content from external html file
+async function loadAppContent(window_id, app_name) {
+  var appElement = document.getElementById(window_id);
+  var file_path = ("spencos/apps/" + app_name + ".html")
+
+  if (file_path) {
+    const response = await fetch(file_path);
+    if (response.ok) {
+      const content = await response.text();
+      appElement.innerHTML += content;
+    }
+    else {
+      appElement.innerHTML += "<h1>Error loading app content..</h1>";
+    }
+  }
+  else {
+    appElement.innerHTML += "<h1>Error finding app location..</h1>";
+  }
+
+  // Make app window draggable again to fix broken dragging after content is loaded
+  dragElement(window_id);
+
+  /* Remove loading indicator (if app includes one)
+    const loadingElement = appElement.querySelector('.appLoading');
+    if (loadingElement) {
+    loadingElement.remove();
+  }*/
+
+  // Check if any extra app changes nessesary
+  checkAppConditions(window_id, app_name);
+}
+
+// Update app toggles for applicable apps
+function checkAppConditions(window_id, app_name) {
+  var appElement = document.getElementById(window_id);
+  console.log(appElement);
+
+  // Settings slider & button toggles
+  switch (app_name) {
+    case "Settings": {
+      settings.forEach(setting => {
+        // Grab the current localstorage saved state of each setting
+        let state = localStorage.getItem('dset_' + setting);
+        // Apply styling to the button
+        const button = appElement.querySelector(`[data-setting="${setting}"]`);
+        // If button (or slider) exists, update its visual style
+        if (button) {
+          button.setAttribute('data_active', state)
+        }
+      });
+    }
+  }
 }
 
 
