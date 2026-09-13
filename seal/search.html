@@ -33,29 +33,6 @@
         </nav>
 		
         <div id="leavingPage"></div>
-        
-        <div id="imageViewer" onclick="uiFunction('Viewer')">
-            <div id="imageBackdrop"></div>
-            <div id="imageDisplay"></div>
-            <button title="Close">x</button>
-        </div>
-
-      <div id="modalViewer" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content" id="modalShortcuts">
-				<div class="modal-header">
-					<span class="close" onclick="uiFunction('Modal')">×</span>
-					<h2>Add Shortcuts</h2>
-				</div>
-				<div class="modal-body centered">
-					<form>
-						<input type="text" id="link-name" placeholder="Link Name"> 
-						<input type="url" id="link-url" placeholder="Link URL"><br>
-						<input type="submit" value="🔗" id="add-link" class="inputSubmit">
-					</form>
-				</div>
-			</div>	
-        </div>
 
 		<main id="seal" class="centered" onclick="clickPage()">
 			<img src="local/media/sealsearch.webp" class="vertical viewable searchLogo">
@@ -118,6 +95,32 @@
 				</div>
 			</div>
 		</main>
+		
+        <div id="dynamicViews">
+			<div id="imageViewer" onclick="uiFunction('Viewer')">
+				<div id="imageBackdrop"></div>
+				<div id="imageDisplay"></div>
+				<button title="Close">x</button>
+			</div>
+
+			<div id="modalViewer" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content" id="modalShortcuts">
+					<div class="modal-header">
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+						<h2>Add Shortcuts</h2>
+					</div>
+					<div class="modal-body centered">
+						<form>
+							<input type="text" id="link-name" placeholder="Link Name"> 
+							<input type="url" id="link-url" placeholder="Link URL"><br>
+							<input type="submit" value="🔗" id="add-link" class="inputSubmit">
+						</form>
+					</div>
+				</div>	
+			</div>
+		</div>
+
 	</body>
 	<script src="../global/scripts/scripts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

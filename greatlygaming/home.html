@@ -32,70 +32,6 @@
         </nav>
 	
         <div id="leavingPage"></div>
-        
-		<!-- Details Modal -->
-        <div id="modalViewer" class="modal">
-			<!-- Modal navigation -->
-			<div id="modalNavigation" class="centered">
-				<h2>Navigation</h2>
-				<button onclick="uiFlexFunction('Modal', 'One')">Discuss</button>
-				<button onclick="uiFlexFunction('Modal', 'Two')">Customize</button>
-				<button onclick="uiFlexFunction('Modal', 'Three')">Expand</button>
-				<button onclick="uiFlexFunction('Modal', 'Four')">Enjoy</button>
-			</div>
-            <!-- Modal content -->
-            <div class="modal-content" id="modalOne">
-                <div class="modal-header">
-					<h2>More Info - Discuss</h2>
-                    <span class="close" onclick="uiFunction('Modal')">×</span>
-                </div>
-                <div class="modal-body centered">
-					<p>Find you're missing something? You can even make your own 'group chat' using forums. Pretty cool!</p>
-					<img src="local/media/forumExamples.webp" loading="lazy" class="viewable">
-                </div>
-            </div>
-			 <div class="modal-content" id="modalTwo">
-                <div class="modal-header">
-					<h2>More Info - Customize</h2>
-                    <span class="close" onclick="uiFunction('Modal')">×</span>
-                </div>
-                <div class="modal-body centered">
-                    <p>Roles: Thanks to Discord you can now select colors and roles easily!</p>
-					<img src="local/media/customizePromo.webp" loading="lazy" class="viewable"><hr>  
-					<p>Emoji: Here are some you can use! My favorites are Gil from <a href="https://www.guilded.gg" target="_blank">Guilded</a>, which the server used to be on, and my mascot emoji <img src="local/media/ggarc.webp" class="viewable emoji"></p>
-					<img src="local/media/emojiPromo.webp" loading="lazy" class="viewable"><hr>
-					<p>Thank you boosters for the extra features!</p>
-                </div>
-            </div>
-			 <div class="modal-content" id="modalThree">
-                <div class="modal-header">
-					<h2>More Info - Expand</h2>
-                    <span class="close" onclick="uiFunction('Modal')">×</span>
-                </div>
-                <div class="modal-body centered">
-                    <p>I have been working on this server since 2016, so suffice to say a lot has changed! For fun, here's an old screenshot from 2017 before Discord even had categories :p</p>
-					<img src="local/media/oldExample.webp" loading="lazy" class="viewable">
-                </div>
-            </div>
-			 <div class="modal-content" id="modalFour">
-                <div class="modal-header">
-					<h2>More Info - Enjoy</h2>
-                    <span class="close" onclick="uiFunction('Modal')">×</span>
-                </div>
-                <div class="modal-body centered">
-					<p>Bots: Listen to music from all platforms with <a href="../cyan/home.html">Cyan</a>, collect cards with Karuta/Mudae, and grow your level with Mee6</p>
-                    <img src="local/media/bots.webp" loading="lazy" class="viewable"><hr>
-					<p>Minecraft: I host a 24/7 server with creative and survival worlds</p>
-					<img src="local/media/llamalisted.webp" loading="lazy" class="viewable">
-                </div>
-            </div>
-        </div>
-
-        <div id="imageViewer" onclick="uiFunction('Viewer')">
-            <div id="imageBackdrop"></div>
-            <div id="imageDisplay"></div>
-            <button title="Close">x</button>
-        </div>
 
 		<main onclick="clickPage()">
 			<div id="bannerContainer" class="placeholderGalleon">
@@ -117,8 +53,12 @@
 						<div class="inviteButtons centeredMobile spacedHeight">
 							<a class="linkButton mainJoinDiscord" href="https://discord.gg/EcTssJF5Md", target="_blank"><img src="../global/media/icons/logos/logoDiscord.webp">Discord</a>
 							<a class="linkButton mainJoinSteam" href="https://steamcommunity.com/groups/GreatlyGaming" target="_blank"><img src="../global/media/icons/logos/logoSteam.webp">Steam</a>
-							<a class="linkButton mainJoinStoat" href="https://stt.gg/pk5GqfZx" target="_blank"><img src="../global/media/icons/logos/logoStoat.webp">Stoat</a>
-							<a class="linkButton mainJoinRoot" href="https://rootapp.gg/ACvQAUMWhgqy9u2zASFfpw" target="_blank"><img src="../global/media/icons/logos/logoRoot.webp">Root</a>
+							<a id="hiddenButtonMoreServers" class="linkButton mainJoinOther hiddenButton" onclick="showHiddenItem('MoreServers')"><img src="../global/media/icons/nav/search.png" class="invert">More</a>
+							<div id="hiddenItemMoreServers" class="hiddenItem">
+								<a class="linkButton mainJoinOther" href="https://stt.gg/pk5GqfZx" target="_blank"><img src="../global/media/icons/logos/logoStoat.webp" loading="lazy">Stoat</a>
+								<a class="linkButton mainJoinRoot" href="https://rootapp.gg/ACvQAUMWhgqy9u2zASFfpw" target="_blank"><img src="../global/media/icons/logos/logoRoot.webp" loading="lazy">Root</a>
+								<a class="linkButton mainJoinOther" href="https://fluxer.gg/12992NYf" target="_blank"><img src="../global/media/icons/emotes/sailboat.webp" loading="lazy">Fluxer</a>
+							</div>
 						</div>
 					</div>
 					<div class="columnItem brieflyHidden">
@@ -133,6 +73,85 @@
 				</div><p class="centered">—=[ • GreatlyGaming 2016-2026 • ]=— </p>
 			</article>
 		</main>
+
+		<div id="dynamicViews">
+			<!-- Details Modal -->
+			<div id="modalViewer" class="modal">
+				<!-- Modal navigation -->
+				<div id="modalNavigation" class="centered">
+					<h2>Navigation</h2>
+					<button onclick="uiFlexFunction('Modal', 'One')">Discuss</button>
+					<button onclick="uiFlexFunction('Modal', 'Two')">Customize</button>
+					<button onclick="uiFlexFunction('Modal', 'Three')">Expand</button>
+					<button onclick="uiFlexFunction('Modal', 'Four')">Enjoy</button>
+				</div>
+				<div class="modal-content" id="modalLinks">
+					<div class="modal-header">
+						<h2>More Platforms</h2>
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+					</div>
+					<div class="modal-body">
+						<p>As of now these platforms are not as supported or active per se, but they are viable alternatives / backups for members</p>
+						<div class="centeredMobile spacedHeight">
+							
+						</div>
+					</div>
+				</div>
+				<!-- Modal content -->
+				<div class="modal-content" id="modalOne">
+					<div class="modal-header">
+						<h2>More Info - Discuss</h2>
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+					</div>
+					<div class="modal-body centered">
+						<p>Find you're missing something? You can even make your own 'group chat' using forums. Pretty cool!</p>
+						<img src="local/media/forumExamples.webp" loading="lazy" class="viewable">
+					</div>
+				</div>
+				<div class="modal-content" id="modalTwo">
+					<div class="modal-header">
+						<h2>More Info - Customize</h2>
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+					</div>
+					<div class="modal-body centered">
+						<p>Roles: Thanks to Discord you can now select colors and roles easily!</p>
+						<img src="local/media/customizePromo.webp" loading="lazy" class="viewable"><hr>  
+						<p>Emoji: Here are some you can use! My favorites are Gil from <a href="https://www.guilded.gg" target="_blank">Guilded</a>, which the server used to be on, and my mascot emoji <img src="local/media/ggarc.webp" class="viewable emoji"></p>
+						<img src="local/media/emojiPromo.webp" loading="lazy" class="viewable"><hr>
+						<p>Thank you boosters for the extra features!</p>
+					</div>
+				</div>
+				<div class="modal-content" id="modalThree">
+					<div class="modal-header">
+						<h2>More Info - Expand</h2>
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+					</div>
+					<div class="modal-body centered">
+						<p>I have been working on this server since 2016, so suffice to say a lot has changed! For fun, here's an old screenshot from 2017 before Discord even had categories :p</p>
+						<img src="local/media/oldExample.webp" loading="lazy" class="viewable">
+					</div>
+				</div>
+				<div class="modal-content" id="modalFour">
+					<div class="modal-header">
+						<h2>More Info - Enjoy</h2>
+						<span class="close" onclick="uiFunction('Modal')">×</span>
+					</div>
+					<div class="modal-body centered">
+						<p>Bots: Listen to music from all platforms with <a href="../cyan/home.html">Cyan</a>, collect cards with Karuta/Mudae, and grow your level with Mee6</p>
+						<img src="local/media/bots.webp" loading="lazy" class="viewable"><hr>
+						<p>Minecraft: I host a 24/7 server with creative and survival worlds</p>
+						<img src="local/media/llamalisted.webp" loading="lazy" class="viewable">
+					</div>
+				</div>
+			</div>
+
+			<div id="imageViewer" onclick="uiFunction('Viewer')">
+				<div id="imageBackdrop"></div>
+				<div id="imageDisplay"></div>
+				<button title="Close">x</button>
+			</div>
+		</div>
+
 	</body>
 	<script src="../global/scripts/scripts.js"></script>
 </html>

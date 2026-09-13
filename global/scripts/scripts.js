@@ -162,33 +162,36 @@ if (modal) {
 function uiFunction(name) {
   switch(name) {
     case "Spaces": {
-      if(UIStateSpaces == false) {
-        document.getElementById("spaceList").style.display = "block";
-        document.getElementById("spaceList").style.pointerEvents = "none";
-        document.getElementById("spaceList").style.animation = "slideDownBelow 0.3s forwards";
+      var spaceListElement = document.getElementById("spaceList");
+
+      if(!UIStateSpaces) {
+        spaceListElement.style.display = "block";
+        spaceListElement.style.pointerEvents = "none";
+        spaceListElement.style.animation = "slideDownBelow 0.3s forwards";
         // Patch to prevent mouse overlap
-        setTimeout(function(){document.getElementById("spaceList").style.pointerEvents = "all";}, 100);
+        setTimeout(function(){spaceListElement.style.pointerEvents = "all";}, 100);
       }
       else {
-        document.getElementById("spaceList").style.animation = "slideUpAbove 0.2s forwards";
-        setTimeout(function(){document.getElementById("spaceList").style.display = "none";}, 200);
+        spaceListElement.style.animation = "slideUpAbove 0.2s forwards";
+        setTimeout(function(){spaceListElement.style.display = "none";}, 200);
       }
       UIStateSpaces = !UIStateSpaces;
+      
       break;
     }
     case "Drawer": {
-      if (UIStateDrawer == false){
+      if (!UIStateDrawer){
         document.getElementById("navbox").style.height = "350px";
         setTimeout(function(){document.getElementById("navbox").style.overflowY = "auto";}, 150);
         UIStateDrawer = true;
       }
-      else if (UIStateDrawer == true){
-          closeThatNav();
+      else {
+        closeThatNav();
       }
       break;
     }
     case "Viewer": {
-      if (UIStateViewer == false) {
+      if (!UIStateViewer) {
         imageViewer.style.display = "block";
         imageViewer.style.animation = "appearOpacity 0.2s forwards";
         imageBackdrop.style.animation = "appearOpacity 0.4s forwards";
@@ -203,8 +206,7 @@ function uiFunction(name) {
       break;
     }
     case "Modal": {
-      console.log("State " + UIStateModal)
-      if(UIStateModal == false) {
+      if(!UIStateModal) {
         modal.style.display = "block";
         modal.style.animation = "appearOpacity 0.15s forwards";
       }
@@ -238,6 +240,7 @@ function uiFunction(name) {
   }
 }
 
+// Special version that allows for opening multiple UIs at once
 function uiFlexFunction(name, item) {
   switch(name) {
     case "Modal": {
@@ -247,6 +250,7 @@ function uiFlexFunction(name, item) {
         if(UIStateModal == false) {
           uiFunction('Modal');
         }
+        
         // If model backdrop already open, close all other models. Makes for a seamless transition
         else{
           modalContents.forEach(content => {
@@ -289,7 +293,6 @@ function closeThatNav() {
   // Patch to fix desktop nav cutoff issue
   if (window.matchMedia("(max-width: 750px)").matches){
     document.getElementById("navbox").style.overflowY = "hidden";
-    console.log('test');
   }
   // Patch to fix double click issue when navigating back
   UIStateSpaces = false;
