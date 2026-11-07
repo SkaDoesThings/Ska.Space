@@ -62,7 +62,7 @@ hr {
 }
 
 /*Content containers*/
-.box, .blog article {
+.box, .blog article, .divider {
     background: var(--background-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
@@ -98,7 +98,7 @@ hr {
     --color-quartary: #efb461;
     --border-primary: rgb(88, 86, 86);
     --border-secondary: rgb(117, 117, 117);
-    --gradient-grays: linear-gradient(180deg, rgb(54, 53, 53), rgb(40, 41, 43));
+    --gradient-grays: linear-gradient(180deg, rgb(44, 45, 47), rgb(40, 41, 43));
     --gradient-shine: linear-gradient(10deg, rgb(88, 86, 86), rgb(152, 150, 150), rgb(88, 86, 86));
     
     --icon-theme: url('../media/icons/nav/themeDark.webp');
@@ -115,9 +115,9 @@ hr {
     --background-tertiary: rgb(240, 240, 240);
     --blurred-background: rgb(240, 240, 245, 0.8);
     --blurred-attribute: blur(25px);
-    --color-primary: rgb(248, 135, 135); 
+    --color-primary: rgb(248, 154, 154); 
     --color-secondary: rgb(255, 95, 95);
-    --color-tertiary: #f0e6e6;
+    --color-tertiary: #ffeeee;
     --color-quartary: #fab555;
     --border-primary: #c3c3c3;
     --border-secondary: #c3c3c3;
@@ -171,6 +171,29 @@ hr {
     --border-primary: rgb(87, 65, 65);
     --border-secondary: rgb(163, 123, 123);
 }
+
+[data-theme='bad'] {
+    --page-background: rgb(255, 217, 0);
+    --page-wallpaper: none;
+    --loading-wallpaper: rgb(255, 252, 193);
+    --text-color: rgb(147, 0, 196);
+
+    --background-primary: rgb(30, 0, 255);
+    --background-secondary: rgb(254, 0, 102);
+    --background-tertiary: rgb(126, 130, 10);
+
+    --color-primary: rgb(243, 150, 0); 
+    --color-secondary: rgb(124, 141, 255);
+    --color-tertiary: rgb(113, 170, 0);
+
+    --color-quartary: rgb(255, 0, 157);
+    --blurred-background: rgb(181, 0, 0);
+    --blurred-attribute: blur(0px);
+    --color-tertiary: rgb(105, 67, 67);
+    --border-primary: rgb(0, 255, 43);
+    --border-secondary: rgb(45, 225, 168);
+}
+
 
 
 [data-theme='twilight'] {
@@ -421,29 +444,32 @@ nav{
     list-style-type: none;
     height: 30px;
     min-width: 30px;
-    padding: 0px 5px;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-top: 11px;
+    padding: 2px 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 7px;
     font-size: 16pt;
-    border-radius: 5px;
-    transition: background-color 0.15s, color 0.15s;
+    transition: background-color 0.15s, color 0.15s, border 0.15s;
     cursor: pointer;
+    border-radius: 7px;
+    border: 2px solid transparent;
     font-family: 'Segoe UI', Arial, sans-serif;
 }   
 
 #linkContainer a:hover, .siteName:hover{
-    background-color: var(--color-primary);
+    background-color: var(--color-tertiary);
+    border: 2px solid var(--color-primary);
 }
 
 #linkContainer a.active{
     color: var(--color-secondary); 
     text-decoration: underline;
+    text-decoration-thickness: 2px;
 }  
 
-#linkContainer a.active:hover{
-    background-color: var(--color-primary);
-    color: rgb(255, 255, 255) !important; 
+#linkContainer a.active:hover {
+    color: var(--text-color) !important; 
+    border: 2px solid var(--color-primary)
 }
 
 #globalName{
@@ -586,7 +612,7 @@ nav{
 
 
 [data-theme='dark'] #themeButtonDark, [data-theme='light'] #themeButtonLight, [data-theme='red'] #themeButtonRed, [data-theme='blue'] #themeButtonBlue, 
-[data-theme='oled'] #themeButtonOLED, [data-theme='twilight'] #themeButtonTwilight, [data-theme='rgb'] #themeButtonRGB {
+[data-theme='oled'] #themeButtonOLED, [data-theme='twilight'] #themeButtonTwilight, [data-theme='rgb'] #themeButtonRGB, [data-theme='bad'] #themeButtonBad {
     border: 1px solid var(--color-primary);
 }
 
@@ -1051,7 +1077,7 @@ code .orange { color: rgb(255, 177, 134); }
         width: 88%;
         display: flex;
         margin-top: 5px;
-        margin-left: 5px;
+        margin-left: 3px;
         padding: 5px 10px;
     }
     
@@ -1197,9 +1223,14 @@ code .orange { color: rgb(255, 177, 134); }
         margin-top: 10px;
         margin-bottom: 10px;
         font-size: 18pt;
-        border: 2px solid rgb(209, 209, 209);
-        margin-left: 10px;
-        border-radius: 7px;
+        margin: 10px 5px;
+        border: 2px solid var(--border-primary);
+    }
+
+    #linkContainer .active{
+        background-color: var(--color-tertiary);
+        color: var(--text-color) !important;
+        border: 2px solid var(--color-primary);
     }
 
     #spaceList {
@@ -1221,7 +1252,6 @@ code .orange { color: rgb(255, 177, 134); }
         height: 54px;
         padding: 0px;
         border-radius: 50%;
-        border-width: 0px;
     }
 
     #spaceList img{
